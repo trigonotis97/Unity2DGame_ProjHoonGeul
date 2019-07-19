@@ -152,8 +152,47 @@ public class Judgement : MonoBehaviour
                         return -1;
                     }
                 }
+                else if(bossStageIdx==5) //chapter 5 boss
+                {
+                    string jaeumChapt5 = inputValue.Substring(2, 4);
+                    bool isCondCorrect = true;
+                    for (int q=0;q<2;q++)
+                    {
+                        string temp = jaeumChapt5.Substring(q * 2, 2);
+                        if( !((temp == "10")|| (temp == "12")|| (temp == "13")|| (temp == "15")||
+                            (temp == "16")|| (temp =="17")) )
+                        {
+                            isCondCorrect = false;
+                            break;
+                        }
+                    }
 
-
+                    if(!isCondCorrect)
+                    {
+                        Debug.Log("오답! (chapter 5 boss ) : 사전에 있지만 ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ 를 사용하지 않는 자음이 포함" + inputWord);
+                        return -1;
+                    }
+                }
+            else if(bossStageIdx==5)
+                {
+                    string moeumChapt5 = inputValue.Substring(6, 4);
+                    bool isCondCorrect = true;
+                    for (int q=0;q<2;q++)
+                    {
+                        string temp = moeumChapt5.Substring(q * 2, 2);
+                        if( ((temp == "10") || (temp == "12") || (temp == "14") || (temp == "16") ||
+                            (temp == "18") || (temp == "22")))
+                        {
+                            isCondCorrect = false;
+                            break;
+                        }
+                    }
+                    
+                    if(!isCondCorrect)
+                    {
+                        Debug.Log("오답! (chapter 5 boss ) : 사전에 있지만 ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ 이(가) 모음이 포함 " + inputWord);
+                    }
+                }
 
                 //일반 정답 처리부분 
                 for (int j = 0; j < 3; j++)
