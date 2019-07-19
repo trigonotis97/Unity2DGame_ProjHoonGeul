@@ -3610,7 +3610,7 @@ MonoBehaviour:
   count_4: 20
   count_5: 60
   count_6: 70
-  count_7: 80
+  count_7: 100
 --- !u!4 &1894321287
 Transform:
   m_ObjectHideFlags: 0
