@@ -169,6 +169,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
             {
                 m_sunbi.Attack(inputWord);
                 m_sunbi.Heal();
+
             }
             else if (questionHealOrDeal_arr[CorrectIdx] == 0) //딜일 경우
             {
@@ -371,4 +372,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
     {
         yield return new WaitForSeconds(waitsecond_);
     }
+
+    
 }
