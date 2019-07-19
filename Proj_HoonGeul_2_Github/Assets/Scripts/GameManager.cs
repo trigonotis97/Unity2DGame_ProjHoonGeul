@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
     
     /// 데이터 초기화
     
-    /// <param name="inputDict"></param>
+    // <param name="inputDict"></param>
 
     //xml load 씬에서 호출. game manager 의 데이터를 초기화해준다
     public void SetXmlDictData(Dictionary<string,string> []inputDict)

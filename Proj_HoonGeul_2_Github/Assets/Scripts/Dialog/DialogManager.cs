@@ -52,7 +52,7 @@ public class DialogManager : MonoBehaviour
 
         //m_enemyImage.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
 
-        Debug.Log("Background/" + m_data.BGImage);
+       
         bg_image.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
        // Debug.Log(m_gameManager.GetCurrentDialogKey());
         m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey() + 1);

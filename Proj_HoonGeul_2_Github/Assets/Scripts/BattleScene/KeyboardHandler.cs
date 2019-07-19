@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+
 
 public class KeyboardHandler : MonoBehaviour
 {
@@ -15,7 +17,8 @@ public class KeyboardHandler : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
+        if(!(GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>()==null))
+            m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
     }
 
     void Start()
@@ -78,7 +81,7 @@ public class KeyboardHandler : MonoBehaviour
         
     }
 
-    void ChangeKeyboardKorToEng()
+    void ChangeKeyboardKortoEng()
     {
 
     }
