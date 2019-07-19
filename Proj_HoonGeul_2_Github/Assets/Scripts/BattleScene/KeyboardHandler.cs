@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class KeyboardHandler : MonoBehaviour
@@ -17,11 +18,24 @@ public class KeyboardHandler : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        if(!(GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>()==null))
+        if (SceneManager.GetActiveScene().name!="StartScene")
             m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
     }
 
     void Start()
+    {
+        if (SceneManager.GetActiveScene().name != "StartScene")
+            ChangeKeyboardKortoEng();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void ChangeKeyboardKortoEng()
     {
         is5_3stage = (m_battleManager.Is2to5BossStage() == 7);
 
@@ -40,7 +54,7 @@ public class KeyboardHandler : MonoBehaviour
                     case "띄움":
                         break;
                     case "ㅈㅊ":
-                        keyText[i].text="J Ch";
+                        keyText[i].text = "J Ch";
                         break;
                     case "ㅅㅎ":
                         keyText[i].text = "S H";
@@ -67,22 +81,10 @@ public class KeyboardHandler : MonoBehaviour
 
                         keyText[i].text = "O M";
                         break;
-                        
+
 
                 }
             }
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void ChangeKeyboardKortoEng()
-    {
-
     }
 }

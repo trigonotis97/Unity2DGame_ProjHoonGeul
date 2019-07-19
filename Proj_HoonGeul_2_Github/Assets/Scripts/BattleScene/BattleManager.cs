@@ -143,8 +143,9 @@ public class BattleManager : MonoBehaviour
     }
     public int Is2to5BossStage()
     {
+        Debug.Log(m_data.chapterNum + "," + m_data.isBoss);
         int outNumInd=0;//어떤스테이지도 아닐경우
-        if (m_data.chapterNum == 2 && m_data.isBoss)
+        if ((m_data.chapterNum == 2) && m_data.isBoss)
         {
             outNumInd = 2;
         }
