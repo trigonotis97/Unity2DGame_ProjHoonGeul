@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DialogScene xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<DialogSet>
-		<key>1</key>
-		<chapterNum>1</chapterNum>
-		<stageNum>1</stageNum>
-		<script>다이얼로그 씬1-1, 초딩 1판 시작 전, 나오는, 다이얼로그</script>
-		<conv_state>0,1,2,2</conv_state>
-		<isNextBattle>true</isNextBattle>
-		<nextSceneKey>1</nextSceneKey>
-		<BGImage>student_bg_1</BGImage>
-		<enemyImage>jap_face_1</enemyImage>
-    <BGM>drum_funny</BGM>
-	</DialogSet>
-	<DialogSet>
-		<key>2</key>
-		<chapterNum>1</chapterNum>
-		<stageNum>2</stageNum>
-		<script>다이얼로그 씬1-2, 초딩 1판 끝나고, 나오는, 다이얼로그</script>
-		<conv_state>1,1,2,2</conv_state>
-		<isNextBattle>true</isNextBattle>
-		<nextSceneKey>0</nextSceneKey>
-		<BGImage>student_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
-    <BGM>drum_funny</BGM>
-	</DialogSet>
-	<DialogSet>
-		<key>3</key>
-		<chapterNum>1</chapterNum>
-		<stageNum>3</stageNum>
-		<script>다이얼로그 씬1-3, 초딩 2판 끝나고, 나오는, 다이얼로그</script>
-		<conv_state>2,0,1,1</conv_state>
-		<isNextBattle>false</isNextBattle>
-		<nextSceneKey>2</nextSceneKey>
-		<BGImage>student_bg_1</BGImage>
-		<enemyImage>jap_face_1</enemyImage>
-    <BGM>drum_funny</BGM>
-	</DialogSet>
-	<DialogSet>
-		<key>4</key>
-		<chapterNum>1</chapterNum>
-		<stageNum>4</stageNum>
-		<script>다이얼로그 씬1-4, 초딩 보스 시작 전, 나오는, 다이얼로그</script>
-		<conv_state>0,2,1,2</conv_state>
-		<isNextBattle>true</isNextBattle>
-		<nextSceneKey>0</nextSceneKey>
-		<BGImage>student_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
-    <BGM>drum_funny</BGM>
-	</DialogSet>
+  <DialogSet>
+    <key>1</key>
+    <chapterNum>1</chapterNum>
+    <stageNum>1</stageNum>
+    <script>다이얼로그 씬1-1, 초딩 1판 시작 전, 나오는, 다이얼로그</script>
+    <conv_state>0,1,2,2</conv_state>
+    <isNextBattle>true</isNextBattle>
+    <nextSceneKey>1</nextSceneKey>
+    <BGImage>student_bg_1</BGImage>
+    <enemyImage>jap_face_1</enemyImage>
+    <enemyWholeImage>1</enemyWholeImage>
+    <BGM>choding</BGM>
+  </DialogSet>
+  <DialogSet>
+    <key>2</key>
+    <chapterNum>1</chapterNum>
+    <stageNum>2</stageNum>
+    <script>다이얼로그 씬1-2, 초딩 1판 끝나고, 나오는, 다이얼로그</script>
+    <conv_state>1,1,2,2</conv_state>
+    <isNextBattle>true</isNextBattle>
+    <nextSceneKey>0</nextSceneKey>
+    <BGImage>student_bg_1</BGImage>
+    <enemyImage>player_face</enemyImage>
+    <enemyWholeImage>1</enemyWholeImage>
+    <BGM>choding</BGM>
+  </DialogSet>
+  <DialogSet>
+    <key>3</key>
+    <chapterNum>1</chapterNum>
+    <stageNum>3</stageNum>
+    <script>다이얼로그 씬1-3, 초딩 2판 끝나고, 나오는, 다이얼로그</script>
+    <conv_state>2,0,1,1</conv_state>
+    <isNextBattle>false</isNextBattle>
+    <nextSceneKey>2</nextSceneKey>
+    <BGImage>student_bg_1</BGImage>
+    <enemyImage>jap_face_1</enemyImage>
+    <enemyWholeImage>2</enemyWholeImage>
+    <BGM>choding</BGM>
+  </DialogSet>
+  <DialogSet>
+    <key>4</key>
+    <chapterNum>1</chapterNum>
+    <stageNum>4</stageNum>
+    <script>다이얼로그 씬1-4, 초딩 보스 시작 전, 나오는, 다이얼로그</script>
+    <conv_state>0,2,1,2</conv_state>
+    <isNextBattle>true</isNextBattle>
+    <nextSceneKey>0</nextSceneKey>
+    <BGImage>student_bg_2</BGImage>
+    <enemyImage>player_face</enemyImage>
+    <enemyWholeImage>3</enemyWholeImage>
+    <BGM>choding</BGM>
+  </DialogSet>
   <DialogSet>
     <key>5</key>
     <chapterNum>1</chapterNum>
@@ -58,7 +62,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>student_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM>drum_funny</BGM>
+    <enemyWholeImage>3</enemyWholeImage>
+    <BGM>choding</BGM>
   </DialogSet>
   <DialogSet>
     <key>6</key>
@@ -70,7 +75,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>jap_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM>drum_funny</BGM>
+    <enemyWholeImage>4</enemyWholeImage>
+    <BGM>japan</BGM>
   </DialogSet>
   <DialogSet>
     <key>7</key>
@@ -82,7 +88,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>jap_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM>drum_funny</BGM>
+    <enemyWholeImage>4</enemyWholeImage>
+    <BGM>japan</BGM>
   </DialogSet>
   <DialogSet>
     <key>8</key>
@@ -94,7 +101,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>jap_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM>drum_funny</BGM>
+    <enemyWholeImage>5</enemyWholeImage>
+    <BGM>japan</BGM>
   </DialogSet>
   <DialogSet>
     <key>9</key>
@@ -106,7 +114,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>jap_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>6</enemyWholeImage>
+    <BGM>japan</BGM>
   </DialogSet>
   <DialogSet>
     <key>10</key>
@@ -118,7 +127,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>jap_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>6</enemyWholeImage>
+    <BGM>japan</BGM>
   </DialogSet>
   <DialogSet>
     <key>11</key>
@@ -130,7 +140,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>china_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>7</enemyWholeImage>
+    <BGM>china</BGM>
   </DialogSet>
   <DialogSet>
     <key>12</key>
@@ -142,7 +153,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>china_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>7</enemyWholeImage>
+    <BGM>china</BGM>
   </DialogSet>
   <DialogSet>
     <key>13</key>
@@ -154,7 +166,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>china_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>8</enemyWholeImage>
+    <BGM>china</BGM>
   </DialogSet>
   <DialogSet>
     <key>14</key>
@@ -166,7 +179,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>china_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>9</enemyWholeImage>
+    <BGM>china</BGM>
   </DialogSet>
   <DialogSet>
     <key>15</key>
@@ -178,7 +192,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>china_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>9</enemyWholeImage>
+    <BGM>china</BGM>
   </DialogSet>
   <DialogSet>
     <key>16</key>
@@ -190,7 +205,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>america_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>10</enemyWholeImage>
+    <BGM>america</BGM>
   </DialogSet>
   <DialogSet>
     <key>17</key>
@@ -202,7 +218,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>america_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>10</enemyWholeImage>
+    <BGM>america</BGM>
   </DialogSet>
   <DialogSet>
     <key>18</key>
@@ -214,7 +231,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>america_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>11</enemyWholeImage>
+    <BGM>america</BGM>
   </DialogSet>
   <DialogSet>
     <key>19</key>
@@ -226,7 +244,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>america_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>12</enemyWholeImage>
+    <BGM>america</BGM>
   </DialogSet>
   <DialogSet>
     <key>20</key>
@@ -238,7 +257,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>america_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>12</enemyWholeImage>
+    <BGM>america</BGM>
   </DialogSet>
   <DialogSet>
     <key>21</key>
@@ -250,7 +270,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>13</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>22</key>
@@ -262,7 +283,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>13</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>23</key>
@@ -274,7 +296,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>14</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>24</key>
@@ -286,7 +309,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>14</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>25</key>
@@ -298,7 +322,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>15</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>26</key>
@@ -310,7 +335,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>15</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>27</key>
@@ -322,7 +348,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>16</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>28</key>
@@ -334,7 +361,8 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>joseon_bg_2</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage>16</enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
   <DialogSet>
     <key>29</key>
@@ -346,6 +374,7 @@
     <nextSceneKey>0</nextSceneKey>
     <BGImage>jeonju_1</BGImage>
     <enemyImage>player_face</enemyImage>
-    <BGM></BGM>
+    <enemyWholeImage></enemyWholeImage>
+    <BGM>joseon</BGM>
   </DialogSet>
 </DialogScene>

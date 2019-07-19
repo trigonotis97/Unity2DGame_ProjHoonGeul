@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyScriptDefault : MonoBehaviour
 {
@@ -72,6 +73,7 @@ public class EnemyScriptDefault : MonoBehaviour
             //게임오버 판정
             m_battleManager.SetStateStageClear();
             //battle scene 으로 게임오버 함수 실행
+            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
         }
         else
         {
@@ -93,7 +95,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
     IEnumerator AttackWave()
     {
-        //Debug.Log("start wave");
+        Debug.Log("start wave");
         yield return new WaitForSeconds(attackWaveSpeed_temp);
         EnemyAttack();
         StartCoroutine(AttackWave());

@@ -105,6 +105,7 @@ public class XMLLoad : MonoBehaviour
                 DLD.nextSceneKey = int.Parse(node.SelectSingleNode("nextSceneKey").InnerText);
                 DLD.BGImage = node.SelectSingleNode("BGImage").InnerText;
                 DLD.enemyImage = node.SelectSingleNode("enemyImage").InnerText;
+                DLD.enemyWholeImage = node.SelectSingleNode("enemyWholeImage").InnerText;
                 DLD.BGM = node.SelectSingleNode("BGM").InnerText; //암것도 안 들어있어서 주석 처리. 나중에 넣어주세요!
                 dialogDataTbl[indCount++] = DLD;
             }

@@ -64,6 +64,7 @@ public class MainSceneManager : MonoBehaviour
         Difficulty1.SetActive(false);
         Difficulty2.SetActive(false);
         BackButton.SetActive(false);
+        SceneManager.LoadScene("TempMain");
     }
     public void BackClick()
     {

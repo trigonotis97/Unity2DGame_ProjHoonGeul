@@ -47,6 +47,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     public bool isChapter1Boss=false;
+    public int CorrectIdx;
+    //초성생성 애니메이션 문제로 전역화
+
     public bool isChapter2Boss = false;
     public bool isChapter3Boss = false;
 
@@ -148,7 +151,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         string inputWord = InputText.text; //tmp에 엔터 버튼을 눌렀을 때의 문자열 저장.
 
         //모음인지 아닌지, 입력단어 ,현재 문제 초성(자음) value array, 어원을 사용하는지 : 0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어)
-        int CorrectIdx = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
+        CorrectIdx = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
         
       
 
@@ -169,7 +172,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
             {
                 m_sunbi.Attack(inputWord);
                 m_sunbi.Heal();
-
             }
             else if (questionHealOrDeal_arr[CorrectIdx] == 0) //딜일 경우
             {
@@ -183,7 +185,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 isHellQuestState = true;
                 countCorrect_hell = 0;
             }
-            StartCoroutine("MakeTextTransparently",CorrectIdx);
+            //StartCoroutine("MakeTextTransparently",CorrectIdx);
             //choObj_inputText_srt.ShowInputText();
             //m_sunbi.Attack(inputWord);
         }
@@ -196,10 +198,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         InputText.text = ""; //입력창 초기화
 
     }
-    /*** 수정해야할것 ***
-    이 스크립트는 초성을 새로만드는것에만 집중해야 했다.
-    문제 정답에 관한건 다른 스크립트에서 해야한다. 
-    */
+
 
     
     public void MakeNewQuestion(int index,bool isChapter1Boss)
@@ -283,14 +282,13 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         //RandomRange가 아닌 다른 방법으로 확률 생성하는 방법?
         float Percent = Random.Range(1.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
-        Debug.Log("current heal Percent:" + Percent);
+        
         if (Percent <= healProbability)
         {
             Chosung_text_arr[index].color = HealColor;
             questionHealOrDeal_arr[index] = 1;
             countCorrect_heal=0;
             healProbability = 0;
-            Debug.Log("MAKE HEAL");
         }
         else
         {
@@ -358,20 +356,18 @@ public class ChosungGeneratorDefault : MonoBehaviour
         questTbl = normalTbl;
         hellquestTbl = hellTbl;
     }
-    IEnumerator MakeTextTransparently(int index)
-    {
-        Chosung_text_arr[index].color = new Color(Chosung_text_arr[index].color.r, Chosung_text_arr[index].color.g, Chosung_text_arr[index].color.b, 0);
-        //Debug.Log("is waiting");
-        yield return StartCoroutine("waitTime");
-        //Debug.Log("anddddddddddddd Done!");
+    //IEnumerator MakeTextTransparently(int index)
+    //{
+    //    Chosung_text_arr[index].color = new Color(Chosung_text_arr[index].color.r, Chosung_text_arr[index].color.g, Chosung_text_arr[index].color.b, 0);
+    //    Debug.Log("is waiting");
+    //    yield return StartCoroutine("waitTime");
+    //    Debug.Log("anddddddddddddd Done!");
         
-        MakeNewQuestion(index, isChapter1Boss);
+    //    MakeNewQuestion(index, isChapter1Boss);
         
-    }
+    //}
     IEnumerator waitTime()
     {
         yield return new WaitForSeconds(waitsecond_);
     }
-
-    
 }

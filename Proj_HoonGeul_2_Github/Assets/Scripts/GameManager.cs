@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
     
     /// 데이터 초기화
     
-    // <param name="inputDict"></param>
+    /// <param name="inputDict"></param>
 
     //xml load 씬에서 호출. game manager 의 데이터를 초기화해준다
     public void SetXmlDictData(Dictionary<string,string> []inputDict)
@@ -177,24 +177,8 @@ public class DialogData
     public string BGImage;
     //public string sunbiImage;
     public string enemyImage;
+    public string enemyWholeImage;
     public string BGM;
-}
-
-public class BonusSpellData
-{
-    public int key;
-    public string correctSpell;
-    public string wrongSpell1;
-    public string wrongSpell2;
-}
-
-public class BonusCharacterData
-{
-    public int key;
-    public string question;
-    public string correctCharacter;
-    public string wrongCharacter1;
-    public string wrongCharacter2;
 }
 
 /*
