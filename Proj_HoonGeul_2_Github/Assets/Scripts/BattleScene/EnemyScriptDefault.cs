@@ -93,7 +93,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
     IEnumerator AttackWave()
     {
-        Debug.Log("start wave");
+        //Debug.Log("start wave");
         yield return new WaitForSeconds(attackWaveSpeed_temp);
         EnemyAttack();
         StartCoroutine(AttackWave());

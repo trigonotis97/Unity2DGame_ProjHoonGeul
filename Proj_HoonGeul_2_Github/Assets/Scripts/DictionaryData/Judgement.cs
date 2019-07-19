@@ -125,7 +125,7 @@ public class Judgement : MonoBehaviour
                 ////////////    보스 패턴 부분   ////////////
                 if (bossStageIdx==2) // chapter 2 boss 
                 {
-                    if(inputValue[10]=='1')
+                    if(inputValue[10]=='1')//받침유무 value 확인
                     {
                         Debug.Log("오답! (chapter 2 boss) : 사전에 있지만 받침이 있음! " + inputWord);
                         return -1;
@@ -139,7 +139,7 @@ public class Judgement : MonoBehaviour
                     {
                         string temp = moeumChapt4.Substring(q * 2, 2);
                         if( !((temp == "10")|| (temp == "15")|| (temp == "18")||
-                            (temp == "30")|| (temp == "23")) )
+                            (temp == "30")|| (temp == "23")) )// ㅏ ㅔ ㅣ ㅗ ㅜ 모음value 만 정답가능
                         {
                             isCondCorrect = false;
                             break;

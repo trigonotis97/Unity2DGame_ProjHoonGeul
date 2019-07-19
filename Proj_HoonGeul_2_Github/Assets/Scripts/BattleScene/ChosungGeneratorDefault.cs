@@ -169,6 +169,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
             {
                 m_sunbi.Attack(inputWord);
                 m_sunbi.Heal();
+
             }
             else if (questionHealOrDeal_arr[CorrectIdx] == 0) //딜일 경우
             {
@@ -195,7 +196,10 @@ public class ChosungGeneratorDefault : MonoBehaviour
         InputText.text = ""; //입력창 초기화
 
     }
-
+    /*** 수정해야할것 ***
+    이 스크립트는 초성을 새로만드는것에만 집중해야 했다.
+    문제 정답에 관한건 다른 스크립트에서 해야한다. 
+    */
 
     
     public void MakeNewQuestion(int index,bool isChapter1Boss)
@@ -279,13 +283,14 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         //RandomRange가 아닌 다른 방법으로 확률 생성하는 방법?
         float Percent = Random.Range(1.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
-        
+        Debug.Log("current heal Percent:" + Percent);
         if (Percent <= healProbability)
         {
             Chosung_text_arr[index].color = HealColor;
             questionHealOrDeal_arr[index] = 1;
             countCorrect_heal=0;
             healProbability = 0;
+            Debug.Log("MAKE HEAL");
         }
         else
         {
@@ -356,9 +361,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
     IEnumerator MakeTextTransparently(int index)
     {
         Chosung_text_arr[index].color = new Color(Chosung_text_arr[index].color.r, Chosung_text_arr[index].color.g, Chosung_text_arr[index].color.b, 0);
-        Debug.Log("is waiting");
+        //Debug.Log("is waiting");
         yield return StartCoroutine("waitTime");
-        Debug.Log("anddddddddddddd Done!");
+        //Debug.Log("anddddddddddddd Done!");
         
         MakeNewQuestion(index, isChapter1Boss);
         
@@ -367,4 +372,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
     {
         yield return new WaitForSeconds(waitsecond_);
     }
+
+    
 }
