@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -25,6 +26,7 @@ public class EnemyStatus
 */
 public class BattleManager : MonoBehaviour
 {
+    
     GameManager m_gameManager;
     public int show_chapter_num;
     public int show_stage_num;
@@ -46,8 +48,8 @@ public class BattleManager : MonoBehaviour
 
     
     GameObject m_enemy;
-    public SpriteRenderer bg_image; // ####
-
+    //public SpriteRenderer bg_image; // ####
+    public Image bg_image_;
 
     public AudioClip bg_audioclip;
     AudioSource m_audioSource;
@@ -70,10 +72,11 @@ public class BattleManager : MonoBehaviour
         //###나중에 받아오기
         //데이터 받아오기 (가져올 객체 : 
         m_data = m_gameManager.GetBattleSceneData();
-        Debug.Log("battle data IsBoss status::"+m_data.isBoss);
+        Debug.Log(m_data.enemyDamage);
         m_generator.SetProblempocket(m_data.problemPocket, m_data.hellProblemPocket);
 
         //백그라운드 오디오 가져오기 및 재생
+        Debug.Log("clip :: " + m_data.BGM);
         bg_audioclip = Resources.Load("BGM/" + m_data.BGM)as AudioClip;
            
         m_audioSource.clip = bg_audioclip;
@@ -100,9 +103,8 @@ public class BattleManager : MonoBehaviour
         //m_enemy.GetComponent<EnemyScriptDefault>().SetEnemyData(m_data.enemyHp, m_data.enemyDamage);
 
         
-        bg_image.sprite = Resources.Load("Background/"+m_data.BGImage,typeof(Sprite))as Sprite;
+        bg_image_.sprite = Resources.Load("Background/"+m_data.BGImage,typeof(Sprite))as Sprite;
         
-        //다음 배틀씬을 가리킨다
         m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
 
 
@@ -112,7 +114,7 @@ public class BattleManager : MonoBehaviour
     //enemy script에서 호출.
     public EnemyStatus GetEnemyData()
     {
-        //Debug.Log(m_data.enemyHp+" <<"+ m_data.enemyDamage);
+        Debug.Log(m_data.enemyHp+" <<"+ m_data.enemyDamage);
         EnemyStatus temp=new EnemyStatus();
         temp.maxHp = m_data.enemyHp;
         temp.attack_demage = m_data.enemyDamage;
@@ -143,9 +145,8 @@ public class BattleManager : MonoBehaviour
     }
     public int Is2to5BossStage()
     {
-        Debug.Log(m_data.chapterNum + "," + m_data.isBoss);
         int outNumInd=0;//어떤스테이지도 아닐경우
-        if ((m_data.chapterNum == 2) && m_data.isBoss)
+        if (m_data.chapterNum == 2 && m_data.isBoss)
         {
             outNumInd = 2;
         }

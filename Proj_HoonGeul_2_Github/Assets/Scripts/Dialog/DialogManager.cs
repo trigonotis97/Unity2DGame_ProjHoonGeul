@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
@@ -24,7 +25,8 @@ public class DialogManager : MonoBehaviour
 
     GameObject m_enemy;
     public SpriteRenderer m_enemyImage;
-    public SpriteRenderer bg_image;
+    //public SpriteRenderer bg_image;
+    public Image bg_image_;
     AudioClip bg_audioclip;
 
     Dialog2 m_script;
@@ -44,7 +46,6 @@ public class DialogManager : MonoBehaviour
         stageStatus = StageState.READY;
 
         m_data = m_gameManager.GetDialogData();
-        m_battledata = m_gameManager.GetBattleSceneData();
         m_script.SetScriptloader(m_data.script, m_data.conv_state);
 
         show_chapter_num = m_data.chapterNum;
@@ -52,25 +53,14 @@ public class DialogManager : MonoBehaviour
 
         //m_enemyImage.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
 
-       
-        bg_image.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
+        Debug.Log("Background/" + m_data.BGImage);
+        bg_image_.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
        // Debug.Log(m_gameManager.GetCurrentDialogKey());
         m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey() + 1);
-        
-        if (!m_battledata.isBoss)
-        {
-            GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_battledata.enemyPrefab.ToString())as GameObject;
-            
-            m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation)as GameObject;
-            m_enemy.GetComponent<SpriteRenderer>().sprite = tempEnemy.GetComponent<SpriteRenderer>().sprite;
-        }
-        else
-        {
-            GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_battledata.enemyPrefab.ToString()) as GameObject;
-            enemyImg.GetComponent<SpriteRenderer>().sprite = tempEnemy.GetComponent<SpriteRenderer>().sprite;
-            m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
-            //m_enemy = Instantiate(Resources.Load("EnemyPref/Boss_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
-        }
+
+        GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString())as GameObject;
+        m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation)as GameObject;
+        m_enemy.GetComponent<SpriteRenderer>().sprite = tempEnemy.GetComponent<SpriteRenderer>().sprite;
         //m_enemy.GetComponent<EnemyScriptDefault>().enabled = false;
         m_enemy.transform.SetParent(m_canvas.transform, false);
         
