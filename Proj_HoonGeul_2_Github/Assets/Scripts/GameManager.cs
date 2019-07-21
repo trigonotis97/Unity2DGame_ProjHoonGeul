@@ -181,6 +181,24 @@ public class DialogData
     public string BGM;
 }
 
+
+public class BonusSpellData
+{
+    public int key;
+    public string correctSpell;
+    public string wrongSpell1;
+    public string wrongSpell2;
+}
+
+public class BonusCharacterData
+{
+    public int key;
+    public string question;
+    public string correctCharacter;
+    public string wrongCharacter1;
+    public string wrongCharacter2;
+}
+
 /*
 key : 다이얼로그 키값
 chapter num : 챕터 넘버

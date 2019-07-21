@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class CharacterQuiz : MonoBehaviour
 {
+    GameManager m_gameManager;
+    public BonusSpellData m_data;
+
+    private void start()
+    {
+        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+    public void AnsGenerator()
+    {
+
+    }
     public void AnsClick(int BtNum)
     {
         switch (BtNum){
