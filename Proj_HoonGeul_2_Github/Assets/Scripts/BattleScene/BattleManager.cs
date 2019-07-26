@@ -72,6 +72,10 @@ public class BattleManager : MonoBehaviour
         //###나중에 받아오기
         //데이터 받아오기 (가져올 객체 : 
         m_data = m_gameManager.GetBattleSceneData();
+        if(m_data.stageNum==1)
+        {
+            m_gameManager.SaveCheckPoint();
+        }
         Debug.Log(m_data.enemyDamage);
         m_generator.SetProblempocket(m_data.problemPocket, m_data.hellProblemPocket);
 
@@ -104,7 +108,8 @@ public class BattleManager : MonoBehaviour
 
         
         bg_image_.sprite = Resources.Load("Background/"+m_data.BGImage,typeof(Sprite))as Sprite;
-        
+     
+       ////중요!!! 이부분 게임클리어 시로 넣어야함
         m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
 
 
