@@ -47,7 +47,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     public bool isChapter1Boss=false;
-    public int CorrectIdx;
+    public int correctState;
     //초성생성 애니메이션 문제로 전역화
 
     public bool isChapter2Boss = false;
@@ -99,6 +99,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
        // m_playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();//@@@교체
     }
+
     void Start()
     {
         //사용 변수 초기화
@@ -111,7 +112,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         isHellQuestState = false;
         hellCountInd = 0;
 
-
+       
         //처음 문제 생성
         for (int i = 0; i < 3; i++)
             MakeNewQuestion(i, isChapter1Boss);
@@ -119,44 +120,49 @@ public class ChosungGeneratorDefault : MonoBehaviour
         isChapter1Boss = m_battleManager.Is1BossStage();//1챕터 보스 확인
         bossStageIdx = m_battleManager.Is2to5BossStage();//2~5챕터 보스인지 확인
 
-
+        
         switch (bossStageIdx)
         {
             case 3://3챕터 보스일경우
                 wordType = 2;
                 break;
+            case 8://5-4 스테이지 일 경우
+
+                //중앙의 하나의 문제만 남김.
+                Destroy(Chosung_text_arr[0].gameObject);
+                Destroy(Chosung_text_arr[2].gameObject);
+                wordType = 4;//0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
+                break;
         }
     }
 
-    // 엔터 버튼을 눌렀을 때
+    /// 엔터 버튼을 눌렀을 때
     public void textInputEnter() 
     {
         string inputWord = InputText.text; //tmp에 엔터 버튼을 눌렀을 때의 문자열 저장.
 
         //모음인지 아닌지, 입력단어 ,현재 문제 초성(자음) value array, 어원을 사용하는지 : 0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어)
-        CorrectIdx = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
+        correctState = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
         
       
 
-        //딜, 힐 판정하기 위해서는 이 if문의 수정도 필요함. 
-        if (CorrectIdx > -1)
+        ///정답일 경우
+        if (correctState > -1)
         {
-            tile[CorrectIdx].SetTrigger("correct");
+            tile[correctState].SetTrigger("correct"); //애니메이션이 끝날때 make new question 실행.
             signAni.Play("O");
-            
-            //////////////////////
 
 
             countCorrect_hell++;
             countCorrect_heal++;
 
 
-            if (questionHealOrDeal_arr[CorrectIdx] == 1) //힐일 경우
+            if (questionHealOrDeal_arr[correctState] == 1) //힐일 경우
             {
                 m_sunbi.Attack(inputWord);
                 m_sunbi.Heal();
             }
-            else if (questionHealOrDeal_arr[CorrectIdx] == 0) //딜일 경우
+            else if (questionHealOrDeal_arr[correctState] == 0) //딜일 경우
             {
                 m_sunbi.Attack(inputWord);
                 Debug.Log("딜");
@@ -168,7 +174,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 isHellQuestState = true;
                 countCorrect_hell = 0;
             }
-            //StartCoroutine("MakeTextTransparently",CorrectIdx);
+            //StartCoroutine("MakeTextTransparently",correctState);
             //choObj_inputText_srt.ShowInputText();
             //m_sunbi.Attack(inputWord);
         }
@@ -183,7 +189,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
     }
 
 
-    //문제생성
+    ///문제생성
     public void MakeNewQuestion(int index,bool isChapter1Boss)
     {
         ///사용 변수 초기화
@@ -317,7 +323,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         Chosung_text_arr[index].text = questStr;
 
     }
-
+        
     public string getRandomChoseongText() 
     {
         string outString;

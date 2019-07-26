@@ -18,9 +18,12 @@ public class Judgement : MonoBehaviour
 
 
 
+    
     private int wordCount; //사용하는 단어의 글자 수
     private int[] wordType_arr = new int[4]; // 단어 어원 선택
                                              //(1 : 고유어 2: 한자어 3: 외래어  4 : 혼종어
+
+    
 
     //보스 스테이지 관련 변수
     int bossStageIdx;
@@ -40,9 +43,11 @@ public class Judgement : MonoBehaviour
         StartCoroutine("GetDictXml");
         //m_dictTbl = m_gameManager.GetXmlDictData();
         usedWordDict = new Dictionary<string, string>(); //매 스테이지 시작시 초기화
+
         /*
             게임 시작시 스테이지 조건 변수들 가져오기
         */
+
         //지금은 임의로 입력
 
         //보스스테이지 관련 인덱스 가져오기 (0:default)
@@ -88,8 +93,9 @@ public class Judgement : MonoBehaviour
                     Debug.Log("오답! : 사전에 있지만 단어수가 다름" + inputWord);
                     return -1;
                 }
-                
+
                 ///어원 검사
+                //0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
                 if (usingType > 0)
                 {
                     bool isCorrectType = false;

@@ -40,8 +40,11 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt("BattleStageIndex", 0);
         PlayerPrefs.SetInt("DialogStageIndex", 0);
 
-        //저장된 체크포인트 가져오기 
+        ///저장된 체크포인트 가져오기 (체크포인트 초기화)
         currentBattleStageIdx = PlayerPrefs.GetInt("BattleStageIndex", 0);
+        /*
+
+        */
         currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
 
         Debug.Log("battle ind: " + currentBattleStageIdx);
@@ -60,8 +63,6 @@ public class GameManager : MonoBehaviour {
   
     
     /// 데이터 초기화
-    
-    //<param name="inputDict"></param>
 
     //xml load 씬에서 호출. game manager 의 데이터를 초기화해준다
     public void SetXmlDictData(Dictionary<string,string> []inputDict)

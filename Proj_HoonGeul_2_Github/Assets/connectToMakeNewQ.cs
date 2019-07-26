@@ -8,7 +8,7 @@ public class connectToMakeNewQ : MonoBehaviour
     
     public void connect_makeNewQ()
     {
-        Debug.Log("nowTile is:" + chosungGeneratorDefault.CorrectIdx);
-        chosungGeneratorDefault.MakeNewQuestion(chosungGeneratorDefault.CorrectIdx, chosungGeneratorDefault.isChapter1Boss);
+        Debug.Log("nowTile is:" + chosungGeneratorDefault.correctState);
+        chosungGeneratorDefault.MakeNewQuestion(chosungGeneratorDefault.correctState, chosungGeneratorDefault.isChapter1Boss);
     }
 }
