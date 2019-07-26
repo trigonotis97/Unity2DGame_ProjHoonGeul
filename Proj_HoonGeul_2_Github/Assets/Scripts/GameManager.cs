@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//FF608B4E
+///FFFFA200 (서영이 주황색FFB69253,
+///FF4AB3CB (하늘색
+///->xml 문서주석 구분기호, 텍스트->xml문서 주석 텍스트
 public class GameManager : MonoBehaviour {
 
     public static GameManager gameManager = null;              //Static instance of GameManager which allows it to be accessed by any other script.

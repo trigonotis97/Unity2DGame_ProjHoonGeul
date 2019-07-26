@@ -101,49 +101,32 @@ public class ChosungGeneratorDefault : MonoBehaviour
     }
     void Start()
     {
+        //사용 변수 초기화
         isChapter1Boss = false;
         wordType = 0;
-
-
-
-
         isMoeumStage = false;
-
-
-
-
-        //isChapter2Boss = m_battleManager.Is2BossStage();
-        //isChapter3Boss = m_battleManager.Is3BossStage();
-
         questionVal_arr = new string[3] { "", "", "" };
-        
         choObj_inputText_srt = GetComponent<AttackText>();
         countCorrect_hell = 0;
         isHellQuestState = false;
         hellCountInd = 0;
 
-        //처음
+
+        //처음 문제 생성
         for (int i = 0; i < 3; i++)
-            MakeNewQuestion(i,isChapter1Boss);
+            MakeNewQuestion(i, isChapter1Boss);
 
-        isChapter1Boss = m_battleManager.Is1BossStage();
-        bossStageIdx = m_battleManager.Is2to5BossStage();
+        isChapter1Boss = m_battleManager.Is1BossStage();//1챕터 보스 확인
+        bossStageIdx = m_battleManager.Is2to5BossStage();//2~5챕터 보스인지 확인
 
-        //보스패턴 관련
-        switch(bossStageIdx)
+
+        switch (bossStageIdx)
         {
-            case 3:
+            case 3://3챕터 보스일경우
                 wordType = 2;
                 break;
         }
     }
-
-    //디버그용 텍스트. 인게임에서 영향은 없다.
-    public void text(Text Test_Text) 
-    {
-        Test_Text.text = InputText.text;
-    }
-
 
     // 엔터 버튼을 눌렀을 때
     public void textInputEnter() 
@@ -200,21 +183,23 @@ public class ChosungGeneratorDefault : MonoBehaviour
     }
 
 
-    
+    //문제생성
     public void MakeNewQuestion(int index,bool isChapter1Boss)
     {
+        ///사용 변수 초기화
         string questStr;
         bool isSameWord = false;
 
-        //
-        //hellQueue[index] = false;
+
+        ///1챕터 보스일경우
         if (isChapter1Boss)
         {
             // questStr = getRandomChoseongText();
             questStr = Chosung_text_arr[index].text;
         }
-        else
+        else///1챕터 보스 아닐경우 일반적인 문제 생성
         {
+            ///초성 풀에 있는 단어중 지금 사용하지 않고있는 단어 고르기
             do
             {
                 questStr = getRandomChoseongText();
@@ -233,13 +218,14 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 }
             } while (isSameWord);
 
-
+            //헬 문제일경우?????????????
             if (isHellQuestState)
                 isHellQuestState = false;
 
 
+            ///현재 만든 초성의 val값 뽑아내기
             int[] choVal = new int[2];
-            if (isMoeumStage)
+            if (isMoeumStage)//모음 스테이지 일 경우
             {
                 for (int n = 0; n < 2; n++)
                 {
@@ -254,7 +240,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
                     }
                 }
             }
-            else
+            else//자음 스테이지 일 경우
             {
                 for (int n = 0; n < 2; n++)
                 {
