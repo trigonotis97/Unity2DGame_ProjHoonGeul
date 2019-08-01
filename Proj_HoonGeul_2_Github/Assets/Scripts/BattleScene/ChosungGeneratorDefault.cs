@@ -119,21 +119,10 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         isChapter1Boss = m_battleManager.Is1BossStage();//1챕터 보스 확인
         bossStageIdx = m_battleManager.Is2to5BossStage();//2~5챕터 보스인지 확인
+        MakeBossStage(bossStageIdx);
 
-        
-        switch (bossStageIdx)
-        {
-            case 3://3챕터 보스일경우
-                wordType = 2;
-                break;
-            case 8://5-4 스테이지 일 경우
 
-                //중앙의 하나의 문제만 남김.
-                Destroy(Chosung_text_arr[0].gameObject);
-                Destroy(Chosung_text_arr[2].gameObject);
-                wordType = 4;//0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
-                break;
-        }
+
     }
 
     /// 엔터 버튼을 눌렀을 때
@@ -361,5 +350,25 @@ public class ChosungGeneratorDefault : MonoBehaviour
     IEnumerator waitTime()
     {
         yield return new WaitForSeconds(waitsecond_);
+    }
+
+    ///일반 스테이지에서 보스 스테이지일 경우 변경
+    void MakeBossStage(int bossStageInd)
+    {
+        switch (bossStageIdx)
+        {
+            case 3://3챕터 보스일경우
+                wordType = 2;
+                break;
+            case 8://5-4 스테이지 일 경우
+
+                //중앙의 하나의 문제만 남김.
+                Destroy(Chosung_text_arr[0].gameObject);
+                Destroy(Chosung_text_arr[2].gameObject);
+                wordType = 4;//0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
+                //+ 추가 ㅂ버추얼키보드 영어로 바꾸기
+
+                break;
+        }
     }
 }

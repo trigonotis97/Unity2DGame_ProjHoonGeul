@@ -22,11 +22,14 @@ public class KeyboardHandler : MonoBehaviour
 
     void Start()
     {
-      
-        if ((SceneManager.GetActiveScene().name != "StartScene")&&(m_battleManager.Is2to5BossStage() == 7))
+        //5-4 스테이지 일 경우
+        if ((SceneManager.GetActiveScene().name != "StartScene") && (m_battleManager.Is2to5BossStage() == 8))
             ChangeKeyboardKortoEng();
-        //5-2 스테이지 일 경우 키보드 변경
-     
+        //5-3 스테이지 일 경우
+        else if ((SceneManager.GetActiveScene().name != "StartScene") && (m_battleManager.Is2to5BossStage() == 7))
+            DeleteKeyboardText();
+
+
 
     }
 
@@ -36,10 +39,11 @@ public class KeyboardHandler : MonoBehaviour
         
     }
 
+
+
     void ChangeKeyboardKortoEng()
     {
 
-       
         keyButtonObj = GameObject.FindGameObjectsWithTag("ChunjiinKeyText");
         keyText = new Text[keyButtonObj.Length];
         for (int i = 0; i < keyText.Length; i++)
@@ -84,5 +88,16 @@ public class KeyboardHandler : MonoBehaviour
             }
         }
         
+    }
+
+    void DeleteKeyboardText()
+    {
+        keyButtonObj = GameObject.FindGameObjectsWithTag("ChunjiinKeyText");
+        keyText = new Text[keyButtonObj.Length];
+        for (int i = 0; i < keyText.Length; i++)
+        {
+            keyText[i] = keyButtonObj[i].GetComponent<Text>();
+            keyText[i].text = "";
+        }
     }
 }
