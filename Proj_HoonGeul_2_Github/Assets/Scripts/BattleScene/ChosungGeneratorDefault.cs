@@ -87,6 +87,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
     //모드 관련 변수
     bool isMoeumStage = false;
 
+    //오답 말풍선
+    SpeechBubble speechBubble;
+
 
     private void Awake()
     {
@@ -96,7 +99,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         //Chosung_text_arr[2] = GameObject.Find("chosung3").GetComponent<Text>();
         m_sunbi = GameObject.FindGameObjectWithTag("Sunbi").GetComponent<Sunbi>();
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
-
+        speechBubble = GetComponent<SpeechBubble>();
        // m_playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();//@@@교체
     }
 
@@ -136,7 +139,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
       
 
         ///정답일 경우
-        if (correctState > -1)
+        if (correctState > -1)//correctState 가 맞은 문제의 인덱스를 나타낸다.
         {
             tile[correctState].SetTrigger("correct"); //애니메이션이 끝날때 make new question 실행.
             signAni.Play("O");
@@ -168,8 +171,11 @@ public class ChosungGeneratorDefault : MonoBehaviour
             //m_sunbi.Attack(inputWord);
         }
         /////여기 성율이가 추가함. O X 애니메이션 띄우기 위함.
+        ///오답일경우
         else
         {
+            ///오답 말풍선 띄우기
+            speechBubble.makeBubbleText(correctState);
             signAni.Play("X");
         }
         
