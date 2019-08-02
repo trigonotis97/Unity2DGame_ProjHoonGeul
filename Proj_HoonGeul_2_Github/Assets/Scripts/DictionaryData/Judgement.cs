@@ -186,6 +186,7 @@ public class Judgement : MonoBehaviour
                     for (int q = 0; q < 2; q++)
                     {
                         string temp = moeumChapt5.Substring(q * 2, 2);
+
                         if (((temp == "10") || (temp == "12") || (temp == "14") || (temp == "16") ||
                             (temp == "18") || (temp == "22")))
                         {

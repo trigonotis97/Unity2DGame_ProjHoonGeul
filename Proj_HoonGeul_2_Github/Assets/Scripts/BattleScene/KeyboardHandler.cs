@@ -22,8 +22,8 @@ public class KeyboardHandler : MonoBehaviour
 
     void Start()
     {
-        //5-4 스테이지 일 경우
-        if ((SceneManager.GetActiveScene().name != "StartScene") && (m_battleManager.Is2to5BossStage() == 8))
+        //4 스테이지 보스 일 경우
+        if ((SceneManager.GetActiveScene().name != "StartScene") && (m_battleManager.Is2to5BossStage() == 4))
             ChangeKeyboardKortoEng();
         //5-3 스테이지 일 경우
         else if ((SceneManager.GetActiveScene().name != "StartScene") && (m_battleManager.Is2to5BossStage() == 7))

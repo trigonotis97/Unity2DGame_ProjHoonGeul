@@ -161,7 +161,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
             }
             
             
-            if (countCorrect_hell >= hellCountNum) //헬로 만들기
+            if (countCorrect_hell >= hellCountNum) //2개 맞추면 헬로 만들기
             {
                 isHellQuestState = true;
                 countCorrect_hell = 0;
