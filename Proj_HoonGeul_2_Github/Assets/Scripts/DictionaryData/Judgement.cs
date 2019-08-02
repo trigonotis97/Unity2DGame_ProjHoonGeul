@@ -28,6 +28,8 @@ public class Judgement : MonoBehaviour
     //보스 스테이지 관련 변수
     int bossStageIdx;
     
+
+    
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
