@@ -38,7 +38,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     public Judgement ansJudge; 
-    AttackText choObj_inputText_srt;
+    //AttackText choObj_inputText_srt;
     public Sunbi m_sunbi;
     public int dealHeal = -1; // 딜, 힐 속성. 1은 힐, 0은 딜
    // public float healProbability = 20.0f; //힐 확률 결정. 
@@ -110,7 +110,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         wordType = 0;
         isMoeumStage = false;
         questionVal_arr = new string[3] { "", "", "" };
-        choObj_inputText_srt = GetComponent<AttackText>();
+        //choObj_inputText_srt = GetComponent<AttackText>();
         countCorrect_hell = 0;
         isHellQuestState = false;
         hellCountInd = 0;
