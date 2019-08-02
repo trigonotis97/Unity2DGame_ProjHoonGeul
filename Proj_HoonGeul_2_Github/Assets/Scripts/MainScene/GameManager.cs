@@ -194,7 +194,7 @@ public class BonusSpellData
     public string wrongSpell2;
 }
 
-public class BonusCharacterData
+public class  BonusCharacterData
 {
     public int key;
     public string question;
