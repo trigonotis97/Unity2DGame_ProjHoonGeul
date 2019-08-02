@@ -2,6 +2,19 @@
 <DialogScene xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<DialogSet>
 		<key>1</key>
+		<chapterNum>0</chapterNum>
+		<stageNum>1</stageNum>
+		<script>오프닝, 선비는, 모험을, 떠난다</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isNextBattle>false</isNextBattle>
+		<isNextBonus>false</isNextBonus>
+		<BGImage>jeonju_1</BGImage>
+		<enemyImage>jap_face_1</enemyImage>
+		<enemyWholeImage>0</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>2</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>1</stageNum>
 		<script>다이얼로그 씬1-1, 초딩 1판 시작 전, 나오는, 다이얼로그</script>
@@ -14,7 +27,7 @@
 		<BGM>choding</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>2</key>
+		<key>3</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>2</stageNum>
 		<script>다이얼로그 씬1-2, 초딩 1판 끝나고, 나오는, 다이얼로그</script>
@@ -27,7 +40,7 @@
 		<BGM>choding</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>3</key>
+		<key>4</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>3</stageNum>
 		<script>다이얼로그 씬1-3, 초딩 2판 끝나고, 나오는, 다이얼로그</script>
@@ -40,7 +53,7 @@
 		<BGM>choding</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>4</key>
+		<key>5</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>4</stageNum>
 		<script>다이얼로그 씬1-4, 초딩 보스 시작 전, 나오는, 다이얼로그</script>
@@ -53,7 +66,7 @@
 		<BGM>choding</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>5</key>
+		<key>6</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>5</stageNum>
 		<script>다이얼로그 씬1-5, 초딩 보스 끝나고, 나오는, 다이얼로그</script>
@@ -66,7 +79,7 @@
 		<BGM>choding</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>6</key>
+		<key>7</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>1</stageNum>
 		<script>다이얼로그 씬2-1, 일본 1판 시작 전, 나오는, 다이얼로그</script>
@@ -79,7 +92,7 @@
 		<BGM>japan</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>7</key>
+		<key>8</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>2</stageNum>
 		<script>다이얼로그 씬2-2, 일본 1판 끝나고, 나오는, 다이얼로그</script>
@@ -92,7 +105,7 @@
 		<BGM>japan</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>8</key>
+		<key>9</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>3</stageNum>
 		<script>다이얼로그 씬2-3, 일본 2판 끝나고, 나오는, 다이얼로그</script>
@@ -105,7 +118,7 @@
 		<BGM>japan</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>9</key>
+		<key>10</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>4</stageNum>
 		<script>다이얼로그 씬2-4, 일본 보스 시작 전, 나오는, 다이얼로그</script>
@@ -118,7 +131,7 @@
 		<BGM>japan</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>10</key>
+		<key>11</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>5</stageNum>
 		<script>다이얼로그 씬2-5, 일본 보스 끝나고, 나오는, 다이얼로그</script>
@@ -131,10 +144,10 @@
 		<BGM>japan</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>11</key>
+		<key>12</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>1</stageNum>
-		<script>다이얼로그 씬EX-1, 보너스 스테이지 1 시작전, 나오는, 다이얼로그</script>
+		<script>다이얼로그 씬EX-1-1, 보너스 스테이지 1 시작전, 나오는, 다이얼로그</script>
 		<conv_state>0,0,0,0</conv_state>
 		<isNextBattle>false</isNextBattle>
 		<isNextBonus>true</isNextBonus>
@@ -144,7 +157,20 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>12</key>
+		<key>13</key>
+		<chapterNum>0</chapterNum>
+		<stageNum>2</stageNum>
+		<script>다이얼로그 씬EX-1-2, 보너스 스테이지 1 끝나고, 나오는, 다이얼로그</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isNextBattle>false</isNextBattle>
+		<isNextBonus>false</isNextBonus>
+		<BGImage>joseon_bg_1</BGImage>
+		<enemyImage>heung</enemyImage>
+		<enemyWholeImage>0</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>14</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>1</stageNum>
 		<script>다이얼로그 씬3-1, 중국 1판 시작 전, 나오는, 다이얼로그</script>
@@ -157,7 +183,7 @@
 		<BGM>china</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>13</key>
+		<key>15</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>2</stageNum>
 		<script>다이얼로그 씬3-2, 중국 1판 끝나고, 나오는, 다이얼로그</script>
@@ -170,7 +196,7 @@
 		<BGM>china</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>14</key>
+		<key>16</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>3</stageNum>
 		<script>다이얼로그 씬3-3, 중국 2판 끝나고, 나오는, 다이얼로그</script>
@@ -183,7 +209,7 @@
 		<BGM>china</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>15</key>
+		<key>17</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>4</stageNum>
 		<script>다이얼로그 씬3-4, 중국 보스 시작 전, 나오는, 다이얼로그</script>
@@ -196,7 +222,7 @@
 		<BGM>china</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>16</key>
+		<key>18</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>5</stageNum>
 		<script>다이얼로그 씬3-5, 중국 보스 끝나고, 나오는, 다이얼로그</script>
@@ -209,10 +235,10 @@
 		<BGM>china</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>17</key>
+		<key>19</key>
 		<chapterNum>0</chapterNum>
-		<stageNum>2</stageNum>
-		<script>다이얼로그 씬EX-2, 보너스 스테이지 2 시작전, 나오는, 다이얼로그</script>
+		<stageNum>3</stageNum>
+		<script>다이얼로그 씬EX-2-1, 보너스 스테이지 2 시작전, 나오는, 다이얼로그</script>
 		<conv_state>0,0,0,0</conv_state>
 		<isNextBattle>false</isNextBattle>
 		<isNextBonus>true</isNextBonus>
@@ -222,7 +248,20 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>18</key>
+		<key>20</key>
+		<chapterNum>0</chapterNum>
+		<stageNum>4</stageNum>
+		<script>다이얼로그 씬EX-2-2, 보너스 스테이지 2 끝나고, 나오는, 다이얼로그</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isNextBattle>false</isNextBattle>
+		<isNextBonus>false</isNextBonus>
+		<BGImage>joseon_bg_1</BGImage>
+		<enemyImage>heung</enemyImage>
+		<enemyWholeImage>0</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>21</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>1</stageNum>
 		<script>다이얼로그 씬4-1, 미국 1판 시작 전, 나오는, 다이얼로그</script>
@@ -235,7 +274,7 @@
 		<BGM>america</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>19</key>
+		<key>22</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>2</stageNum>
 		<script>다이얼로그 씬4-2, 미국 1판 끝나고, 나오는, 다이얼로그</script>
@@ -248,7 +287,7 @@
 		<BGM>america</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>20</key>
+		<key>23</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>3</stageNum>
 		<script>다이얼로그 씬4-3, 미국 2판 끝나고, 나오는, 다이얼로그</script>
@@ -261,7 +300,7 @@
 		<BGM>america</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>21</key>
+		<key>24</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>4</stageNum>
 		<script>다이얼로그 씬4-4, 미국 보스 시작 전, 나오는, 다이얼로그</script>
@@ -274,7 +313,7 @@
 		<BGM>america</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>22</key>
+		<key>25</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>5</stageNum>
 		<script>다이얼로그 씬4-5, 미국 보스 끝나고, 나오는, 다이얼로그</script>
@@ -287,10 +326,10 @@
 		<BGM>america</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>23</key>
+		<key>26</key>
 		<chapterNum>0</chapterNum>
-		<stageNum>3</stageNum>
-		<script>다이얼로그 씬EX-3, 보너스 스테이지 2 시작전, 나오는, 다이얼로그</script>
+		<stageNum>5</stageNum>
+		<script>다이얼로그 씬EX-3-1, 보너스 스테이지 3 시작전, 나오는, 다이얼로그</script>
 		<conv_state>0,0,0,0</conv_state>
 		<isNextBattle>false</isNextBattle>
 		<isNextBonus>true</isNextBonus>
@@ -300,7 +339,20 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>24</key>
+		<key>27</key>
+		<chapterNum>0</chapterNum>
+		<stageNum>6</stageNum>
+		<script>다이얼로그 씬EX-3-2, 보너스 스테이지 3 끝나고, 나오는, 다이얼로그</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isNextBattle>false</isNextBattle>
+		<isNextBonus>false</isNextBonus>
+		<BGImage>joseon_bg_1</BGImage>
+		<enemyImage>heung</enemyImage>
+		<enemyWholeImage>0</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>28</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>1</stageNum>
 		<script>다이얼로그 씬5-1, 조선 보스1 시작 전, 나오는, 다이얼로그</script>
@@ -313,7 +365,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>25</key>
+		<key>29</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>2</stageNum>
 		<script>다이얼로그 씬5-2, 조선 보스1 끝나고, 나오는, 다이얼로그</script>
@@ -326,7 +378,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>26</key>
+		<key>30</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>3</stageNum>
 		<script>다이얼로그 씬5-3, 조선 보스2 시작 전, 나오는, 다이얼로그</script>
@@ -339,7 +391,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>27</key>
+		<key>31</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>4</stageNum>
 		<script>다이얼로그 씬5-4, 조선 보스2 끝나고, 나오는, 다이얼로그</script>
@@ -352,7 +404,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>28</key>
+		<key>32</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>5</stageNum>
 		<script>다이얼로그 씬5-5, 조선 보스3 시작 전, 나오는, 다이얼로그</script>
@@ -365,7 +417,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>29</key>
+		<key>33</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>6</stageNum>
 		<script>다이얼로그 씬5-6, 조선 보스3 끝나고, 나오는, 다이얼로그</script>
@@ -378,7 +430,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>30</key>
+		<key>34</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>7</stageNum>
 		<script>다이얼로그 씬5-7, 세종대왕 시작 전, 나오는, 다이얼로그</script>
@@ -391,7 +443,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>31</key>
+		<key>35</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>8</stageNum>
 		<script>다이얼로그 씬5-8, 세종대왕 끝나고, 나오는, 다이얼로그</script>
@@ -404,7 +456,7 @@
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
-		<key>32</key>
+		<key>36</key>
 		<chapterNum>6</chapterNum>
 		<stageNum>1</stageNum>
 		<script>엔딩, 따로 있는지는 모르겠지만, 일단은 만들어놓은, 다이얼로그</script>

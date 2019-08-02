@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpellingQuiz : MonoBehaviour
 {
@@ -56,10 +57,12 @@ public class SpellingQuiz : MonoBehaviour
         if (BtNum == correctAns)
         {
             Debug.Log("정답");
+            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
         }
         else
         {
             Debug.Log("오답");
+            //깜지 씬으로 이동
         }
     }
 }

@@ -89,6 +89,21 @@ public class DialogManager : MonoBehaviour
         {
             SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
         }
+        else if (m_data.isNextBonus == true)
+        {
+            switch (m_data.stageNum)
+            {
+                case 1:
+                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                    break;
+                case 2:
+                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    break;
+                case 3:
+                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                    break;
+            }
+        }
         else
         {
             SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
