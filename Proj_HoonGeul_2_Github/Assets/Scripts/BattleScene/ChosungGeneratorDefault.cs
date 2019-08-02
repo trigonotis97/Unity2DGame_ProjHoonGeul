@@ -44,6 +44,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
    // public float healProbability = 20.0f; //힐 확률 결정. 
 
     Color HealColor = new Color(0.0f, 0.7f, 0.3f);
+    Color HellColor = new Color(0.0f, 0.7f, 0.3f);
 
 
     public bool isChapter1Boss=false;
@@ -87,16 +88,13 @@ public class ChosungGeneratorDefault : MonoBehaviour
     //모드 관련 변수
     bool isMoeumStage = false;
 
-    //오답 말풍선
+    //오답 말풍선 (함수사용)
     SpeechBubble speechBubble;
 
 
     private void Awake()
     {
         //퍼블릭으로 할당했습니다. 이름이 같아야 애니메이터를 공유할 수 있어서!
-        //Chosung_text_arr[0] = GameObject.Find("chosung1").GetComponent<Text>();
-        //Chosung_text_arr[1] = GameObject.Find("chosung2").GetComponent<Text>();
-        //Chosung_text_arr[2] = GameObject.Find("chosung3").GetComponent<Text>();
         m_sunbi = GameObject.FindGameObjectWithTag("Sunbi").GetComponent<Sunbi>();
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         speechBubble = GetComponent<SpeechBubble>();
@@ -219,9 +217,14 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 }
             } while (isSameWord);
 
-            //헬 문제일경우?????????????
+
+            ///헬 판정부분
+            //헬 문제일경우 ( 앞에서 만드는게 반복되었기 때문에 밑에서 bool 변수를 바꿔준다)
             if (isHellQuestState)
+            {
                 isHellQuestState = false;
+                Chosung_text_arr[index].color = HellColor;
+            }
 
 
             ///현재 만든 초성의 val값 뽑아내기
@@ -265,8 +268,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         }
 
-        /////////////  힐 확률보정  /////////////
-
+        ///힐 판정부분
         //RandomRange가 아닌 다른 방법으로 확률 생성하는 방법?
         float Percent = Random.Range(1.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
         
@@ -318,7 +320,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
         Chosung_text_arr[index].text = questStr;
 
     }
-        
+        /*
+        헬과제는 3개 순서대로.이미 있는건 건너뛰기?
+        */
     public string getRandomChoseongText() 
     {
         string outString;
@@ -327,9 +331,11 @@ public class ChosungGeneratorDefault : MonoBehaviour
             
             outString = questTbl[Random.Range(0, questTbl.Length)];
         }
-        else
+        else//헬 문제 만들경우
         {
-            outString = hellquestTbl[Random.Range(0, 3)];
+            //outString = hellquestTbl[Random.Range(0, 3)];
+            outString = hellquestTbl[hellCountInd];
+            hellCountInd++;
         }
         return outString;
     }
