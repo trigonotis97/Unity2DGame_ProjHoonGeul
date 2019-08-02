@@ -72,6 +72,10 @@ public class BattleManager : MonoBehaviour
         //###나중에 받아오기
         //데이터 받아오기 (가져올 객체 : 
         m_data = m_gameManager.GetBattleSceneData();
+        if(m_data.stageNum==1)
+        {
+            m_gameManager.SaveCheckPoint();
+        }
         Debug.Log(m_data.enemyDamage);
         m_generator.SetProblempocket(m_data.problemPocket, m_data.hellProblemPocket);
 
@@ -104,10 +108,8 @@ public class BattleManager : MonoBehaviour
 
         
         bg_image_.sprite = Resources.Load("Background/"+m_data.BGImage,typeof(Sprite))as Sprite;
-        
-        m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
-
-
+     
+     
 
     }
 
@@ -183,12 +185,15 @@ public class BattleManager : MonoBehaviour
         return m_data.chapterNum;
     }
 
-    public void NextScene()
+    public void NextDialogScene()
     {
         //m_gameManager.SetCurrentDialogKey(m_data.nextDialogNum);
         SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+
+        ////중요!!! 이부분 게임클리어 시로 넣어야함
+        m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
     }
-        
+
     /*
     public GameObject Keyboardlock;
 
@@ -228,5 +233,5 @@ public class BattleManager : MonoBehaviour
     }
     */
 
-    
+
 }

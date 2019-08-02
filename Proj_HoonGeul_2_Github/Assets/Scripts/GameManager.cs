@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//FF608B4E
+///FFFFA200 (서영이 주황색FFB69253,
+///FF4AB3CB (하늘색
+///->xml 문서주석 구분기호, 텍스트->xml문서 주석 텍스트
 public class GameManager : MonoBehaviour {
 
     public static GameManager gameManager = null;              //Static instance of GameManager which allows it to be accessed by any other script.
@@ -37,8 +40,11 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt("BattleStageIndex", 0);
         PlayerPrefs.SetInt("DialogStageIndex", 0);
 
-        //저장된 체크포인트 가져오기 
+        ///저장된 체크포인트 가져오기 (체크포인트 초기화)
         currentBattleStageIdx = PlayerPrefs.GetInt("BattleStageIndex", 0);
+        /*
+
+        */
         currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
 
         Debug.Log("battle ind: " + currentBattleStageIdx);
@@ -57,8 +63,6 @@ public class GameManager : MonoBehaviour {
   
     
     /// 데이터 초기화
-    
-    //<param name="inputDict"></param>
 
     //xml load 씬에서 호출. game manager 의 데이터를 초기화해준다
     public void SetXmlDictData(Dictionary<string,string> []inputDict)

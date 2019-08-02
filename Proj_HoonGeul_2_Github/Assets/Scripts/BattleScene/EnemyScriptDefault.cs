@@ -63,7 +63,7 @@ public class EnemyScriptDefault : MonoBehaviour
         
     }
 
-    public void EnemyDamage(/*int i*/) //콜라이더 ontriger 에서 호출
+    public void EnemyDamage(/*int i*/) //콜라이더 ontrigger 에서 호출
     {
         currentHp -= sunbiAttackDamage;
         if (currentHp <= 0f)
@@ -72,8 +72,10 @@ public class EnemyScriptDefault : MonoBehaviour
             hpBar.value = 0;
             //게임오버 판정
             m_battleManager.SetStateStageClear();
-            //battle scene 으로 게임오버 함수 실행
-            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+
+           
+            m_battleManager.NextDialogScene();
+            //SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
         }
         else
         {

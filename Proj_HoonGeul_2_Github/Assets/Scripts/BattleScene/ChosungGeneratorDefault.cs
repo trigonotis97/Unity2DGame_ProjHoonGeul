@@ -47,7 +47,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     public bool isChapter1Boss=false;
-    public int CorrectIdx;
+    public int correctState;
     //초성생성 애니메이션 문제로 전역화
 
     public bool isChapter2Boss = false;
@@ -87,6 +87,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
     //모드 관련 변수
     bool isMoeumStage = false;
 
+    //오답 말풍선
+    SpeechBubble speechBubble;
+
 
     private void Awake()
     {
@@ -96,84 +99,62 @@ public class ChosungGeneratorDefault : MonoBehaviour
         //Chosung_text_arr[2] = GameObject.Find("chosung3").GetComponent<Text>();
         m_sunbi = GameObject.FindGameObjectWithTag("Sunbi").GetComponent<Sunbi>();
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
-
+        speechBubble = GetComponent<SpeechBubble>();
        // m_playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();//@@@교체
     }
+
     void Start()
     {
+        //사용 변수 초기화
         isChapter1Boss = false;
         wordType = 0;
-
-
-
-
         isMoeumStage = false;
-
-
-
-
-        //isChapter2Boss = m_battleManager.Is2BossStage();
-        //isChapter3Boss = m_battleManager.Is3BossStage();
-
         questionVal_arr = new string[3] { "", "", "" };
-        
         choObj_inputText_srt = GetComponent<AttackText>();
         countCorrect_hell = 0;
         isHellQuestState = false;
         hellCountInd = 0;
 
-        //처음
+       
+        //처음 문제 생성
         for (int i = 0; i < 3; i++)
-            MakeNewQuestion(i,isChapter1Boss);
+            MakeNewQuestion(i, isChapter1Boss);
 
-        isChapter1Boss = m_battleManager.Is1BossStage();
-        bossStageIdx = m_battleManager.Is2to5BossStage();
+        isChapter1Boss = m_battleManager.Is1BossStage();//1챕터 보스 확인
+        bossStageIdx = m_battleManager.Is2to5BossStage();//2~5챕터 보스인지 확인
+        MakeBossStage(bossStageIdx);
 
-        //보스패턴 관련
-        switch(bossStageIdx)
-        {
-            case 3:
-                wordType = 2;
-                break;
-        }
+
+
     }
 
-    //디버그용 텍스트. 인게임에서 영향은 없다.
-    public void text(Text Test_Text) 
-    {
-        Test_Text.text = InputText.text;
-    }
-
-
-    // 엔터 버튼을 눌렀을 때
+    /// 엔터 버튼을 눌렀을 때
     public void textInputEnter() 
     {
         string inputWord = InputText.text; //tmp에 엔터 버튼을 눌렀을 때의 문자열 저장.
 
         //모음인지 아닌지, 입력단어 ,현재 문제 초성(자음) value array, 어원을 사용하는지 : 0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어)
-        CorrectIdx = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
+        correctState = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
         
       
 
-        //딜, 힐 판정하기 위해서는 이 if문의 수정도 필요함. 
-        if (CorrectIdx > -1)
+        ///정답일 경우
+        if (correctState > -1)//correctState 가 맞은 문제의 인덱스를 나타낸다.
         {
-            tile[CorrectIdx].SetTrigger("correct");
+            tile[correctState].SetTrigger("correct"); //애니메이션이 끝날때 make new question 실행.
             signAni.Play("O");
-            
-            //////////////////////
 
 
             countCorrect_hell++;
             countCorrect_heal++;
 
 
-            if (questionHealOrDeal_arr[CorrectIdx] == 1) //힐일 경우
+            if (questionHealOrDeal_arr[correctState] == 1) //힐일 경우
             {
                 m_sunbi.Attack(inputWord);
                 m_sunbi.Heal();
             }
-            else if (questionHealOrDeal_arr[CorrectIdx] == 0) //딜일 경우
+            else if (questionHealOrDeal_arr[correctState] == 0) //딜일 경우
             {
                 m_sunbi.Attack(inputWord);
                 Debug.Log("딜");
@@ -185,13 +166,16 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 isHellQuestState = true;
                 countCorrect_hell = 0;
             }
-            //StartCoroutine("MakeTextTransparently",CorrectIdx);
+            //StartCoroutine("MakeTextTransparently",correctState);
             //choObj_inputText_srt.ShowInputText();
             //m_sunbi.Attack(inputWord);
         }
         /////여기 성율이가 추가함. O X 애니메이션 띄우기 위함.
+        ///오답일경우
         else
         {
+            ///오답 말풍선 띄우기
+            speechBubble.makeBubbleText(correctState);
             signAni.Play("X");
         }
         
@@ -200,21 +184,23 @@ public class ChosungGeneratorDefault : MonoBehaviour
     }
 
 
-    
+    ///문제생성
     public void MakeNewQuestion(int index,bool isChapter1Boss)
     {
+        ///사용 변수 초기화
         string questStr;
         bool isSameWord = false;
 
-        //
-        //hellQueue[index] = false;
+
+        ///1챕터 보스일경우
         if (isChapter1Boss)
         {
             // questStr = getRandomChoseongText();
             questStr = Chosung_text_arr[index].text;
         }
-        else
+        else///1챕터 보스 아닐경우 일반적인 문제 생성
         {
+            ///초성 풀에 있는 단어중 지금 사용하지 않고있는 단어 고르기
             do
             {
                 questStr = getRandomChoseongText();
@@ -233,13 +219,14 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 }
             } while (isSameWord);
 
-
+            //헬 문제일경우?????????????
             if (isHellQuestState)
                 isHellQuestState = false;
 
 
+            ///현재 만든 초성의 val값 뽑아내기
             int[] choVal = new int[2];
-            if (isMoeumStage)
+            if (isMoeumStage)//모음 스테이지 일 경우
             {
                 for (int n = 0; n < 2; n++)
                 {
@@ -254,7 +241,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
                     }
                 }
             }
-            else
+            else//자음 스테이지 일 경우
             {
                 for (int n = 0; n < 2; n++)
                 {
@@ -331,7 +318,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         Chosung_text_arr[index].text = questStr;
 
     }
-
+        
     public string getRandomChoseongText() 
     {
         string outString;
@@ -369,5 +356,25 @@ public class ChosungGeneratorDefault : MonoBehaviour
     IEnumerator waitTime()
     {
         yield return new WaitForSeconds(waitsecond_);
+    }
+
+    ///일반 스테이지에서 보스 스테이지일 경우 변경
+    void MakeBossStage(int bossStageInd)
+    {
+        switch (bossStageIdx)
+        {
+            case 3://3챕터 보스일경우
+                wordType = 2;
+                break;
+            case 8://5-4 스테이지 일 경우
+
+                //중앙의 하나의 문제만 남김.
+                Destroy(Chosung_text_arr[0].gameObject);
+                Destroy(Chosung_text_arr[2].gameObject);
+                wordType = 4;//0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
+                //+ 추가 ㅂ버추얼키보드 영어로 바꾸기
+
+                break;
+        }
     }
 }

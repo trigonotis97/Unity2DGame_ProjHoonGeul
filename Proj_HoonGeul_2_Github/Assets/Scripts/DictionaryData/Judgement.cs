@@ -18,9 +18,12 @@ public class Judgement : MonoBehaviour
 
 
 
+    
     private int wordCount; //사용하는 단어의 글자 수
     private int[] wordType_arr = new int[4]; // 단어 어원 선택
                                              //(1 : 고유어 2: 한자어 3: 외래어  4 : 혼종어
+
+    
 
     //보스 스테이지 관련 변수
     int bossStageIdx;
@@ -40,9 +43,11 @@ public class Judgement : MonoBehaviour
         StartCoroutine("GetDictXml");
         //m_dictTbl = m_gameManager.GetXmlDictData();
         usedWordDict = new Dictionary<string, string>(); //매 스테이지 시작시 초기화
+
         /*
             게임 시작시 스테이지 조건 변수들 가져오기
         */
+
         //지금은 임의로 입력
 
         //보스스테이지 관련 인덱스 가져오기 (0:default)
@@ -78,7 +83,7 @@ public class Judgement : MonoBehaviour
             if (usedWordDict.ContainsKey(inputWord))
             {
                 Debug.Log("오답! 이미 사용한 단어:" + inputWord);
-                return -1;
+                return -2;
             }
             ///2. 단어수 , 어원 , 초성 매치 여부 순서대로 검색
             {
@@ -86,10 +91,11 @@ public class Judgement : MonoBehaviour
                 if (!(inputValue[0].ToString() == wordCount.ToString()))
                 {
                     Debug.Log("오답! : 사전에 있지만 단어수가 다름" + inputWord);
-                    return -1;
+                    return -6;
                 }
-                
+
                 ///어원 검사
+                //0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
                 if (usingType > 0)
                 {
                     bool isCorrectType = false;
@@ -106,7 +112,7 @@ public class Judgement : MonoBehaviour
                     if (!isCorrectType)
                     {
                         Debug.Log("오답! : 사전에 있지만 정해진 타입과 다름" + inputWord);
-                        return -1;
+                        return -3;
                     }
                 }
 
@@ -128,7 +134,7 @@ public class Judgement : MonoBehaviour
                     if(inputValue[10]=='1')
                     {
                         Debug.Log("오답! (chapter 2 boss) : 사전에 있지만 받침이 있음! " + inputWord);
-                        return -1;
+                        return -4;
                     }
                 }
                 else if(bossStageIdx==4) // chapter 4 boss
@@ -149,7 +155,7 @@ public class Judgement : MonoBehaviour
                     if(!isCondCorrect)
                     {
                         Debug.Log("오답! (chapter 4 boss ) : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함" + inputWord);
-                        return -1;
+                        return -5;
                     }
                 }
                 else if (bossStageIdx == 5) //chapter 5-1 boss
@@ -170,7 +176,7 @@ public class Judgement : MonoBehaviour
                     if (!isCondCorrect)
                     {
                         Debug.Log("오답! (chapter 5 boss ) : 사전에 있지만 ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ 를 사용하지 않는 자음이 포함" + inputWord);
-                        return -1;
+                        return -7;
                     }
                 }
                 else if (bossStageIdx == 6)//6==chapter 5-2
@@ -191,6 +197,7 @@ public class Judgement : MonoBehaviour
                     if (!isCondCorrect)
                     {
                         Debug.Log("오답! (chapter 5 boss ) : 사전에 있지만 ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ 이(가) 모음이 포함 " + inputWord);
+                        return -8;
                     }
                 }
 
@@ -210,7 +217,7 @@ public class Judgement : MonoBehaviour
 
                 {//사전에 있지만 문제와 다를경우
                     Debug.Log("오답! :사전에 있지만 문제와 맞지 않음" + inputWord);
-                    return -1;
+                    return -9;
                 }
 
 
