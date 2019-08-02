@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterQuiz : MonoBehaviour
 {
     GameManager m_gameManager;
     public BonusSpellData m_data;
+
+    public Text question;
+    public Text num1;
+    public Text num2;
+    public Text num3;
 
     int selectAns;
     int correctAns;
@@ -20,25 +26,42 @@ public class CharacterQuiz : MonoBehaviour
                                             { "논개", "한산대첩", "가락지", "임진왜란" } };
     string[] nowAnsStr = new string[4];
 
-    private void start()
+    private void Start()
     {
-        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        //m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        AnsGenerator();
     }
     public void AnsGenerator()
     {
-        selectAns = Random.Range(0, 9);
-        correctAns = Random.Range(1, 4); 
+        selectAns = Random.Range(0, 9);     //문제 번호 랜덤
+        correctAns = Random.Range(1, 4);    //정답 문항 랜덤
+        for(int i = 0; i<4; i++)
+        {
+            nowAnsStr[i] = answerStr[selectAns, i]; //중간 매개 배열
+        }
+        // 정답 문항으로 각 문제[1] 을 이동시키기 위한 코드.
+        string temp = nowAnsStr[correctAns];
+        nowAnsStr[correctAns] = nowAnsStr[1];
+        nowAnsStr[1] = temp;
+        Debug.Log(nowAnsStr[correctAns]);
+        Debug.Log(correctAns);
 
+
+        //텍스트로 문자열 출력
+        question.GetComponent<Text>().text = nowAnsStr[0];
+        num1.GetComponent<Text>().text = nowAnsStr[1];
+        num2.GetComponent<Text>().text = nowAnsStr[2];
+        num3.GetComponent<Text>().text = nowAnsStr[3];
     }
     public void AnsClick(int BtNum)
     {
         if (BtNum == correctAns)
         {
-
+            Debug.Log("정답");
         }
         else
         {
-
+            Debug.Log("오답");
         }
     }
 }

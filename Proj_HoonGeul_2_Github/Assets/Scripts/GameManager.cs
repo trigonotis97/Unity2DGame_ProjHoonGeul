@@ -176,7 +176,7 @@ public class DialogData
     public string[] script;
     public int[] conv_state;    
     public bool isNextBattle;
-    public int nextSceneKey;
+    public bool isNextBonus;
     //추가
     public string BGImage;
     //public string sunbiImage;
