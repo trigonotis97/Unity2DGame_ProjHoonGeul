@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class BossPatternHandler : MonoBehaviour
     ChosungGeneratorDefault m_generator;
     Judgement m_judgement;
     KeyboardHandler m_keyboardHandler;
-    TextinputHandler m_textinputHandler;
+    //TextinputHandler m_textinputHandler;
 
 
     private void Awake()
@@ -26,7 +26,7 @@ public class BossPatternHandler : MonoBehaviour
         m_generator = GameObject.FindGameObjectWithTag("QuestionControl").GetComponent<ChosungGeneratorDefault>();
         m_judgement = GameObject.FindGameObjectWithTag("QuestionControl").GetComponent<Judgement>();
         m_keyboardHandler = GameObject.FindGameObjectWithTag("KeyboardHandler").GetComponent<KeyboardHandler>();
-        m_textinputHandler = GameObject.FindGameObjectWithTag("TextinputHandler").GetComponent<TextinputHandler>();
+        //m_textinputHandler = GameObject.FindGameObjectWithTag("TextinputHandler").GetComponent<TextinputHandler>();
 
     }
     void Start()
