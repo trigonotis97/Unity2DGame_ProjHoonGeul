@@ -243,7 +243,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
                     }
                 }
-            }
+            }   
             else//자음 스테이지 일 경우
             {
                 for (int n = 0; n < 2; n++)
@@ -383,4 +383,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 break;
         }
     }
+
+    
 }
+

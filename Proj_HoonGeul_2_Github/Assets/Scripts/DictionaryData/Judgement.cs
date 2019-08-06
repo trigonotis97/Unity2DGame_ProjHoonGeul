@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///private static string m_cho_Tbl = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"; // 10부터 시작
+///private static string m_jung_Tbl = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ"; //10+ 21
 //like every moment in the end
 
 public class Judgement : MonoBehaviour
@@ -27,6 +29,7 @@ public class Judgement : MonoBehaviour
 
     //보스 스테이지 관련 변수
     int bossStageIdx;
+    int bossCountInd;
     
 
     
@@ -54,7 +57,8 @@ public class Judgement : MonoBehaviour
 
         //보스스테이지 관련 인덱스 가져오기 (0:default)
         bossStageIdx = m_battleManager.Is2to5BossStage();
-        
+        bossCountInd = 0;
+
 
     }
     // 0 1 2345 6789 10 
@@ -160,6 +164,27 @@ public class Judgement : MonoBehaviour
                         return -5;
                     }
                 }
+                else if (bossStageIdx == 4) ///변경중~~~
+                {
+                    string moeumChapt4 = inputValue.Substring(6, 4);
+                    bool isCondCorrect = true;
+                    for (int q = 0; q < 2; q++)
+                    {
+                        string temp = moeumChapt4.Substring(q * 2, 2);
+                        if (!((temp == "10") || (temp == "15") || (temp == "18") ||
+                            (temp == "30") || (temp == "23")))
+                        {
+                            isCondCorrect = false;
+                            break;
+                        }
+                    }
+
+                    if (!isCondCorrect)
+                    {
+                        Debug.Log("오답! (chapter 4 boss ) : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함" + inputWord);
+                        return -5;
+                    }
+                }
                 else if (bossStageIdx == 5) //chapter 5-1 boss
                 {
                     string jaeumChapt5 = inputValue.Substring(2, 4);
@@ -167,6 +192,7 @@ public class Judgement : MonoBehaviour
                     for (int q = 0; q < 2; q++)
                     {
                         string temp = jaeumChapt5.Substring(q * 2, 2);
+                        string []patternCondition=GetBossPattern5_1(bossCountInd);
                         if (!((temp == "10") || (temp == "12") || (temp == "13") || (temp == "15") ||
                            (temp == "16") || (temp == "17")))
                         {
@@ -253,5 +279,25 @@ public class Judgement : MonoBehaviour
                 Debug.Log("get dictionary xml data successfully");
             }
         } while (m_dictTbl == null);
+    }
+
+    string[] GetBossPattern5_1(int ind)
+    {
+        string[] outString= { "" };
+        switch (ind)
+        {
+            case 0:
+                outString = new string[3] { "16", "19", "27" };
+                break;
+
+            case 1:
+                outString = new string[3] { "11", "15", "21" };
+                break;
+
+            case 2:
+                outString = new string[3] { "28", "22", "12" };
+                break;
+        }
+        return outString;
     }
 }
