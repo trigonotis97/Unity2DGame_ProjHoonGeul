@@ -219,7 +219,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
             ///헬 판정부분
-            //헬 문제일경우 ( 앞에서 만드는게 반복되었기 때문에 밑에서 bool 변수를 바꿔준다)
+            //헬 문제일경우 ( 앞에서 만드는게 반복되었기 때문에 앞에서 판정하지 못하니 밑에서 bool 변수를 바꿔준다)
             if (isHellQuestState)
             {
                 isHellQuestState = false;
