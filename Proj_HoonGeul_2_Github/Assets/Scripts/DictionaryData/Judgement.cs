@@ -29,7 +29,11 @@ public class Judgement : MonoBehaviour
 
     //보스 스테이지 관련 변수
     int bossStageIdx;
-    int bossCountInd;
+
+
+    string[,]ch5_1_moeumTabel =new string[3, 3] { { "16", "19", "27" }, { "11", "15", "21" }, { "28", "22", "12" } };
+    string[] ch5_2_moeunTable = new string[5] { "10", "18", "30", "23", "14" };
+    int bossCondCount = 0;
     
 
     
@@ -57,7 +61,7 @@ public class Judgement : MonoBehaviour
 
         //보스스테이지 관련 인덱스 가져오기 (0:default)
         bossStageIdx = m_battleManager.Is2to5BossStage();
-        bossCountInd = 0;
+        bossCondCount = 0;
 
 
     }
@@ -134,7 +138,7 @@ public class Judgement : MonoBehaviour
                 }
 
 
-                ////////////    보스 패턴 부분   ////////////
+                /// /////////    보스 패턴 부분   ////////////
                 if (bossStageIdx==2) // chapter 2 boss 
                 {
                     if(inputValue[10]=='1')
@@ -164,59 +168,46 @@ public class Judgement : MonoBehaviour
                         return -5;
                     }
                 }
-                else if (bossStageIdx == 4) ///변경중~~~
+                else if (bossStageIdx == 5) ///chapter 5-1 boss
                 {
-                    string moeumChapt4 = inputValue.Substring(6, 4);
-                    bool isCondCorrect = true;
-                    for (int q = 0; q < 2; q++)
+                    string moeumChapt5_1 = inputValue.Substring(6, 4);
+                    bool isCondCorrect = false;
+                    for (int q = 0; q < 2; q++)//모음 글자 2개 순서대로 검사
                     {
-                        string temp = moeumChapt4.Substring(q * 2, 2);
-                        if (!((temp == "10") || (temp == "15") || (temp == "18") ||
-                            (temp == "30") || (temp == "23")))
-                        {
-                            isCondCorrect = false;
-                            break;
-                        }
-                    }
+                        string moeumSingle = moeumChapt5_1.Substring(q * 2, 2);
 
+                        for(int i=0;i<3;i++)//3개의 모음을 강제
+                        {
+                            if(moeumSingle==ch5_1_moeumTabel[bossCondCount,i])
+                            {
+                                isCondCorrect = true;
+                                break;
+                            }
+                        }
+                        if (isCondCorrect)
+                            break;
+                    }
                     if (!isCondCorrect)
                     {
-                        Debug.Log("오답! (chapter 4 boss ) : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함" + inputWord);
-                        return -5;
-                    }
-                }
-                else if (bossStageIdx == 5) //chapter 5-1 boss
-                {
-                    string jaeumChapt5 = inputValue.Substring(2, 4);
-                    bool isCondCorrect = true;
-                    for (int q = 0; q < 2; q++)
-                    {
-                        string temp = jaeumChapt5.Substring(q * 2, 2);
-                        string []patternCondition=GetBossPattern5_1(bossCountInd);
-                        if (!((temp == "10") || (temp == "12") || (temp == "13") || (temp == "15") ||
-                           (temp == "16") || (temp == "17")))
-                        {
-                            isCondCorrect = false;
-                            break;
-                        }
-                    }
-
-                    if (!isCondCorrect)
-                    {
-                        Debug.Log("오답! (chapter 5 boss ) : 사전에 있지만 ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ 를 사용하지 않는 자음이 포함" + inputWord);
+                        Debug.Log("오답! (chapter 5-1boss ) : 사전에 있지만 조건에 맞는 모음을 사용하지 않음" + inputWord);
                         return -7;
                     }
-                }
-                else if (bossStageIdx == 6)//6==chapter 5-2
+                    else//정답일때 조건 바꾸기
+                    {
+                        if (bossCondCount == 2)//카운트가 배열 마지막 2일때 0으로 변경
+                            bossCondCount = 0;
+                        else
+                            bossCondCount++;
+                    }
+                }/// ///DOING//
+                else if (bossStageIdx == 6)///chapter 5-2
                 {
-                    string moeumChapt5 = inputValue.Substring(6, 4);
+                    string moeumChapt5_2 = inputValue.Substring(6, 4);
                     bool isCondCorrect = true;
                     for (int q = 0; q < 2; q++)
                     {
-                        string temp = moeumChapt5.Substring(q * 2, 2);
-
-                        if (((temp == "10") || (temp == "12") || (temp == "14") || (temp == "16") ||
-                            (temp == "18") || (temp == "22")))
+                        string moeunSingle = moeumChapt5_2.Substring(q * 2, 2);
+                        if(moeunSingle==ch5_2_moeunTable[bossCondCount])//모음을 순서대로 한개씩 제한.
                         {
                             isCondCorrect = false;
                             break;
@@ -225,8 +216,15 @@ public class Judgement : MonoBehaviour
 
                     if (!isCondCorrect)
                     {
-                        Debug.Log("오답! (chapter 5 boss ) : 사전에 있지만 ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ 이(가) 모음이 포함 " + inputWord);
+                        Debug.Log("오답! (chapter 5_2 boss ) : 사전에 있지만 조건에 맞는 모음을 포함하지 않음 " + inputWord);
                         return -8;
+                    }
+                    else //정답을 맞출 경우
+                    {
+                        if (bossCondCount == 4)//5개의 모음배열중 마지막을 가리킬때
+                            bossCondCount = 0;
+                        else
+                            bossCondCount++;
                     }
                 }
 
@@ -280,24 +278,5 @@ public class Judgement : MonoBehaviour
             }
         } while (m_dictTbl == null);
     }
-
-    string[] GetBossPattern5_1(int ind)
-    {
-        string[] outString= { "" };
-        switch (ind)
-        {
-            case 0:
-                outString = new string[3] { "16", "19", "27" };
-                break;
-
-            case 1:
-                outString = new string[3] { "11", "15", "21" };
-                break;
-
-            case 2:
-                outString = new string[3] { "28", "22", "12" };
-                break;
-        }
-        return outString;
-    }
+    
 }
