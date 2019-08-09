@@ -84,6 +84,7 @@ public class Judgement : MonoBehaviour
             {
                 isExist = true;
                 inputValue = m_dictTbl[i][inputWord];//입력단어의 value 값 가져오기
+                Debug.Log("받침 ::"+inputValue[10]);
             }
         }
 
@@ -109,15 +110,12 @@ public class Judgement : MonoBehaviour
                 if (usingType > 0)
                 {
                     bool isCorrectType = false;
-                    for (int i = 0; i < 4; i++)
+                    
+                    if (inputValue[1].ToString() == (usingType).ToString())//정해진 타입과 맞는 단어일경우
                     {
-
-                        if (inputValue[1].ToString() == (usingType-1).ToString())//정해진 타입과 맞는 단어일경우
-                        {
-                            isCorrectType = true;
-                            break;
-                        }
+                        isCorrectType = true;
                     }
+                    
                     //정해진 타입과 맞는 단어가 아니면 오답 , 맞으면 다음 검사로 넘어감
                     if (!isCorrectType)
                     {
@@ -139,7 +137,7 @@ public class Judgement : MonoBehaviour
 
 
                 /// /////////    보스 패턴 부분   ////////////
-                if (bossStageIdx==2) // chapter 2 boss 
+                if (bossStageIdx==2) /// chapter 2 boss 
                 {
                     if(inputValue[10]=='1')
                     {
@@ -147,7 +145,8 @@ public class Judgement : MonoBehaviour
                         return -4;
                     }
                 }
-                else if(bossStageIdx==4) // chapter 4 boss
+                /*
+                else if(bossStageIdx==4) /// chapter 4 boss
                 {
                     string moeumChapt4= inputValue.Substring(6, 4);
                     bool isCondCorrect = true;
@@ -168,6 +167,7 @@ public class Judgement : MonoBehaviour
                         return -5;
                     }
                 }
+                */
                 else if (bossStageIdx == 5) ///chapter 5-1 boss
                 {
                     string moeumChapt5_1 = inputValue.Substring(6, 4);
@@ -199,7 +199,7 @@ public class Judgement : MonoBehaviour
                         else
                             bossCondCount++;
                     }
-                }/// ///DOING//
+                }
                 else if (bossStageIdx == 6)///chapter 5-2
                 {
                     string moeumChapt5_2 = inputValue.Substring(6, 4);
