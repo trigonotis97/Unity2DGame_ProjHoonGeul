@@ -31,7 +31,7 @@ public class Judgement : MonoBehaviour
     int bossStageIdx;
 
 
-    string[,]ch5_1_moeumTabel =new string[3, 3] { { "16", "19", "27" }, { "11", "15", "21" }, { "28", "22", "12" } };
+    string[,]ch5_1_moeumTable =new string[3, 3] { { "16", "19", "27" }, { "11", "15", "21" }, { "28", "22", "12" } };
     string[] ch5_2_moeunTable = new string[5] { "10", "18", "30", "23", "14" };
     int bossCondCount = 0;
     
@@ -164,7 +164,7 @@ public class Judgement : MonoBehaviour
 
                     if(!isCondCorrect)
                     {
-                        Debug.Log("오답! (chapter 4 boss ) : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함" + inputWord);
+                        Debug.Log("오답! (chapter 4 boss ) : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함 " + inputWord);
                         return -5;
                     }
                 }
@@ -178,7 +178,7 @@ public class Judgement : MonoBehaviour
 
                         for(int i=0;i<3;i++)//3개의 모음을 강제
                         {
-                            if(moeumSingle==ch5_1_moeumTabel[bossCondCount,i])
+                            if(moeumSingle==ch5_1_moeumTable[bossCondCount,i])
                             {
                                 isCondCorrect = true;
                                 break;
