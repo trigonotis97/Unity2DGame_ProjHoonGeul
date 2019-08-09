@@ -84,7 +84,7 @@
 		<enemyPrefab>6</enemyPrefab>
 		<enemyHP>20</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>2</bossPattern>
 		<nextDialogNum>13</nextDialogNum>
 		<BGImage>jap_bg_2</BGImage>
@@ -129,7 +129,7 @@
 		<enemyPrefab>9</enemyPrefab>
 		<enemyHP>25</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>3</bossPattern>
 		<nextDialogNum>19</nextDialogNum>
 		<BGImage>china_bg_2</BGImage>
@@ -174,7 +174,7 @@
 		<enemyPrefab>12</enemyPrefab>
 		<enemyHP>29</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>4</bossPattern>
 		<nextDialogNum>25</nextDialogNum>
 		<BGImage>america_bg_2</BGImage>
