@@ -123,7 +123,7 @@ public class XMLLoad : MonoBehaviour
             {
                 SceneData SCD = new SceneData();
                 SCD.key = int.Parse(node.SelectSingleNode("key").InnerText);
-                SCD.nextScene = int.Parse(node.SelectSingleNode("nextScene").InnerText);
+                SCD.nextScene = int.Parse(node.SelectSingleNode("nextSceneCase").InnerText);
                 SCD.nextSceneKey = int.Parse(node.SelectSingleNode("nextSceneKey").InnerText);
                 sceneDataTbl[indCount++] = SCD;
             }
