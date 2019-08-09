@@ -96,10 +96,10 @@ public class DialogManager : MonoBehaviour
                 case 1:
                     SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
                     break;
-                case 3:
+                case 2:
                     SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
                     break;
-                case 5:
+                case 3:
                     SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
                     break;
             }
