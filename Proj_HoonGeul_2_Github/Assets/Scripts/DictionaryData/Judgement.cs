@@ -294,9 +294,9 @@ public class Judgement : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 if (i == 0)
-                    bossCondText.text = ValuetoWord(ch5_1_moeumTabel[bossCondCount, i], 1).ToString();
+                    bossCondText.text = ValuetoWord(ch5_1_moeumTable[bossCondCount, i], 1).ToString();
                 else
-                    bossCondText.text += ValuetoWord(ch5_1_moeumTabel[bossCondCount, i], 1);
+                    bossCondText.text += ValuetoWord(ch5_1_moeumTable[bossCondCount, i], 1);
 
             }
         }
