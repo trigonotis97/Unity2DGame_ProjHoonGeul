@@ -370,7 +370,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         switch (bossStageIdx)
         {
             case 3://3챕터 보스일경우
-                //wordType = 2;
+                wordType = 2;
                 break;
             case 8://5-4 스테이지 일 경우
 

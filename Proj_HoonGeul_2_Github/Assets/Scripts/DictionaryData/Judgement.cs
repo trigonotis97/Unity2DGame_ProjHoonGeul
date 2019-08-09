@@ -33,7 +33,7 @@ public class Judgement : MonoBehaviour
     private static string m_cho_Tbl = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"; // 10부터 시작
     private static string m_jung_Tbl = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ"; //10+ 21
 
-    string[,]ch5_1_moeumTabel =new string[3, 3] { { "16", "19", "27" }, { "11", "15", "21" }, { "28", "22", "12" } };
+    string[,]ch5_1_moeumTable =new string[3, 3] { { "16", "19", "27" }, { "11", "15", "21" }, { "28", "22", "12" } };
     string[] ch5_2_moeunTable = new string[5] { "10", "18", "30", "23", "14" };
 
 
@@ -90,6 +90,7 @@ public class Judgement : MonoBehaviour
             {
                 isExist = true;
                 inputValue = m_dictTbl[i][inputWord];//입력단어의 value 값 가져오기
+                Debug.Log("받침 ::"+inputValue[10]);
             }
         }
 
@@ -115,15 +116,12 @@ public class Judgement : MonoBehaviour
                 if (usingType > 0)
                 {
                     bool isCorrectType = false;
-                    for (int i = 0; i < 4; i++)
+                    
+                    if (inputValue[1].ToString() == (usingType).ToString())//정해진 타입과 맞는 단어일경우
                     {
-
-                        if (inputValue[1].ToString() == (usingType-1).ToString())//정해진 타입과 맞는 단어일경우
-                        {
-                            isCorrectType = true;
-                            break;
-                        }
+                        isCorrectType = true;
                     }
+                    
                     //정해진 타입과 맞는 단어가 아니면 오답 , 맞으면 다음 검사로 넘어감
                     if (!isCorrectType)
                     {
@@ -145,7 +143,7 @@ public class Judgement : MonoBehaviour
 
 
                 /// /////////    보스 패턴 부분   ////////////
-                if (bossStageIdx==2) // chapter 2 boss 
+                if (bossStageIdx==2) /// chapter 2 boss 
                 {
                     if(inputValue[10]=='1')
                     {
@@ -153,7 +151,8 @@ public class Judgement : MonoBehaviour
                         return -4;
                     }
                 }
-                else if(bossStageIdx==4) // chapter 4 boss
+                /*
+                else if(bossStageIdx==4) /// chapter 4 boss
                 {
                     string moeumChapt4= inputValue.Substring(6, 4);
                     bool isCondCorrect = true;
@@ -170,10 +169,11 @@ public class Judgement : MonoBehaviour
 
                     if(!isCondCorrect)
                     {
-                        Debug.Log("오답! (chapter 4 boss ) : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함" + inputWord);
+                        Debug.Log("오답! (chapter 4 boss ) : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함 " + inputWord);
                         return -5;
                     }
                 }
+                */
                 else if (bossStageIdx == 5) ///chapter 5-1 boss
                 {
                     string moeumChapt5_1 = inputValue.Substring(6, 4);
@@ -184,7 +184,7 @@ public class Judgement : MonoBehaviour
 
                         for(int i=0;i<3;i++)//3개의 모음을 강제
                         {
-                            if(moeumSingle==ch5_1_moeumTabel[bossCondCount,i])
+                            if(moeumSingle==ch5_1_moeumTable[bossCondCount,i])
                             {
                                 isCondCorrect = true;
                                 break;
@@ -205,7 +205,7 @@ public class Judgement : MonoBehaviour
                         else
                             bossCondCount++;
                     }
-                }/// ///DOING//
+                }
                 else if (bossStageIdx == 6)///chapter 5-2
                 {
                     string moeumChapt5_2 = inputValue.Substring(6, 4);
