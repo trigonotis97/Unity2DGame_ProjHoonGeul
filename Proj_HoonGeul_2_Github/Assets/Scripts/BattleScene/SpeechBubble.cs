@@ -35,16 +35,16 @@ public class SpeechBubble : MonoBehaviour
             case -4: //사전에 있지만 받침이 있음 (chapter 2 boss)
                 break;
 
-            case -5: // : 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함 (chapter 4 boss )
+            case -5: //chapter 4 boss: 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함 (chapter 4 boss )
                 break;
 
-            case -6: //사전에 있지만 단어수가 다름
+            case -6: //사전에 있지만 단어수가 다름 (미사용)
                 break;
 
-            case -7: //오답! (chapter 5 boss ) : 사전에 있지만 ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ 를 사용하지 않는 자음이 포함
+            case -7: //오답! (chapter 5-1 boss ) : 사전에 있지만 ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ 를 사용하지 않는 자음이 포함
                 break;
 
-            case -8: //오답!(chapter 5 boss ) : 사전에 있지만 ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ 이(가) 모음이 포함
+            case -8: //오답!(chapter 5-2 boss ) : 사전에 있지만 ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ 이(가) 모음이 포함
                 break;
 
             case -9: //사전에 있지만 문제와 맞지 않음

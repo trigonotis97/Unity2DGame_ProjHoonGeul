@@ -219,7 +219,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
             ///헬 판정부분
-            //헬 문제일경우 ( 앞에서 만드는게 반복되었기 때문에 밑에서 bool 변수를 바꿔준다)
+            //헬 문제일경우 ( 앞에서 만드는게 반복되었기 때문에 앞에서 판정하지 못하니 밑에서 bool 변수를 바꿔준다)
             if (isHellQuestState)
             {
                 isHellQuestState = false;
@@ -370,15 +370,19 @@ public class ChosungGeneratorDefault : MonoBehaviour
         switch (bossStageIdx)
         {
             case 3://3챕터 보스일경우
-                wordType = 2;
+                //wordType = 2;
                 break;
             case 8://5-4 스테이지 일 경우
 
                 //중앙의 하나의 문제만 남김.
                 Destroy(Chosung_text_arr[0].gameObject);
                 Destroy(Chosung_text_arr[2].gameObject);
-                wordType = 4;//0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
-                //+ 추가 ㅂ버추얼키보드 영어로 바꾸기
+                /*
+                    오브젝트를 삭제한 후, 어차피 보이는 문제의 인덱스로만 접근하기때문에
+                    다른 장치를 두지 않아도 문제가 생기지 않을것으로 판단.
+                */
+                //wordType = 4;//0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어
+                //+ 추가 ㅂ버추얼키보드 영어로 바꾸기(삭제)
 
                 break;
         }
