@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 ///private static string m_cho_Tbl = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"; // 10부터 시작
 ///private static string m_jung_Tbl = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ"; //10+ 21
@@ -29,13 +30,15 @@ public class Judgement : MonoBehaviour
 
     //보스 스테이지 관련 변수
     int bossStageIdx;
-
+    private static string m_cho_Tbl = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"; // 10부터 시작
+    private static string m_jung_Tbl = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ"; //10+ 21
 
     string[,]ch5_1_moeumTabel =new string[3, 3] { { "16", "19", "27" }, { "11", "15", "21" }, { "28", "22", "12" } };
     string[] ch5_2_moeunTable = new string[5] { "10", "18", "30", "23", "14" };
-    int bossCondCount = 0;
-    
 
+
+    int bossCondCount = 0;
+    public Text bossCondText;
     
     private void Awake()
     {
@@ -63,8 +66,11 @@ public class Judgement : MonoBehaviour
         bossStageIdx = m_battleManager.Is2to5BossStage();
         bossCondCount = 0;
 
+        UpdateCondText();//조건 텍스트 보여주기
 
     }
+
+
     // 0 1 2345 6789 10 
 
 
@@ -216,7 +222,7 @@ public class Judgement : MonoBehaviour
 
                     if (!isCondCorrect)
                     {
-                        Debug.Log("오답! (chapter 5_2 boss ) : 사전에 있지만 조건에 맞는 모음을 포함하지 않음 " + inputWord);
+                        Debug.Log("오답! (chapter 5_2 boss ) : 사전에 있지만 조건에 맞지않는 모음을 포함함 " + inputWord);
                         return -8;
                     }
                     else //정답을 맞출 경우
@@ -237,6 +243,7 @@ public class Judgement : MonoBehaviour
                         Debug.Log("정답 ! :" + inputWord);
                         usedWordDict.Add(inputWord, wordValue);
 
+                        UpdateCondText();
                         return j;
                     }
                     
@@ -279,4 +286,34 @@ public class Judgement : MonoBehaviour
         } while (m_dictTbl == null);
     }
     
+
+    void UpdateCondText()
+    {
+        if (bossStageIdx == 5)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 0)
+                    bossCondText.text = ValuetoWord(ch5_1_moeumTabel[bossCondCount, i], 1).ToString();
+                else
+                    bossCondText.text += ValuetoWord(ch5_1_moeumTabel[bossCondCount, i], 1);
+
+            }
+        }
+        else if (bossStageIdx == 6)
+        {
+            bossCondText.text = ValuetoWord(ch5_2_moeunTable[bossCondCount],1).ToString();
+        }
+    }
+    char ValuetoWord(string value,int type)
+    {
+        if(type==0)//자음
+        {
+            return m_cho_Tbl[int.Parse(value) - 10];
+        }
+        else//모음
+        {
+            return m_jung_Tbl[int.Parse(value) - 10];
+        }
+    }
 }
