@@ -13,6 +13,8 @@ public class SpellingQuiz : MonoBehaviour
     public Text num2;
     public Text num3;
 
+    public SceneData sceneData;
+
     int selectAns;
     int correctAns;
     string[,] answerStr = new string[8, 4] {{ "이게 뭐하는 ___야","짓거리","짓꺼리", "짓걸이"},
@@ -26,7 +28,9 @@ public class SpellingQuiz : MonoBehaviour
     string[] nowAnsStr = new string[4];
     private void Start()
     {
+        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         AnsGenerator();
+        sceneData = m_gameManager.GetSceneData();
     }
 
     public void AnsGenerator()
@@ -57,7 +61,30 @@ public class SpellingQuiz : MonoBehaviour
         if (BtNum == correctAns)
         {
             Debug.Log("정답");
-            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+            switch (sceneData.nextScene)
+            {
+                case 0:
+                    SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+                    break;
+                case 1:
+                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                    break;
+                case 2:
+                    m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+                    SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+                    break;
+                case 3:
+                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                    break;
+                case 4:
+                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    break;
+                case 5:
+                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                    break;
+            }
         }
         else
         {

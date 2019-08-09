@@ -12,9 +12,11 @@ public class XMLLoad : MonoBehaviour
 
     BattleSceneData []battleDataTbl;
     DialogData[] dialogDataTbl;
+    SceneData[] sceneDataTbl;
 
     public int dialogDataLength; //** 퍼블릭으로 xml data 변수 설정
     public int battleDataLength; //**
+    public int sceneDataLength;
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -23,6 +25,7 @@ public class XMLLoad : MonoBehaviour
     {
         battleDataTbl = new BattleSceneData[battleDataLength];
         dialogDataTbl = new DialogData[dialogDataLength];
+        sceneDataTbl = new SceneData[sceneDataLength];
         LoadXml();
     }
 
@@ -40,7 +43,8 @@ public class XMLLoad : MonoBehaviour
             (TextAsset)Resources.Load("2umjul_Honjong"),
             //(TextAsset)Resources.Load("BattleSceneXml"),
             (TextAsset)Resources.Load("BattleSceneXml_0607"),
-            (TextAsset)Resources.Load("DialogSceneXml")
+            (TextAsset)Resources.Load("DialogSceneXml"),
+            (TextAsset)Resources.Load("SceneDataXml")
         };
 
         XmlDocument xmlDoc = new XmlDocument();
@@ -110,8 +114,22 @@ public class XMLLoad : MonoBehaviour
                 dialogDataTbl[indCount++] = DLD;
             }
         }
-              
-        
+        for (int i = 6; i < 7; i++) //다이얼로그 데이터 저장
+        {
+            xmlDoc.LoadXml(textAsset[i].text);
+            XmlNodeList nodes = xmlDoc.SelectNodes("SceneData/SceneDataSet");
+            int indCount = 0;
+            foreach (XmlNode node in nodes)
+            {
+                SceneData SCD = new SceneData();
+                SCD.key = int.Parse(node.SelectSingleNode("key").InnerText);
+                SCD.nextScene = int.Parse(node.SelectSingleNode("nextScene").InnerText);
+                SCD.nextSceneKey = int.Parse(node.SelectSingleNode("nextSceneKey").InnerText);
+                sceneDataTbl[indCount++] = SCD;
+            }
+        }
+
+
 
 
         sw.Stop();//시간측정을 위한 함수
@@ -119,6 +137,6 @@ public class XMLLoad : MonoBehaviour
         m_gameManager.SetXmlDictData(dictTbl);
         m_gameManager.SetXmlBattleSceneData(battleDataTbl);
         m_gameManager.SetXmlDialogData(dialogDataTbl);
-
+        m_gameManager.SetXmlSceneData(sceneDataTbl);
     }
 }

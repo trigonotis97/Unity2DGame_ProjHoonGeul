@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public class CharacterQuiz : MonoBehaviour
 {
     GameManager m_gameManager;
-    public BonusSpellData m_data;
 
     public Text question;
     public Text num1;
     public Text num2;
     public Text num3;
+
+    public SceneData sceneData;
 
     int selectAns;
     int correctAns;
@@ -29,7 +30,8 @@ public class CharacterQuiz : MonoBehaviour
 
     private void Start()
     {
-        //m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        sceneData = m_gameManager.GetSceneData();
         AnsGenerator();
     }
     public void AnsGenerator()
@@ -59,7 +61,30 @@ public class CharacterQuiz : MonoBehaviour
         if (BtNum == correctAns)
         {
             Debug.Log("정답");
-            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+            switch (sceneData.nextScene)
+            {
+                case 0:
+                    SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+                    break;
+                case 1:
+                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                    break;
+                case 2:
+                    m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+                    SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+                    break;
+                case 3:
+                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                    break;
+                case 4:
+                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    break;
+                case 5:
+                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                    break;
+            }
         }
         else
         {

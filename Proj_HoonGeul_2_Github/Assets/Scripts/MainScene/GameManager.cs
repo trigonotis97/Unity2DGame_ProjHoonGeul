@@ -13,9 +13,11 @@ public class GameManager : MonoBehaviour {
     private Dictionary<string, string>[] dictionary_Tbl; //사전 데이터 테이블
     private BattleSceneData[] battleData_Tbl; //배틀씬 데이터 테이블
     private DialogData[] dialogData_Tbl; //다이얼로그 데이터 테이블
+    private SceneData[] sceneData_Tbl;
 
     private int currentBattleStageIdx;
     private int currentDialogIdx;
+    private int currentSceneDataIdx;
     private int currentMode; // 1: 집현전모드(노멀)  2: 세종대왕모드 (하드)
 
     
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour {
 
         PlayerPrefs.SetInt("BattleStageIndex", 0);
         PlayerPrefs.SetInt("DialogStageIndex", 0);
+        PlayerPrefs.SetInt("SceneIndex", 0);
 
         ///저장된 체크포인트 가져오기 (체크포인트 초기화)
         currentBattleStageIdx = PlayerPrefs.GetInt("BattleStageIndex", 0);
@@ -46,9 +49,11 @@ public class GameManager : MonoBehaviour {
 
         */
         currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
+        currentSceneDataIdx = PlayerPrefs.GetInt("SceneIndex", 0);
 
         Debug.Log("battle ind: " + currentBattleStageIdx);
         Debug.Log("dialog ind: " + currentDialogIdx);
+        Debug.Log("scene ind: " + currentSceneDataIdx);
 
 
     }
@@ -58,6 +63,7 @@ public class GameManager : MonoBehaviour {
     {
         PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
         PlayerPrefs.SetInt("DialogStageIndex", currentDialogIdx);
+        PlayerPrefs.SetInt("SceneIndex", currentSceneDataIdx);
     }
 
   
@@ -81,6 +87,10 @@ public class GameManager : MonoBehaviour {
     {
         dialogData_Tbl = inputData;
     }
+    public void SetXmlSceneData(SceneData []inputData)
+    {
+        sceneData_Tbl = inputData;
+    }
 
     
 
@@ -93,6 +103,10 @@ public class GameManager : MonoBehaviour {
     {
         return dialogData_Tbl[currentDialogIdx];
     }
+    public SceneData GetSceneData()
+    {
+        return sceneData_Tbl[currentSceneDataIdx];
+    }
 
     ///씬 이동 관련 변수
     public int GetCurrentDialogKey()
@@ -103,6 +117,11 @@ public class GameManager : MonoBehaviour {
     {
         return currentBattleStageIdx;
     }
+    public int GetCurrentSceneKey()
+    {
+        return currentSceneDataIdx;
+    }
+
     public void SetCurrentDialogKey(int input)
     {
         currentDialogIdx = input;
@@ -110,6 +129,10 @@ public class GameManager : MonoBehaviour {
     public void SetCurrentBattlekey(int input)
     {
         currentBattleStageIdx = input;
+    }
+    public void SetCurrentSceneKey(int input)
+    {
+        currentSceneDataIdx = input;
     }
 
     //모드 관련 함수
@@ -185,22 +208,11 @@ public class DialogData
     public string BGM;
 }
 
-
-public class BonusSpellData
+public class SceneData
 {
     public int key;
-    public string correctSpell;
-    public string wrongSpell1;
-    public string wrongSpell2;
-}
-
-public class  BonusCharacterData
-{
-    public int key;
-    public string question;
-    public string correctCharacter;
-    public string wrongCharacter1;
-    public string wrongCharacter2;
+    public int nextScene;
+    public int nextSceneKey;
 }
 
 /*

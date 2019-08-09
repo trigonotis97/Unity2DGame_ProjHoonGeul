@@ -356,11 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c92324643fa5e4f9370d84948a6b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastIndex: -1
-  textLength: 0
-  isEnd: 1
-  front: 
-  back: 
 --- !u!1 &79638663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,9 +1492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862d3c9b8ef04f4418b89ac93f1012b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text1: {fileID: 106522724}
-  thisText: {fileID: 0}
-  Animation: {fileID: 371769559}
 --- !u!111 &371769559
 Animation:
   m_ObjectHideFlags: 0
@@ -1990,8 +1982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14fdf52bc762104e9ed1ef12bb45462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1148911758}
-  collider2D: {fileID: 0}
 --- !u!95 &1148911758
 Animator:
   serializedVersion: 3
@@ -3084,6 +3074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogDataLength: 36
   battleDataLength: 16
+  sceneDataLength: 56
 --- !u!4 &2016438098
 Transform:
   m_ObjectHideFlags: 0

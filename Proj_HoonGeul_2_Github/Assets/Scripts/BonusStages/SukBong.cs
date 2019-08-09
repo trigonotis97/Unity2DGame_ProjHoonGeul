@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SukBong : MonoBehaviour
 {
+    GameManager m_gameManager;
+
     public Text question;
     public InputField InputText;
+
+    public SceneData sceneData;
 
     int selectAns;
     string[] answerStr = new string[7] {"안녕하세요",
@@ -21,6 +25,8 @@ public class SukBong : MonoBehaviour
 
     void Start()
     {
+        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        sceneData = m_gameManager.GetSceneData();
         AnsGenerator();
     }
 
@@ -38,7 +44,30 @@ public class SukBong : MonoBehaviour
         if (nowAns == inputWord)
         {
             Debug.Log("정답");
-            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+            switch (sceneData.nextScene)
+            {
+                case 0:
+                    SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+                    break;
+                case 1:
+                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                    break;
+                case 2:
+                    m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+                    SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+                    break;
+                case 3:
+                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                    break;
+                case 4:
+                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    break;
+                case 5:
+                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                    break;
+            }
         }
         else
         {
