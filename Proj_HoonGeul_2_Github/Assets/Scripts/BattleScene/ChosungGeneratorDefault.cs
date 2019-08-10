@@ -44,7 +44,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
    // public float healProbability = 20.0f; //힐 확률 결정. 
 
     Color HealColor = new Color(0.0f, 0.7f, 0.3f);
-    Color HellColor = new Color(0.0f, 0.7f, 0.3f);
+    Color HellColor = new Color(0.5f, 0.7f, 0.3f);
 
 
     public bool isChapter1Boss=false;
@@ -223,7 +223,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
             if (isHellQuestState)
             {
                 isHellQuestState = false;
-                Chosung_text_arr[index].color = HellColor;
+                Chosung_text_arr[index].color = HellColor; ///에러부분 :: out of index
             }
 
 

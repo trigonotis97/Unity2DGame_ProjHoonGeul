@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SpeechBubble : MonoBehaviour
 {
     public Text bubbleText;
+    
     // Start is called before the first frame update
     void Start()
     {
