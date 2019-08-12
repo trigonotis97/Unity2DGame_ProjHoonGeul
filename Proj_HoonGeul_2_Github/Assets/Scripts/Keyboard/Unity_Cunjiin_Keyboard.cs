@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Test_Cunjiin : MonoBehaviour
+public class Unity_Cunjiin_Keyboard : MonoBehaviour
 {
     public AudioClip m_audioEffect;
     AudioSource m_audio;
@@ -30,9 +30,9 @@ public class Test_Cunjiin : MonoBehaviour
     {
     */
     private static int HANGUL = 0;
-    private static int UPPER_ENGLISH = 1;
-    private static int ENGLISH = 2;
-    private static int NUMBER = 3;
+    //private static int UPPER_ENGLISH = 1;
+    //private static int ENGLISH = 2;
+    //private static int NUMBER = 3;
 
     private Button[] btn;
     public InputField et;

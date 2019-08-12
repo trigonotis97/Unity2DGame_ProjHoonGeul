@@ -375,8 +375,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
             case 8://5-4 스테이지 일 경우
 
                 //중앙의 하나의 문제만 남김.
-                Destroy(Chosung_text_arr[0].gameObject);
-                Destroy(Chosung_text_arr[2].gameObject);
+                Destroy(Chosung_text_arr[0].transform.parent.gameObject);
+                Destroy(Chosung_text_arr[2].transform.parent.gameObject);
                 /*
                     오브젝트를 삭제한 후, 어차피 보이는 문제의 인덱스로만 접근하기때문에
                     다른 장치를 두지 않아도 문제가 생기지 않을것으로 판단.
