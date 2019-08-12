@@ -4,54 +4,81 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class SpeechBubble : MonoBehaviour
 {
-    public Text bubbleText;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int randInt;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    string[] noDict= {"그게 뭔가?","잘못 친거같은데…","그런말이 있나?","그게 말이 된다고 생각하나?"}; //사전에 없는 단어. 3
+        string[] noDictAmericaBoss = { "자판을 다시 한번 보시게", "다시 잘 살펴보게", "당황하지 말게", "자네 영어 안배웠나?", "알파벳 모르나..?" };
+    //현재 스테이지가 미국 보스인 경우, 사전에 없을 때 noDict 대신 noDictAmericaBoss 를 사용.4
+    string[] alreadyUsed = { "중복이네", "이미 사용한 단어야", "한번 사용한 단어는 다시 쓸 수 없네", "또?", "자네 기억력이... 흠..." }; //이미 사용한 단어. 4
+    string[] yesDictWrong = { "아직 때가아니네", "맞는 말이긴 하네만…", "다시 확인해보시게" }; // 사전에는 있으나, 현재 과제와 맞지 않음.2
+
+
+    string[] japanPatternWrong = { "받침이 없어야 된다네", "받침이 없는 단어로 다시 해보게", "일본어에는 받침이 없다네" }; //일본 보스 패턴에 맞지 않음. 2
+    string[] chinaPatternWorng = { "한자어를 써야하네", "저자는 중국인일세", "한자어만 사용해야 한다네", "한자로 된 단어만 알아듣는건가...?" }; //3
+
+    ///우의정 조선 스테이지1. 3
+    string[] joseonRightMinister = { "그 모음은 쓰면 안되네", "그게 들어가면 안되네", "저 모음(자음)들은 사용해선 안돼.", "쓰면 안되는 모음이 있는 것 같은데?" };
+    
+    //좌의정 조선 스테이지2. 2
+    string[] joseonLeftMinister = { "꼭 필요한 모음이 빠진 것 같은데..", "저자가 말하는 모음이 포함되야해", "저 모음이 사용되지 않은 것 같은데..?" };
+
+    //영의정 조선 스테이지3 인 경우, 사전에 없을 때 nodict 대신 joseonYoungMinister를 사용. 2 
+    string[] joseonYoungMinister = { "마음의 눈으로 보시오", "눈에 보이는게 다가 아니네", "당황하지 마시게" };
+
+    public Text bubbleText;
+ 
     public void makeBubbleText(int count)
     {
-        switch(count)
+        switch (count)
         {
+            
             case -1: //사전에 없는 단어
-                bubbleText.text = "사전에 없네.";
+                randInt = Random.Range(0, 3);
+                bubbleText.text = noDict[randInt];
                 break;
 
             case -2: //이미 사용한 단어
+                randInt = Random.Range(0, 4);
+                bubbleText.text = alreadyUsed[randInt];
                 break;
 
-            case -3: //사전에 있지만 정해진 타입과 다름 (보스 스테이지 전용)
+            case -3: //사전에 있지만 현재 과제와 맞지 않음
+                randInt = Random.Range(0, 2);
+                bubbleText.text = yesDictWrong[randInt];
                 break;
 
-            case -4: //사전에 있지만 받침이 있음 (chapter 2 boss)
+            case -4: //사전에 있지만 받침이 있음 (일본 보스 chapter 2 boss)
+                randInt = Random.Range(0, 2);
+                bubbleText.text = japanPatternWrong[randInt];
                 break;
 
-            case -5: //chapter 4 boss: 사전에 있지만 ㅏ ㅔ ㅣ ㅗ ㅜ 를 사용하지 않는 모음이 포함 (chapter 4 boss )
+            case -5: //한자어가 아님 (중국 보스)
+                randInt = Random.Range(0, 3);
+                bubbleText.text = chinaPatternWorng[randInt];
                 break;
 
-            case -6: //사전에 있지만 단어수가 다름 (미사용)
+            case -6: // case -1 처럼 사전에 없고, 현재 스테이지가 미국 보스일 때
+                randInt = Random.Range(0, 4);
+                bubbleText.text = noDictAmericaBoss[randInt];
                 break;
 
-            case -7: //오답! (chapter 5-1 boss ) : 사전에 있지만 ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ 를 사용하지 않는 자음이 포함
+            case -7: //(chapter 5-1 boss ) : 제한된 모음이 사용된 오답.
+                randInt = Random.Range(0, 3);
+                bubbleText.text = joseonRightMinister[randInt];
                 break;
 
-            case -8: //오답!(chapter 5-2 boss ) : 사전에 있지만 ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ 이(가) 모음이 포함
+            case -8: //(chapter 5-2 boss) : 강요된 모음이 사용되지 않은 오답.
+                randInt = Random.Range(0, 2);
+                bubbleText.text = joseonLeftMinister[randInt];
                 break;
 
-            case -9: //사전에 있지만 문제와 맞지 않음
+            case -9: //(chpater 5-3 boss) : no dict 대신 사용
+                randInt = Random.Range(0, 2);
+                bubbleText.text = joseonYoungMinister[randInt];
                 break;
-
-
         }
         StartCoroutine("maintainBubble");
     }
