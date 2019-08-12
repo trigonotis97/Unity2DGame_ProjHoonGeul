@@ -48,27 +48,11 @@ public class Sunbi : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_boxCollider = GetComponent<BoxCollider2D>();
 
-        /*
-        //적 찾기
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-
-        {
-            if (enemy == null)
-                enemy = GameObject.FindGameObjectWithTag("Boss");
-        }
-        */
-
-
-
-
-
     }
 
     private void Start()
     {
-        //enemyDamage = enemy.GetComponent<EnemyScriptDefault>().attackDemage;
-        currentHp = maxHP;
-             
+        currentHp = maxHP;       
     }
 
 
@@ -96,7 +80,7 @@ public class Sunbi : MonoBehaviour
     }
 
     // 아래 콜라이더 ontrigger에서 호출
-    public void Danage() //선비가 피격당함
+    public void Damage() //선비가 피격당함
     {
         //선비 hp 감소
         currentHp -= enemyDamage;
@@ -130,9 +114,8 @@ public class Sunbi : MonoBehaviour
 
         if (collision.gameObject.tag == "EnemyBullet")
         {
-
             m_animator.SetTrigger("hitT");
-            Danage();
+            Damage();
             //Debug.Log(currentHp);
         }
         /* 공격시 효과음, 픽격시 효과음, 사망시 효과음, 기타 등등*/

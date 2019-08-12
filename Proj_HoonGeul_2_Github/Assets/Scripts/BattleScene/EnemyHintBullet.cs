@@ -1,12 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /* //여기서 할것
 
 */
 public class EnemyHintBullet : MonoBehaviour
 {
+    [Header("Show Variable (0~1)")]
+    public float wordProb; //default : 30
+    [Space(16)]
+    public float hintProb; //default : 25
+    public float wrongHintProb; //default : 75
+    [Space(16)]
+    public int show_sunbiHitCount=0; //default : 2
+    [Space(30)]
+    public string hellWorld;
+
+
     /*
 //힌트, 오답 투사체 위한 변수 가져오기 
     - 선비 오브젝트의 피격 횟수
