@@ -36,6 +36,9 @@ public class Sunbi : MonoBehaviour
     GameObject enemy;
     public float enemyDamage;
 
+    //적 힌트 투사체를 위한 선비 피격 카운트 보낼 오브젝트
+    public EnemyHintBulletHandler m_enemybulletHandler;
+
     /*
     Awake는 모든 오브젝트가 초기화되고 호출되기 때문에, 
     GameObject.FindWithTag를 이용해서 해당 게임 오브젝트를 요청하거나, 
@@ -116,6 +119,7 @@ public class Sunbi : MonoBehaviour
         {
             m_animator.SetTrigger("hitT");
             Damage();
+            m_enemybulletHandler.SunbiHitCounter();
             //Debug.Log(currentHp);
         }
         /* 공격시 효과음, 픽격시 효과음, 사망시 효과음, 기타 등등*/
