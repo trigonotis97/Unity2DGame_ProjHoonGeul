@@ -1990,10 +1990,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7fb1a6636c4b04bb28898f78b2a28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordProb: 30
-  hintProb: 25
-  sunbiMaxHitNum: 0
-  sunbiHitCount: 0
+  wordProb: 0
+  hintProb: 0
+  wrongHintProb: 0
+  show_sunbiHitCount: 0
+  hellWorld: 
 --- !u!4 &610284875
 Transform:
   m_ObjectHideFlags: 0
@@ -3315,7 +3316,6 @@ MonoBehaviour:
   sunbiAudioClip: {fileID: 0}
   canvasObj: {fileID: 1148911752}
   enemyDamage: 1
-  m_enemybulletHandler: {fileID: 610284874}
 --- !u!50 &1212890327
 Rigidbody2D:
   serializedVersion: 4
@@ -4406,7 +4406,6 @@ MonoBehaviour:
   count_5: 60
   count_6: 70
   count_7: 80
-  m_enemybulletHandler: {fileID: 610284874}
 --- !u!4 &1894321287
 Transform:
   m_ObjectHideFlags: 0

@@ -6,16 +6,17 @@ using UnityEngine.UI;
 /* //여기서 할것
 
 */
-public class EnemyHintBulletHandler : MonoBehaviour
+public class EnemyHintBullet : MonoBehaviour
 {
     [Header("Show Variable (0~1)")]
     public float wordProb; //default : 30
     [Space(16)]
     public float hintProb; //default : 25
-    //public float wrongHintProb; //default : 75
-    public int sunbiMaxHitNum; //default : 2
+    public float wrongHintProb; //default : 75
+    [Space(16)]
+    public int show_sunbiHitCount=0; //default : 2
     [Space(30)]
-    public int sunbiHitCount = 0; 
+    public string hellWorld;
 
 
     /*
@@ -45,35 +46,5 @@ public class EnemyHintBulletHandler : MonoBehaviour
     void Update()
     {
         
-    }
-
-    
-    public void SunbiHitCounter()//Sunbi.cs
-    {
-        sunbiHitCount++;
-        if(sunbiHitCount==sunbiMaxHitNum)
-        {
-            // make hint bullet
-        }
-    }
-
-    
-    public void ResetSunbiHitCount()//chosung generator.cs
-    {
-        sunbiHitCount = 0;
-    }
-
-    void HintProbHandler()
-    {
-        float word_percent = Random.Range(0f, 100f);
-
-        if(word_percent >= wordProb)
-        {
-            float hint_percent = Random.Range(0f, 100f);
-            if(hint_percent>=hintProb)
-            {
-                //make hint bullet
-            }
-        }
     }
 }

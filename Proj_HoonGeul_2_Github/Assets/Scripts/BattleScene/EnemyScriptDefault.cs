@@ -47,8 +47,7 @@ public class EnemyScriptDefault : MonoBehaviour
     private int hpValue;
 
     ///에너미 투사체 단어관련 변수
-    public int bulletState=0;// 0:image  1:worngHint 2:rightHint
-    public Dictionary<string, string>[] temp_dictTable = new Dictionary<string, string>[4];
+    
 
     private void Awake()
     {
@@ -103,7 +102,7 @@ public class EnemyScriptDefault : MonoBehaviour
     {
         hpBar.value = currentHp / maxHP;
     }
-    public void EnemyAttack() //fire bullet
+    public void EnemyAttack()
     {
         GameObject attackPref = Instantiate(enemyAttackPrefb[0], transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
         attackPref.transform.SetParent(m_canvas.transform, false);
