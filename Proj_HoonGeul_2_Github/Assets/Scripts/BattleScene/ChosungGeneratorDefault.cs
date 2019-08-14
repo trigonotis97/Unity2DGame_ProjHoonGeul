@@ -91,7 +91,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
     //오답 말풍선 (함수사용)
     SpeechBubble speechBubble;
 
-
+    //에너미 힌트 투사체를 위한 오브젝트
+    public EnemyHintBulletHandler m_enemybulletHandler;
     private void Awake()
     {
         //퍼블릭으로 할당했습니다. 이름이 같아야 애니메이터를 공유할 수 있어서!
@@ -164,9 +165,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 isHellQuestState = true;
                 countCorrect_hell = 0;
             }
-            //StartCoroutine("MakeTextTransparently",correctState);
-            //choObj_inputText_srt.ShowInputText();
-            //m_sunbi.Attack(inputWord);
+            //정답일경우 힌트투사체 카운트 리셋
+            m_enemybulletHandler.ResetSunbiHitCount();
         }
         /////여기 성율이가 추가함. O X 애니메이션 띄우기 위함.
         ///오답일경우
