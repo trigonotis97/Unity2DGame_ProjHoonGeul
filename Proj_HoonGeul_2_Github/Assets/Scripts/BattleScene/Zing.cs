@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zing : MonoBehaviour
 {
     public AudioClip zingSound;
-    AudioSource audio;
+    AudioSource audio=new AudioSource();
     // Start is called before the first frame update
     void Start()
     {

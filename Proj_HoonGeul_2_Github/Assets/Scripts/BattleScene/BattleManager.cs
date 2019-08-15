@@ -218,6 +218,7 @@ public class BattleManager : MonoBehaviour
         //m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
     }
 
+
     /*
     public GameObject Keyboardlock;
 
