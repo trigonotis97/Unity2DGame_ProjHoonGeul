@@ -75,7 +75,7 @@ public class SukBong : MonoBehaviour
         else
         {
             Debug.Log("오답");
-            //깜지 씬으로 이동
+            SceneManager.LoadScene("BonusStagePenalty", LoadSceneMode.Single);//깜지 씬으로 이동
         }
         InputText.text = "";
     }

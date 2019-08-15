@@ -15,7 +15,7 @@ public class SpellingQuiz : MonoBehaviour
 
         public SceneData sceneData;
 
-    int selectAns;
+    int selectAns = 0;
     int correctAns;
     string[,] answerStr = new string[8, 4] {{ "이게 뭐하는 ___야","짓거리","짓꺼리", "짓걸이"},
                                             { "동훈이는 정말 __이구나","숙맥", "쑥맥", "쑥멕" },
@@ -35,7 +35,7 @@ public class SpellingQuiz : MonoBehaviour
 
     public void AnsGenerator()
     {
-        selectAns = Random.Range(0, 8);     //문제 번호 랜덤
+        //selectAns = Random.Range(0, 8);     //문제 번호 랜덤
         correctAns = Random.Range(1, 4);    //정답 문항 랜덤
         for (int i = 0; i < 4; i++)
         {
@@ -61,38 +61,46 @@ public class SpellingQuiz : MonoBehaviour
         if (BtNum == correctAns)
         {
             Debug.Log("정답");
-            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-            switch (sceneData.nextScene)
+            if (selectAns < 7)
             {
-                case 0:
-                    SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
-                    break;
-                case 1:
-                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                    break;
-                case 2:
-                    m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-                    break;
-                case 3:
-                    SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
-                    break;
-                case 4:
-                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
-                    break;
-                case 5:
-                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
-                    break;
-                case 6:
-                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
-                    break;
+                selectAns++;
+                AnsGenerator();
+            }
+            else
+            {
+                m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+                switch (sceneData.nextScene)
+                {
+                    case 0:
+                        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+                        break;
+                    case 1:
+                        m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                        SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                        break;
+                    case 2:
+                        m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+                        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+                        break;
+                    case 3:
+                        SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+                        break;
+                    case 4:
+                        SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                        break;
+                    case 5:
+                        SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                        break;
+                    case 6:
+                        SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                        break;
+                }
             }
         }
         else
         {
             Debug.Log("오답");
-            //깜지 씬으로 이동
+            SceneManager.LoadScene("BonusStagePenalty", LoadSceneMode.Single);//깜지 씬으로 이동
         }
     }
 }
