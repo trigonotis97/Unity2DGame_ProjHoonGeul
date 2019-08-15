@@ -3086,7 +3086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogDataLength: 36
   battleDataLength: 16
-  sceneDataLength: 56
+  sceneDataLength: 62
 --- !u!4 &2016438098
 Transform:
   m_ObjectHideFlags: 0

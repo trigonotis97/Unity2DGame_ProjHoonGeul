@@ -71,12 +71,15 @@ public class BonusPenalty : MonoBehaviour
                     SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
                     break;
                 case 3:
-                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                    SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
                     break;
                 case 4:
-                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
                     break;
                 case 5:
+                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    break;
+                case 6:
                     SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
                     break;
             }

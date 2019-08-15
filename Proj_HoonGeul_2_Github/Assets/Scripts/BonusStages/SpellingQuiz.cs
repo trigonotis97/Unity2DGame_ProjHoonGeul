@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class SpellingQuiz : MonoBehaviour
 {
-    GameManager m_gameManager;
+        GameManager m_gameManager;
 
-    public Text question;
-    public Text num1;
-    public Text num2;
-    public Text num3;
+        public Text question;
+        public Text num1;
+        public Text num2;
+        public Text num3;
 
-    public SceneData sceneData;
+        public SceneData sceneData;
 
     int selectAns;
     int correctAns;
@@ -76,12 +76,15 @@ public class SpellingQuiz : MonoBehaviour
                     SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
                     break;
                 case 3:
-                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                    SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
                     break;
                 case 4:
-                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
                     break;
                 case 5:
+                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    break;
+                case 6:
                     SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
                     break;
             }

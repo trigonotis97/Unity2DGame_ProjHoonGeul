@@ -4,45 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SukBong : MonoBehaviour
+
+public class VocaQuiz : MonoBehaviour
 {
     GameManager m_gameManager;
 
     public Text question;
-    public InputField InputText;
+    public Text num1;
+    public Text num2;
+    public Text num3;
 
     public SceneData sceneData;
 
-    int selectAns;
-    string[] answerStr = new string[7] {"안녕하세요",
-                                        "니코니코니",
-                                        "덩덕쿵덕쿵덕",
-                                        "말린망고한봉지",
-                                        "고구마전호박전",
-                                        "쿵쾅쿵쾅쿵쾅쾅",
-                                        "뚜찌빠찌뽀찌"};
-    string nowAns;
-
+    // Start is called before the first frame update
     void Start()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         sceneData = m_gameManager.GetSceneData();
-        AnsGenerator();
     }
 
-    public void AnsGenerator()
+    // Update is called once per frame
+    void Update()
     {
-        selectAns = Random.Range(0, 7);
-        nowAns = answerStr[selectAns];
-
-        question.GetComponent<Text>().text = nowAns;
+        
     }
-    
-    public void textInputEnter()
+
+    public void Ansclick()
     {
-        string inputWord = InputText.text;
-        if (nowAns == inputWord)
-        {
+        //if (BtNum == correctAns)
+        //{
             Debug.Log("정답");
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
             switch (sceneData.nextScene)
@@ -70,13 +60,12 @@ public class SukBong : MonoBehaviour
                 case 6:
                     SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
                     break;
-            }
+                //}
+                //}
+                /*else
+                {
+                    Debug.Log("오답");
+                    //깜지 씬으로 이동*/
         }
-        else
-        {
-            Debug.Log("오답");
-            //깜지 씬으로 이동
-        }
-        InputText.text = "";
     }
 }
