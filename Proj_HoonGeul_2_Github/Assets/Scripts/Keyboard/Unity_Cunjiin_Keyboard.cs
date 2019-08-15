@@ -852,10 +852,10 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
 
     /// 미리
     private void setBtnText(int mode)
-    {
+    {/*
         switch (mode)
         {
-            /*
+            
             case HANGUL:
                 btn[0].setText("ㅇㅁ");
                 btn[1].setText("ㅣ");
@@ -899,8 +899,8 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
                 for (int i = 0; i < 10; i++)
                     btn[i].setText(Integer.tostring(i));
                 break;
-                */
-        }
+               
+        } */
     }
 
     private int getUnicode(string real_jong)

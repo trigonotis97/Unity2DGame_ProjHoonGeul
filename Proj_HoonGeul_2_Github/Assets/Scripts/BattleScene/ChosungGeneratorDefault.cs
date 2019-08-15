@@ -43,8 +43,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
     public int dealHeal = -1; // 딜, 힐 속성. 1은 힐, 0은 딜
    // public float healProbability = 20.0f; //힐 확률 결정. 
 
-    Color HealColor = new Color(0.0f, 0.7f, 0.3f);
-    Color HellColor = new Color(0.5f, 0.7f, 0.3f);
+    //Color HealColor = new Color(0.0f, 0.7f, 0.3f); ///수정 ->  + 마크가 종이에 표시됨
+    public Color HellColor = new Color(1f,0f,0f);
 
 
     public bool isChapter1Boss=false;
@@ -54,7 +54,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
     public bool isChapter2Boss = false;
     public bool isChapter3Boss = false;
 
- 
+
+    //힐 관련 변수
+    public SpriteRenderer[] healRenderer_arr = new SpriteRenderer[3];
     //[Space(16)]
     [Header("Show Variable")]
     //헬과제 관련 변수
@@ -62,7 +64,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
     public bool isHellQuestState;
     public int hellCountInd;
     public int hellCountNum; //여기서 개수 조절 퍼블릭으로
-    //[Space(16)]
+                             //[Space(16)]
+
 
 
     //확률관련 변수 조정
@@ -99,7 +102,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
         m_sunbi = GameObject.FindGameObjectWithTag("Sunbi").GetComponent<Sunbi>();
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         speechBubble = GetComponent<SpeechBubble>();
-       // m_playerScript = GameObject.Find("Player").GetComponent<PlayerScript>();//@@@교체
     }
 
     void Start()
@@ -109,21 +111,22 @@ public class ChosungGeneratorDefault : MonoBehaviour
         wordType = 0;
         isMoeumStage = false;
         questionVal_arr = new string[3] { "", "", "" };
-        //choObj_inputText_srt = GetComponent<AttackText>();
         countCorrect_hell = 0;
         isHellQuestState = false;
         hellCountInd = 0;
 
-       
+
         //처음 문제 생성
         for (int i = 0; i < 3; i++)
+        {
             MakeNewQuestion(i, isChapter1Boss);
+            healRenderer_arr[i].enabled = false;//힐 오브젝트 렌더 끄기
+        }
 
         isChapter1Boss = m_battleManager.Is1BossStage();//1챕터 보스 확인
         bossStageIdx = m_battleManager.Is2to5BossStage();//2~5챕터 보스인지 확인
         MakeBossStage(bossStageIdx);
-
-
+        
 
     }
 
@@ -152,6 +155,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
             {
                 m_sunbi.Attack(inputWord);
                 m_sunbi.Heal();
+                healRenderer_arr[correctState].enabled = false;
             }
             else if (questionHealOrDeal_arr[correctState] == 0) //딜일 경우
             {
@@ -165,7 +169,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 isHellQuestState = true;
                 countCorrect_hell = 0;
             }
-            //정답일경우 힌트투사체 카운트 리셋
+            //정답일경우 에너미 힌트투사체 카운트 리셋
             m_enemybulletHandler.ResetSunbiHitCount();
         }
         /////여기 성율이가 추가함. O X 애니메이션 띄우기 위함.
@@ -188,7 +192,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         ///사용 변수 초기화
         string questStr;
         bool isSameWord = false;
-
+        Chosung_text_arr[index].color = Color.black;
 
         ///1챕터 보스일경우
         if (isChapter1Boss)
@@ -223,6 +227,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
             if (isHellQuestState)
             {
                 isHellQuestState = false;
+                Debug.Log("index ::" + index);
                 Chosung_text_arr[index].color = HellColor; ///에러부분 :: out of index
             }
 
@@ -272,9 +277,10 @@ public class ChosungGeneratorDefault : MonoBehaviour
         //RandomRange가 아닌 다른 방법으로 확률 생성하는 방법?
         float Percent = Random.Range(1.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
         
-        if (Percent <= healProbability)
+        if (Percent <= healProbability)//make heal
         {
-            Chosung_text_arr[index].color = HealColor;
+            healRenderer_arr[index].enabled = true;
+            //Chosung_text_arr[index].color = HealColor;
             questionHealOrDeal_arr[index] = 1;
             countCorrect_heal=0;
             healProbability = 0;
@@ -311,7 +317,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
                     healProbability = 100;
                     break;
             }
-            Chosung_text_arr[index].color = Color.black;
+            //Chosung_text_arr[index].color = Color.black;
             questionHealOrDeal_arr[index] = 0;
         }
 
@@ -334,8 +340,10 @@ public class ChosungGeneratorDefault : MonoBehaviour
         else//헬 문제 만들경우
         {
             //outString = hellquestTbl[Random.Range(0, 3)];
-            outString = hellquestTbl[hellCountInd];
+            outString = hellquestTbl[hellCountInd];/// out of index;
             hellCountInd++;
+            if (hellCountInd >= 3)
+                hellCountInd = 0;
         }
         return outString;
     }
@@ -349,16 +357,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         questTbl = normalTbl;
         hellquestTbl = hellTbl;
     }
-    //IEnumerator MakeTextTransparently(int index)
-    //{
-    //    Chosung_text_arr[index].color = new Color(Chosung_text_arr[index].color.r, Chosung_text_arr[index].color.g, Chosung_text_arr[index].color.b, 0);
-    //    Debug.Log("is waiting");
-    //    yield return StartCoroutine("waitTime");
-    //    Debug.Log("anddddddddddddd Done!");
-        
-    //    MakeNewQuestion(index, isChapter1Boss);
-        
-    //}
+    
     IEnumerator waitTime()
     {
         yield return new WaitForSeconds(waitsecond_);
