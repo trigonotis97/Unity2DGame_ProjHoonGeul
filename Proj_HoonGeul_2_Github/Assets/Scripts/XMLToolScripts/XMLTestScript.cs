@@ -51,7 +51,7 @@ public class XMLTestScript : MonoBehaviour
 
     void LoadXml()
     {
-        TextAsset textAsset = (TextAsset)Resources.Load("2umjul_Honjong"); // WordDictionary.xml 파일은 Resources안에 있음. 
+        TextAsset textAsset = (TextAsset)Resources.Load("2umjul_Waerae"); // WordDictionary.xml 파일은 Resources안에 있음. 
         Debug.Log(textAsset);
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.LoadXml(textAsset.text);
@@ -61,7 +61,7 @@ public class XMLTestScript : MonoBehaviour
         
         foreach (XmlNode node in nodes)
         {
-            AllNodes = AllNodes + WordToValue("4", node.SelectSingleNode("Key").InnerText) + "\n"; // foreach문을 돌면서 모든 <Word>를 불러옴.
+            AllNodes = AllNodes + WordToValue("3", node.SelectSingleNode("Key").InnerText) + "\n"; // foreach문을 돌면서 모든 <Word>를 불러옴.
         }
         Debug.Log(AllNodes);
     }
@@ -111,7 +111,7 @@ public class XMLTestScript : MonoBehaviour
                 m_Cho = ""; m_Jung = ""; m_Jong = "";
             }
 
-
+                
             // iUniCode에 한글코드에 대한 유니코드 위치를 담고 이를 이용해 인덱스 계산.
             int iUniCode = uTempCode - mUniCode_Base;
 
