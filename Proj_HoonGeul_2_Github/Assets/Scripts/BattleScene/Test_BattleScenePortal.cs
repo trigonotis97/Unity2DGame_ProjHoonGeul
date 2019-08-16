@@ -15,10 +15,7 @@ public class Test_BattleScenePortal : MonoBehaviour
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
-    void Start()
-    {
-        
-    }
+
     public void JumpToBattleScene()
     {
         string inputText = inputField.text;
