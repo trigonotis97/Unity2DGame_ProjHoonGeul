@@ -93,6 +93,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
     //에너미 힌트 투사체를 위한 오브젝트
     public EnemyHintBulletHandler m_enemybulletHandler;
+
+    //말풍선 입력 시 초기화를 위한 변수
+    
     private void Awake()
     {
         //퍼블릭으로 할당했습니다. 이름이 같아야 애니메이터를 공유할 수 있어서!
@@ -134,7 +137,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         //모음인지 아닌지, 입력단어 ,현재 문제 초성(자음) value array, 어원을 사용하는지 : 0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어)
         correctState = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
-        
       
 
         ///정답일 경우
