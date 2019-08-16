@@ -236,10 +236,11 @@ public class Judgement : MonoBehaviour
                     }
                     else //정답을 맞출 경우
                     {
+                        bossCondCount++;
                         if (bossCondCount == ch5_2_moeumTable.GetLength(0))//5개의 모음배열중 마지막을 가리킬때
                             bossCondCount = 0;
-                        else
-                            bossCondCount++;
+                        
+                            
                     }
                 }
 
