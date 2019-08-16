@@ -38,12 +38,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     public Judgement ansJudge; 
-    //AttackText choObj_inputText_srt;
     public Sunbi m_sunbi;
     public int dealHeal = -1; // 딜, 힐 속성. 1은 힐, 0은 딜
-   // public float healProbability = 20.0f; //힐 확률 결정. 
 
-    //Color HealColor = new Color(0.0f, 0.7f, 0.3f); ///수정 ->  + 마크가 종이에 표시됨
     public Color HellColor = new Color(1f,0f,0f);
 
 
@@ -202,7 +199,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         }
         else///1챕터 보스 아닐경우 일반적인 문제 생성
         {
-            ///초성 풀에 있는 단어중 지금 사용하지 않고있는 단어 고르기
+            //초성 풀에 있는 단어중 지금 사용하지 않고있는 단어 고르기
             do
             {
                 questStr = getRandomChoseongText();
@@ -211,10 +208,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 {
                     if (Chosung_text_arr[t].text == questStr)
                     {
-                        /*if (isChapter1Boss == false)
-                        {
-
-                        }*/
                         isSameWord = true;
                         break;
                     }

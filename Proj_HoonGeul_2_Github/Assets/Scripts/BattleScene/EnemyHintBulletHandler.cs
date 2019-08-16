@@ -30,24 +30,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
 
 힌트 단어 풀 생성
     - 자음 단어 별 단어 풀 생성
-*/
-    private void Awake()
-    {
-        
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
+*/    
     public void SunbiHitCounter()//Sunbi.cs
     {
         sunbiHitCount++;

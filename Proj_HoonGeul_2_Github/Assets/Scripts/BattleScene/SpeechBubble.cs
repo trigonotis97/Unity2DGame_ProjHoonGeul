@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SpeechBubble : MonoBehaviour
 {
     int randInt;
-
+    public float bubbleWaitTime;
     string[] noDict= {"그게 뭔가?","잘못 친거같은데…","그런말이 있나?","그게 말이 된다고 생각하나?"}; //사전에 없는 단어. 3
         string[] noDictAmericaBoss = { "자판을 다시 한번 보시게", "다시 잘 살펴보게", "당황하지 말게", "자네 영어 안배웠나?", "알파벳 모르나..?" };
     //현재 스테이지가 미국 보스인 경우, 사전에 없을 때 noDict 대신 noDictAmericaBoss 를 사용.4
@@ -36,47 +36,47 @@ public class SpeechBubble : MonoBehaviour
         {
             
             case -1: //사전에 없는 단어
-                randInt = Random.Range(0, 3);
+                randInt = Random.Range(0, noDict.Length);
                 bubbleText.text = noDict[randInt];
                 break;
 
             case -2: //이미 사용한 단어
-                randInt = Random.Range(0, 4);
+                randInt = Random.Range(0, alreadyUsed.Length);
                 bubbleText.text = alreadyUsed[randInt];
                 break;
-
-            case -3: //사전에 있지만 현재 과제와 맞지 않음
-                randInt = Random.Range(0, 2);
+                
+            case -9: //사전에 있지만 현재 과제와 맞지 않음 
+                randInt = Random.Range(0, yesDictWrong.Length);
                 bubbleText.text = yesDictWrong[randInt];
                 break;
 
             case -4: //사전에 있지만 받침이 있음 (일본 보스 chapter 2 boss)
-                randInt = Random.Range(0, 2);
+                randInt = Random.Range(0, japanPatternWrong.Length);
                 bubbleText.text = japanPatternWrong[randInt];
                 break;
 
             case -5: //한자어가 아님 (중국 보스)
-                randInt = Random.Range(0, 3);
+                randInt = Random.Range(0, chinaPatternWorng.Length);
                 bubbleText.text = chinaPatternWorng[randInt];
                 break;
-
+               
             case -6: // case -1 처럼 사전에 없고, 현재 스테이지가 미국 보스일 때
-                randInt = Random.Range(0, 4);
+                randInt = Random.Range(0, noDictAmericaBoss.Length);
                 bubbleText.text = noDictAmericaBoss[randInt];
                 break;
 
-            case -7: //(chapter 5-1 boss ) : 제한된 모음이 사용된 오답.
-                randInt = Random.Range(0, 3);
+            case -7: //(chapter 5-1 boss ) : 제한된 모음이 사용된 오답. //못쓰게 하는거
+                randInt = Random.Range(0, joseonRightMinister.Length);
                 bubbleText.text = joseonRightMinister[randInt];
                 break;
 
-            case -8: //(chapter 5-2 boss) : 강요된 모음이 사용되지 않은 오답.
-                randInt = Random.Range(0, 2);
+            case -8: //(chapter 5-2 boss) : 강요된 모음이 사용되지 않은 오답. //쓰게하는거
+                randInt = Random.Range(0, joseonLeftMinister.Length);
                 bubbleText.text = joseonLeftMinister[randInt];
                 break;
 
-            case -9: //(chpater 5-3 boss) : no dict 대신 사용
-                randInt = Random.Range(0, 2);
+            case -10: //(chpater 5-3 boss) : no dict 대신 사용
+                randInt = Random.Range(0, joseonYoungMinister.Length);
                 bubbleText.text = joseonYoungMinister[randInt];
                 break;
         }
@@ -84,7 +84,7 @@ public class SpeechBubble : MonoBehaviour
     }
     IEnumerator maintainBubble()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(bubbleWaitTime);
         bubbleText.text = "";
     }
 
