@@ -29,7 +29,12 @@ public class SpeechBubble : MonoBehaviour
     string[] joseonYoungMinister = { "마음의 눈으로 보시오", "눈에 보이는게 다가 아니네", "당황하지 마시게" };
 
     public Text bubbleText;
- 
+    public Image bubbleImage;
+    private void Start()
+    {
+        bubbleImage.enabled = false;
+        bubbleText.text = "";
+    }
     public void makeBubbleText(int count)
     {
         switch (count)
@@ -80,11 +85,13 @@ public class SpeechBubble : MonoBehaviour
                 bubbleText.text = joseonYoungMinister[randInt];
                 break;
         }
+        bubbleImage.enabled = true;
         StartCoroutine("maintainBubble");
     }
     IEnumerator maintainBubble()
     {
         yield return new WaitForSeconds(bubbleWaitTime);
+        bubbleImage.enabled = false;
         bubbleText.text = "";
     }
 
