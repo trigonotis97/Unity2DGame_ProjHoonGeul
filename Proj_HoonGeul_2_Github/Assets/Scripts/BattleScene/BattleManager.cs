@@ -58,6 +58,9 @@ public class BattleManager : MonoBehaviour
 
     ChosungGeneratorDefault m_generator;
 
+    // 키보드 날아다니는 세종 패턴을 위한 천지인캔버스 할당
+    public GameObject chunjiin;
+
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -108,8 +111,12 @@ public class BattleManager : MonoBehaviour
 
         
         bg_image_.sprite = Resources.Load("Background/"+m_data.BGImage,typeof(Sprite))as Sprite;
-     
-     
+
+
+        if(Is2to5BossStage()==8)
+        {
+            chunjiin.GetComponent<KeyboardHandler>().isSejong = true;
+        }
 
     }
 

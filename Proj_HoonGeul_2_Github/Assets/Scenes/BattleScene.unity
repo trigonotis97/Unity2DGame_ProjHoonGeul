@@ -1697,6 +1697,7 @@ MonoBehaviour:
   m_canvas: {fileID: 1148911752}
   bg_image_: {fileID: 1313140863}
   bg_audioclip: {fileID: 0}
+  chunjiin: {fileID: 2941351920318328974}
 --- !u!4 &404107656
 Transform:
   m_ObjectHideFlags: 0
@@ -5124,10 +5125,43 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 63685615}
+    - target: {fileID: 8939180287713364521, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: textInputEnter
+      objectReference: {fileID: 0}
     - target: {fileID: 8939180289032598604, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: et
       value: 
       objectReference: {fileID: 63685610}
+    - target: {fileID: 2941351920318328973, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: frameColX
+      value: 
+      objectReference: {fileID: 2941351920318328973}
+    - target: {fileID: 2941351920318328973, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: frameColY
+      value: 
+      objectReference: {fileID: 2941351920318328972}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+--- !u!1 &2941351920318328972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1362690613, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2941351920318328971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2941351920318328973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 117281153837009958, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2941351920318328971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2941351920318328974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8939180287212870520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2941351920318328971}
+  m_PrefabAsset: {fileID: 0}

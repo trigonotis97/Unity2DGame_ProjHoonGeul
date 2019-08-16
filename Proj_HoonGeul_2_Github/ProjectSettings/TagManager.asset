@@ -17,6 +17,8 @@ TagManager:
   - KeyboardHandler
   - QuestionControl
   - ChunjiinKeyText
+  - KeyColliderX
+  - KeyColliderY
   layers:
   - Default
   - TransparentFX

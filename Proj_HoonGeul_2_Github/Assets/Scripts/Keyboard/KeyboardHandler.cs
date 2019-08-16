@@ -14,6 +14,12 @@ public class KeyboardHandler : MonoBehaviour
 
     bool is5_3stage;
     // Start is called before the first frame update
+
+    //키보드 날아다니는 세종 패턴
+    public bool isSejong = false;
+    public GameObject frameColX, frameColY;
+    public GameObject[] movingButtons;
+
     private void Awake()
     {
         if (SceneManager.GetActiveScene().name != "StartScene")
@@ -30,7 +36,17 @@ public class KeyboardHandler : MonoBehaviour
             DeleteKeyboardText();
 
 
-
+        //키보드 날아다니는 세종 패턴
+        if (isSejong)
+        {
+            frameColX.SetActive(true);
+            frameColY.SetActive(true);
+            for (int i = 0; i < movingButtons.Length; i++)
+            {
+                movingButtons[i].GetComponent<BoxCollider2D>().enabled = true;
+                movingButtons[i].GetComponent<keyButtonColHandler>().enabled = true;
+            }
+        }
     }
 
     void ChangeKeyboardKortoEng()
