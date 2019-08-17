@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BonusStage/BonusStageSukBong.unity
     guid: a4cfdb51123859f45bfb1443d7fb5c39
+  - enabled: 1
+    path: Assets/Scenes/BonusStage/BonusStagePenalty.unity
+    guid: 8e89a517e5350a5498483d1a0e8fcc4b
   m_configObjects: {}

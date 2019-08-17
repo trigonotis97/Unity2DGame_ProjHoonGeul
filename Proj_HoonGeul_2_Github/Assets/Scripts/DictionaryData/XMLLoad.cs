@@ -101,7 +101,7 @@ public class XMLLoad : MonoBehaviour
                 DLD.chapterNum = int.Parse(node.SelectSingleNode("chapterNum").InnerText);
                 DLD.stageNum = int.Parse(node.SelectSingleNode("stageNum").InnerText);
                 string tmp_script = node.SelectSingleNode("script").InnerText;
-                DLD.script = tmp_script.Split(new char[] { ',' });
+                DLD.script = tmp_script.Split(new char[] { '/' });
                 string tmp_conv_state = node.SelectSingleNode("conv_state").InnerText;
                 string[] tmp_conv_state_arr = tmp_conv_state.Split(new char[] { ',' });
                 DLD.conv_state = Array.ConvertAll<string, int>(tmp_conv_state_arr, int.Parse);

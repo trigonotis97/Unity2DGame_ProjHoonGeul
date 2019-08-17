@@ -153,7 +153,7 @@
 		<isNextBonus>true</isNextBonus>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>heung</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -166,7 +166,7 @@
 		<isNextBonus>false</isNextBonus>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>heung</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -244,7 +244,7 @@
 		<isNextBonus>true</isNextBonus>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>money</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>300</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -256,8 +256,8 @@
 		<isNextBattle>false</isNextBattle>
 		<isNextBonus>false</isNextBonus>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>heung</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyImage>money</enemyImage>
+		<enemyWholeImage>300</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
