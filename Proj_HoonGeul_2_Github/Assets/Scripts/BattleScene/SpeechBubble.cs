@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SpeechBubble : MonoBehaviour
 {
     int randInt;
-
+    public float bubbleWaitTime;
     string[] noDict= {"그게 뭔가?","잘못 친거같은데…","그런말이 있나?","그게 말이 된다고 생각하나?"}; //사전에 없는 단어. 3
         string[] noDictAmericaBoss = { "자판을 다시 한번 보시게", "다시 잘 살펴보게", "당황하지 말게", "자네 영어 안배웠나?", "알파벳 모르나..?" };
     //현재 스테이지가 미국 보스인 경우, 사전에 없을 때 noDict 대신 noDictAmericaBoss 를 사용.4
@@ -29,63 +29,94 @@ public class SpeechBubble : MonoBehaviour
     string[] joseonYoungMinister = { "마음의 눈으로 보시오", "눈에 보이는게 다가 아니네", "당황하지 마시게" };
 
     public Text bubbleText;
- 
+    public Image bubbleImage;
+    public RectTransform rectTransform;
+    public float textWidthScale = 0.1f;
+
+    //코루틴 시간 확인을 위한 변수 (말풍선 순삭버그)
+    bool isCoRunning = false;
+
+    private void Start()
+    {
+        bubbleImage.enabled = false;
+        bubbleText.text = "";
+    }
     public void makeBubbleText(int count)
     {
-        switch (count)
+        if (!isCoRunning)
         {
-            
-            case -1: //사전에 없는 단어
-                randInt = Random.Range(0, 3);
-                bubbleText.text = noDict[randInt];
-                break;
+            switch (count)
+            {
 
-            case -2: //이미 사용한 단어
-                randInt = Random.Range(0, 4);
-                bubbleText.text = alreadyUsed[randInt];
-                break;
+                case -1: //사전에 없는 단어
+                    randInt = Random.Range(0, noDict.Length);
+                    bubbleText.text = noDict[randInt];
 
-            case -3: //사전에 있지만 현재 과제와 맞지 않음
-                randInt = Random.Range(0, 2);
-                bubbleText.text = yesDictWrong[randInt];
-                break;
+                    break;
 
-            case -4: //사전에 있지만 받침이 있음 (일본 보스 chapter 2 boss)
-                randInt = Random.Range(0, 2);
-                bubbleText.text = japanPatternWrong[randInt];
-                break;
+                case -2: //이미 사용한 단어
+                    randInt = Random.Range(0, alreadyUsed.Length);
+                    bubbleText.text = alreadyUsed[randInt];
+                    break;
 
-            case -5: //한자어가 아님 (중국 보스)
-                randInt = Random.Range(0, 3);
-                bubbleText.text = chinaPatternWorng[randInt];
-                break;
+                case -9: //사전에 있지만 현재 과제와 맞지 않음 
+                    randInt = Random.Range(0, yesDictWrong.Length);
+                    bubbleText.text = yesDictWrong[randInt];
+                    break;
 
-            case -6: // case -1 처럼 사전에 없고, 현재 스테이지가 미국 보스일 때
-                randInt = Random.Range(0, 4);
-                bubbleText.text = noDictAmericaBoss[randInt];
-                break;
+                case -4: //사전에 있지만 받침이 있음 (일본 보스 chapter 2 boss)
+                    randInt = Random.Range(0, japanPatternWrong.Length);
+                    bubbleText.text = japanPatternWrong[randInt];
+                    break;
 
-            case -7: //(chapter 5-1 boss ) : 제한된 모음이 사용된 오답.
-                randInt = Random.Range(0, 3);
-                bubbleText.text = joseonRightMinister[randInt];
-                break;
+                case -5: //한자어가 아님 (중국 보스)
+                    randInt = Random.Range(0, chinaPatternWorng.Length);
+                    bubbleText.text = chinaPatternWorng[randInt];
+                    break;
 
-            case -8: //(chapter 5-2 boss) : 강요된 모음이 사용되지 않은 오답.
-                randInt = Random.Range(0, 2);
-                bubbleText.text = joseonLeftMinister[randInt];
-                break;
+                case -6: // case -1 처럼 사전에 없고, 현재 스테이지가 미국 보스일 때
+                    randInt = Random.Range(0, noDictAmericaBoss.Length);
+                    bubbleText.text = noDictAmericaBoss[randInt];
+                    break;
 
-            case -9: //(chpater 5-3 boss) : no dict 대신 사용
-                randInt = Random.Range(0, 2);
-                bubbleText.text = joseonYoungMinister[randInt];
-                break;
+                case -7: //(chapter 5-1 boss ) : 제한된 모음이 사용된 오답. //못쓰게 하는거
+                    randInt = Random.Range(0, joseonRightMinister.Length);
+                    bubbleText.text = joseonRightMinister[randInt];
+                    break;
+
+                case -8: //(chapter 5-2 boss) : 강요된 모음이 사용되지 않은 오답. //쓰게하는거
+                    randInt = Random.Range(0, joseonLeftMinister.Length);
+                    bubbleText.text = joseonLeftMinister[randInt];
+                    break;
+
+                case -10: //(chpater 5-3 boss) : no dict 대신 사용
+                    randInt = Random.Range(0, joseonYoungMinister.Length);
+                    bubbleText.text = joseonYoungMinister[randInt];
+                    break;
+            }
+
+            rectTransform.sizeDelta += new Vector2(bubbleText.preferredWidth * textWidthScale, 0);
+            rectTransform.anchoredPosition = new Vector3(-453.7f + (bubbleText.preferredWidth * textWidthScale * 0.35f), 783.2f, 0);
+            bubbleImage.enabled = true;
+            StartCoroutine("maintainBubble");
         }
-        StartCoroutine("maintainBubble");
     }
     IEnumerator maintainBubble()
     {
-        yield return new WaitForSeconds(1f);
+        isCoRunning = true;
+        yield return new WaitForSeconds(bubbleWaitTime);
+        bubbleImage.enabled = false;
         bubbleText.text = "";
+        rectTransform.anchoredPosition = new Vector3(-453.7f, 783.2f, 0);
+        rectTransform.sizeDelta = new Vector2 (249.7f, 228.6f);
+        isCoRunning = false;
     }
+    //public void MaintainBubble_enter()
+    //{  
+    //        bubbleImage.enabled = false;
+    //        bubbleText.text = "";
+    //        rectTransform.anchoredPosition = new Vector3(-453.7f, 783.2f, 0);
+    //        rectTransform.sizeDelta = new Vector2(249.7f, 228.6f);            
+    //}
 
 }

@@ -38,12 +38,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     public Judgement ansJudge; 
-    //AttackText choObj_inputText_srt;
     public Sunbi m_sunbi;
     public int dealHeal = -1; // 딜, 힐 속성. 1은 힐, 0은 딜
-   // public float healProbability = 20.0f; //힐 확률 결정. 
 
-    //Color HealColor = new Color(0.0f, 0.7f, 0.3f); ///수정 ->  + 마크가 종이에 표시됨
     public Color HellColor = new Color(1f,0f,0f);
 
 
@@ -96,6 +93,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
     //에너미 힌트 투사체를 위한 오브젝트
     public EnemyHintBulletHandler m_enemybulletHandler;
+
+    //말풍선 입력 시 초기화를 위한 변수
+    
     private void Awake()
     {
         //퍼블릭으로 할당했습니다. 이름이 같아야 애니메이터를 공유할 수 있어서!
@@ -137,7 +137,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         //모음인지 아닌지, 입력단어 ,현재 문제 초성(자음) value array, 어원을 사용하는지 : 0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어)
         correctState = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
-        
       
 
         ///정답일 경우
@@ -202,7 +201,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         }
         else///1챕터 보스 아닐경우 일반적인 문제 생성
         {
-            ///초성 풀에 있는 단어중 지금 사용하지 않고있는 단어 고르기
+            //초성 풀에 있는 단어중 지금 사용하지 않고있는 단어 고르기
             do
             {
                 questStr = getRandomChoseongText();
@@ -211,10 +210,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 {
                     if (Chosung_text_arr[t].text == questStr)
                     {
-                        /*if (isChapter1Boss == false)
-                        {
-
-                        }*/
                         isSameWord = true;
                         break;
                     }
