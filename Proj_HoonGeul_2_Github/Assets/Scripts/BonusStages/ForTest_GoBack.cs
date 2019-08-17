@@ -11,6 +11,7 @@ public class ForTest_GoBack : MonoBehaviour
     void Start()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey());
         sceneData = m_gameManager.GetSceneData();
     }
 
@@ -23,6 +24,9 @@ public class ForTest_GoBack : MonoBehaviour
     public void BtnClick()
     {
         m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 1);
+        sceneData = m_gameManager.GetSceneData();
+        Debug.Log(sceneData.nextScene);
+        Debug.Log(sceneData.nextSceneKey);
         switch (sceneData.nextScene)
         {
             case 0:

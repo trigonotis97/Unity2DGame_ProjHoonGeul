@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3be37760fcc22d42b10872580042f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogDataLength: 36
+  dialogDataLength: 42
   battleDataLength: 16
   sceneDataLength: 62
 --- !u!4 &2016438098

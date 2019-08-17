@@ -42,7 +42,6 @@ public class Dialog2 : MonoBehaviour
         switch (nowState)
         {
             case 0:
-
                 break;
             case 2:
                 break;

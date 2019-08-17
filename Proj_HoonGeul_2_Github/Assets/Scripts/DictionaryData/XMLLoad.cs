@@ -105,8 +105,7 @@ public class XMLLoad : MonoBehaviour
                 string tmp_conv_state = node.SelectSingleNode("conv_state").InnerText;
                 string[] tmp_conv_state_arr = tmp_conv_state.Split(new char[] { ',' });
                 DLD.conv_state = Array.ConvertAll<string, int>(tmp_conv_state_arr, int.Parse);
-                DLD.isNextBattle = bool.Parse(node.SelectSingleNode("isNextBattle").InnerText);
-                DLD.isNextBonus = bool.Parse(node.SelectSingleNode("isNextBonus").InnerText);
+                DLD.isKnockDown = bool.Parse(node.SelectSingleNode("isKnockDown").InnerText);
                 DLD.BGImage = node.SelectSingleNode("BGImage").InnerText;
                 DLD.enemyImage = node.SelectSingleNode("enemyImage").InnerText;
                 DLD.enemyWholeImage = node.SelectSingleNode("enemyWholeImage").InnerText;

@@ -52,17 +52,12 @@ public class DialogManager : MonoBehaviour
         show_chapter_num = m_data.chapterNum;
         show_stage_num = m_data.stageNum;
 
-        //m_enemyImage.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
-
         Debug.Log("Background/" + m_data.BGImage);
         bg_image_.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
-       // Debug.Log(m_gameManager.GetCurrentDialogKey());
-        //m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey() + 1);
 
         GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString())as GameObject;
         m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation)as GameObject;
         m_enemy.GetComponent<SpriteRenderer>().sprite = tempEnemy.GetComponent<SpriteRenderer>().sprite;
-        //m_enemy.GetComponent<EnemyScriptDefault>().enabled = false;
         m_enemy.transform.SetParent(m_canvas.transform, false);
         
         bg_audioclip = Resources.Load("BGM/" + m_data.BGM) as AudioClip;
@@ -112,31 +107,5 @@ public class DialogManager : MonoBehaviour
                 SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
                 break;
         }
-        //m_gameManager.SetCurrentDialogKey(m_data.nextSceneKey);
-        //m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey() + 1);
-        /*if (m_data.isNextBattle == true)
-        {
-            SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-        }
-        else if (m_data.isNextBonus == true)
-        {
-            switch (m_data.stageNum)
-            {
-                case 1:
-                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
-                    break;
-                case 3:
-                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
-                    break;
-                case 5:
-                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
-                    break;
-            }
-        }
-        else
-        {
-            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-        }
-        */
     }
 }

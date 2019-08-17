@@ -197,9 +197,8 @@ public class DialogData
     public int chapterNum;
     public int stageNum;
     public string[] script;
-    public int[] conv_state;    
-    public bool isNextBattle;
-    public bool isNextBonus;
+    public int[] conv_state;
+    public bool isKnockDown;
     //추가
     public string BGImage;
     //public string sunbiImage;
