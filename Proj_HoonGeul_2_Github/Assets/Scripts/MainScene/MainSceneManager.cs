@@ -78,12 +78,15 @@ public class MainSceneManager : MonoBehaviour
     public void Difficulty1Click()
     {
         m_gameManager.SetGameMode(1); //집현전 모드 설정
+        //m_gameManager.SetCurrentDialogKey(1);
         SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
     }
 
     public void Difficulty2Click()
     {
         m_gameManager.SetGameMode(2); //세종대왕 모드 설정
+        m_gameManager.SetCurrentDialogKey(1);
+        m_gameManager.SetCurrentSceneKey(1);
     }
 
     public void ExitGameClick()

@@ -24,6 +24,7 @@ public class Dialog2 : MonoBehaviour
     {
         duration = 1;
         StartCoroutine(_PlayDialogueText(script[index], duration));
+        SetState(conv_state[index]);
     }
     void Update()
     {
@@ -34,6 +35,18 @@ public class Dialog2 : MonoBehaviour
     {
         script = ScriptTbl;
         conv_state = ConvTbl;
+    }
+
+    public void SetState(int nowState)
+    {
+        switch (nowState)
+        {
+            case 0:
+
+                break;
+            case 2:
+                break;
+        }
     }
 
 

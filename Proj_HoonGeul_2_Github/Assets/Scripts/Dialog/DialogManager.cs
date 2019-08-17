@@ -11,7 +11,7 @@ public class DialogManager : MonoBehaviour
     public int show_stage_num;
 
     DialogData m_data;
-    BattleSceneData m_battledata;
+    SceneData sceneData;
 
     StageState stageStatus;
     public GameObject m_canvas;
@@ -44,6 +44,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         stageStatus = StageState.READY;
+        sceneData = m_gameManager.GetSceneData();
 
         m_data = m_gameManager.GetDialogData();
         m_script.SetScriptloader(m_data.script, m_data.conv_state);
@@ -56,7 +57,7 @@ public class DialogManager : MonoBehaviour
         Debug.Log("Background/" + m_data.BGImage);
         bg_image_.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
        // Debug.Log(m_gameManager.GetCurrentDialogKey());
-        m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey() + 1);
+        //m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey() + 1);
 
         GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString())as GameObject;
         m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation)as GameObject;
@@ -83,15 +84,59 @@ public class DialogManager : MonoBehaviour
 
     public void NextScene()
     {
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+        Debug.Log(sceneData.nextScene);
+        switch (sceneData.nextScene)
+        {
+            case 0:
+                SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+                break;
+            case 1:
+                m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                break;
+            case 2:
+                m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+                SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+                break;
+            case 3:
+                SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+                break;
+            case 4:
+                SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                break;
+            case 5:
+                SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                break;
+            case 6:
+                SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                break;
+        }
         //m_gameManager.SetCurrentDialogKey(m_data.nextSceneKey);
         //m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey() + 1);
-        if (m_data.isNextBattle == true)
+        /*if (m_data.isNextBattle == true)
         {
             SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+        }
+        else if (m_data.isNextBonus == true)
+        {
+            switch (m_data.stageNum)
+            {
+                case 1:
+                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                    break;
+                case 3:
+                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                    break;
+                case 5:
+                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                    break;
+            }
         }
         else
         {
             SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
         }
+        */
     }
 }

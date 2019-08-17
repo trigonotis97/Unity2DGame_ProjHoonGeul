@@ -6,25 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/zzzzTrash/Title.unity
+    path: 
     guid: e0aed4ffcc594974da0ff7b276491799
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: bed26f34b43d328439c125daca0fcb59
   - enabled: 0
-    path: Assets/zzzzTrash/Cutscene 1-1.unity
+    path: 
     guid: 4175eef84121c8e408176e643f9abff4
   - enabled: 0
-    path: Assets/zzzzTrash/Stage1_test.unity
+    path: 
     guid: 3e22739b2e646b045a0cf2318a41060b
   - enabled: 0
-    path: Assets/zzzzTrash/Cutscene 1-2.unity
+    path: 
     guid: ac522bf734edd1a489104968c7793d8c
   - enabled: 0
-    path: Assets/zzzzTrash/SampleScene.unity
+    path: 
     guid: e8bd4a0b38ac0314eae48e2bc3780bf5
   - enabled: 0
-    path: Assets/zzzzTrash/Cutscene 1.unity
+    path: 
     guid: 6e5c3e595b3b7a54f9e00818497d5dc4
   - enabled: 1
     path: Assets/Scenes/TempMain.unity
@@ -35,4 +35,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DialogScene.unity
     guid: 4d8ae058b76eff149b75e6aaefd96d79
+  - enabled: 1
+    path: Assets/Scenes/BonusStage/BonusStageVoca.unity
+    guid: 1479fe63601792e4bb08e96896a9d4d1
+  - enabled: 1
+    path: Assets/Scenes/BonusStage/BonusStageCharacter.unity
+    guid: c03f9a44cdaf42448b03262c83f40095
+  - enabled: 1
+    path: Assets/Scenes/BonusStage/BonusStageSpelling.unity
+    guid: b7845d03614a51646a929a397a7171f2
+  - enabled: 1
+    path: Assets/Scenes/BonusStage/BonusStageSukBong.unity
+    guid: a4cfdb51123859f45bfb1443d7fb5c39
+  - enabled: 1
+    path: Assets/Scenes/BonusStage/BonusStagePenalty.unity
+    guid: 8e89a517e5350a5498483d1a0e8fcc4b
   m_configObjects: {}

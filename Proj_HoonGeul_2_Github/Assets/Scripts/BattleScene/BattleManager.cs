@@ -32,7 +32,7 @@ public class BattleManager : MonoBehaviour
     public int show_stage_num;
     //데이터 받아올변수
     public BattleSceneData m_data; //현재 배틀 스테이지에서 사용할 데이터
-
+    public SceneData sceneData;
 
     StageState stageStatus; // 0: 게임 시작 전 1: 게임중 2: 게임 중단 3:게임종료 4: 게임 클리어
     public GameObject m_canvas;
@@ -71,7 +71,7 @@ public class BattleManager : MonoBehaviour
     private void Start()
     {
         stageStatus = StageState.READY;
-        
+        sceneData = m_gameManager.GetSceneData();
         //###나중에 받아오기
         //데이터 받아오기 (가져올 객체 : 
         m_data = m_gameManager.GetBattleSceneData();
@@ -194,11 +194,38 @@ public class BattleManager : MonoBehaviour
 
     public void NextDialogScene()
     {
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+        switch (sceneData.nextScene)
+        {
+            case 0:
+                SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+                break;
+            case 1:
+                m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                break;
+            case 2:
+                m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+                SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+                break;
+            case 3:
+                SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+                break;
+            case 4:
+                SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                break;
+            case 5:
+                SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                break;
+            case 6:
+                SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                break;
+        }
         //m_gameManager.SetCurrentDialogKey(m_data.nextDialogNum);
-        SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+        //SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
 
         ////중요!!! 이부분 게임클리어 시로 넣어야함
-        m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
+        //m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
     }
 
 
