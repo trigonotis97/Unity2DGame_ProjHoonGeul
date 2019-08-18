@@ -27,8 +27,8 @@ public class SukBong : MonoBehaviour
 
     void Start()
     {
-        //m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        //sceneData = m_gameManager.GetSceneData();
+        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        sceneData = m_gameManager.GetSceneData();
         AnsGenerator();
         selectAns = 0;
         Debug.Log(answerStr.Length);
