@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class SpellingQuiz : MonoBehaviour
 {
-        GameManager m_gameManager;
+    GameManager m_gameManager;
 
-        public Text question;
-        public Text num1;
-        public Text num2;
-        public Text num3;
+    public Text question;
+    public Text num1;
+    public Text num2;
+    public Text num3;
 
-        public SceneData sceneData;
+    public SceneData sceneData;
+    public SceneChange SceneChange;
 
     int selectAns = 0;
     int correctAns;
@@ -28,6 +29,7 @@ public class SpellingQuiz : MonoBehaviour
     string[] nowAnsStr = new string[4];
     private void Start()
     {
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         AnsGenerator();
         sceneData = m_gameManager.GetSceneData();
@@ -56,7 +58,7 @@ public class SpellingQuiz : MonoBehaviour
         num3.GetComponent<Text>().text = nowAnsStr[3];
     }
 
-    public void AnsClick(int BtNum)
+    public void Ansclick(int BtNum)
     {
         if (BtNum == correctAns)
         {
@@ -69,38 +71,13 @@ public class SpellingQuiz : MonoBehaviour
             else
             {
                 m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-                switch (sceneData.nextScene)
-                {
-                    case 0:
-                        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
-                        break;
-                    case 1:
-                        m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                        SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                        break;
-                    case 2:
-                        m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-                        break;
-                    case 3:
-                        SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
-                        break;
-                    case 4:
-                        SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
-                        break;
-                    case 5:
-                        SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
-                        break;
-                    case 6:
-                        SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
-                        break;
-                }
+                SceneChange.NextScene();
             }
         }
         else
         {
             Debug.Log("오답");
-            SceneManager.LoadScene("BonusStagePenalty", LoadSceneMode.Single);//깜지 씬으로 이동
+            SceneChange.NextScene();
         }
     }
 }

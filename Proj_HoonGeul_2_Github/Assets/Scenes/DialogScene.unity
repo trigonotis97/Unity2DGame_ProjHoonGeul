@@ -682,6 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917640929}
   - component: {fileID: 917640930}
+  - component: {fileID: 917640931}
   - component: {fileID: 917640928}
   m_Layer: 0
   m_Name: DialogSceneManager
@@ -819,6 +820,18 @@ MonoBehaviour:
   bg_image_: {fileID: 1852292404}
   enemyImg: {fileID: 1623089738495535638, guid: 586bfede2e84f3d45a6b4e5aa11a523c,
     type: 3}
+--- !u!114 &917640931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917640927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8986b3cdb6fd80a4bad36b2c17c65b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1199477896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1103,7 @@ MonoBehaviour:
   duration: 2
   continueButton: {fileID: 1745466638}
   dialogManager: {fileID: 917640930}
+  SceneChange: {fileID: 917640931}
 --- !u!4 &1711597449
 Transform:
   m_ObjectHideFlags: 0
@@ -1552,7 +1566,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917640930}
+      - m_Target: {fileID: 917640931}
         m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:

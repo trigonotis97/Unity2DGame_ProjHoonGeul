@@ -1672,6 +1672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404107656}
   - component: {fileID: 404107655}
+  - component: {fileID: 404107658}
   - component: {fileID: 404107657}
   m_Layer: 0
   m_Name: BattleManager
@@ -1808,6 +1809,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &404107658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404107654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8986b3cdb6fd80a4bad36b2c17c65b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &468854827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,8 +2483,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 404107655}
-        m_MethodName: NextDialogScene
+      - m_Target: {fileID: 404107658}
+        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

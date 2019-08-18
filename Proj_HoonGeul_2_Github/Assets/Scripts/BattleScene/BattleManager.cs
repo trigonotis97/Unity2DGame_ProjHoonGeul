@@ -70,6 +70,8 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+
         stageStatus = StageState.READY;
         sceneData = m_gameManager.GetSceneData();
         //###나중에 받아오기
@@ -192,81 +194,6 @@ public class BattleManager : MonoBehaviour
         return m_data.chapterNum;
     }
 
-    public void NextDialogScene()
-    {
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-        switch (sceneData.nextScene)
-        {
-            case 0:
-                SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
-                break;
-            case 1:
-                m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                break;
-            case 2:
-                m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-                break;
-            case 3:
-                SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
-                break;
-            case 4:
-                SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
-                break;
-            case 5:
-                SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
-                break;
-            case 6:
-                SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
-                break;
-        }
-        //m_gameManager.SetCurrentDialogKey(m_data.nextDialogNum);
-        //SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-
-        ////중요!!! 이부분 게임클리어 시로 넣어야함
-        //m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
-    }
-
-
-    /*
-    public GameObject Keyboardlock;
-
-    ChosungGenerator generator;
-    EnemyScript callattack;
-    
-    void Start()
-    {
-
-       // StartCoroutine(BeforeStart());
-        //generator = GameObject.Find("ChosungObject").GetComponent<ChosungGenerator>();
-        //callattack = GameObject.Find("Enemy").GetComponent<EnemyScript>();
-        /*for (int i = 0; i < 3; i++) //코루틴을 빼서 초반 시작 딜레이를 없애려고 했지만 
-        //오브젝트 할당순서가 물리고 물려서 부득이하게 일단 넣어줌
-        {
-            generator.MakeNewQuestion(i);// 무작위 초성 생성
-        }
-        callattack.EnemyAttacks();
-        
-
-
-    }
-
-    IEnumerator BeforeStart()
-    {
-        
-        아마 게임초반 딜레이때문에 여기에 초성 초기화문을 넣은것 같은데 나중에 더 가독성있게 바꾸자.
-        게임초반 딜레이도 기획부분에서 변경될것.
-    
-        yield return new WaitForSeconds(1.0f);
-        Destroy(Keyboardlock);
-        for(int i = 0; i < 3; i++)
-        {
-            generator.MakeNewQuestion(i);// 무작위 초성 생성
-        }
-        callattack.EnemyAttacks();
-    }
-    */
 
 
 }
