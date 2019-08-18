@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class BonusPenalty : MonoBehaviour
 {
     GameManager m_gameManager;
-
+    public ForTest_GoBack ForTest_GoBack;
     //public Text problem;
     public InputField InputText;
     public Text[] texts;

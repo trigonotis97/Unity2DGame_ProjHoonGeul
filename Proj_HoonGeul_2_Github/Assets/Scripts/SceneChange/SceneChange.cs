@@ -23,17 +23,19 @@ public class SceneChange : MonoBehaviour
                 SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
                 break;
             case 1:
-                if (m_gameManager.GetCurrentSceneKey() + 1 < 0)
-                {
-                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                }
-                else
-                {
-                    m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 1);
-                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                }
+                //if (m_gameManager.GetCurrentSceneKey() + 1 < 0)
+                //{
+                //    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                //    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                //}
+                //else
+                //{
+                //    m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 1);
+                //    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                //    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                //}
+                m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
                 break;
             case 2:
                 m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
