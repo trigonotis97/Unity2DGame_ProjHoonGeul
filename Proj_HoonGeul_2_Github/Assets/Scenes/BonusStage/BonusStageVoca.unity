@@ -1105,6 +1105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814843602}
   - component: {fileID: 1814843603}
+  - component: {fileID: 1814843604}
   m_Layer: 0
   m_Name: BSVManager
   m_TagString: Untagged
@@ -1141,6 +1142,19 @@ MonoBehaviour:
   question: {fileID: 991875213}
   num1: {fileID: 1285099009}
   num2: {fileID: 166513049}
+  SceneChange: {fileID: 1814843604}
+--- !u!114 &1814843604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814843601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8986b3cdb6fd80a4bad36b2c17c65b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1948072091
 GameObject:
   m_ObjectHideFlags: 0

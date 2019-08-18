@@ -30,6 +30,7 @@ public class EnemyScriptDefault : MonoBehaviour
     ///데이터 초기화 부분
     GameManager m_gameManager;
     public BattleManager m_battleManager;
+    public SceneChange SceneChange;
     EnemyStatus m_enemyData;
 
 
@@ -87,10 +88,8 @@ public class EnemyScriptDefault : MonoBehaviour
             currentHp = 0;
             hpBar.value = 0;
             //게임오버 판정
-            m_battleManager.SetStateStageClear();
-
-           
-            m_battleManager.NextDialogScene();
+            m_battleManager.SetStateStageClear();           
+            SceneChange.NextScene();
             //SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
         }
         else

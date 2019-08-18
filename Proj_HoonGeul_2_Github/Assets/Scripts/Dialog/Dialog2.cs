@@ -17,6 +17,7 @@ public class Dialog2 : MonoBehaviour
     public float duration;
     public GameObject continueButton;
     public DialogManager dialogManager;
+    public SceneChange SceneChange;
     private int index = 0;
     
 
@@ -83,7 +84,7 @@ public class Dialog2 : MonoBehaviour
         {
             if (index + 1 == script.Length)
             {
-                dialogManager.NextScene();
+                SceneChange.NextScene();
             }
             index++;
             StartCoroutine(_PlayDialogueText(script[index], duration));

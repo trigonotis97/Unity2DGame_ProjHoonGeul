@@ -43,6 +43,8 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+
         stageStatus = StageState.READY;
         sceneData = m_gameManager.GetSceneData();
 
@@ -75,37 +77,5 @@ public class DialogManager : MonoBehaviour
     public int GetChapterNum()
     {
         return m_data.chapterNum;
-    }
-
-    public void NextScene()
-    {
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-        Debug.Log(sceneData.nextScene);
-        switch (sceneData.nextScene)
-        {
-            case 0:
-                SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
-                break;
-            case 1:
-                m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                break;
-            case 2:
-                m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-                break;
-            case 3:
-                SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
-                break;
-            case 4:
-                SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
-                break;
-            case 5:
-                SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
-                break;
-            case 6:
-                SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
-                break;
-        }
     }
 }

@@ -12,7 +12,9 @@ public class MainSceneManager : MonoBehaviour
     public GameObject chunjiin_keyboard;
     public GameObject NewGame, ContinueGame, ExitGame;
     public GameObject Difficulty1, Difficulty2, BackButton;
-    
+    public SceneData sceneData;
+    public SceneChange SceneChange;
+
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -28,6 +30,7 @@ public class MainSceneManager : MonoBehaviour
         Difficulty1.SetActive(false);
         Difficulty2.SetActive(false);
         BackButton.SetActive(false);
+
     }
     public void text(Text Test_Text) //디버그용 텍스트. 인게임에서 영향은 없다.
     {
@@ -79,6 +82,7 @@ public class MainSceneManager : MonoBehaviour
     {
         m_gameManager.SetGameMode(1); //집현전 모드 설정
         //m_gameManager.SetCurrentDialogKey(1);
+        m_gameManager.SetCurrentDialogKey(0);
         SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
     }
 

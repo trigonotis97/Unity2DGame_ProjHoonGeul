@@ -93,7 +93,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>100</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -105,7 +105,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>100</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -189,7 +189,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -201,7 +201,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -285,7 +285,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>300</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -297,7 +297,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>0</enemyWholeImage>
+		<enemyWholeImage>300</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -496,10 +496,58 @@
 		<key>42</key>
 		<chapterNum>6</chapterNum>
 		<stageNum>1</stageNum>
-		<script>엔딩, 따로 있는지는 모르겠지만, 일단은 만들어놓은, 다이얼로그</script>
+		<script>엔딩/ 따로 있는지는 모르겠지만/ 일단은 만들어놓은/ 다이얼로그</script>
 		<conv_state>0,2,1,2</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jeonju_1</BGImage>
+		<enemyImage>player_face</enemyImage>
+		<enemyWholeImage>0</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>-3</key>
+		<chapterNum>-1</chapterNum>
+		<stageNum>3</stageNum>
+		<script>아니 이런 기본적인 어휘도 모르면서 다른 언어를 논한게야?/어휴…. 어휘…./아주 기본이 안되있어 기본이./가서 깜지 쓰고 왓!</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isKnockDown>FALSE</isKnockDown>
+		<BGImage>joseon_bg_1</BGImage>
+		<enemyImage>player_face</enemyImage>
+		<enemyWholeImage>100</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>-4</key>
+		<chapterNum>-1</chapterNum>
+		<stageNum>4</stageNum>
+		<script>아니 이런 기본적인 것도 몰라?!/역사 인물 상식이 아주 볼품없구만!/아니 문제가 너무 쪼잔하잖아요… 어떻게 맞춰 이걸../뭐? 쪼잔???/가서 깜지 쓰고 왓!!!/아… 귀찮은데..</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isKnockDown>FALSE</isKnockDown>
+		<BGImage>joseon_bg_1</BGImage>
+		<enemyImage>player_face</enemyImage>
+		<enemyWholeImage>200</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>-5</key>
+		<chapterNum>-1</chapterNum>
+		<stageNum>5</stageNum>
+		<script>방금 문제 어떤 것 같아?/틀렸나요?/응 맞아./그럼 깜../응 맞아. 쓰고 오면 돼.</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isKnockDown>FALSE</isKnockDown>
+		<BGImage>joseon_bg_1</BGImage>
+		<enemyImage>player_face</enemyImage>
+		<enemyWholeImage>300</enemyWholeImage>
+		<BGM>joseon</BGM>
+	</DialogSet>
+	<DialogSet>
+		<key>-6</key>
+		<chapterNum>-1</chapterNum>
+		<stageNum>6</stageNum>
+		<script>거 봐라 내 그럴 줄 알았다/글 하나 제대로 못쓰면서, 뭐 한글?/아니 아무것도 안보이는데…/어허!/속이 탄다 속이 타./안되면 되게해야 될거 아니야/가서 깜지 쓰고 다시 와!/아니 깜지 손아픈데…./젊어서 고생은 사서도 한다 그랬어./요령피울 생각이나 하고 말이야 끌끌끌</script>
+		<conv_state>0,0,0,0</conv_state>
+		<isKnockDown>FALSE</isKnockDown>
+		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
 		<enemyWholeImage>0</enemyWholeImage>
 		<BGM>joseon</BGM>
