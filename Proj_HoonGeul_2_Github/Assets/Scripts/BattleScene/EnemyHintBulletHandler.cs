@@ -16,11 +16,24 @@ public class EnemyHintBulletHandler : MonoBehaviour
     public int sunbiMaxHitNum; //default : 2
     [Space(30)]
     public int sunbiHitCount = 0;
+    public GameObject enemyBullet;
 
 
-    /// temp variable
+    Image bulletImage;
+    Text bulletText;
+
+
+    //bullet image variable
+    Sprite[] bulletSprites=new Sprite[3];
+    int bulletIndCount;
+
+    /// 힌트관련 변수
     Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
     BattleManager mbattleManager;
+
+    ///xml 완료 시 수정
+    string[] wrongHintTable= { "바보","옥냥","국밥"};
+    string[] rightHintTable= { "힌일","힌이","힌삼"};
     // key=questionValue , value=hintTable
 
     /*
@@ -29,9 +42,9 @@ public class EnemyHintBulletHandler : MonoBehaviour
     - 정답 맞출때 체크
     - 힌트,오답 가져오기
     - 힌트: 이미 쓴거중에 똑같은거는 안나오게 검색, 사전에실제로 있는단어 검색
-구현할거
-    - 힌트, 오답 확률 (확률변수 인스펙터로 보이게 만들기)
-    - 힌트 검색
+구현할거(0)
+    - 힌트, 오답 확률 (확률변수 인스펙터로 보이게 만들기)(0)
+    - 힌트 검색(0)
 
 힌트 단어 풀 생성
     - 자음 단어 별 단어 풀 생성
@@ -39,15 +52,24 @@ public class EnemyHintBulletHandler : MonoBehaviour
     private void Awake()
     {
         mbattleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
+        bulletText= enemyBullet.transform.GetChild(1).GetComponent<Text>();
+        bulletImage = enemyBullet.transform.GetChild(0).GetComponent<Image>();
     }
     private void Start()
     {
+
+        //변수 초기화
+        bulletIndCount = 0;
+        //chosungValHintTable
+        //bullet 이미지 로드
+
+
         //hintTable 초기화
         ///이 스테이지에서 사용할 초성 문제의 정답 데이터를 받아옴(복사)
         /// m_data->problemPocket + hellPoket
         /// 
 
-        //hintTable.Add()
+       
     }
     public void SunbiHitCounter()//Sunbi.cs
     {
@@ -63,12 +85,23 @@ public class EnemyHintBulletHandler : MonoBehaviour
         switch(hintProb)
         {
             case 0:// image bullet
+                bulletImage.enabled = true;
+                bulletImage.sprite = bulletSprites[bulletIndCount];
+                bulletIndCount++;
+                if (bulletIndCount == 3)
+                    bulletIndCount = 0;
                 break;
 
-            case 1:
+            case 1://worng hint bullet
+                ///xml 완료시 수정
+                bulletText.enabled=true;
+                bulletText.text = wrongHintTable[Random.Range(0, wrongHintTable.Length)];
                 break;
 
-            case 2:
+            case 2://right hint bullet
+                ///xml 완료시 수정
+                bulletText.enabled = true;
+                bulletText.text = rightHintTable[Random.Range(0, wrongHintTable.Length)];
                 break;
 
         }
@@ -138,10 +171,15 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
 
     ///오브젝트에 넣기
-
-
+    public void LoadBulletImage(Sprite[]sprites)
+    {
+        bulletSprites=sprites;
+        
+    }
+        /*
     string WordToValue(string word)
     {
 
     }
+    */
 }

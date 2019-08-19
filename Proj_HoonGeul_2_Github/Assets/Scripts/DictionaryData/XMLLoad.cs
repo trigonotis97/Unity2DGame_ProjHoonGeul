@@ -48,19 +48,22 @@ public class XMLLoad : MonoBehaviour
         };
 
         XmlDocument xmlDoc = new XmlDocument();
-
         for (int i = 0; i < 4; i++) // 단어 데이터들 딕셔너리에 저장
         {
             dictTbl[i] = new Dictionary<string, string>();
             xmlDoc.LoadXml(textAsset[i].text);
 
             XmlNodeList nodes = xmlDoc.SelectNodes("WordDic/WordSet"); // 가져올 노드 설정
+            int count = 0;
 
             foreach (XmlNode node in nodes)
             {
                 dictTbl[i].Add(node.SelectSingleNode("Key").InnerText, node.SelectSingleNode("Value").InnerText);
+                count++;
             }
+            Debug.Log("wordCpunt:" + count);
         }
+        
         
         for (int i = 4; i < 5; i++) // 배틀씬데이터 저장
         {
