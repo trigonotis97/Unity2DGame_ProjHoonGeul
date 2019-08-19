@@ -47,7 +47,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
         /// m_data->problemPocket + hellPoket
         /// 
 
-        hintTable.Add()
+        //hintTable.Add()
     }
     public void SunbiHitCounter()//Sunbi.cs
     {
@@ -59,7 +59,19 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
     public void Loop()
     {
+        int hintProb = HintProbHandler();
+        switch(hintProb)
+        {
+            case 0:// image bullet
+                break;
 
+            case 1:
+                break;
+
+            case 2:
+                break;
+
+        }
     }
     
     public void ResetSunbiHitCount()//chosung generator.cs
@@ -126,6 +138,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
 
     ///오브젝트에 넣기
+
 
     string WordToValue(string word)
     {
