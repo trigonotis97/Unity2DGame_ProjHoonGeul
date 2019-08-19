@@ -50,6 +50,7 @@ public class EnemyScriptDefault : MonoBehaviour
     ///에너미 투사체 단어관련 변수
     public int bulletState=0;// 0:image  1:worngHint 2:rightHint
     public Dictionary<string, string>[] temp_dictTable = new Dictionary<string, string>[4];
+    public EnemyHintBulletHandler hintHandler;
 
     private void Awake()
     {
