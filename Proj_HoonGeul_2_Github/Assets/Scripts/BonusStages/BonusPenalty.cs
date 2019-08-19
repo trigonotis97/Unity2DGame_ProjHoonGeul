@@ -56,7 +56,14 @@ public class BonusPenalty : MonoBehaviour
     public void AdButton()
     {
         //광고 재생 후 다음 씬으로
-    }
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 3);
+        sceneData = m_gameManager.GetSceneData();
+        Debug.Log(sceneData.nextScene);
+        Debug.Log(sceneData.nextSceneKey);
+
+        m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+        SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);            
+        }
     //public void AnsGenerator()
     //{
     //    selectAns = Random.Range(0, 2);

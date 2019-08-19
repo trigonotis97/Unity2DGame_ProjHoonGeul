@@ -28,9 +28,9 @@ public class SpellingQuiz : MonoBehaviour
                                             { "유어 웰컴 = ____ ", "천만에요", "천만해요", "천만애요"} };
     string[] nowAnsStr = new string[4];
     private void Start()
-    {
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+    {        
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
         AnsGenerator();
         sceneData = m_gameManager.GetSceneData();
     }
@@ -70,14 +70,14 @@ public class SpellingQuiz : MonoBehaviour
             }
             else
             {
-                m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-                SceneChange.NextScene();
+                Debug.Log("클리어");
+                SceneChange.BonusNextScene(true);
             }
         }
         else
         {
             Debug.Log("오답");
-            SceneChange.NextScene();
+            SceneChange.BonusNextScene(false);
         }
     }
 }

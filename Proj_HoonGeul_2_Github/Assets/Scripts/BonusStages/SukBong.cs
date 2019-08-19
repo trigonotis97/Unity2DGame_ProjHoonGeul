@@ -12,6 +12,7 @@ public class SukBong : MonoBehaviour
     public InputField InputText;
 
     public SceneData sceneData;
+    public SceneChange SceneChange;
 
     int selectAns;
     string[] answerStr = new string[7] {"안녕하세요",
@@ -26,6 +27,7 @@ public class SukBong : MonoBehaviour
     void Start()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
         sceneData = m_gameManager.GetSceneData();
         AnsGenerator();
     }
@@ -44,39 +46,23 @@ public class SukBong : MonoBehaviour
         if (nowAns == inputWord)
         {
             Debug.Log("정답");
-            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-            switch (sceneData.nextScene)
+            if (selectAns < 6)
             {
-                case 0:
-                    SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
-                    break;
-                case 1:
-                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                    break;
-                case 2:
-                    m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-                    break;
-                case 3:
-                    SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
-                    break;
-                case 4:
-                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
-                    break;
-                case 5:
-                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
-                    break;
-                case 6:
-                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
-                    break;
+                selectAns++;
+                AnsGenerator();
+            }
+            else
+            {
+                Debug.Log("클리어");
+                SceneChange.BonusNextScene(true);
             }
         }
         else
         {
             Debug.Log("오답");
-            SceneManager.LoadScene("BonusStagePenalty", LoadSceneMode.Single);//깜지 씬으로 이동
+            SceneChange.BonusNextScene(false);
         }
         InputText.text = "";
     }
+    
 }

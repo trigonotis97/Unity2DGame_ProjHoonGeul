@@ -67,14 +67,14 @@ public class VocaQuiz : MonoBehaviour
             }
             else
             {
-                m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-                SceneChange.NextScene();
+                Debug.Log("클리어");
+                SceneChange.BonusNextScene(true);
             }
         }
         else
         {
             Debug.Log("오답");
-            SceneChange.NextScene();
+            SceneChange.BonusNextScene(false);
         }
     }
 }
