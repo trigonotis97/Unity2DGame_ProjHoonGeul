@@ -31,8 +31,9 @@ public class BattleManager : MonoBehaviour
     public int show_chapter_num;
     public int show_stage_num;
     //데이터 받아올변수
-    BattleSceneData m_data; //현재 배틀 스테이지에서 사용할 데이터
 
+    public BattleSceneData m_data; //현재 배틀 스테이지에서 사용할 데이터
+    public SceneData sceneData;
 
     StageState stageStatus; // 0: 게임 시작 전 1: 게임중 2: 게임 중단 3:게임종료 4: 게임 클리어
     public GameObject m_canvas;
@@ -70,8 +71,10 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+
         stageStatus = StageState.READY;
-        
+        sceneData = m_gameManager.GetSceneData();
         //###나중에 받아오기
         //데이터 받아오기 (가져올 객체 : 
         m_data = m_gameManager.GetBattleSceneData();
@@ -192,54 +195,6 @@ public class BattleManager : MonoBehaviour
         return m_data.chapterNum;
     }
 
-    public void NextDialogScene()
-    {
-        //m_gameManager.SetCurrentDialogKey(m_data.nextDialogNum);
-        SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-
-        ////중요!!! 이부분 게임클리어 시로 넣어야함
-        m_gameManager.SetCurrentBattlekey(m_gameManager.GetCurrentBattleKey() + 1);
-    }
-
-
-    /*
-    public GameObject Keyboardlock;
-
-    ChosungGenerator generator;
-    EnemyScript callattack;
-    
-    void Start()
-    {
-
-       // StartCoroutine(BeforeStart());
-        //generator = GameObject.Find("ChosungObject").GetComponent<ChosungGenerator>();
-        //callattack = GameObject.Find("Enemy").GetComponent<EnemyScript>();
-        /*for (int i = 0; i < 3; i++) //코루틴을 빼서 초반 시작 딜레이를 없애려고 했지만 
-        //오브젝트 할당순서가 물리고 물려서 부득이하게 일단 넣어줌
-        {
-            generator.MakeNewQuestion(i);// 무작위 초성 생성
-        }
-        callattack.EnemyAttacks();
-        
-
-
-    }
-
-    IEnumerator BeforeStart()
-    {
-        
-        아마 게임초반 딜레이때문에 여기에 초성 초기화문을 넣은것 같은데 나중에 더 가독성있게 바꾸자.
-        게임초반 딜레이도 기획부분에서 변경될것.
-    
-        yield return new WaitForSeconds(1.0f);
-        Destroy(Keyboardlock);
-        for(int i = 0; i < 3; i++)
-        {
-            generator.MakeNewQuestion(i);// 무작위 초성 생성
-        }
-        callattack.EnemyAttacks();
-    }
-    */
 
 
 }

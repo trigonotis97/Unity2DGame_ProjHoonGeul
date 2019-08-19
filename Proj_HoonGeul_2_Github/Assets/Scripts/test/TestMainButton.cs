@@ -44,7 +44,7 @@ public class TestMainButton : MonoBehaviour
         SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
 
     }
-    public void PriviousDialogScene()
+    /*public void PriviousDialogScene()
     {
         gameManager.SetCurrentDialogKey(gameManager.GetCurrentDialogKey() - 1);
         if (m_data.isNextBattle == true)
@@ -61,6 +61,6 @@ public class TestMainButton : MonoBehaviour
     {
         gameManager.SetCurrentDialogKey(gameManager.GetCurrentDialogKey() - 1);
         SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-    }
+    }*/
 
 }
