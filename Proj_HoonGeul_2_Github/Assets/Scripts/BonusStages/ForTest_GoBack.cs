@@ -23,35 +23,13 @@ public class ForTest_GoBack : MonoBehaviour
 
     public void BtnClick()
     {
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 1);
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 3);
         sceneData = m_gameManager.GetSceneData();
         Debug.Log(sceneData.nextScene);
         Debug.Log(sceneData.nextSceneKey);
-        switch (sceneData.nextScene)
-        {
-            case 0:
-                SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
-                break;
-            case 1:
-                m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                break;  
-            case 2:
-                m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
-                break;
-            case 3:
-                SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
-                break;
-            case 4:
-                SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
-                break;
-            case 5:
-                SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
-                break;
-            case 6:
-                SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
-                break;
-        }
+        m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+        SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+            
+        
     }
 }
