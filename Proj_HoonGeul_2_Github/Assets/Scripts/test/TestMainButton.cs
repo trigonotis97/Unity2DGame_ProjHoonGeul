@@ -39,8 +39,7 @@ public class TestMainButton : MonoBehaviour
     ///////////////////////////////////////////////
     public void MainScene()
     {
-        gameManager.SetCurrentBattlekey(0);
-        gameManager.SetCurrentDialogKey(0);
+        gameManager.SetCurrentSceneKey(0);
         SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
 
     }
@@ -61,6 +60,6 @@ public class TestMainButton : MonoBehaviour
     {
         gameManager.SetCurrentDialogKey(gameManager.GetCurrentDialogKey() - 1);
         SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-    }*/
+    }*/ 
 
 }
