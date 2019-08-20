@@ -71,6 +71,7 @@ public class SpellingQuiz : MonoBehaviour
             else
             {
                 m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+                sceneData = m_gameManager.GetSceneData();
                 SceneChange.NextScene();
             }
         }

@@ -51,6 +51,7 @@ public class SukBong : MonoBehaviour
             {
                 Debug.Log("모든 문제를 다 풀었어요.");
                 m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+                sceneData = m_gameManager.GetSceneData();
                 SceneChange.NextScene();
                 
             } // 마지막 문제면 씬이동

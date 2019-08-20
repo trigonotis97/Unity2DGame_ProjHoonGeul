@@ -55,7 +55,25 @@ public class BonusPenalty : MonoBehaviour
     }
     public void AdButton()
     {
+
         //광고 재생 후 다음 씬으로
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
+        sceneData = m_gameManager.GetSceneData();
+        switch (sceneData.nextScene)
+        {
+            case 3:
+                SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+                break;
+            case 4:
+                SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                break;
+            case 5:
+                SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                break;
+            case 6:
+                SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                break;
+        }
     }
     //public void AnsGenerator()
     //{
