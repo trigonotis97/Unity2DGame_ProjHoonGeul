@@ -50,6 +50,12 @@ public class EnemyScriptDefault : MonoBehaviour
     ///에너미 투사체 단어관련 변수
     public int bulletState=0;// 0:image  1:worngHint 2:rightHint
     public Dictionary<string, string>[] temp_dictTable = new Dictionary<string, string>[4];
+    EnemyHintBulletHandler hintHandler;
+
+    ///enemy bullet vareiable
+    GameObject enemyBullet;
+
+   
 
     private void Awake()
     {
@@ -59,6 +65,10 @@ public class EnemyScriptDefault : MonoBehaviour
         m_canvas = GameObject.FindGameObjectWithTag("Canvas");
         animator = this.GetComponent<Animator>();
         m_sunbi = GameObject.FindGameObjectWithTag("Sunbi").GetComponent<Sunbi>();
+        enemyBullet = GameObject.FindGameObjectWithTag("EnemyBullet");
+        hintHandler = GameObject.FindGameObjectWithTag("BulletHandler").GetComponent<EnemyHintBulletHandler>();
+
+
     }
     void Start()
     {
@@ -90,7 +100,6 @@ public class EnemyScriptDefault : MonoBehaviour
             //게임오버 판정
             m_battleManager.SetStateStageClear();           
             SceneChange.NextScene();
-            //SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
         }
         else
         {
@@ -98,16 +107,25 @@ public class EnemyScriptDefault : MonoBehaviour
         }
 
     }
+
     void hpBarUpdate()
     {
         hpBar.value = currentHp / maxHP;
     }
     public void EnemyAttack() //fire bullet
     {
+        //reset bullet position
+        enemyBullet.transform.position = transform.position + new Vector3(0, 1.5f, 0);
+
+        //set hint or image
+        hintHandler.Loop();
+
+        /*
         GameObject attackPref = Instantiate(enemyAttackPrefb[0], transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
         attackPref.transform.SetParent(m_canvas.transform, false);
         attackPrefText = attackPref.transform.GetComponent<Text>();
         attackPrefText.text = "공1";//"お前";
+        */
     }
 
     IEnumerator AttackWave()
@@ -119,53 +137,7 @@ public class EnemyScriptDefault : MonoBehaviour
         //공격 속도 변수에 따라서 쉬는 시간의 길이도 달라짐. 
     }
 
-
-
-    public void CallEnemyAttack()
-    {
-        //EnemyAttackManager의 EnemyAttacks를 호출.
-    }
-
-    /*이만큼의 내용이 아마 EnemyAttackManagerDefault.cs로 옮겨질 예정
-     * public void EnemyAttacks() //IEnumerator에서 호출
-    {
-        AttackSeed = Random.Range(0, 3);
-        animator.SetTrigger("attackT");
-        switch (AttackSeed)
-        {
-            case 0:
-                GameObject attackPref=Instantiate(EnemyAttack1, transform.position + new Vector3(0, 1.5f, 0), transform.rotation)as GameObject;
-                attackPref.transform.SetParent(canvasObj.transform, false);
-                //프리팹 컴포넌트에 입력 스트링값 전달
-                attackPrefText = attackPref.transform.GetComponent<Text>();
-                attackPrefText.text = "가다";// "おはよう";
-                break;
-            case 1:
-                GameObject attackPref2 = Instantiate(EnemyAttack2, transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
-                attackPref2.transform.SetParent(canvasObj.transform, false);
-                //프리팹 컴포넌트에 입력 스트링값 전달
-                attackPrefText = attackPref2.transform.GetComponent<Text>();
-                attackPrefText.text = "가다";//"お前";
-
-                break;
-            case 2:
-                GameObject attackPref3 = Instantiate(EnemyAttack3, transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
-                attackPref3.transform.SetParent(canvasObj.transform, false);
-                //프리팹 컴포넌트에 입력 스트링값 전달
-                attackPrefText = attackPref3.transform.GetComponent<Text>();
-                attackPrefText.text = "가다";//"きらい";
-
-                break;
-        }
-        //StartCoroutine(WaitForIt());
-    }
-
-    //여기가 아니라 EnemyAttackPattern으로
-    IEnumerator WaitForIt()
-    {
-        yield return new WaitForSeconds(3.0f);
-        EnemyAttacks();
-    } */
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -176,13 +148,13 @@ public class EnemyScriptDefault : MonoBehaviour
         }
     }
 
-    public void Damaged()
-    {
 
-    }
     public void SetEnemyData(float enemyHp,float enemyDemage)
     {
         m_enemyData.maxHp = enemyHp;
         m_enemyData.attack_demage = enemyDemage;
     }
+
+    
+
 }

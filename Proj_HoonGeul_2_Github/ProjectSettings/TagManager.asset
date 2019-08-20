@@ -19,6 +19,7 @@ TagManager:
   - ChunjiinKeyText
   - KeyColliderX
   - KeyColliderY
+  - BulletHandler
   layers:
   - Default
   - TransparentFX

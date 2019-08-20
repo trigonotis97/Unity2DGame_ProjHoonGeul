@@ -24,7 +24,7 @@
 		<enemyPrefab>2</enemyPrefab>
 		<enemyHP>13</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>false</isBoss>  
 		<bossPattern>0</bossPattern>
 		<nextDialogNum>5</nextDialogNum>
 		<BGImage>student_bg_1</BGImage>

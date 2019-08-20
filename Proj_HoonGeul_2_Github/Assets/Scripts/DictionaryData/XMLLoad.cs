@@ -17,8 +17,11 @@ public class XMLLoad : MonoBehaviour
     public int dialogDataLength; //** 퍼블릭으로 xml data 변수 설정
     public int battleDataLength; //**
     public int sceneDataLength;
+
+    public XmlTools_0820 hintXmlTool;
     private void Awake()
     {
+        if(hintXmlTool==null)
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     void Start()
@@ -48,19 +51,22 @@ public class XMLLoad : MonoBehaviour
         };
 
         XmlDocument xmlDoc = new XmlDocument();
-
         for (int i = 0; i < 4; i++) // 단어 데이터들 딕셔너리에 저장
         {
             dictTbl[i] = new Dictionary<string, string>();
             xmlDoc.LoadXml(textAsset[i].text);
 
             XmlNodeList nodes = xmlDoc.SelectNodes("WordDic/WordSet"); // 가져올 노드 설정
+            int count = 0;
 
             foreach (XmlNode node in nodes)
             {
                 dictTbl[i].Add(node.SelectSingleNode("Key").InnerText, node.SelectSingleNode("Value").InnerText);
+                count++;
             }
+            Debug.Log("wordCount:" + count);
         }
+        
         
         for (int i = 4; i < 5; i++) // 배틀씬데이터 저장
         {
@@ -127,15 +133,33 @@ public class XMLLoad : MonoBehaviour
                 sceneDataTbl[indCount++] = SCD;
             }
         }
+        
+    
 
 
 
 
         sw.Stop();//시간측정을 위한 함수
         Debug.Log(sw.ElapsedMilliseconds.ToString() + "ms");
-        m_gameManager.SetXmlDictData(dictTbl);
-        m_gameManager.SetXmlBattleSceneData(battleDataTbl);
-        m_gameManager.SetXmlDialogData(dialogDataTbl);
-        m_gameManager.SetXmlSceneData(sceneDataTbl);
+        if (hintXmlTool == null)
+        {
+            m_gameManager.SetXmlDictData(dictTbl);
+            m_gameManager.SetXmlBattleSceneData(battleDataTbl);
+            m_gameManager.SetXmlDialogData(dialogDataTbl);
+            m_gameManager.SetXmlSceneData(sceneDataTbl);
+        }
+        else
+        {
+            hintXmlTool.Loop();
+        }
+    }
+    /// for make xml data (hint p
+    public BattleSceneData[] GetBattleData()
+    {
+        return battleDataTbl;
+    }
+    public Dictionary<string,string>[] GetDictData()
+    {
+        return dictTbl;
     }
 }

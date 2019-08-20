@@ -31,6 +31,7 @@ public class BattleManager : MonoBehaviour
     public int show_chapter_num;
     public int show_stage_num;
     //데이터 받아올변수
+
     public BattleSceneData m_data; //현재 배틀 스테이지에서 사용할 데이터
     public SceneData sceneData;
 
@@ -47,7 +48,6 @@ public class BattleManager : MonoBehaviour
     
 
     
-    GameObject m_enemy;
     //public SpriteRenderer bg_image; // ####
     public Image bg_image_;
 
@@ -60,6 +60,10 @@ public class BattleManager : MonoBehaviour
 
     // 키보드 날아다니는 세종 패턴을 위한 천지인캔버스 할당
     public GameObject chunjiin;
+
+    //에너미 새로 할당
+    GameObject m_enemy;
+    public EnemyHintBulletHandler hintHandler;
 
     private void Awake()
     {
@@ -87,7 +91,7 @@ public class BattleManager : MonoBehaviour
         //백그라운드 오디오 가져오기 및 재생
         Debug.Log("clip :: " + m_data.BGM);
         bg_audioclip = Resources.Load("BGM/" + m_data.BGM)as AudioClip;
-           
+         
         m_audioSource.clip = bg_audioclip;
         m_audioSource.Play();
         m_audioSource.loop = true;
@@ -97,7 +101,13 @@ public class BattleManager : MonoBehaviour
 
         show_chapter_num = m_data.chapterNum;
         show_stage_num = m_data.stageNum;
-
+        ///
+        /*
+        m_enemy.GetComponent<SpriteRenderer>().sprite = Resources.Load("EnemySprite/" + m_data.enemyPrefab.ToString())as Sprite;
+        m_enemy.transform.position = new Vector3(507.392f, 405.248f, -9000f);
+        m_enemy.transform.rotation = transform.rotation;///확인후 삭제
+        */
+        ///
         //m_enemy = Resources.Load("EnemyPref/" + m_data.key.ToString()) as GameObject;
         if (!m_data.isBoss)
         {
@@ -106,16 +116,23 @@ public class BattleManager : MonoBehaviour
         else
         {
             m_enemy = Instantiate(Resources.Load("EnemyPref/Mob_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
-            //m_enemy = Instantiate(Resources.Load("EnemyPref/Boss_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
         }
         m_enemy.transform.SetParent(m_canvas.transform, false);
-        //m_enemy.GetComponent<EnemyScriptDefault>().SetEnemyData(m_data.enemyHp, m_data.enemyDamage);
 
-        
+        ///
         bg_image_.sprite = Resources.Load("Background/"+m_data.BGImage,typeof(Sprite))as Sprite;
 
+        //bullet 이미지 받아오기
+        Sprite[] bullets = new Sprite[3];
+        for(int i=0;i<3;i++)
+        {
+            //"chapter-imageNum"
+            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_" + (i+1).ToString())as Sprite;
+        }
+        hintHandler.LoadBulletImage(bullets);
 
-        if(Is2to5BossStage()==8)
+
+        if (Is2to5BossStage()==8)
         {
             chunjiin.GetComponent<KeyboardHandler>().isSejong = true;
         }
