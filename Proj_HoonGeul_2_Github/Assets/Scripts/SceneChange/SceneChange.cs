@@ -25,7 +25,7 @@ public class SceneChange : MonoBehaviour
                 SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
                 break;
             case 1:
-                if (sceneData.nextSceneKey % 9 == 0 && sceneData.nextSceneKey >= 45)
+                if (sceneData.nextSceneKey % 9 == 0 && sceneData.nextSceneKey < 45)
                 {
                     SceneManager.LoadScene("BonusStagePenalty", LoadSceneMode.Single);
                 }
