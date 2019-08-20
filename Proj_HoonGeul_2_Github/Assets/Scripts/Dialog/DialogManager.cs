@@ -34,6 +34,8 @@ public class DialogManager : MonoBehaviour
     public GameObject enemyImg;
     AudioSource m_audio;
 
+    public ConvStateHandler convStateHandler;
+
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -57,16 +59,25 @@ public class DialogManager : MonoBehaviour
         Debug.Log("Background/" + m_data.BGImage);
         bg_image_.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
 
-        GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString())as GameObject;
-        m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation)as GameObject;
-        m_enemy.GetComponent<SpriteRenderer>().sprite = tempEnemy.GetComponent<SpriteRenderer>().sprite;
-        m_enemy.transform.SetParent(m_canvas.transform, false);
+        //GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString())as GameObject;
+        //m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation)as GameObject;
+        //m_enemy.GetComponent<SpriteRenderer>().sprite = tempEnemy.GetComponent<SpriteRenderer>().sprite;
         
+            GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString()) as GameObject;
+            tempEnemy.GetComponent<EnemyScriptDefault>().enabled = false;
+            m_enemy = Instantiate(tempEnemy, new Vector3(0f, 0f, 0f), transform.rotation) as GameObject;
+            m_enemy.transform.Translate(new Vector3(-m_enemy.GetComponent<SpriteRenderer>().bounds.size.x / 2, m_enemy.GetComponent<SpriteRenderer>().bounds.size.y / 2, 0));
+
+            m_enemy.transform.SetParent(m_canvas.transform, false);
+        
+
         bg_audioclip = Resources.Load("BGM/" + m_data.BGM) as AudioClip;
         m_audio.clip = bg_audioclip;
         
         m_audio.Play();
         m_audio.loop = true;
+
+        convStateHandler.FaceImageUpload(m_data.enemyImage);
     }
 
     public void SetStateDialogEnd()

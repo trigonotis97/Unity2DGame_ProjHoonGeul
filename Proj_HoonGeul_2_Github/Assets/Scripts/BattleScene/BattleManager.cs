@@ -101,13 +101,17 @@ public class BattleManager : MonoBehaviour
         //m_enemy = Resources.Load("EnemyPref/" + m_data.key.ToString()) as GameObject;
         if (!m_data.isBoss)
         {
-            m_enemy = Instantiate(Resources.Load("EnemyPref/Mob_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
+            m_enemy = Instantiate(Resources.Load("EnemyPref/Mob_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(0f, 0f, 0f), transform.rotation) as GameObject;
+            m_enemy.transform.Translate(new Vector3(-m_enemy.GetComponent<SpriteRenderer>().bounds.size.x/2, m_enemy.GetComponent<SpriteRenderer>().bounds.size.y/2, 0));
         }
+
         else
         {
-            m_enemy = Instantiate(Resources.Load("EnemyPref/Mob_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
-            //m_enemy = Instantiate(Resources.Load("EnemyPref/Boss_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
+            m_enemy = Instantiate(Resources.Load("EnemyPref/Mob_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(0f, 0f, 0f), transform.rotation) as GameObject;
+            m_enemy.transform.Translate(new Vector3(-m_enemy.GetComponent<SpriteRenderer>().bounds.size.x / 2, m_enemy.GetComponent<SpriteRenderer>().bounds.size.y / 2, 0));
         }
+        //m_enemy = Instantiate(Resources.Load("EnemyPref/Boss_" + m_data.enemyPrefab.ToString()) as GameObject, new Vector3(507.392f, 405.248f, -9000f), transform.rotation) as GameObject;
+    
         m_enemy.transform.SetParent(m_canvas.transform, false);
         //m_enemy.GetComponent<EnemyScriptDefault>().SetEnemyData(m_data.enemyHp, m_data.enemyDamage);
 
