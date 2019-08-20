@@ -215,6 +215,7 @@ public class SceneData
 }
 
 /*
+
 key : 다이얼로그 키값
 chapter num : 챕터 넘버
 stageNum : 스테이지 넘버
@@ -222,4 +223,5 @@ script [] : 대사
 conv state [] : 이미지 함수 파라미터 (1~한 4까지? 일듯)`
 is next scene battle : 다음 씬이 배틀 씬인지
 nextscenekey: 다음 배틀씬으로 넘어갈때 쓸 키값 
+
 */

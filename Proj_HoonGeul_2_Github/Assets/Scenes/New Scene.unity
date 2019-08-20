@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAttack_default
       objectReference: {fileID: 0}
+    - target: {fileID: 8249511751303520833, guid: eb564e57fd75ca94faf6cf0c86e8ba45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5489252889337037594, guid: eb564e57fd75ca94faf6cf0c86e8ba45,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,8 +245,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1369283562}
+  - component: {fileID: 1369283564}
+  - component: {fileID: 1369283563}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: hintXml
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,6 +268,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369283563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369283561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eda321cafb6fa44ba7a4d85cc0a01b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmlData: {fileID: 1369283564}
+--- !u!114 &1369283564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369283561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3be37760fcc22d42b10872580042f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogDataLength: 0
+  battleDataLength: 0
+  sceneDataLength: 0
+  hintXmlTool: {fileID: 1369283563}
 --- !u!1 &1656850472
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656850472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed709ab990103db4c97f51b95afb312c, type: 3}
   m_Name: 
@@ -367,6 +403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyAttack_hint_include
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010564771934848465, guid: a1261455d443d694aaf745da11cbfd60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 718880737293280394, guid: a1261455d443d694aaf745da11cbfd60,
         type: 3}

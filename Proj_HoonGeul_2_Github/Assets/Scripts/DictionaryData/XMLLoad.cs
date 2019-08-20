@@ -17,8 +17,11 @@ public class XMLLoad : MonoBehaviour
     public int dialogDataLength; //** 퍼블릭으로 xml data 변수 설정
     public int battleDataLength; //**
     public int sceneDataLength;
+
+    public XmlTools_0820 hintXmlTool;
     private void Awake()
     {
+        if(hintXmlTool==null)
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     void Start()
@@ -61,7 +64,7 @@ public class XMLLoad : MonoBehaviour
                 dictTbl[i].Add(node.SelectSingleNode("Key").InnerText, node.SelectSingleNode("Value").InnerText);
                 count++;
             }
-            Debug.Log("wordCpunt:" + count);
+            Debug.Log("wordCount:" + count);
         }
         
         
@@ -130,15 +133,33 @@ public class XMLLoad : MonoBehaviour
                 sceneDataTbl[indCount++] = SCD;
             }
         }
+        
+    
 
 
 
 
         sw.Stop();//시간측정을 위한 함수
         Debug.Log(sw.ElapsedMilliseconds.ToString() + "ms");
-        m_gameManager.SetXmlDictData(dictTbl);
-        m_gameManager.SetXmlBattleSceneData(battleDataTbl);
-        m_gameManager.SetXmlDialogData(dialogDataTbl);
-        m_gameManager.SetXmlSceneData(sceneDataTbl);
+        if (hintXmlTool == null)
+        {
+            m_gameManager.SetXmlDictData(dictTbl);
+            m_gameManager.SetXmlBattleSceneData(battleDataTbl);
+            m_gameManager.SetXmlDialogData(dialogDataTbl);
+            m_gameManager.SetXmlSceneData(sceneDataTbl);
+        }
+        else
+        {
+            hintXmlTool.Loop();
+        }
+    }
+    /// for make xml data (hint p
+    public BattleSceneData[] GetBattleData()
+    {
+        return battleDataTbl;
+    }
+    public Dictionary<string,string>[] GetDictData()
+    {
+        return dictTbl;
     }
 }

@@ -190,7 +190,5 @@ public class XMLLoad_forExcel : MonoBehaviour
         sw.Stop();
 
         Debug.Log(sw.ElapsedMilliseconds.ToString() + "ms");
-
-
     }
 }

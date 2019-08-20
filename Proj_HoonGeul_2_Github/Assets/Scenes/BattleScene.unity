@@ -456,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 4010564771934848465, guid: a1261455d443d694aaf745da11cbfd60,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 718880737293280394, guid: a1261455d443d694aaf745da11cbfd60,
         type: 3}
@@ -516,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 718880737293280394, guid: a1261455d443d694aaf745da11cbfd60,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1770
       objectReference: {fileID: 0}
     - target: {fileID: 718880737293280394, guid: a1261455d443d694aaf745da11cbfd60,
         type: 3}
@@ -566,18 +566,24 @@ PrefabInstance:
     - target: {fileID: 5031721810440451630, guid: a1261455d443d694aaf745da11cbfd60,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5031721809415091715, guid: a1261455d443d694aaf745da11cbfd60,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1261455d443d694aaf745da11cbfd60, type: 3}
 --- !u!224 &97411528 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 718880737293280394, guid: a1261455d443d694aaf745da11cbfd60,
+    type: 3}
+  m_PrefabInstance: {fileID: 97411527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &97411529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4010564771934848465, guid: a1261455d443d694aaf745da11cbfd60,
     type: 3}
   m_PrefabInstance: {fileID: 97411527}
   m_PrefabAsset: {fileID: 0}
@@ -1469,12 +1475,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 359077807}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &359077809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6228809133891793144, guid: 8501956619071c745b8415ad01e1b149,
-    type: 3}
-  m_PrefabInstance: {fileID: 359077807}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361319615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,10 +1815,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   show_chapter_num: 0
   show_stage_num: 0
-  m_canvas: {fileID: 359077809}
+  m_canvas: {fileID: 1148911752}
   bg_image_: {fileID: 1313140863}
   bg_audioclip: {fileID: 0}
   chunjiin: {fileID: 2941351920318328974}
+  hintHandler: {fileID: 610284874}
 --- !u!4 &404107656
 Transform:
   m_ObjectHideFlags: 0
@@ -2188,7 +2189,7 @@ GameObject:
   - component: {fileID: 610284874}
   m_Layer: 0
   m_Name: EnemyWordBulletHandler
-  m_TagString: Untagged
+  m_TagString: BulletHandler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2209,6 +2210,7 @@ MonoBehaviour:
   hintProb: 25
   sunbiMaxHitNum: 0
   sunbiHitCount: 0
+  enemyBullet: {fileID: 97411529}
 --- !u!4 &610284875
 Transform:
   m_ObjectHideFlags: 0

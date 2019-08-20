@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Xml;
+using System.IO;
+
 
 /* //여기서 할것
 
@@ -53,7 +56,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
     {
         mbattleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         bulletText= enemyBullet.transform.GetChild(1).GetComponent<Text>();
-        bulletImage = enemyBullet.transform.GetChild(0).GetComponent<Image>();
+        bulletImage = enemyBullet.transform.GetChild(0).GetComponent<Image>();  
     }
     private void Start()
     {
@@ -175,6 +178,23 @@ public class EnemyHintBulletHandler : MonoBehaviour
     {
         bulletSprites=sprites;
         
+    }
+
+    void LoadHintXml()
+    {
+        XmlDocument xmlDoc = new XmlDocument();
+
+        TextAsset textAsset =(TextAsset)Resources.Load("HintData");
+        xmlDoc.LoadXml(textAsset.text);
+
+        XmlNodeList nodes = xmlDoc.SelectNodes("CharacterInfo/Character");
+
+        foreach (XmlNode node in nodes)
+        {
+            Debug.Log("Name :: " + node.SelectSingleNode("Name").InnerText);
+            Debug.Log("Level :: " + node.SelectSingleNode("Level").InnerText);
+            Debug.Log("Exp :: " + node.SelectSingleNode("Experience").InnerText);
+        }
     }
         /*
     string WordToValue(string word)

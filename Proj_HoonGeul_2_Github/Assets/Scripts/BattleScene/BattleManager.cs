@@ -127,7 +127,7 @@ public class BattleManager : MonoBehaviour
         for(int i=0;i<3;i++)
         {
             //"chapter-imageNum"
-            bullets[i] = Resources.Load("EnemyBullet/projectile" + m_data.chapterNum.ToString() + "_" + (i+1).ToString())as Sprite;
+            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_" + (i+1).ToString())as Sprite;
         }
         hintHandler.LoadBulletImage(bullets);
 
