@@ -29,6 +29,7 @@ public class SukBong : MonoBehaviour
     void Start()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
         sceneData = m_gameManager.GetSceneData();
         AnsGenerator();
         selectAns = 0;
@@ -52,8 +53,8 @@ public class SukBong : MonoBehaviour
                 Debug.Log("모든 문제를 다 풀었어요.");
                 m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
                 sceneData = m_gameManager.GetSceneData();
-                SceneChange.NextScene();
-                
+                SceneChange.BonusNextScene(true);
+
             } // 마지막 문제면 씬이동
             else //아니면 다음문제
             {
@@ -65,7 +66,7 @@ public class SukBong : MonoBehaviour
         else
         {
             Debug.Log("오답");
-            SceneChange.NextScene();
+            SceneChange.BonusNextScene(false);
         }
         InputText.text = "";
     }
