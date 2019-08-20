@@ -5,7 +5,7 @@ using System.Xml;
 using System.IO;
 
 
-public class XmlTools_0820 : MonoBehaviour
+public class XmlHintTool : MonoBehaviour
 {
 
     private static string m_cho_Tbl = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"; // 10부터 시작

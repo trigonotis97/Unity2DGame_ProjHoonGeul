@@ -18,7 +18,7 @@ public class XMLLoad : MonoBehaviour
     public int battleDataLength; //**
     public int sceneDataLength;
 
-    public XmlTools_0820 hintXmlTool;
+    public XmlHintTool hintXmlTool;
     private void Awake()
     {
         if(hintXmlTool==null)
