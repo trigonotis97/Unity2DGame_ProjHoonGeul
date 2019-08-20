@@ -9,7 +9,7 @@ public class Dialog2 : MonoBehaviour
 {
 
     string[] script;
-    int[] conv_state;
+    string[] now_conv_state;
 
     public Text textDisplay;
     public DialogData dialogData;
@@ -19,36 +19,26 @@ public class Dialog2 : MonoBehaviour
     public DialogManager dialogManager;
     public SceneChange SceneChange;
     private int index = 0;
-    
 
+    public ConvStateHandler convStateHandler;
+    
     private void Start()
     {
         duration = 1;
         StartCoroutine(_PlayDialogueText(script[index], duration));
-        SetState(conv_state[index]);
+        convStateHandler.Effect(now_conv_state[index]);
+
     }
     void Update()
     {
         
     }
 
-    public void SetScriptloader(string[] ScriptTbl, int[] ConvTbl)
+    public void SetScriptloader(string[] ScriptTbl, string[] ConvTbl)
     {
         script = ScriptTbl;
-        conv_state = ConvTbl;
+        now_conv_state = ConvTbl;
     }
-
-    public void SetState(int nowState)
-    {
-        switch (nowState)
-        {
-            case 0:
-                break;
-            case 2:
-                break;
-        }
-    }
-
 
     private IEnumerator _PlayDialogueText(string text, float duration)
     {
@@ -86,7 +76,10 @@ public class Dialog2 : MonoBehaviour
             {
                 SceneChange.NextScene();
             }
+            Debug.Log(index);
+            
             index++;
+            convStateHandler.Effect(now_conv_state[index]);
             StartCoroutine(_PlayDialogueText(script[index], duration));
         }
     }

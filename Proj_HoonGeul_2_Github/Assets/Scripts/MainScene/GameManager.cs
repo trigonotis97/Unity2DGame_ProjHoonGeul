@@ -197,7 +197,7 @@ public class DialogData
     public int chapterNum;
     public int stageNum;
     public string[] script;
-    public int[] conv_state;
+    public string[] conv_state;
     public bool isKnockDown;
     //추가
     public string BGImage;

@@ -96,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: be971d070cb325341ab733f31aecdf93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,9 +126,11 @@ MonoBehaviour:
   attackWaveSpeed_temp: 3
   isBoss: 0
   m_battleManager: {fileID: 0}
+  SceneChange: {fileID: 0}
   enemyAttackPrefb:
   - {fileID: 8249511751303520833, guid: eb564e57fd75ca94faf6cf0c86e8ba45, type: 3}
   sunbiAttackDamage: 0
+  bulletState: 0
 --- !u!95 &3323175597099437434
 Animator:
   serializedVersion: 3
