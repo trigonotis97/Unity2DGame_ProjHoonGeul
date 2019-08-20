@@ -94,7 +94,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
     //에너미 힌트 투사체를 위한 오브젝트
     public EnemyHintBulletHandler m_enemybulletHandler;
 
-    //말풍선 입력 시 초기화를 위한 변수
+    //힌트관련 변수
+    int []oldestQuestInd_arr=new int [3];
     
     private void Awake()
     {
@@ -114,18 +115,26 @@ public class ChosungGeneratorDefault : MonoBehaviour
         countCorrect_hell = 0;
         isHellQuestState = false;
         hellCountInd = 0;
-
+        
 
         //처음 문제 생성
         for (int i = 0; i < 3; i++)
         {
             MakeNewQuestion(i, isChapter1Boss);
             healRenderer_arr[i].enabled = false;//힐 오브젝트 렌더 끄기
+
+            oldestQuestInd_arr[i] = 0;//사용변수 초기화
         }
 
         isChapter1Boss = m_battleManager.Is1BossStage();//1챕터 보스 확인
         bossStageIdx = m_battleManager.Is2to5BossStage();//2~5챕터 보스인지 확인
         MakeBossStage(bossStageIdx);
+
+        if(bossStageIdx==8)//5-4스테이지 사용시 과제 1개로
+        {
+            oldestQuestInd_arr[0] = -1;
+            oldestQuestInd_arr[2] = -1;
+        }
         
 
     }
@@ -170,6 +179,19 @@ public class ChosungGeneratorDefault : MonoBehaviour
             }
             //정답일경우 에너미 힌트투사체 카운트 리셋
             m_enemybulletHandler.ResetSunbiHitCount();
+
+            //가장 오래된 과제, 힌트 투사체를 위한 카운트
+            for(int i=0;i<3;i++)
+            {
+                if (bossStageIdx == 8)
+                    break;
+
+                if(i==correctState)
+                    oldestQuestInd_arr[correctState] = 0;
+                else
+                    oldestQuestInd_arr[i] ++;
+            }
+
         }
         /////여기 성율이가 추가함. O X 애니메이션 띄우기 위함.
         ///오답일경우
