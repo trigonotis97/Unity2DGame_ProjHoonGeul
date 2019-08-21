@@ -146,7 +146,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         //모음인지 아닌지, 입력단어 ,현재 문제 초성(자음) value array, 어원을 사용하는지 : 0-미사용 1-고유어 2- 한자어 3-혼종어 4-외래어)
         correctState = ansJudge.IsCorrectAnswer(false,inputWord, getQuestValue(), wordType, isChapter2Boss);
-      
+        
 
         ///정답일 경우
         if (correctState > -1)//correctState 가 맞은 문제의 인덱스를 나타낸다.
@@ -375,10 +375,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         hellquestTbl = hellTbl;
     }
     
-    IEnumerator waitTime()
-    {
-        yield return new WaitForSeconds(waitsecond_);
-    }
+
 
     ///일반 스테이지에서 보스 스테이지일 경우 변경
     void MakeBossStage(int bossStageInd)

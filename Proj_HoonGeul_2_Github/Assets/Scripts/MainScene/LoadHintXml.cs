@@ -169,7 +169,7 @@ public class LoadHintXml : MonoBehaviour
 "ㄷㅌ"
         };
 
-    Dictionary<string, string>[] dictTable;
+    //Dictionary<string, string>[] dictTable;
 
     XmlDocument xmlDoc = new XmlDocument();
 
