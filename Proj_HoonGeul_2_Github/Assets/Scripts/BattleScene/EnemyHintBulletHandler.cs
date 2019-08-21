@@ -204,6 +204,9 @@ public class EnemyHintBulletHandler : MonoBehaviour
         };
     // key=questionValue , value=hintTable
 
+    bool isAlreadyShow = false;
+    string alreadyShowWord = "";
+
 
     private void Awake()
     {
@@ -234,8 +237,16 @@ public class EnemyHintBulletHandler : MonoBehaviour
         int hintProb = HintProbHandler();
         if (sunbiHitCount >= sunbiMaxHitNum)
         {
-            hintProb = 2;
-            sunbiHitCount = 0;
+            if(isAlreadyShow)//쳐맞은담에 또 쳐맞았을때
+            {
+                hintProb = 3;
+            }
+            else
+            {
+                hintProb = 2;
+                isAlreadyShow = true;
+            }
+            //sunbiHitCount = 0;
         }
         switch (hintProb)
         {
@@ -281,6 +292,12 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 ///xml 완료시 수정
                 bulletText.enabled = true;
                 bulletText.text = outHintWord;
+                alreadyShowWord = outHintWord;
+                break;
+            case 3:
+                bulletText.enabled = true;
+                bulletText.text = alreadyShowWord;
+                Debug.Log("정답힌트 발사+다회차:" + alreadyShowWord);
                 break;
 
         }
@@ -289,6 +306,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
     public void ResetSunbiHitCount()//chosung generator.cs
     {
         sunbiHitCount = 0;
+        isAlreadyShow = false;
     }
 
     int HintProbHandler()
