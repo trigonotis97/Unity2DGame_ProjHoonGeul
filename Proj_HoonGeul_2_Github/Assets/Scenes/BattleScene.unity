@@ -2223,7 +2223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordProb: 50
   hintProb: 50
-  sunbiMaxHitNum: 0
+  sunbiMaxHitNum: 2
   sunbiHitCount: 0
   enemyBullet: {fileID: 97411529}
   chosungGenerator: {fileID: 1894321286}

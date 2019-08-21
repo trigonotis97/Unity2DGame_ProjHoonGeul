@@ -41,6 +41,9 @@ public class Judgement : MonoBehaviour
 
     int bossCondCount = 0;
     public Text bossCondText;
+
+    //힌트 단어테이블의 정답단어 삭제를 위한 변수
+    public EnemyHintBulletHandler hintHandler;
     
     private void Awake()
     {
@@ -80,9 +83,7 @@ public class Judgement : MonoBehaviour
     public int IsCorrectAnswer(bool isMoeum, string inputWord, string[] questionVal_arr, int usingType,bool isChapter2Boss)
     {
         string wordValue = "";
-        /*
 
-        */
         bool isExist = false;
         string inputValue = ""; //11자리 숫자
         ///1. 사전에 있는지 검색

@@ -218,15 +218,16 @@ public class EnemyHintBulletHandler : MonoBehaviour
     public void SunbiHitCounter()//Sunbi.cs
     {
         sunbiHitCount++;
-        if(sunbiHitCount==sunbiMaxHitNum)
-        {
-            // make hint bullet
-        }
     }
     public void MakeHintorImage()
     {
         int hintProb = HintProbHandler();
-        switch(hintProb)
+        if (sunbiHitCount >= sunbiMaxHitNum)
+        {
+            hintProb = 2;
+            sunbiHitCount = 0;
+        }
+        switch (hintProb)
         {
             case 0:// image bullet
                 bulletImage.enabled = true;
@@ -322,7 +323,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
 
     ///입력한 답이 정답 테이블에 있으면 지운다.
-    void DeleteHintWord(string targetValue,string targetWord)
+    public void DeleteHintWord(string targetValue,string targetWord)
     {
         Dictionary<string, string> hintTable = new Dictionary<string, string>();
         if(chosungValHintTable.ContainsKey(targetValue))
