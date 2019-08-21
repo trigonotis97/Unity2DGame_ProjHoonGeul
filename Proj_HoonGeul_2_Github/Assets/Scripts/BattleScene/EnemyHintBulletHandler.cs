@@ -37,6 +37,163 @@ public class EnemyHintBulletHandler : MonoBehaviour
     ///xml 완료 시 수정
     string[] wrongHintTable= { "바보","옥냥","국밥"};
     string[] rightHintTable= { "힌일","힌이","힌삼"};
+
+    private static string m_cho_Tbl = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"; // 10부터 시작
+    private static string m_jung_Tbl = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
+    private static string m_alphabet_Tbl = "abcdefghijklmnopqrstuvwxyz";
+    string[] word_arr ={"ㅇㅅ",
+
+"ㄱㅅ",
+"ㄱㅈ",
+"ㅇㄱ",
+"ㄱㅇ",
+"ㅇㅇ",
+"ㅇㅈ",
+"ㄱㄱ",
+"ㅈㄱ",
+"ㅅㅅ",
+"ㅈㅅ",
+"ㅅㅈ",
+"ㅅㄱ",
+"ㅈㅇ",
+"ㅅㅇ",
+"ㅈㅈ",
+"ㅂㅅ",
+"ㅎㅅ",
+"ㄱㅂ",
+"ㅇㅂ",
+"ㅂㅇ",
+"ㅂㅈ",
+"ㅁㅅ",
+"ㅇㅁ",
+"ㅇㄹ",
+"ㅂㄱ",
+"ㅎㄱ",
+"ㄱㄹ",
+"ㅎㅇ",
+"ㅇㅎ",
+"ㅊㄱ",
+"ㄱㅎ",
+"ㄱㅊ",
+"ㄱㅁ",
+"ㅊㅅ",
+"ㅅㅎ",
+"ㅇㄷ",
+"ㅅㅂ",
+"ㅎㅈ",
+"ㅁㅈ",
+"ㅈㅂ",
+"ㅇㅊ",
+"ㅊㅈ",
+"ㄷㅅ",
+"ㅅㅊ",
+"ㅁㅇ",
+"ㅅㄹ",
+"ㅈㅊ",
+"ㅈㄹ",
+"ㅈㅁ",
+"ㅈㅎ",
+"ㄱㄷ",
+"ㅁㄱ",
+"ㅅㅁ",
+"ㅊㅇ",
+"ㄷㄱ",
+"ㄷㅈ",
+"ㅂㅊ",
+"ㅂㅎ",
+"ㅈㄷ",
+"ㅂㅂ",
+"ㅎㅂ",
+"ㅅㄷ",
+"ㄷㅇ",
+"ㅂㅁ",
+"ㄴㅅ",
+"ㅁㅁ",
+"ㅍㅅ",
+"ㄷㅂ",
+"ㅂㄹ",
+"ㄴㅇ",
+"ㅅㅍ",
+"ㄴㅈ",
+"ㅎㄷ",
+"ㅂㄷ",
+"ㅊㅂ",
+"ㅌㅅ",
+"ㅍㄱ",
+"ㅎㅁ",
+"ㄱㅍ",
+"ㅁㅂ",
+"ㅈㅍ",
+"ㅌㄱ",
+"ㅍㅈ",
+"ㅎㅎ",
+"ㄷㄹ",
+"ㅁㄷ",
+"ㅇㅍ",
+"ㅅㅌ",
+"ㅊㅎ",
+"ㅎㄹ",
+"ㅁㄹ",
+"ㅇㄴ",
+"ㄴㄱ",
+"ㄴㅂ",
+"ㅅㄴ",
+"ㅌㅇ",
+"ㅍㅇ",
+"ㄱㅌ",
+"ㄷㅁ",
+"ㅁㅎ",
+"ㅂㅍ",
+"ㅇㅌ",
+"ㄱㄴ",
+"ㅊㅁ",
+"ㅎㅊ",
+"ㅁㅊ",
+"ㅌㅈ",
+"ㅊㄷ",
+"ㅊㅊ",
+"ㅊㄹ",
+"ㅂㅌ",
+"ㄷㄷ",
+"ㄷㅊ",
+"ㄷㅍ",
+"ㅎㅍ",
+"ㅍㄹ",
+"ㄴㅁ",
+"ㅈㅌ",
+"ㄴㄹ",
+"ㄷㅎ",
+"ㅈㄴ",
+"ㅍㄷ",
+"ㅍㅂ",
+"ㄴㅊ",
+"ㅍㅁ",
+"ㅎㅌ",
+"ㅂㄴ",
+"ㅍㅎ",
+"ㄴㅎ",
+"ㅁㄴ",
+"ㄷㄴ",
+"ㅁㅍ",
+"ㅊㅌ",
+"ㅎㄴ",
+"ㅌㅎ",
+"ㄴㄷ",
+"ㅊㄴ",
+"ㅊㅍ",
+"ㅌㄹ",
+"ㅁㅌ",
+"ㅌㅂ",
+"ㅍㅊ",
+"ㄴㅍ",
+"ㅌㅁ",
+"ㅌㄷ",
+"ㅌㅊ",
+"ㄴㅌ",
+"ㅌㅍ",
+"ㅍㅍ",
+"ㄷㅌ"
+        };
     // key=questionValue , value=hintTable
 
     /*
@@ -172,34 +329,19 @@ public class EnemyHintBulletHandler : MonoBehaviour
             }
         }
     }
-
-    ///오브젝트에 넣기
+    
     public void LoadBulletImage(Sprite[]sprites)
     {
         bulletSprites=sprites;
         
     }
 
-    void LoadHintXml()
-    {
-        XmlDocument xmlDoc = new XmlDocument();
 
-        TextAsset textAsset =(TextAsset)Resources.Load("HintData");
-        xmlDoc.LoadXml(textAsset.text);
-
-        XmlNodeList nodes = xmlDoc.SelectNodes("CharacterInfo/Character");
-
-        foreach (XmlNode node in nodes)
-        {
-            Debug.Log("Name :: " + node.SelectSingleNode("Name").InnerText);
-            Debug.Log("Level :: " + node.SelectSingleNode("Level").InnerText);
-            Debug.Log("Exp :: " + node.SelectSingleNode("Experience").InnerText);
-        }
-    }
         /*
     string WordToValue(string word)
     {
 
     }
     */
+
 }

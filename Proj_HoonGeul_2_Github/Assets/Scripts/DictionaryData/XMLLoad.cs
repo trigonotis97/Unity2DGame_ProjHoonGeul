@@ -66,7 +66,7 @@ public class XMLLoad : MonoBehaviour
             }
             Debug.Log("wordCount:" + count);
         }
-        
+        /*
         
         for (int i = 4; i < 5; i++) // 배틀씬데이터 저장
         {
@@ -136,7 +136,7 @@ public class XMLLoad : MonoBehaviour
         }
         
     
-
+    */
 
 
 

@@ -403,4 +403,10 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 break;
         }
     }
+
+
+    public int [] GetOldestQuest()
+    {
+        return oldestQuestInd_arr;
+    }
 }

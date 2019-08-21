@@ -193,7 +193,7 @@ public class XmlHintTool : MonoBehaviour
         
         SaveHintWord();
 
-        xmlDoc.Save("./Assets/Resources/Character.xml");
+        xmlDoc.Save("./Assets/Resources/HintData.xml");
 
     }
 
@@ -244,7 +244,7 @@ public class XmlHintTool : MonoBehaviour
             Dictionary<string, string> tempWordTable = new Dictionary<string, string>();
             for (int i = 0; i < 4; i++)
             {
-                int isExist = 0;
+                //int isExist = 0;
                 foreach (KeyValuePair<string, string> items in dictTable[i])
                 {
                     if (items.Value.Substring(2, 4) == value_arr[j])
@@ -252,11 +252,11 @@ public class XmlHintTool : MonoBehaviour
                         if (!tempWordTable.ContainsKey(items.Key))
                         {
                             tempWordTable.Add(items.Key, items.Value);
-                            isExist = 1;
+                            //isExist = 1;
                         }
                     }
                 }
-                Debug.Log(tempWordTable.Count);
+                //Debug.Log(tempWordTable.Count);
             }
 
             int[] ind_arr = new int[10];
@@ -278,11 +278,11 @@ public class XmlHintTool : MonoBehaviour
                         child.AppendChild(wordset);
                         XmlElement key = xmlDoc.CreateElement("Key");
                         key.InnerText = items.Key;
-                        child.AppendChild(key);
+                        wordset.AppendChild(key);
 
                         XmlElement value = xmlDoc.CreateElement("Value");
                         value.InnerText = items.Value;
-                        child.AppendChild(value);
+                        wordset.AppendChild(value);
                         break;
                     }
                     else
