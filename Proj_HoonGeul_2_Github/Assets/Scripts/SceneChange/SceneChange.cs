@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     SceneData sceneData;
+    DialogData m_data;
     GameManager m_gameManager;
 
     private void Start()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         sceneData = m_gameManager.GetSceneData();
+        m_data = m_gameManager.GetDialogData();
     }
     public void NextScene()
     {
@@ -23,19 +25,15 @@ public class SceneChange : MonoBehaviour
                 SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
                 break;
             case 1:
-                //if (m_gameManager.GetCurrentSceneKey() + 1 < 0)
-                //{
-                //    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                //    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                //}
-                //else
-                //{
-                //    m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 1);
-                //    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                //    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
-                //}
-                m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                if (sceneData.nextSceneKey % 9 == 0 && sceneData.nextSceneKey < 45)
+                {
+                    SceneManager.LoadScene("BonusStagePenalty", LoadSceneMode.Single);
+                }
+                else
+                {
+                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                }
                 break;
             case 2:
                 m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
@@ -53,6 +51,23 @@ public class SceneChange : MonoBehaviour
             case 6:
                 SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
                 break;
+        }
+    }
+    public void BonusNextScene(bool isCorrect)
+    {
+        if (isCorrect == true)
+        {
+            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+            sceneData = m_gameManager.GetSceneData();
+            m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey());
+            sceneData = m_gameManager.GetSceneData();
+            m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+            SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
         }
     }
 }

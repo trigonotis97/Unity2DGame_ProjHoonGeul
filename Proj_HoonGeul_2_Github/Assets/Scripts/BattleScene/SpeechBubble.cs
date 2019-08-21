@@ -31,7 +31,7 @@ public class SpeechBubble : MonoBehaviour
     public Text bubbleText;
     public Image bubbleImage;
     public RectTransform rectTransform;
-    public float textWidthScale = 0.1f;
+    public float textWidthScale = 1f;
 
     //코루틴 시간 확인을 위한 변수 (말풍선 순삭버그)
     bool isCoRunning = false;
@@ -96,7 +96,7 @@ public class SpeechBubble : MonoBehaviour
             }
 
             rectTransform.sizeDelta += new Vector2(bubbleText.preferredWidth * textWidthScale, 0);
-            rectTransform.anchoredPosition = new Vector3(-453.7f + (bubbleText.preferredWidth * textWidthScale * 0.35f), 783.2f, 0);
+            rectTransform.anchoredPosition = new Vector3(355f + (bubbleText.preferredWidth * textWidthScale * 0.7f), 2043f, 0);
             bubbleImage.enabled = true;
             StartCoroutine("maintainBubble");
         }
@@ -107,7 +107,7 @@ public class SpeechBubble : MonoBehaviour
         yield return new WaitForSeconds(bubbleWaitTime);
         bubbleImage.enabled = false;
         bubbleText.text = "";
-        rectTransform.anchoredPosition = new Vector3(-453.7f, 783.2f, 0);
+        rectTransform.anchoredPosition = new Vector3(355f, 2043f, 0);
         rectTransform.sizeDelta = new Vector2 (249.7f, 228.6f);
         isCoRunning = false;
     }

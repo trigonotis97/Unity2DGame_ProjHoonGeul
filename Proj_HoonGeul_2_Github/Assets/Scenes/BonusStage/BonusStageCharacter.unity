@@ -681,7 +681,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814843603}
-        m_MethodName: AnsClick
+        m_MethodName: Ansclick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -889,7 +889,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814843603}
-        m_MethodName: AnsClick
+        m_MethodName: Ansclick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1093,7 +1093,7 @@ SpriteRenderer:
   m_Size: {x: 14.44, y: 17.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1681948075
@@ -1185,6 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814843602}
   - component: {fileID: 1814843603}
+  - component: {fileID: 1814843604}
   m_Layer: 0
   m_Name: BSCManager
   m_TagString: Untagged
@@ -1222,6 +1223,19 @@ MonoBehaviour:
   num1: {fileID: 1285099009}
   num2: {fileID: 166513049}
   num3: {fileID: 1567331164}
+  SceneChange: {fileID: 1814843604}
+--- !u!114 &1814843604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814843601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8986b3cdb6fd80a4bad36b2c17c65b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1948072091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1316,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814843603}
-        m_MethodName: AnsClick
+        m_MethodName: Ansclick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

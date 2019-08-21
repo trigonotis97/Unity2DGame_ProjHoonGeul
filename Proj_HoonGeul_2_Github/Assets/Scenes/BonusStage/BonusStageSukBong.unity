@@ -1592,6 +1592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1924841211}
   - component: {fileID: 1924841212}
+  - component: {fileID: 1924841213}
   m_Layer: 0
   m_Name: BSSBManager
   m_TagString: Untagged
@@ -1627,5 +1628,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: {fileID: 1574386109}
   InputText: {fileID: 63685610}
+  SceneChange: {fileID: 1924841213}
   selectAns: 0
   SeokbongCanvasAnimator: {fileID: 1148911758}
+--- !u!114 &1924841213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924841210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8986b3cdb6fd80a4bad36b2c17c65b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
