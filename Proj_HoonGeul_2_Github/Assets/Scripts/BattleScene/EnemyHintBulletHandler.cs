@@ -234,12 +234,17 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 bulletIndCount++;
                 if (bulletIndCount == 3)
                     bulletIndCount = 0;
+
+                Debug.Log("이미지 발사 index:" + bulletSprites[bulletIndCount].name);
+
                 break;
 
             case 1://worng hint bullet
                 ///xml 완료시 수정
                 bulletText.enabled=true;
-                bulletText.text = wrongHintTable[Random.Range(0, wrongHintTable.Length)];
+                string wrongHint = wrongHintTable[Random.Range(0, wrongHintTable.Length)];
+                bulletText.text = wrongHint;
+                Debug.Log("오답힌트 발사 :" + wrongHint);
                 break;
 
             case 2://right hint bullet
@@ -258,7 +263,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
                     }
                     indexCount++;
                 }
-                Debug.Log("정답힌트 나간다!!!!" + outHintWord);
+                Debug.Log("정답힌트 발사:" + outHintWord);
                 ///xml 완료시 수정
                 bulletText.enabled = true;
                 bulletText.text = outHintWord;
@@ -276,10 +281,10 @@ public class EnemyHintBulletHandler : MonoBehaviour
     {
         float word_percent = Random.Range(0f, 100f);
 
-        if(word_percent >= wordProb)
+        if(word_percent <= wordProb)
         {
             float hint_percent = Random.Range(0f, 100f);
-            if (hint_percent >= hintProb)
+            if (hint_percent <= hintProb)
                 return 2;//make right hint bullet
             else
                 return 1;//make wrong hint bullet

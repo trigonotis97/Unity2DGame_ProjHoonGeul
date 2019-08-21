@@ -123,11 +123,13 @@ public class BattleManager : MonoBehaviour
         bg_image_.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
 
         //bullet 이미지 받아오기
+        ///더미데이터 받아오는중. 투사체 이미지 업로드 완료 후 수정요망
         Sprite[] bullets = new Sprite[3];
         for (int i = 0; i < 3; i++)
         {
             //"chapter-imageNum"
-            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_" + (i + 1).ToString()) as Sprite;
+            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_1", typeof(Sprite)) as Sprite;
+           // Debug.Log(bullets[i].name);
         }
         hintHandler.LoadBulletImage(bullets);
 
