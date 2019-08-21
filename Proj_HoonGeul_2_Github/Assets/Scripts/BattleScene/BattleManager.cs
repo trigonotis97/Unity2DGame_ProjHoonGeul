@@ -215,6 +215,7 @@ public class BattleManager : MonoBehaviour
     public Dictionary<string, Dictionary<string, string>> GetUsingHint()
     {
         Dictionary<string, Dictionary<string, string>> outDict = new Dictionary<string, Dictionary<string, string>>();
+
         string questValue = "";
         for (int i=0;i<m_data.problemPocket.Length;i++)
         {
@@ -229,7 +230,27 @@ public class BattleManager : MonoBehaviour
 
         return outDict;
     }
-        
+
+    public Dictionary<string,string[]> GetUsingWrongHint()
+    {
+        Dictionary<string, string[]> outWrongHintDict = new Dictionary<string, string[]>();
+        string questWord = "";
+        for (int i = 0; i < m_data.problemPocket.Length; i++)
+        {
+            questWord = hintHandler.WordtoValue(m_data.problemPocket[i], 0);
+            outWrongHintDict.Add(questWord, m_gameManager.GetSingleWrongHintArray(m_data.problemPocket[i]));
+
+        }
+        for (int i = 0; i < m_data.hellProblemPocket.Length; i++)
+        {
+            questWord = hintHandler.WordtoValue(m_data.hellProblemPocket[i], 0);
+            outWrongHintDict.Add(questWord, m_gameManager.GetSingleWrongHintArray(m_data.hellProblemPocket[i]));
+
+        }
+        return outWrongHintDict;
+    }
+
+
 
 
 

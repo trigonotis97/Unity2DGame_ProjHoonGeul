@@ -169,7 +169,11 @@ public class XmlHintTool : MonoBehaviour
 "ㄴㅌ",
 "ㅌㅍ",
 "ㅍㅍ",
-"ㄷㅌ"
+"ㄷㅌ",
+"ㅍㅌ",
+"ㅅㅋ",
+"ㅇㅋ"
+
         };
     string[] value_arr;
     void Start()

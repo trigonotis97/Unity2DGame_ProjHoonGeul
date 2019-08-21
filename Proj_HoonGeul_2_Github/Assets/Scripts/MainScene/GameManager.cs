@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
     private int currentMode; // 1: 집현전모드(노멀)  2: 세종대왕모드 (하드)
 
     private Dictionary<string, Dictionary<string, string>> chosungValHint_Tbl = new Dictionary<string, Dictionary<string, string>>();
+    private Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
+
 
 
     void Awake()
@@ -166,9 +168,23 @@ public class GameManager : MonoBehaviour {
 
         return outDict;
     }
-    public void SetHintData(Dictionary<string,Dictionary<string,string>> inputTable)
+    public string[] GetSingleWrongHintArray(string inputChoWord)
     {
-        chosungValHint_Tbl = inputTable;
+        string[] outArr=new string[1];
+        if (chosungWrongHintTable.ContainsKey(inputChoWord))
+        {
+            outArr = chosungWrongHintTable[inputChoWord];
+        }
+        else
+        {
+            Debug.LogError("didnt have right hint table for : " + inputChoWord);
+        }
+        return outArr;
+    }
+    public void SetAllHintData(Dictionary<string,Dictionary<string,string>> hintTable,Dictionary<string,string[]> wrongHintTable)
+    {
+        chosungValHint_Tbl = hintTable;
+        chosungWrongHintTable = wrongHintTable;
     }
 
 

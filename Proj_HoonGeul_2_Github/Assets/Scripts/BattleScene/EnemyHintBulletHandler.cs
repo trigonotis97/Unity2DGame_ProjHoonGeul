@@ -32,6 +32,11 @@ public class EnemyHintBulletHandler : MonoBehaviour
 
     /// 힌트관련 변수
     public Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
+    Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
+
+
+
+
     BattleManager mbattleManager;
     public ChosungGeneratorDefault chosungGenerator;
     ///xml 완료 시 수정
@@ -192,7 +197,10 @@ public class EnemyHintBulletHandler : MonoBehaviour
 "ㄴㅌ",
 "ㅌㅍ",
 "ㅍㅍ",
-"ㄷㅌ"
+"ㄷㅌ",
+"ㅍㅌ",
+"ㅅㅋ",
+"ㅇㅋ"
         };
     // key=questionValue , value=hintTable
 
@@ -210,9 +218,11 @@ public class EnemyHintBulletHandler : MonoBehaviour
         bulletIndCount = 0;
 
         //chosungValHintTable 초기화
-        LoadHintTable();
-        //print("hell world");
-        //bullet 이미지 로드
+        LoadAllHintTable();
+
+        //bullet image load->배틀씬에서 넣어준다.
+
+        bulletImage.enabled = false;
 
     }
     public void SunbiHitCounter()//Sunbi.cs
@@ -241,11 +251,14 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 break;
 
             case 1://worng hint bullet
+                string oldsetValue_ = chosungGenerator.GetOldestQuestionValue();
+                int randInt_ = Random.Range(0, chosungWrongHintTable[oldsetValue_].Length);
+                string outWrongHintWord = chosungWrongHintTable[oldsetValue_][randInt_];
+
                 ///xml 완료시 수정
                 bulletText.enabled=true;
-                string wrongHint = wrongHintTable[Random.Range(0, wrongHintTable.Length)];
-                bulletText.text = wrongHint;
-                Debug.Log("오답힌트 발사 :" + wrongHint);
+                bulletText.text = outWrongHintWord;
+                Debug.Log("오답힌트 발사 :" + outWrongHintWord);
                 break;
 
             case 2://right hint bullet
@@ -376,10 +389,13 @@ public class EnemyHintBulletHandler : MonoBehaviour
         return outValue;
     }
 
-    void LoadHintTable()
+    void LoadAllHintTable()
     {
         chosungValHintTable = mbattleManager.GetUsingHint();
+        chosungWrongHintTable = mbattleManager.GetUsingWrongHint();
     }
+
+
 
     /*
 string WordToValue(string word)
