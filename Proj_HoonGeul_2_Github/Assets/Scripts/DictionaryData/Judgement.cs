@@ -255,6 +255,10 @@ public class Judgement : MonoBehaviour
                         usedWordDict.Add(inputWord, wordValue);
 
                         UpdateCondText();
+
+                        //힌트 테이블에서 정답 지우기
+
+                        hintHandler.DeleteHintWord(wordValue, inputWord);
                         return j;
                     }
                     

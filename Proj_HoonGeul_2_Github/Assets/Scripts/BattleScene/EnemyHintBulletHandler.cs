@@ -333,6 +333,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
             {
                 chosungValHintTable.Remove(targetWord);
                 Debug.Log("맞춘단어 힌트에서 제외 : " + targetWord);
+                sunbiHitCount = 0;
             }
         }
     }

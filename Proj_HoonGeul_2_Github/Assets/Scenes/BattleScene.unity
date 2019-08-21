@@ -2302,8 +2302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7fb1a6636c4b04bb28898f78b2a28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordProb: 50
-  hintProb: 50
+  wordProb: 30
+  hintProb: 25
   sunbiMaxHitNum: 2
   sunbiHitCount: 0
   enemyBullet: {fileID: 97411529}
@@ -4955,6 +4955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossCondText: {fileID: 1520677480}
+  hintHandler: {fileID: 610284874}
 --- !u!114 &1894321291
 MonoBehaviour:
   m_ObjectHideFlags: 0
