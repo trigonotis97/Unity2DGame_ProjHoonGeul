@@ -33,7 +33,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
     /// 힌트관련 변수
     Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
     BattleManager mbattleManager;
-
+    public ChosungGeneratorDefault chosungGenerator;
     ///xml 완료 시 수정
     string[] wrongHintTable= { "바보","옥냥","국밥"};
     string[] rightHintTable= { "힌일","힌이","힌삼"};
@@ -220,16 +220,12 @@ public class EnemyHintBulletHandler : MonoBehaviour
 
         //변수 초기화
         bulletIndCount = 0;
+
         //chosungValHintTable
+        LoadHintTable();
+        //print("hell world");
         //bullet 이미지 로드
 
-
-        //hintTable 초기화
-        ///이 스테이지에서 사용할 초성 문제의 정답 데이터를 받아옴(복사)
-        /// m_data->problemPocket + hellPoket
-        /// 
-
-       
     }
     public void SunbiHitCounter()//Sunbi.cs
     {
@@ -239,7 +235,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
             // make hint bullet
         }
     }
-    public void Loop()
+    public void MakeHintorImage()
     {
         int hintProb = HintProbHandler();
         switch(hintProb)
@@ -337,11 +333,47 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
 
 
-        /*
-    string WordToValue(string word)
+    public string WordtoValue(string word, int type)
     {
+        string outValue = "";
+        if (type == 0)//자음
+        {
 
+            for (int i = 0; i < 2; i++)
+            {
+                char singleWord = word[i];
+                for (int j = 0; j < m_cho_Tbl.Length; j++)
+                {
+                    if (m_cho_Tbl[j] == singleWord)
+                        outValue += (10 + j).ToString();
+                }
+            }
+        }
+        else//모음
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                char singleWord = word[i];
+                for (int j = 0; j < m_jung_Tbl.Length; j++)
+                {
+                    if (m_jung_Tbl[j] == singleWord)
+                        outValue += (10 + j).ToString();
+                }
+            }
+        }
+        return outValue;
     }
-    */
+
+    void LoadHintTable()
+    {
+        chosungValHintTable = mbattleManager.GetUsingHint();
+    }
+
+    /*
+string WordToValue(string word)
+{
+
+}
+*/
 
 }

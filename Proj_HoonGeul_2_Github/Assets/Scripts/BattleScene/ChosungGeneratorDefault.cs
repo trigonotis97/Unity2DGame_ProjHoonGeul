@@ -405,8 +405,12 @@ public class ChosungGeneratorDefault : MonoBehaviour
     }
 
 
-    public int [] GetOldestQuest()
+    public int [] GetOldestQuestGetOldestQuest()
     {
         return oldestQuestInd_arr;
+    }
+    public string[] GetQuestionValueArr()
+    {
+        return questionVal_arr;
     }
 }

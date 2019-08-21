@@ -118,8 +118,9 @@ public class EnemyScriptDefault : MonoBehaviour
         enemyBullet.transform.position = transform.position + new Vector3(0, 1.5f, 0);
 
         //set hint or image
-        hintHandler.Loop();
+        hintHandler.MakeHintorImage();
 
+        ///투사체 발사하는 작업 여기에
         /*
         GameObject attackPref = Instantiate(enemyAttackPrefb[0], transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
         attackPref.transform.SetParent(m_canvas.transform, false);

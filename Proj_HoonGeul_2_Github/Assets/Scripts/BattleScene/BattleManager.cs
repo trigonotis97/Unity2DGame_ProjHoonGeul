@@ -26,7 +26,7 @@ public class EnemyStatus
 */
 public class BattleManager : MonoBehaviour
 {
-    
+
     GameManager m_gameManager;
     public int show_chapter_num;
     public int show_stage_num;
@@ -45,9 +45,9 @@ public class BattleManager : MonoBehaviour
         GAMEOVER,
         STAGECLEAR
     };
-    
 
-    
+
+
     //public SpriteRenderer bg_image; // ####
     public Image bg_image_;
 
@@ -81,7 +81,7 @@ public class BattleManager : MonoBehaviour
         //###나중에 받아오기
         //데이터 받아오기 (가져올 객체 : 
         m_data = m_gameManager.GetBattleSceneData();
-        if(m_data.stageNum==1)
+        if (m_data.stageNum == 1)
         {
             m_gameManager.SaveCheckPoint();
         }
@@ -90,8 +90,8 @@ public class BattleManager : MonoBehaviour
 
         //백그라운드 오디오 가져오기 및 재생
         Debug.Log("clip :: " + m_data.BGM);
-        bg_audioclip = Resources.Load("BGM/" + m_data.BGM)as AudioClip;
-         
+        bg_audioclip = Resources.Load("BGM/" + m_data.BGM) as AudioClip;
+
         m_audioSource.clip = bg_audioclip;
         m_audioSource.Play();
         m_audioSource.loop = true;
@@ -120,19 +120,19 @@ public class BattleManager : MonoBehaviour
         m_enemy.transform.SetParent(m_canvas.transform, false);
 
         ///
-        bg_image_.sprite = Resources.Load("Background/"+m_data.BGImage,typeof(Sprite))as Sprite;
+        bg_image_.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
 
         //bullet 이미지 받아오기
         Sprite[] bullets = new Sprite[3];
-        for(int i=0;i<3;i++)
+        for (int i = 0; i < 3; i++)
         {
             //"chapter-imageNum"
-            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_" + (i+1).ToString())as Sprite;
+            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_" + (i + 1).ToString()) as Sprite;
         }
         hintHandler.LoadBulletImage(bullets);
 
 
-        if (Is2to5BossStage()==8)
+        if (Is2to5BossStage() == 8)
         {
             chunjiin.GetComponent<KeyboardHandler>().isSejong = true;
         }
@@ -142,8 +142,8 @@ public class BattleManager : MonoBehaviour
     //enemy script에서 호출.
     public EnemyStatus GetEnemyData()
     {
-        Debug.Log(m_data.enemyHp+" <<"+ m_data.enemyDamage);
-        EnemyStatus temp=new EnemyStatus();
+        Debug.Log(m_data.enemyHp + " <<" + m_data.enemyDamage);
+        EnemyStatus temp = new EnemyStatus();
         temp.maxHp = m_data.enemyHp;
         temp.attack_demage = m_data.enemyDamage;
         return temp;
@@ -173,7 +173,7 @@ public class BattleManager : MonoBehaviour
     }
     public int Is2to5BossStage()
     {
-        int outNumInd=0;//어떤스테이지도 아닐경우
+        int outNumInd = 0;//어떤스테이지도 아닐경우
         if (m_data.chapterNum == 2 && m_data.isBoss)
         {
             outNumInd = 2;
@@ -186,7 +186,7 @@ public class BattleManager : MonoBehaviour
         {
             outNumInd = 4;
         }
-        else if (m_data.chapterNum == 5 && m_data.stageNum==1)
+        else if (m_data.chapterNum == 5 && m_data.stageNum == 1)
         {
             outNumInd = 5;
         }
@@ -210,6 +210,26 @@ public class BattleManager : MonoBehaviour
     {
         return m_data.chapterNum;
     }
+    public Dictionary<string, Dictionary<string, string>> GetUsingHint()
+    {
+        Dictionary<string, Dictionary<string, string>> outDict = new Dictionary<string, Dictionary<string, string>>();
+        string questValue = "";
+        for (int i=0;i<m_data.problemPocket.Length;i++)
+        {
+            questValue = hintHandler.WordtoValue(m_data.problemPocket[i], 0);
+            outDict.Add(questValue,m_gameManager.GetSingleHintDictionary(questValue));
+        }
+        for (int i = 0; i < m_data.hellProblemPocket.Length; i++)
+        {
+            questValue = hintHandler.WordtoValue(m_data.hellProblemPocket[i], 0);
+            outDict.Add(questValue, m_gameManager.GetSingleHintDictionary(questValue));
+        }
+
+        return outDict;
+    }
+        
+
+
 
 
 

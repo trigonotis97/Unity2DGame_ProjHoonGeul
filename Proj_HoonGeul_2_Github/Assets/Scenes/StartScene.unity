@@ -2809,6 +2809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2016438098}
   - component: {fileID: 2016438097}
+  - component: {fileID: 2016438099}
   m_Layer: 0
   m_Name: QuestionControl
   m_TagString: QuestionControl
@@ -2831,6 +2832,7 @@ MonoBehaviour:
   dialogDataLength: 46
   battleDataLength: 16
   sceneDataLength: 67
+  hintXmlTool: {fileID: 0}
 --- !u!4 &2016438098
 Transform:
   m_ObjectHideFlags: 0
@@ -2845,6 +2847,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016438099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016438096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f7e85d7fd5cdb4588e807edb46fce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2045008485
 PrefabInstance:
   m_ObjectHideFlags: 0
