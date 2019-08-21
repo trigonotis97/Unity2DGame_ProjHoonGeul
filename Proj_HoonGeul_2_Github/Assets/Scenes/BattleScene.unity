@@ -573,6 +573,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5031721809415091715, guid: a1261455d443d694aaf745da11cbfd60,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031721809415091715, guid: a1261455d443d694aaf745da11cbfd60,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031721809415091715, guid: a1261455d443d694aaf745da11cbfd60,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1261455d443d694aaf745da11cbfd60, type: 3}
 --- !u!224 &97411528 stripped
@@ -1742,7 +1757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -392.99997}
+  m_AnchoredPosition: {x: 0, y: -393}
   m_SizeDelta: {x: 14.43, y: 17.599976}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &384037991
@@ -2206,8 +2221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7fb1a6636c4b04bb28898f78b2a28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordProb: 30
-  hintProb: 25
+  wordProb: 50
+  hintProb: 50
   sunbiMaxHitNum: 0
   sunbiHitCount: 0
   enemyBullet: {fileID: 97411529}

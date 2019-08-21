@@ -41,6 +41,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
     Slider hpBar;
     Animator animator;
+    Animator bulletAnimator;
     GameObject m_canvas;
     Sunbi m_sunbi;
     public float sunbiAttackDamage;
@@ -64,6 +65,7 @@ public class EnemyScriptDefault : MonoBehaviour
         hpBar = GameObject.FindGameObjectWithTag("EnemyHpBar").GetComponent<Slider>();
         m_canvas = GameObject.FindGameObjectWithTag("Canvas");
         animator = this.GetComponent<Animator>();
+        bulletAnimator = GameObject.FindGameObjectWithTag("EnemyBullet").GetComponent<Animator>();
         m_sunbi = GameObject.FindGameObjectWithTag("Sunbi").GetComponent<Sunbi>();
         enemyBullet = GameObject.FindGameObjectWithTag("EnemyBullet");
         hintHandler = GameObject.FindGameObjectWithTag("BulletHandler").GetComponent<EnemyHintBulletHandler>();
@@ -121,6 +123,7 @@ public class EnemyScriptDefault : MonoBehaviour
         hintHandler.MakeHintorImage();
 
         ///투사체 발사하는 작업 여기에
+        bulletAnimator.SetTrigger("goText");
         /*
         GameObject attackPref = Instantiate(enemyAttackPrefb[0], transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
         attackPref.transform.SetParent(m_canvas.transform, false);
