@@ -31,7 +31,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
     int bulletIndCount;
 
     /// 힌트관련 변수
-    Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
+    public Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
     BattleManager mbattleManager;
     public ChosungGeneratorDefault chosungGenerator;
     ///xml 완료 시 수정
@@ -196,19 +196,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
         };
     // key=questionValue , value=hintTable
 
-    /*
-//힌트, 오답 투사체 위한 변수 가져오기 
-    - 선비 오브젝트의 피격 횟수
-    - 정답 맞출때 체크
-    - 힌트,오답 가져오기
-    - 힌트: 이미 쓴거중에 똑같은거는 안나오게 검색, 사전에실제로 있는단어 검색
-구현할거(0)
-    - 힌트, 오답 확률 (확률변수 인스펙터로 보이게 만들기)(0)
-    - 힌트 검색(0)
 
-힌트 단어 풀 생성
-    - 자음 단어 별 단어 풀 생성
-*/
     private void Awake()
     {
         mbattleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
@@ -221,7 +209,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
         //변수 초기화
         bulletIndCount = 0;
 
-        //chosungValHintTable
+        //chosungValHintTable 초기화
         LoadHintTable();
         //print("hell world");
         //bullet 이미지 로드
@@ -255,9 +243,25 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 break;
 
             case 2://right hint bullet
+                //현재 문제초성 데이터 가져오기  //그중에서 가장 오래된거 골라내기
+                string oldsetValue = chosungGenerator.GetOldestQuestionValue();
+                int randInt = Random.Range(0, 10);
+                int indexCount = 0;
+                string outHintWord="";
+                //해당 문제 밸류값으로 힌트 검색, 랜덤으로 선택
+                foreach (KeyValuePair<string,string> hintword in chosungValHintTable[oldsetValue])
+                {
+                    if(indexCount==randInt)
+                    {
+                        outHintWord = hintword.Key;
+                        break;
+                    }
+                    indexCount++;
+                }
+                Debug.Log("정답힌트 나간다!!!!" + outHintWord);
                 ///xml 완료시 수정
                 bulletText.enabled = true;
-                bulletText.text = rightHintTable[Random.Range(0, wrongHintTable.Length)];
+                bulletText.text = outHintWord;
                 break;
 
         }
@@ -322,6 +326,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
             if (hintTable.ContainsKey(targetWord))
             {
                 chosungValHintTable.Remove(targetWord);
+                Debug.Log("맞춘단어 힌트에서 제외 : " + targetWord);
             }
         }
     }
