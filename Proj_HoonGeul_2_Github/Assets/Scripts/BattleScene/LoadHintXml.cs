@@ -6,6 +6,7 @@ using System;
 
 public class LoadHintXml : MonoBehaviour
 {
+    GameManager m_gameManamger;
     Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
     //key : chosung value , value : value hint table 
 
@@ -175,9 +176,15 @@ public class LoadHintXml : MonoBehaviour
 
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        m_gameManamger = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+
     void Start()
     {
         Load_tXml();
+        m_gameManamger.SetHintData(chosungValHintTable);
     }
 
 
@@ -225,7 +232,7 @@ public class LoadHintXml : MonoBehaviour
                         outValue += (10 + j).ToString();
                 }
             }
-        }
+        } 
         else//모음
         {
             for (int i = 0; i < 2; i++)
@@ -255,21 +262,15 @@ public class LoadHintXml : MonoBehaviour
 
             string alphaSet = ValuetoAlphabet(valueSet);
             XmlNodeList nodes = xmlDoc.SelectNodes("HintData/" + alphaSet + "/WordSet");
-            Debug.Log(alphaSet);
             foreach (XmlNode node in nodes)
             {
                 singleHintDict.Add(node.SelectSingleNode("Key").InnerText ,node.SelectSingleNode("Value").InnerText);
-                Debug.Log(node.SelectSingleNode("Key").InnerText);
-                //string temp1=node["WordSet "]["Key"]
             }
 
             chosungValHintTable.Add(valueSet, singleHintDict);
-           
 
         }
-
-
-        print("Hell World!");
-
+//        print("Hell World!");
     }
+
 }

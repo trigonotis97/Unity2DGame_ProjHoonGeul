@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour {
     private int currentSceneDataIdx;
     private int currentMode; // 1: 집현전모드(노멀)  2: 세종대왕모드 (하드)
 
-    
+    private Dictionary<string, Dictionary<string, string>> chosungValHint_Tbl = new Dictionary<string, Dictionary<string, string>>();
+
+
     void Awake()
     {
         //Check if instance already exists
@@ -150,7 +152,24 @@ public class GameManager : MonoBehaviour {
         
     }
     */
+    public Dictionary<string,string> GetSingleHintDictionary(string inputValue)
+    {
+        Dictionary<string, string> outDict = new Dictionary<string, string>();
+        if(chosungValHint_Tbl.ContainsKey(inputValue))
+        {
+            outDict = chosungValHint_Tbl[inputValue];
+        }
+        else
+        {
+            Debug.LogError("didnt have right hint table for : " + inputValue);
+        }
 
+        return outDict;
+    }
+    public void SetHintData(Dictionary<string,Dictionary<string,string>> inputTable)
+    {
+        chosungValHint_Tbl = inputTable;
+    }
 
 
 }
