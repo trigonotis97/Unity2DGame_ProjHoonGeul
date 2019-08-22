@@ -14,6 +14,8 @@ public class BonusPenalty : MonoBehaviour
     int nowLine;
 
     public SceneData sceneData;
+    public AudioSource AudioSource;
+    public AudioClip correct, incorrect;
     
 
     //int selectAns;
@@ -34,10 +36,28 @@ public class BonusPenalty : MonoBehaviour
     {
         if (InputText.text == answerStr[nowLine])
         {
+            //정답 사운드
+            AudioSource.clip = correct;
+            AudioSource.PlayOneShot(correct);
             nowLine += 1;
             if (nowLine == answerStr.Length)
             {
                 Debug.Log("다음 씬으로 보내주자");
+                switch (sceneData.nextScene)
+                {
+                    case 3:
+                        SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+                        break;
+                    case 4:
+                        SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                        break;
+                    case 5:
+                        SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                        break;
+                    case 6:
+                        SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                        break;
+                }
             }
             else { 
             
@@ -49,6 +69,9 @@ public class BonusPenalty : MonoBehaviour
         }
         else
         {
+            //오답 사운드
+            AudioSource.clip = incorrect;
+            AudioSource.PlayOneShot(incorrect);
             InputText.text = "";
             Debug.Log("틀렸어요");
         }

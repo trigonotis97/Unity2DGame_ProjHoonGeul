@@ -110,7 +110,7 @@ public class XMLLoad : MonoBehaviour
                     string tmp_script = node.SelectSingleNode("script").InnerText;
                     DLD.script = tmp_script.Split(new char[] { '/' });
                     string tmp_conv_state = node.SelectSingleNode("conv_state").InnerText;
-                    string[] tmp_conv_state_arr = tmp_conv_state.Split(new char[] { ',' });
+                    string[] tmp_conv_state_arr = tmp_conv_state.Split(new char[] { '/' });
                     DLD.conv_state = tmp_conv_state_arr;
                     //DLD.conv_state = Array.ConvertAll<string, int>(tmp_conv_state_arr, int.Parse);
                     DLD.isKnockDown = bool.Parse(node.SelectSingleNode("isKnockDown").InnerText);

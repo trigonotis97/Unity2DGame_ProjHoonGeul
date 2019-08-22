@@ -4,8 +4,8 @@
 		<key>1</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>0</stageNum>
-		<script>세종 28년, 우리나라의 말이 중국과 달라 백성을 가엽게 여긴 세종대왕은/ 닿소리 17자에 홀소리 11자로 이루어진 훈민정음을 반포한다./ 이 한글에 푹 빠진 선비가 있었으니…/ 그의 이름은 십선비./ 그는 오늘도 어김없이 한글 수련에 매진한다./나랏말싸미 듕귁에 달아…/ 캬… 한글은 정말 쩐ㄷ…. 아 아니 아름답다니까!/ 알면 알수록 그 깊이에 감탄하게 되고/ 공부하면 할수록 그 넓음에../??:앙 기모띠!/?/누구인가?/지금 누가 그런 천한 말을.../??:행님들 오지구요~지리구요~톰과 제리구요~/아니 어떻게 이런 말을 입에.../??:인정? 어 인정~/안되겠군... 내 직접 훈계하러 가야겠구만/끌끌끌...</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>세종 28년,/우리나라의 말이 중국과 달라 백성을 가엽게 여긴 세종대왕은/닿소리 17자에 홀소리 11자로 이루어진 훈민정음을 반포한다. /이 한글에 푹 빠진 선비가 있었으니…/그의 이름은 십선비./그는 오늘도 어김없이 한글 수련에 매진한다./나랏말싸미 듕귁에 달아…/캬...  한글은 정말 쩐ㄷ... 아 아니 아름답다니까!/알면 알수록 그 깊이에 감탄하게 되고/공부하면 할수록 그 넓음에.. /?? : 앙 기모띠!/?/누구인가?/지금 누가 그런 천한 말을../?? : 행님들 오지구요~ 지리구요~ 톰과 제리구요~/아니 어떻게 이런 말을 입에…/?? : 인정? 어 인정~/안되겠군.. 내 직접 훈계하러 가야겠구만/끌끌끌… (터벅터벅)</script>
+		<conv_state>101/101/101/101/100/100/201/201/201/201/101/201/201/201/101/201/101/201/100</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jeonju_1</BGImage>
 		<enemyImage>jap_face_1</enemyImage>
@@ -16,8 +16,8 @@
 		<key>2</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>1</stageNum>
-		<script>한글초등학교 운동장./앙 기모띠~ 앙 젖꼭띠~/크흠흠…/얘야 그런 말을 쓰면 되겠느냐/한글은 말이다… 음양오행의 원리로 만들어져 우리 민족의 고유한 아름다움…/뭐야 저 틀딱은?/틀딱?/틀딱이 무슨말인지도 못알아듣죠? 오지게 틀니 딱딱거리죠?/나이 많아서 곧 머머리 되는 부분 인정? 어 인정~ 동의? 어 보감~/머머리? 거 당최 무슨 소리인지../야민정음도 못알아듣는 틀딱 수준 실화? 그러면서 선비질하는거 역겹죠?/ 반박시 틀딱충인거 인정? 어 그리~/끌끌끌... 안되겠구만 내 직접 훈계해줘야겠군.</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>한글초등학교 운동장/앙 기모띠~ 오이시~/크흠흠.. /얘야 그런 말을 쓰면 되겠느냐/한글은 말이다… 음양오행의 원리로 만들어져 우리 민족의 고유한 아름다움.../뭐야 저 틀딱은?/틀딱..?/틀딱이 무슨말인지도 못알아듣죠? 오지게 틀니 딱딱거리죠?/나이 많아서 곧 머머리 되는 부분 인정? 어 인정~ 동의? 어 보감~/머머리? 거 당최 무슨 소리인지../야민정음도 못알아듣는 틀딱 수준 실화? 그러면서 선비질하는거 역겹죠?/반박시 틀딱충인부분 인정? 어 그리~/끌끌끌… 안되겠구만 내 직접 훈계해줘야겠군.</script>
+		<conv_state>110/121/211/211/211/121/211/121/121/211/121/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
 		<enemyImage>jap_face_1</enemyImage>
@@ -28,8 +28,8 @@
 		<key>3</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>2</stageNum>
-		<script>으윽…기모띠…/이제 좀 한글의 아름다움을 알겠느냐?/너 자꾸 그런 말 쓰면 세종대왕님 피가 거꾸로 솟아요!/세종머앟… 괴꺼솟…/응? 방금 뭐라고…/우리 반… 머장한테 이를꺼야…/거 아직도 정신을 못차렸구만!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>으윽… 기모띠.../이제 좀 한글의 아름다움을 알겠느냐?/너 자꾸 그런 말 쓰면 세종대왕님 피가 거꾸로 솟아요!/세종머앟… 괴꺼솟.../아니 이놈이 아직도../...우리반... 머장한테 이를꺼야…/거 아직도 정신을 못차렸구만!</script>
+		<conv_state>121/211/211/121/211/121/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -40,8 +40,8 @@
 		<key>4</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>3</stageNum>
-		<script>어떤 틀딱이 우리 반 애들 괴롭혔냐?/거참 틀딱이라니/요즘 아이들 언어 사용 습관이 정말 이래서야 되겠는가… 끌끌/틀딱에 꼰머이기까지 하다니… 듣던대로 보통 십선비가 아니군…/음? 내 이름을 어떻게 알았지?/아무튼 너도 훈계를 좀 받아야겠구나.</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>어떤 틀딱이 우리반 애들 괴롭혔냐?/거 참 틀딱이라니/요즘 아이들 언어사용 습관이 정말 이래서야 되겠는가… 끌끌/틀딱에 꼰머이기까지 하다니… 듣던대로 보통 십선비가 아니군…/음? 내 이름을 어떻게 알았지?/아무튼 너도 훈계를 좀 받아야겠구나</script>
+		<conv_state>121/211/211/121/211/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
 		<enemyImage>jap_face_1</enemyImage>
@@ -52,8 +52,8 @@
 		<key>5</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>4</stageNum>
-		<script>예끼 이놈! 어디 어른 말씀에 대들고 으이?/큭… 칙쇼…/아니 아직도 한글은 안쓰고 그런 말을..!/니가 그렇게 한글을 잘해?/우리 반으로 따라와!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>예끼 이놈! 어디 어른 말씀에 대들고 으이?/큭… 칙쇼…/아니 아직도 한글은 안쓰고 그런 말을..!/넌 이제 죽었다… 우리 학교짱한테 이미 다 일렀어… 크큭/우리 반으로 따라와!</script>
+		<conv_state>211/121/211/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -64,8 +64,8 @@
 		<key>6</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>5</stageNum>
-		<script>애야. 어른을 오라가라 하면 못써요./ㄴㅈ/응?/ㄴㅈ ㅇㅈ? ㅇㅇㅈ~/아니…/ㄴㅈ/자음만 써서 같은말만 반복하기 시작했어…!/ㅇㅇ/계속 그렇게 자음만 쓸꺼냐?/ㅇㅇ/계속 그렇게 같은 말만 반복하려는 거냐?/ㅇㅇ/예끼 이놈! 어른이랑 장난을 치려 들다니!/ㄴㅈ/더 이상... 말이 통하지 않는 상황에 달해버렸군…/ㅇㅈ/안되겠어…/더 이상 한글을 파괴하도록 놔둘 순 없어…!/내가 직접 막는 수 밖엔!/ㄴㅈ</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>한글초등학교 , 6학년 3반/애야. 어른을 오라가라 하면 못써요./ㄴㅈ/응?/ㄴㅈ ㅇㅈ? ㅇㅇㅈ~/아니… /ㄴㅈ/자음만 써서 같은말만 반복하기 시작했어…!/ㅇㅇ/계속 그렇게 자음만 쓸꺼냐?/ㅇㅇ/계속 그렇게 같은 말만 반복하려는 거냐?/ㅇㅇ/예끼 이놈! 어른이랑 장난을 치려 들다니!/ㄴㅈ/더 이상... 말이 통하지 않는 상황에 달해버렸군.../ㅇㅈ/안되겠어.../더 이상 한글을 파괴하도록 놔둘 순 없어…!/내가 직접 막는 수 밖엔!/ㄴㅈ</script>
+		<conv_state>110/211/121/211/121/211/121/211/121/211/121/211/121/211/121/211/121/211/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>student_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -76,8 +76,8 @@
 		<key>7</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>6</stageNum>
-		<script>에헴! 거 이제 한글의 아름다움을 알았느냐?/부끄럽습니다 선비님…/소자가 생각이 짧았습니다…/그래그래. 앞으로는 한글을 사랑하며 살거라!/그럼 난 이만… (총총)/아니 선비님 어딜 그리 급히 가십니까?/기모띠의 나라로 간다.../살펴 가시옵소서 선비님.../(그러고보니 너무 어렵게만 말하고 알아듣기 쉽게 이야기해주지 못했나?)/(아이들의 눈높이에 맞춰서 이야기 해줬으면 좋았을 것을… 허허)/(그럼 마지막은 신세대 용어로 한마디 해주고 가야겠구만!)/크흠흠… 얘야./다른 나라의 말보다 우리 한글이 아주 캡이에요 캡!/…/에반데…</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>에헴! 거 이제 한글의 아름다움을 알았느냐?/부끄럽습니다 선비님… /소자가 생각이 짧았습니다…/그래그래. 앞으로는 한글을 사랑하며 살거라!/예 알겠습니다.../동년배들에게도 선비님의 가르침을 전달하겠습니다.../그럼 난 이만… (총총)/아니 선비님 어딜 그리 급히 가십니까?/기모띠의 나라로 간다.../살펴 가시옵소서../(그러고보니 너무 어렵게만 말하고 알아듣기 쉽게 이야기해주지 못했나?)/(아이들의 눈높이에 맞춰서 이야기 해줬으면 좋았을 것을… 허허)/(그럼 마지막은 신세대 용어로 한마디 해주고 가야겠구만!)/크흠흠… 얘야./다른 나라의 말보다 우리 한글이 아주 캡이에요 캡!/…/에반데…</script>
+		<conv_state>211/121/121/211/121/121/211/121/211/121/211/211/211/211/211/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>student_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -88,8 +88,11 @@
 		<key>8</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>1</stageNum>
-		<script>거참… 얼마나 더 가야 하는거야/ 에헴 여보게/저요?/ 아 아니 이황 선생님 아니십니까?/ 그래그래.. 이 퇴계 이황을 보고 되게 놀라는구나. 허허허 \n (퇴계와 되게의 발음이 비슷한 것을 활용한 개그)/ (아…방금 그거 설마 개그는 아니겠지?)/ 어딜 그리 급히 가느냐?/ 아아 한글을 파괴하는 다른 언어를 정벌하러 가는 길이었습니다./ 허 정벌이라니.. 정말 벌써 걱정이 앞서는구아 .\n ('정벌'을 '정말 벌써'로 변형한 배꼽잡는 개그)/ (아... 방금 그거 설마 개그?)/ (에이 설마...)/ 다른 언어를 배척하기만 하는것은 능사가 아닐진데.../ 거 어디 한글을 얼마나 하는지 한번 볼까?/ 이황 선생님이 가르쳐주시면 저야 영광이지요./ 그래그래. 이왕이면 이 이황을 만났을때 테스트 해보는게 좋지 그럼.  \n (배꼽 빠지지 않게 잘 간수해야 하는 개그)/ (아...이건 좀... 웃는 척이라도 해야하나..?)/ 하하하 너무 재밌습니다 선생님~/ (흐뭇)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>거 참… 얼마나 더 가야 하는거야/에헴 여보게/저요?/아 아니 이황 선생님 아니십니까?/그래그래.. 이 퇴계 이황을 보고 되계 놀라는구나. 허허허
+(퇴계와 되게의 발음이 비슷한 것을 활용한 개그)/(아… 방금 그거 설마 개그는 아니겠지?)/어딜 그리 급히 가느냐?/아아 한글을 파괴하는 다른 언어를 정벌하러 가는 길이었습니다./허 정벌이라니.. 정말 벌써 걱정이 앞서는구나.
+('정벌'을 '정말 벌써'로 변형한 배꼽잡는 개그)/(아… 방금 그거 설마 개그?)/(에이 설마…)/다른 언어를 배척하기만 하는 것은 능사가 아닐진데…/거 어디 한글을 얼마나 하는지 한번 볼까?/이황 선생님이 가르쳐주시면 저야 영광이지요./그래그래. 이왕이면 이 이황을 만났을 때 테스트 해보는 게 좋지 그럼. 
+(배꼽 빠지지 않게 잘 간수해야 하는 개그)/(아… 이건 좀… 웃는 척이라도 해야하나..?)/하하하 너무 재밌습니다 선생님~ /(흐뭇)</script>
+		<conv_state>110/121/211/211/121/211/121/211/121/211/211/121/121/211/121/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -100,8 +103,8 @@
 		<key>9</key>
 		<chapterNum>-1</chapterNum>
 		<stageNum>3</stageNum>
-		<script>아니 이런 기본적인 어휘도 모르면서 다른 언어를 논한게야?/어휴…. 어휘…./아주 기본이 안되있어 기본이./가서 깜지 쓰고 왓!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>아니 이런 기본적인 어휘도 모르면서 다른 언어를 논한게야?/어휴…. 어휘…. /아주 기본이 안되있어 기본이./가서 깜지 쓰고 왓!</script>
+		<conv_state>121/121/121/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -112,8 +115,8 @@
 		<key>10</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>2</stageNum>
-		<script>꽤 기본은 하는구나/ 하하! 그쵸? 꽤 하죠?/ 어허… 그렇다고 배움을 게을리 하거나 자만하지 말고, 항상 겸손한…/ (이미 떠남)/ 아니 저 친구…/ 마음만 앞서는구만… 끌끌…/ 돼지가 내는 소리는… 꿀꿀…/ (푸흡…. 방금꺼 조금 웃겼군.)/ (흐뭇)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>꽤 기본은 하는구나./하하! 그쵸? 꽤 하죠?/어허… 그렇다고 배움을 게을리 하거나 자만하지 말고, 항상 겸손한…/(이미 떠남)/아니 저 친구.../마음만 앞서는구만... 끌끌.../돼지가 내는 소리는… 꿀꿀…/(푸훕…. 방금꺼 조금 웃겼군.)/(흐뭇)</script>
+		<conv_state>121/211/121/010/021/021/021/021/021</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -124,8 +127,8 @@
 		<key>11</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>1</stageNum>
-		<script>일본, 시모노세키/ 으음 여기가 어디지/ 거 이보시오/ 지금 여기가 어디쯤이오?/ 시모노세키/ ?/ ?/ 방금뭐라고?/ 시모노세키/ 아니 새ㄲ.. 라니/ 어디서 그런 천한 말을!/ 여기 지역 이름인데…?/ 거 안되겠구만, 그런 말을 이베 담다니 혼쫄울 내줘야겠군./ 갑자기?</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>일본, 시모노세키/으음 여기가 어디지/거 이보시오/지금 여기가 어디쯤이오?/시모노세키/?/?/방금 뭐라고?/시모노세키/아니 새ㄲ.. 라니/어디 그런 천한 말을!/여기 지역 이름인데…?/거 안되겠구만! 그런 말을 입에 담다니 혼쭐을 내줘야겠군./갑자기?</script>
+		<conv_state>110/211/211/211/121/211/121/211/121/211/211/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -136,8 +139,8 @@
 		<key>12</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>2</stageNum>
-		<script>이제 좀 정신을 차렸느냐!/ 아니 지역 이름이락…/ 시끄럿!/ 어디 또 한번 그런 말 쓰는 꼴 보이기만 해봐/ 크흐흠…/ 어휴 저게 선비야 깡패야…</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>이제 좀 정신을 차렸느냐!/아니 지역 이름이라ㄱ…/시끄럿!/어디 또 한번 그런 말 쓰는 꼴 보이기만 해봐/크흠흠…/어휴 저게 선비야 깡패야…</script>
+		<conv_state>211/121/211/211/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -148,8 +151,8 @@
 		<key>13</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>3</stageNum>
-		<script>크… 여기가 어딘지 몰라도 경치 한번 좋구만!/ 아 게시끼? (けしき, 경치라는 뜻, 욕 아님)  스고이 스고이~/ 뭐 이 새ㄲ야?/ ?</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>크… 여기가 어딘진 몰라도 경치 한번 좋구만!/아 게시끼? (けしき, 경치라는 뜻, 욕 아님)  스고이 스고이~/뭐 이 새ㄲ야?/?</script>
+		<conv_state>110/121/212/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
 		<enemyImage>heung</enemyImage>
@@ -160,8 +163,8 @@
 		<key>14</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>4</stageNum>
-		<script>또 이렇게 한명 손봐줬군./ 다음은 누구냐… 후후/ 아니 그거 욕 아니라고 게시ㄲ(욕맞음)야</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>또 이렇게 한명 손봐줬군./다음은 누구냐… 후후/아니 그거 욕 아니라고 게시ㄲ(욕맞음)야…</script>
+		<conv_state>211/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
 		<enemyImage>heung</enemyImage>
@@ -172,8 +175,8 @@
 		<key>15</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>5</stageNum>
-		<script>??: 어이 거기/ 누가 또 혼날라고..!/ 어떤 놈이야!/ …/ 나다./ …저 부르셨나요?/ 니가 지나가는 사람 붙잡고 시비건다는 그 선비놈이냐?/ 어… 그거 저 아닌데요../ 아 사람 잘못보신 것 같네요ㅎ;/ 그럼 전 이만/ 시모노쎄끼(지역이름) 게시끼!(경치라는 뜻) 어딜 도망가냐!!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>?? : 어이 거기/누가 또 혼날라고..!/어떤 놈이야!/…/나다./...저 부르셨나요?/니가 지나가는 사람 붙잡고 시비건다는 그 선비놈이냐?/어… 그거 저 아닌데요../아 사람 잘못보신 것 같네요ㅎ;/그럼 전 이만/시모노세끼!(지역이름) 게시끼!(경치라는 뜻) 어딜 도망가냐!!</script>
+		<conv_state>100/101/201/110/121/211/121/211/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jap_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -184,8 +187,8 @@
 		<key>16</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>6</stageNum>
-		<script>예끼 이노옴!!/ 큭…/ 이제 더 이상 조선을 위협하는 나라는 없는건가?/ 조선을 위협하는 나라는 이 선비맨이 처리 했으니 안심ㅎ…ㅏ…/(콜록) (컬룩) (태헥)/ 안삼하라ㄱ…ㅜ…/ (엣취) (엑티) (햇틍)/ 뭐…뭐 이건…?/ 중국에서 불러오는 미세먼지데스(death 아님)./ 잘못 마시면 데스(death 맞음)./ 뭐? 우리나라에 상륙하기 전에 처리하러 가야 겠구만/ 끝끝끝…(총총)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>예끼 이노옴!!/큭…/이제 더 이상 조선을 위협하는 나라는 없는건가?/조선을 위협하는 나라는 이 선비맨이 처리했으니 안심ㅎ...ㅏ.../(콜록) (컬룩) (태헥)/안심하라ㄱ…ㅜ.../(엣취) (엑티) (햇틍)/뭐..뭐지 이건…?/중국에서 불어오는 미세먼지데스(death 아님)./잘못 마시면 데스(death 맞음)./뭐? 우리나라에 상륙하기 전에 처리하러 가야 겠구만/끌끌끌… (총총) </script>
+		<conv_state>211/121/211/211/110/211/110/211/121/121/211/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>jap_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -196,8 +199,8 @@
 		<key>17</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>3</stageNum>
-		<script>조선, 경복궁/ 왠놈이냐!/ 아 저 그냥 지나가는 선비입니다./ 마저 지나갑니다… 그럼 이만/ 어허!/ 예..?/ 방금 내 땅 경계선 밟았잖아!/ ?/ 이 흥선대원군이 못봤을꺼라 생각했나?/ 출입료 내!/ 저 돈 없는데요..?/ 그럼 문제를 낼 테니 다 풀면 통과시켜 주겠다!/ 갑자기?/ 떽! 우리 나라의 역사적인 분들이시니 당연히 알아야지!/ 아 뭐.. 네… 그럼 풀게요.../ 헤헤... / 자 문제 나간다!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>조선, 경복궁/왠놈이냐!/아 저 그냥 지나가는 선비입니다./마저 지나갑니다… 그럼 이만/어허!/예..?/방금 내 땅 경계선 밟았잖아!/?/이 흥선대원군이 못봤을꺼라 생각했나?/출입료 내!/저 돈 없는데요..?/그럼 문제를 낼 테니 다 풀면 통과시켜 주겠다!/갑자기?/떽! 우리 나라의 역사적인 분들이시니 당연히 알아야지!/아 뭐.. 네… 그럼 풀게요.../헤헤... /자 문제 나간다!</script>
+		<conv_state>110/121/211/211/121/211/121/211/121/121/211/121/211/121/211/121/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -209,7 +212,7 @@
 		<chapterNum>-1</chapterNum>
 		<stageNum>4</stageNum>
 		<script>아니 이런 기본적인 것도 몰라?!/역사 인물 상식이 아주 볼품없구만!/아니 문제가 너무 쪼잔하잖아요… 어떻게 맞춰 이걸../뭐? 쪼잔???/가서 깜지 쓰고 왓!!!/아… 귀찮은데..</script>
-		<conv_state>0,0,0,0</conv_state>
+		<conv_state>121/121/211/121/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -220,8 +223,10 @@
 		<key>19</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>4</stageNum>
-		<script>으으 분하다.. 다풀다니.../ 아 뭐야 별거 아니잖아./ 뭐..?! 방금 네가 푼 문제는 사실 쉬움 난이도였어… (부들부들)/ 아직… 아직 어려움 난이도 문제가 남았으니까…!!/ 고종 : 흥선대원쿤!! 또 지나가는 사람한테 시비 걸고 있는거야?/ ...그치만…/ 고종 : ..응?/ …..그치만… 이런 행동이 아니면… 고종쟝… 내게 관심도 없는걸!/ (빈틈이 생긴 것 같다. 어떡할까?)/ 1.도망간다. \n 2. 도망친다. \n 3. 도망가기./ (도망)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>으으 분하다.. 다풀다니.../아 뭐야 별거 아니잖아./뭐..?! 방금 네가 푼 문제는 사실 쉬움 난이도였어… (부들부들)/아직… 아직 어려움 난이도 문제가 남았으니까…!!/고종 : 흥선대원쿤!! 또 지나가는 사람한테 시비 걸고 있는거야?/...그치만…/고종 : ..응?/…그치만… 이런 행동이 아니면… 고종쟝… 내게 관심도 없는걸!/(빈틈이 생긴 것 같다. 어떡할까?)/1.도망간다.
+2. 도망친다.
+3. 도망가기./(도망)</script>
+		<conv_state>121/211/121/121/111/121/111/121/211/211/110</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -232,8 +237,8 @@
 		<key>20</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>1</stageNum>
-		<script>중국, 어딘가/ 후우… 여기가 어디쯤이지..?/ 저기 사람이다!/ 어! 대머리다!/ ㅡㅡ/ 어이 대머리라니/ 스님 몰라 스님?/ 으하하 대머리래요~/ 아니… 절 몰라? 절?/ 어허!!!! 떽!!!/ 미세먼지 보내면서 염치도 없느냐!/ 음..? 내가 뭘 보내…/ 난 그냥 산에서 수련밖에 안하는데?/ 어디 어른이 말하는데! 크흠… 안되겠군/ 갑자기?</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>중국, 어딘가/후우… 여기가 어디쯤이지..?/어 저기 사람이다!/어! 대머리다!/ㅡㅡ/어이 대머리라니/스님 몰라 스님?/으하하 대머리래요~/아니… 절 몰라? 절?/어허!!!! 떽!!!/미세먼지 보내면서 염치도 없느냐!/음..? 내가 뭘 보내;/난 그냥 산에서 수련밖에 안하는데?/어디 어른이 말하는데! 크흠… 안되겠군/갑자기?</script>
+		<conv_state>110/211/211/211/121/121/121/211/121/211/211/121/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -244,8 +249,8 @@
 		<key>21</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>2</stageNum>
-		<script>앞으로 미세먼지 또 보낼텐가? 으이?/ 아니 난 모른다니까…/ 어허! 한글 교육 한번 더 받고싶은게야?/ 으악… 사형을 불러야겠어/ 사형!!! 사형!!!!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>앞으로 미세먼지 또 보낼텐가? 으이?/아니 난 모른다니까…/어허! 한글 교육 한번 더 받고싶은게야?/으악… 사형을 불러야겠어/사형!!! 사형!!!!</script>
+		<conv_state>211/121/211/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
 		<enemyImage>money</enemyImage>
@@ -256,8 +261,8 @@
 		<key>22</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>3</stageNum>
-		<script>왠 놈이냐? 누가 우리 문파를 건드려!/ 어떤놈이야!/ 음..?/ 너무 똑같이 생겼는데?/ …리소스가 부족해서.../ 뭐라고?/ 아… 아니다! 형제 모르나 형제?!!/ 음 그러고보니, 아까 일본에서도 그렇고../ …/ 색깔만 바뀌는 것 같네..?/ ...디자이너가… 한명…/ 뭐라고? 아까부터 자꾸 뭐라 지껄이는 것이냐!/ 너도 훈계 좀 받아볼테야?</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>왠 놈이냐? 누가 우리 문파를 건드려!/어떤놈이야!/음..?/너무 똑같이 생겼는데?/…리소스가 부족해서.../뭐라고?/아… 아니다! 형제 모르나 형제?!!/음 그러고보니, 아까 일본에서도 그렇고../…/색깔만 바뀌는 것 같네..?/...디자이너가… 한명이ㄹㅏ…/뭐라고? 아까부터 자꾸 뭐라 지껄이는 것이냐!/너도 훈계 좀 받아볼테야?</script>
+		<conv_state>100/121/211/211/121/211/121/211/121/211/121/211/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
 		<enemyImage>heung</enemyImage>
@@ -268,8 +273,8 @@
 		<key>23</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>4</stageNum>
-		<script>크윽… 감히 우리 문파를…/ 사부를 불러야겠어…사부!!!/ 사부!!! 여기좀 봐요!! 얘좀 봐요!!!/ 어허 아직도 정신을 못차리고… 끌끌</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>크윽… 감히 우리 문파를…/사부를 불러야겠어…사부!!!/사부!!! 여기좀 봐요!! 얘좀 봐요!!!/어허 아직도 정신을 못차리고… 끌끌</script>
+		<conv_state>121/121/121/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -280,8 +285,8 @@
 		<key>24</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>5</stageNum>
-		<script>중국, 만리장성/ 왠 놈이냐!/ 어떤 놈이 우리 문파에서 소란을 피우느냐!/ 응?/ 아니 소림사에서 왠 장군?/ 그것도 최고 사부가 관우?/ 아니 이놈이 아직도 정신을 못차리고…/ 큼흠...큼....큼... (목 가다듬을 때 나는 소리)/ 크릉!!!!!!/ 호달달달달덜달더럳덜덜 (천지가 개벽하고 땅이 흔들리는 소리)/ ? 방금 그 소리 입으로 낸거야? 신기한데?/ 아니 이놈이...!!!/ (대충 목 가다듬을 때 나는 소리라는 뜻)/ 크릉!!!!!!!!!!!!/ (대충 하늘이 흔들리고 땅이 갈라질 때 나는 소리 묘사)/ (음…)/ (여기는 머리 숱으로 대장을 정하나 보네…)/ 다 들린다 이놈아…!!!/ (...흐뭇)/ (아 아니 이럴 때가 아니라...)/ 네이놈! 내가 무사히 돌려 보낼 줄 알았느냐!/ 크릉!!!!!!!!!!!!!!/ (대충 아까보다 더 크고 엄청난 울림이 일어났다는 내용)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>중국, 만리장성/왠 놈이냐!/어떤 놈이 우리 문파에서 소란을 피우느냐!/응?/아니 소림사에서 왠 장군?/그것도 최고 사부가 관우?/아니 이놈이 아직도 정신을 못차리고…/큼흠...큼....큼... (목 가다듬을 때 나는 소리)/크릉!!!!!!/호달달달달덜달더럳덜덜 (천지가 개벽하고 땅이 흔들리는 소리)/? 방금 그 소리 입으로 낸거야? 신기한데?/아니 이놈이...!!!/(대충 목 가다듬을 때 나는 소리라는 뜻)/크릉!!!!!!!!!!!!/(대충 하늘이 흔들리고 땅이 갈라질 때 나는 소리 묘사)/(음…)/(여기는 머리 숱으로 대장을 정하나 보네…)/다 들린다 이놈아…!!!/(...흐뭇)/(아 아니 이럴 때가 아니라...)/네이놈! 내가 무사히 돌려 보낼 줄 알았느냐!/크릉!!!!!!!!!!!!!!/(대충 아까보다 더 크고 엄청난 울림이 일어났다는 내용)</script>
+		<conv_state>110/121/121/211/211/211/121/121/121/110/211/121/121/121/110/211/211/121/121/121/121/121/110</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>china_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -292,8 +297,8 @@
 		<key>25</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>6</stageNum>
-		<script>(대충 졌다는 내용)/ (대충 일본 중국 다 정리했다는 내용)/ (대충 이제 한글이 제일 우수한 언어라는 내용)/ (대충 가장 많이 쓰는 언어 아직 남았다는 내용)/ (대충 거기 정벌하러 간다는 내용)/ (대충 시나리오 쓰기 귀찮아서 날로 먹었다는 내용)/ (대충 이번 다이얼로그 씬 개꿀이었다는 내용)/ (개꿀...ㅎ)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>(대충 졌다는 내용)/(대충 일본 중국 다 정리했다는 내용)/(대충 이제 한글이 제일 우수한 언어라는 내용)/(대충 가장 많이 쓰는 언어 아직 남았다는 내용)/(대충 거기 정벌하러 간다는 내용)/(대충 시나리오 쓰기 귀찮아서 날로 먹었다는 내용)/(대충 이번 다이얼로그 씬 개꿀이었다는 내용)/(개꿀...ㅎ)</script>
+		<conv_state>121/211/211/121/211/110/110/111</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>china_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -304,8 +309,8 @@
 		<key>26</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>5</stageNum>
-		<script>어이 거기/ ?/ 그래 자네 말이야 자네/ 어디서 들리는 소리지?/ 여기야. 지폐 안이라네/ ?!/ 아니 신사임당 선생님../ 어쩌다 그렇게../ 후손들이 날 여기 박제했어…/ 헉.../ 후손들이 날 flex…아 아니 과시하는 용도로 쓰고있어…/ 그건 그렇고, 자네 맞춤법은 좀 하나?/ 아 네 뭐... 근데 절 왜 불러 세우셨..?/ 내가 뭐 할 것 같아?/ 문제..?/ 응 맞아.</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>어이 거기/?/그래 자네 말이야 자네/어디서 들리는 소리지?/여기야. 지폐 안이라네/?!/아니 신사임당 선생님../어쩌다 그렇게../후손들이 날 여기 박제했어…/헉.../후손들이 날 flex…아 아니 과시하는 용도로 쓰고있어…/그건 그렇고, 자네 맞춤법은 좀 하나?/아 네 뭐... 근데 절 왜 불러 세우셨..?/내가 뭐 할 것 같아?/문제요..?/응 맞아.</script>
+		<conv_state>110/211/110/211/121/211/211/211/121/211/121/121/211/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -317,7 +322,7 @@
 		<chapterNum>-1</chapterNum>
 		<stageNum>5</stageNum>
 		<script>방금 문제 어떤 것 같아?/틀렸나요?/응 맞아./그럼 깜../응 맞아. 쓰고 오면 돼.</script>
-		<conv_state>0,0,0,0</conv_state>
+		<conv_state>121/211/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -328,8 +333,8 @@
 		<key>28</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>6</stageNum>
-		<script>너 맞춤법은 꽤 하는구나./ 아 뭐 이정도는~ 하하하/ 맞춤법을 다 안다고 그 언어를 이해하고 있는 건 아니란다./ 네?/ 무슨 말씀이신지..?/ 난 조폐공사와 약속이 있어서 그럼 이만…</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>너 맞춤법은 꽤 하는구나./아 뭐 이정도는~ 하하하/맞춤법을 다 안다고 그 언어를 이해하고 있는 건 아니란다./네?/무슨 말씀이신지..?/난 조폐공사와 약속이 있어서 그럼 이만…</script>
+		<conv_state>121/211/121/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -340,8 +345,15 @@
 		<key>29</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>1</stageNum>
-		<script>saturday \n:목요일 / 휴… 여기가 미국인가?/ Who are you? \n: 누가 너냐?/ 뭐라는거야?/ May I help you \n: 5월달에 도와드리겠습니다/ ? 번역기가 고장났나?/ Sit down, please. \n: 앉아라, 플리즈야./ 싸우자는건가?/ Do you like hamburger? \n: 두유는 햄버거를 좋아해?/ 예...? 당최 뭐라는건지../ Open your mouse, hamburger is coming. \n: 아가ㄹㅣ 벌려 햄버거 들어간다./ 아니 나 햄버거 안좋아하는데...?/ Eat now! \n: 지금을 먹어!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>Saturday
+: 목요일/휴… 여기가 미국인가?/Who are you?
+: 누가 너냐?/뭐라는거야?/May I help you
+: 5월달에 도와드리겠습니다/? 번역기가 고장났나?/Sit down, please.
+: 앉아라, 플리즈야./싸우자는건가?/Do you like hamburger?
+: 두유는 햄버거를 좋아해?/예...? 당최 뭐라는건지../Open your mouse, hamburger is coming.
+: 아가ㄹㅣ 벌려 햄버거 들어간다./아니 나 햄버거 안좋아하는데...?/Eat now!
+: 지금을 먹어!</script>
+		<conv_state>110/211/121/211/121/211/121/211/121/212/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
 		<enemyImage>heung</enemyImage>
@@ -352,8 +364,8 @@
 		<key>30</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>2</stageNum>
-		<script>휴.. 겨우 이겼네../ 이제 정신을 좀 차리겠나?/ …./ ….eat…/ ..now…./ 으악!!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>휴.. 겨우 이겼네../이제 정신을 좀 차리겠나?/…./….eat…/..now…./으악!!</script>
+		<conv_state>211/211/121/121/121/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
 		<enemyImage>heung</enemyImage>
@@ -364,8 +376,8 @@
 		<key>31</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>3</stageNum>
-		<script>헉 헉 겨우 따돌렸나..?/ 안녕하신가!/ 오 이친구는 말이 좀 통하는건가!/ 힘세고 강한 아침! / …./ 하…/ 만약, 당신은 햄버거를 먹지 않는다면 귀하는 저장하지 못한다 너의 삶./ 되고 싶으신가요 똥의 조각?/ 또 햄버거야?/ 열어 너의 아ㄱ리. 햄버거가 오고있다.</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>헉 헉 겨우 따돌렸나..?/안녕하신가!/오 이친구는 말이 좀 통하는건가!/힘세고 강한 아침! /…./하…/만약, 당신은 햄버거를 먹지 않는다면 귀하는 저장하지 못한다 너의 삶./되고 싶으신가요 똥의 조각?/또 햄버거야?/열어 너의 아ㄱ리. 햄버거가 오고있다.</script>
+		<conv_state>110/121/211/121/211/211/121/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -376,8 +388,8 @@
 		<key>32</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>4</stageNum>
-		<script>헉헉…/ 해치웠나…? (복선)/ 도움!!!!/ 아니 자꾸 뭐라는거야 무섭게/ 당신은 귀하의 햄버거. 불쌍한 나 그것과 함께 시식?/ 번역기 왜이래 이거!/ 일단 도망가자...</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>헉헉…/해치웠나…? (복선)/도움!!!!/아니 자꾸 뭐라는거야 무섭게/당신은 귀하의 햄버거. 불쌍한 나 그것과 함께 시식?/번역기 왜이래 이거!/일단 도망가자...</script>
+		<conv_state>211/211/121/121/121/211/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -388,8 +400,15 @@
 		<key>33</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>5</stageNum>
-		<script>USA, new slang \n: 미국, 뉴욕/ I am free's statue. \n: 나는 자유의 여신상 입니다./ What work is there? \n:무슨 일 있으세요?/ dh dlwpdi akfdl wha xhdgksmsrns. \n: (오 이제야 말이 좀 통하는군.)/ dmd anjwl? sk dhodlfo… \n:(응 뭐지? 나 왜이래…)/ gksrmfdl dksskdhk; \n:(한글이 안나와;)/ Kick kick. You pressed one/spirit. \n: ㅋㅋ 너 한/영 눌렸어</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>USA, where are you
+: 미국, 어딘가/I am free's goddess prize.
+: 나는 자유의 여신상 입니다./What work is there?
+:무슨 일 있으세요?/dh dlwpdi akfdl wha xhdgksmsrns.
+: (오 이제야 말이 좀 통하는군.)/dmd anjwl? sk dhodlfo…
+: (응 뭐지? 나 왜이래…)/gksrmfdl dksskdhk;
+: (한글이 안나와;)/Kick kick. You pressed one/spirit.
+: ㅋㅋ 너 한/영 눌렸어</script>
+		<conv_state>110/121/121/211/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>america_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -400,8 +419,8 @@
 		<key>34</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>6</stageNum>
-		<script>와.. 내가 결국 모든 언어를 다 무찌른건가?/ 이정도 했으면 공신 하나 받는거 아니야? (복선)/ (공신 : 국가나 왕실을 위해 공을 세운 사람에게 주던 칭호 또는 그 칭호를 받은 사람.)/ 까똑!!!/ 응 뭐지?/ 세종대왕 : 너 잠깐 나좀 보자/ 응? 나한테 직접 사회관계망 편지를 보내신다고?/ 아 근데 '나 좀' 이 맞는데… 차마 창제하신 분에게 훈수를 할 수도 없고 허허/ 아무튼 공신 하나 진짜 받아버렸지 뭐야~/ 하하~ 내가 살다 살다 공신을 받는 날이 다 오네/ 서둘러 가야겠군</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>와.. 내가 결국 모든 언어를 다 무찌른건가?/이정도 했으면 공신 하나 받는거 아니야? (복선)/(공신 : 국가나 왕실을 위해 공을 세운 사람에게 주던 칭호 또는 그 칭호를 받은 사람.)/까똑!!!/응 뭐지?/세종대왕 : 너 잠깐 나좀 보자/응? 나한테 직접 사회관계망 편지를 보내신다고?/아 근데 '나 좀' 이 맞는데… 차마 창제하신 분에게 훈수를 할 수도 없고 허허/아무튼 공신 하나 진짜 받아버렸지 뭐야~/하하~ 내가 살다 살다 공신을 받는 날이 다 오네/서둘러 가야겠군</script>
+		<conv_state>201/201/101/100/201/101/201/201/201/201/201</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>america_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -412,8 +431,8 @@
 		<key>35</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>7</stageNum>
-		<script>너 이리와서 앉아봐라./ 예? 어디세요? 아무것도 안보이는데?/ 불을 다 껐으니까 당연히 안보이지/ 그건 그렇고, 너 내가 누군지 알아?/ 한석봉 이라고 들어는 봤나?/ 어… 안물어봤는데…/ 아니 어디 어른이 말씀하시는데 따박따박 말대꾸를해?/ 그리고 너 말이야, / 윗사람이 뭘 하고있으면 도와드릴 거라도 없냐고 물어라도 봐야할거 아니냐/ 아 뭐 도와드릴까요?/ 뭐 없으면 여기 와서 글좀 몇장 써봐!/ 예..? 이렇게 어두운데요?/ 하 참… 나때는 말이야 한치 앞도 안보여도 글 수십장씩 쓰고 그랬어!/ 이정도면 밝은거야! 난 지금 눈이 부셔 아주그냥/ 아니 뭐 쓰자면 쓸 수는 있는데... 삯은 주시나요?/ 뭐어?? 삯???/ 이 좋은 인생경험에 삯?/ 나 참. 세상 참 좋아졌어 정말~/ 요즘 사람들은 배우자는 정신이 없어./ 나때는 다 배우는 거라고 생각하고 했어/ (2시간 뒤...)/ 어디 젊어서 경험을 쌓을 생각은 안하고/ 글을 배우겠다ㅏㅏㅏ 하는 생각으로 해야지/ 거 돈 안준다고 글 안쓰고, 어둡다고 글 안쓰고, 이러면 글이 안늘어!/ 아.. 알았어요..! 쓰면 되잖아요!</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>너 이리와서 앉아봐라./예? 어디세요? 아무것도 안보이는데?/불을 다 껐으니까 당연히 안보이지/그건 그렇고, 너 내가 누군지 알아?/한석봉 이라고 들어는 봤나?/어… 안물어봤는데…/아니 어디 어른이 말씀하시는데 따박따박 말대꾸를해?/그리고 너 말이야, /윗사람이 뭘 하고있으면 도와드릴 거라도 없냐고 물어라도 봐야할거 아니냐/아 뭐 도와드릴까요?/뭐 없으면 여기 와서 글좀 몇장 써봐!/예..? 이렇게 어두운데요?/하 참… 나때는 말이야 한치 앞도 안보여도 글 수십장씩 쓰고 그랬어!/이정도면 밝은거야! 난 지금 눈이 부셔 아주그냥/아니 뭐 쓰자면 쓸 수는 있는데... 삯은 주시나요?/뭐어?? 삯???/이 좋은 인생경험에 삯?/나 참. 세상 참 좋아졌어 정말~/요즘 사람들은 배우자는 정신이 없어./나때는 다 배우는 거라고 생각하고 했어/(2시간 뒤...)/어디 젊어서 경험을 쌓을 생각은 안하고/글을 배우겠다ㅏㅏㅏ 하는 생각으로 해야지/거 돈 안준다고 글 안쓰고, 어둡다고 글 안쓰고, 이러면 글이 안늘어!/아.. 알았어요..! 쓰면 되잖아요!</script>
+		<conv_state>000/200/000/000/000/200/000/000/000/200/000/200/000/000/200/000/000/000/000/000/000/000/000/000/200</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -424,8 +443,8 @@
 		<key>36</key>
 		<chapterNum>-1</chapterNum>
 		<stageNum>6</stageNum>
-		<script>거 봐라 내 그럴 줄 알았다/글 하나 제대로 못쓰면서, 뭐 한글?/아니 아무것도 안보이는데…/어허!/속이 탄다 속이 타./안되면 되게해야 될거 아니야/가서 깜지 쓰고 다시 와!/아니 깜지 손아픈데…./젊어서 고생은 사서도 한다 그랬어./요령피울 생각이나 하고 말이야 끌끌끌</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>거 봐라 내 그럴 줄 알았다/글 하나 제대로 못쓰면서, 뭐 한글?/아니 아무것도 안보이는데…/어허!/속이 탄다 속이 타./안되면 되게해야 될거 아니야/가서 깜지 쓰고 다시 와!/아니 깜지 손아픈데…./젊어서 고생은 사서도 한다 그랬어./요령피울 생각이나 하고 말이야! 끌끌끌/또 쓰기 귀찮다고 요령 피우려고 광고보고 넘기고 그러기만 해봐! 혼날줄알아!/(방금 말은 무시하세요 광고는 사랑입니다. -제작자)</script>
+		<conv_state>121/121/211/121/121/121/121/211/121/121/121/111</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -436,8 +455,8 @@
 		<key>37</key>
 		<chapterNum>0</chapterNum>
 		<stageNum>8</stageNum>
-		<script>거 봐라 하니까 되잖아! 내가 뭐라그랬어/ 다 썼으니까 이제 가도 되죠..?/ 떽! 어디 어른이 말씀하시는데!/ 나때는 그런거 상상도 못했다 이말이야!/ 20대 때는 말이야 가치관을 세우는 나이야/ 그때 튼튼하게 자리를 잡아야 30대 때 굳건히 버틸 수 있는 힘이 되는건데/ 요즘 사람들은 그게 없어. 근성이 없단말이야./ 지금 이런 얘기도 그냥 흘려듣는다고/ 나때는 다 적었어/ 이거는 진짜 돈내고 들어야 해/ 돈 내고 들어야 되는거를 말이야... 운이 좋은거야 진짜로/ 그 인생이란건 말이다…/ (4시간 뒤...)/ (귀에서 피가 나기 시작했다…)/ (빨리 도망치자..)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>거 봐라 하니까 되잖아! 내가 뭐라그랬어!/다 썼으니까 이제 가도 되죠..?/떽! 어디 어른이 말씀하시는데!/나때는 그런거 상상도 못했다 이말이야!/20대 때는 말이야 가치관을 세우는 나이야/그때 튼튼하게 자리를 잡아야 30대 때 굳건히 버틸 수 있는 힘이 되는건데/요즘 사람들은 그게 없어. 근성이 없단말이야./지금 이런 얘기도 그냥 흘려듣는다고/나때는 다 적었어/이거는 진짜 돈내고 들어야 해/돈 내고 들어야 되는거를 말이야... 운이 좋은거야 진짜로…/그 인생이란건 말이다…/(4시간 뒤...)/(귀에서 피가 나기 시작했다… 빨리 도망치자..)/(줄행랑)</script>
+		<conv_state>000/200/000/000/000/000/000/000/000/000/000/000/000/200/000</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -448,8 +467,8 @@
 		<key>38</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>1</stageNum>
-		<script>조선, 궁궐/ 주막에서 공신있는 선비 보면 멋있다고 생각하려나?/ 일부로 꾀죄죄하게 입고 가면 주위 사람들이/ "풉, 저런 놈도 선비라고 돌아다니나?"/ 그때 공신교서 책상에 올려놓고 곰방대 하나 피고오면/ 주위사람들이 자리에 몰려들어서/ "와 공신을 받은 선비였어"/ "아니 이 사람 공신교서를 가지고도 겸손하게 아무 말 안하고 있었지?"/ 이렇게 떠드는거를/ "거기, 내 자리"/ 한마디 해 주면,/ 주모가 (고을에서 제일 예쁘다고 소문난 미녀) 와서 너비아니 한접시 서비스로 주면서…/ 저희 얘기좀 나눠봐요/ 아 깜짝이야!/ 무슨얘기요? 난 할 얘기 없소!/ 어명으로 궁에 가는 길이니 비키시오!/ 어허… 이 배운거 없는 놈이 또 날뛰는구만./ 감히 여기가 어디라고/ 뭐? 배운거 없는 놈?!/ 니가 그렇게 한글을 잘해?/ 용마루로 따라와</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>조선, 궁궐/주막에서 공신있는 선비 보면 멋있다고 생각하려나?/일부로 꾀죄죄하게 입고 가면 주위 사람들이/"풉, 저런 놈도 선비라고 돌아다니나?"/그때 공신교서 책상에 올려놓고 곰방대 하나 피고오면/주위사람들이 몰려들어서/"와 공신을 받은 선비였어"/"아니 이 사람 공신교서를 가지고도 겸손하게 아무 말 안하고 있었지?"/이렇게 떠드는데/주모가 (고을에서 제일 예쁘다고 소문난 미녀) 와서 너비아니 한접시 서비스로 주면서…/저희 얘기좀 나눠봐요/아 깜짝이야!/무슨얘기요? 난 할 얘기 없소!/어명으로 궁에 가는 길이니 비키시오!/어허… 이 배운거 없는 놈이 또 날뛰는구만./감히 여기가 어디라고.. 끌끌끌/뭐? 배운거 없는 놈?!/니가 그렇게 한글을 잘해?/용마루로 따라와</script>
+		<conv_state>100/201/201/100/201/201/101/101/201/211/121/211/211/211/121/121/121/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -460,8 +479,8 @@
 		<key>39</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>2</stageNum>
-		<script>생각보다 제법 하는군…/ 뭐야 정승도 별거 아닌데?/ 잠깐…!/ 나는 삼정승 중 가장 약한 우의정이다./ 나를 꺾은 건 시작에 불과해!/ 아니 난 칭찬받으러 가는건데 왜 길을 막는거지??</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>생각보다 제법 하는군…/뭐야 정승도 별거 아닌데?/잠깐…!/나는 삼정승 중 가장 약한 우의정이다./나를 꺾은 건 시작에 불과해!/아니 난 칭찬받으러 가는건데 왜 길을 막는거지??</script>
+		<conv_state>121/211/121/121/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -472,8 +491,8 @@
 		<key>40</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>3</stageNum>
-		<script>우의정이 당한 모양이군.../ 그놈은 우리 삼정승 중 최약체지/ 예?/ 음…/ 나 좌의정은 결코 쉽지 않을 것이다./ (소년 만화를 많이 보셨나…?)/ 용안을 뵙고 싶다면 나를 넘어야 할 것이다./ 간다!/ 아니 난 왕의 부름을 받고 온거라니까..?</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>우의정이 당한 모양이군.../그놈은 우리 삼정승 중 최약체지/예?/음…/나 좌의정은 결코 쉽지 않을 것이다. 각오해라!/(소년 만화를 많이 보셨나…?)/용안을 뵙고 싶다면 나를 넘어야 할 것이다./간다!/아니 난 왕의 부름을 받고 온거라니까..?</script>
+		<conv_state>121/121/211/211/121/211/211/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -484,8 +503,8 @@
 		<key>41</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>4</stageNum>
-		<script>큭…/ 아니 저는 왕께서 부르셔서 온건데/ 그러게 왜 길을 막으셨어요…/ …./ 날…/ 예?/ 날... 쏘고가라…/ (음… 영화를 많이 보셨나…?)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>큭…/아니 저는 왕께서 부르셔서 온건데/그러게 왜 길을 막으셨어요…/…./날…/예?/날... 쏘고가라…/(음… 영화를 많이 보셨나…?)</script>
+		<conv_state>121/211/211/121/121/211/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -496,8 +515,8 @@
 		<key>42</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>5</stageNum>
-		<script>흑...흑…/ ?/ 어떤 놈이 재수없게 울고 난리야? / 나다 이 십선비야…/ 감히... 우리 삼정승을 모욕해?/ 아니 저는 왕이 부르셔서 가는길인데 길을 막아서../ 시끄럽다!/ 나 영의정, 삼정승의 최강이자 의정부의 으뜸 벼슬,/ 용안을 뵙고싶다면 날 먼저 쓰러트려라!/ (음… 다들 대중매체에 노출이 많이 되셨네…)</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>흑...흑…/?/어떤 놈이 재수없게 울고 난리야? /나다 이 십선비야…/감히... 우리 삼정승을 모욕해?/아니 저는 왕이 부르셔서 가는길인데 길을 막아서../시끄럽다!/나 영의정, 삼정승의 최강이자 의정부의 으뜸 벼슬,/용안을 뵙고싶다면 날 먼저 쓰러트려라!/(음… 다들 대중매체에 노출이 많이 되셨네…)/네가 정말 전하를 뵐 자격이 있다면/눈을 가리고 붓을 잡거라!/갑자기?/전하를 뵈러 가는 길에 이정도 관문도 생각 못한건가?</script>
+		<conv_state>110/211/211/121/121/211/121/121/121/211/121/121/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -508,8 +527,8 @@
 		<key>43</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>6</stageNum>
-		<script>영의정/ 죽음/ 선비/ 신남/ 세종머왕에게 간다/ 임시</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>오호 제법 하는구나/하하 공신 받으러 가는 길이올시다!/공신? 나는 그런 얘기는 못들었는데?/예?/그건 그렇고 자네 소문이 조선 팔도에 다 퍼졌다네./하하 벌써 거기까지 소문이 났나요?/서둘러 가야겠군!! 이쪽 방향 맞죠?/음… 그쪽 방향이 맞긴 하네만../(저친구 뭔가 단단히 착각한 모양인데…)</script>
+		<conv_state>121/211/121/211/121/211/211/021/010</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -520,8 +539,8 @@
 		<key>44</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>7</stageNum>
-		<script>세종/ 대왕/ 만남/ 임시</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>와 드디어 궐 안에 들어왔군./…./본인 방금 공신받는 상상함ㅋㅋㅋㅋ/우선 내 앞길 가로막던 정승들 (우의정, 좌의정, 영의정)/특히 다짜고짜 내 눈 가리던 영의정ㅋㅋ/내 공신교서 보고 덜덜 거리면서 빌고ㅋㅋㅋ/어림도 없지/앗 전하…/허 참 공신은 무슨/자네 여기저기 돌아다니면서 훈계하고 선비질하고 다녔다는게 사실인가?/예라이 십선비야... 쯧쯧…/잘못들었습니다..?/너는 좀 맞자./예..??/진실의 방으로.</script>
+		<conv_state>100/100/201/201/201/211/121/211/121/121/121/211/121/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -532,8 +551,8 @@
 		<key>45</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>8</stageNum>
-		<script>세종/ 참교육/ 선비/ 반성/ 임시</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>너 한글은 꽤나 하는구나./근데 왜 그러고 다녔냐 이놈아…/아니 자꾸 한글을 파괴하…/허허… 너 훈민정음 언해본 한번 읊어봐라./(갑자기...?)/나랏말싸미 듕귁에 달아.. 문자와로 서르 사맛디 아니할쎄/이런 젼차로 어린 백셩이 니르고져 홀 배 이셔도.../마참내 제 뜨들 시러펴디 몯 할…/맞춤법 맞아?/아니 이건 옛날 한글…/그래./언어는 시대에 따라 변하는 것 인데, 왜 하나만 알고 둘은 모르느냐/언어 사용은 누군가가 제한하거나 훈계하고, 선비질 할 수 있는게 아니거늘…/어찌 그리 딱딱하게 구는 것이냐?/앗… 아.../…/…..../...킹치만.../어딜 빠져나가려고ㅋㅋㅋ/부끄럽습니다…/거 앞으론 그러지 말게!/예 알겠습니다...</script>
+		<conv_state>121/121/211/121/211/211/211/211/121/211/121/121/121/121/211/211/211/211/121/211/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_2</BGImage>
 		<enemyImage>player_face</enemyImage>
@@ -544,8 +563,8 @@
 		<key>46</key>
 		<chapterNum>6</chapterNum>
 		<stageNum>1</stageNum>
-		<script>엔딩/ 따로 있는지는 모르겠지만/ 일단은 만들어놓은/ 다이얼로그</script>
-		<conv_state>0,0,0,0</conv_state>
+		<script>그 길로 십선비는 한글 공부를 접고 야민정음을 수련하러 떠난다./머머튽… 숲튽훈… 댕댕이... 커엽다... 띵작... /정말 중간을 모르는 선비였다./미머생… 세종머앟… 괴꺼솟… /머박사건… 괄도네넴띤...</script>
+		<conv_state>100/201/101/201/201</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jeonju_1</BGImage>
 		<enemyImage>player_face</enemyImage>

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Zing : MonoBehaviour
 {
-    public AudioClip zingSound;
-    AudioSource audio=new AudioSource();
+    public AudioClip zingSound, correct, incorrect;
+
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
         audio.clip = zingSound;
         audio.PlayOneShot(zingSound);
     }
@@ -18,5 +18,16 @@ public class Zing : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void CorrectSound()
+    {
+        audio.clip = correct;
+        audio.PlayOneShot(correct);
+    }
+    public void InorrectSound()
+    {
+        audio.clip = incorrect;
+        audio.PlayOneShot(incorrect);
     }
 }
