@@ -8,6 +8,9 @@ public class SpellingQuiz : MonoBehaviour
 {
     GameManager m_gameManager;
 
+    public AudioClip o, x;
+    public AudioSource audio;
+
     public Text question;
     public Text num1;
     public Text num2;
@@ -63,6 +66,8 @@ public class SpellingQuiz : MonoBehaviour
         if (BtNum == correctAns)
         {
             Debug.Log("정답");
+            audio.clip = o;
+            audio.PlayOneShot(o);
             if (selectAns < 7)
             {
                 selectAns++;
@@ -77,6 +82,8 @@ public class SpellingQuiz : MonoBehaviour
         else
         {
             Debug.Log("오답");
+            audio.clip = x;
+            audio.PlayOneShot(x);
             SceneChange.BonusNextScene(false);
         }
     }

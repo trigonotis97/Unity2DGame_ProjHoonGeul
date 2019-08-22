@@ -96,7 +96,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>100</enemyWholeImage>
+		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -108,7 +108,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>100</enemyWholeImage>
+		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>
@@ -120,7 +120,7 @@
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
 		<enemyImage>player_face</enemyImage>
-		<enemyWholeImage>100</enemyWholeImage>
+		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
 	<DialogSet>

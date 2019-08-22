@@ -43,6 +43,8 @@ public class BonusPenalty : MonoBehaviour
             if (nowLine == answerStr.Length)
             {
                 Debug.Log("다음 씬으로 보내주자");
+                m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
+                sceneData = m_gameManager.GetSceneData();
                 switch (sceneData.nextScene)
                 {
                     case 3:

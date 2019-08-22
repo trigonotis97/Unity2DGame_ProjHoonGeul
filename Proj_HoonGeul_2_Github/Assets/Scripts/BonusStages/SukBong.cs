@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SukBong : MonoBehaviour
 {
+    public AudioClip o, x;
+    public AudioSource audio;
+
     GameManager m_gameManager;
 
     public Text question;
@@ -47,7 +50,10 @@ public class SukBong : MonoBehaviour
         string inputWord = InputText.text;
         if (nowAns == inputWord)
         {
+
             Debug.Log("정답");
+            audio.clip = o;
+            audio.PlayOneShot(o);
             if (selectAns == answerStr.Length - 1) //마지막 문제면
             {
                 Debug.Log("모든 문제를 다 풀었어요.");
@@ -64,6 +70,8 @@ public class SukBong : MonoBehaviour
         else
         {
             Debug.Log("오답");
+            audio.clip = x;
+            audio.PlayOneShot(x);
             SceneChange.BonusNextScene(false);
         }
         InputText.text = "";
