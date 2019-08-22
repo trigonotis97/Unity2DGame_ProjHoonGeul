@@ -8,7 +8,7 @@
 		<conv_state>101/101/101/101/100/100/201/201/201/201/101/201/201/201/101/201/101/201/100</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jeonju_1</BGImage>
-		<enemyImage>jap_face_1</enemyImage>
+		<enemyImage>0</enemyImage>
 		<enemyWholeImage>0</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -20,7 +20,7 @@
 		<conv_state>110/121/211/211/211/121/211/121/121/211/121/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
-		<enemyImage>jap_face_1</enemyImage>
+		<enemyImage>1-1</enemyImage>
 		<enemyWholeImage>1</enemyWholeImage>
 		<BGM>choding</BGM>
 	</DialogSet>
@@ -32,7 +32,7 @@
 		<conv_state>121/211/211/121/211/121/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>1-1</enemyImage>
 		<enemyWholeImage>1</enemyWholeImage>
 		<BGM>choding</BGM>
 	</DialogSet>
@@ -44,7 +44,7 @@
 		<conv_state>121/211/211/121/211/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
-		<enemyImage>jap_face_1</enemyImage>
+		<enemyImage>1-2</enemyImage>
 		<enemyWholeImage>2</enemyWholeImage>
 		<BGM>choding</BGM>
 	</DialogSet>
@@ -52,11 +52,11 @@
 		<key>5</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>4</stageNum>
-		<script>예끼 이놈! 어디 어른 말씀에 대들고 으이?/큭… 칙쇼…/아니 아직도 한글은 안쓰고 그런 말을..!/넌 이제 죽었다… 우리 학교짱한테 이미 다 일렀어… 크큭/우리 반으로 따라와!</script>
+		<script>예끼 이놈! 어디 어른 말씀에 대들고 으이?/큭… 칙쇼…/아니 아직도 한글은 안쓰고 그런 말을..!/니가 그렇게 한글을 잘해?/우리 반으로 따라와!</script>
 		<conv_state>211/121/211/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>student_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>1-2</enemyImage>
 		<enemyWholeImage>2</enemyWholeImage>
 		<BGM>choding</BGM>
 	</DialogSet>
@@ -68,7 +68,7 @@
 		<conv_state>110/211/121/211/121/211/121/211/121/211/121/211/121/211/121/211/121/211/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>student_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>1-3</enemyImage>
 		<enemyWholeImage>3</enemyWholeImage>
 		<BGM>choding</BGM>
 	</DialogSet>
@@ -80,7 +80,7 @@
 		<conv_state>211/121/121/211/121/121/211/121/211/121/211/211/211/211/211/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>student_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>1-3</enemyImage>
 		<enemyWholeImage>3</enemyWholeImage>
 		<BGM>choding</BGM>
 	</DialogSet>
@@ -95,7 +95,7 @@
 		<conv_state>110/121/211/211/121/211/121/211/121/211/211/121/121/211/121/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>1-200</enemyImage>
 		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -107,7 +107,7 @@
 		<conv_state>121/121/121/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>1-200</enemyImage>
 		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -119,7 +119,7 @@
 		<conv_state>121/211/121/010/021/021/021/021/021</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>1-200</enemyImage>
 		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -131,7 +131,7 @@
 		<conv_state>110/211/211/211/121/211/121/211/121/211/211/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>2-1</enemyImage>
 		<enemyWholeImage>4</enemyWholeImage>
 		<BGM>japan</BGM>
 	</DialogSet>
@@ -143,7 +143,7 @@
 		<conv_state>211/121/211/211/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>2-1</enemyImage>
 		<enemyWholeImage>4</enemyWholeImage>
 		<BGM>japan</BGM>
 	</DialogSet>
@@ -155,7 +155,7 @@
 		<conv_state>110/121/212/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
-		<enemyImage>heung</enemyImage>
+		<enemyImage>2-2</enemyImage>
 		<enemyWholeImage>5</enemyWholeImage>
 		<BGM>japan</BGM>
 	</DialogSet>
@@ -167,7 +167,7 @@
 		<conv_state>211/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>jap_bg_1</BGImage>
-		<enemyImage>heung</enemyImage>
+		<enemyImage>2-2</enemyImage>
 		<enemyWholeImage>5</enemyWholeImage>
 		<BGM>japan</BGM>
 	</DialogSet>
@@ -179,7 +179,7 @@
 		<conv_state>100/101/201/110/121/211/121/211/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jap_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>2-3</enemyImage>
 		<enemyWholeImage>6</enemyWholeImage>
 		<BGM>japan</BGM>
 	</DialogSet>
@@ -191,7 +191,7 @@
 		<conv_state>211/121/211/211/110/211/110/211/121/121/211/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>jap_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>2-3</enemyImage>
 		<enemyWholeImage>6</enemyWholeImage>
 		<BGM>japan</BGM>
 	</DialogSet>
@@ -203,7 +203,7 @@
 		<conv_state>110/121/211/211/121/211/121/211/121/121/211/121/211/121/211/121/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>2-200</enemyImage>
 		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -215,7 +215,7 @@
 		<conv_state>121/121/211/121/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>2-200</enemyImage>
 		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -229,7 +229,7 @@
 		<conv_state>121/211/121/121/111/121/111/121/211/211/110</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>2-200</enemyImage>
 		<enemyWholeImage>200</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -241,7 +241,7 @@
 		<conv_state>110/211/211/211/121/121/121/211/121/211/211/121/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>3-1</enemyImage>
 		<enemyWholeImage>7</enemyWholeImage>
 		<BGM>china</BGM>
 	</DialogSet>
@@ -253,7 +253,7 @@
 		<conv_state>211/121/211/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
-		<enemyImage>money</enemyImage>
+		<enemyImage>3-1</enemyImage>
 		<enemyWholeImage>7</enemyWholeImage>
 		<BGM>china</BGM>
 	</DialogSet>
@@ -265,7 +265,7 @@
 		<conv_state>100/121/211/211/121/211/121/211/121/211/121/211/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
-		<enemyImage>heung</enemyImage>
+		<enemyImage>3-2</enemyImage>
 		<enemyWholeImage>8</enemyWholeImage>
 		<BGM>china</BGM>
 	</DialogSet>
@@ -277,7 +277,7 @@
 		<conv_state>121/121/121/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>china_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>3-2</enemyImage>
 		<enemyWholeImage>8</enemyWholeImage>
 		<BGM>china</BGM>
 	</DialogSet>
@@ -289,7 +289,7 @@
 		<conv_state>110/121/121/211/211/211/121/121/121/110/211/121/121/121/110/211/211/121/121/121/121/121/110</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>china_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>3-3</enemyImage>
 		<enemyWholeImage>9</enemyWholeImage>
 		<BGM>china</BGM>
 	</DialogSet>
@@ -301,7 +301,7 @@
 		<conv_state>121/211/211/121/211/110/110/111</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>china_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>3-3</enemyImage>
 		<enemyWholeImage>9</enemyWholeImage>
 		<BGM>china</BGM>
 	</DialogSet>
@@ -313,7 +313,7 @@
 		<conv_state>110/211/110/211/121/211/211/211/121/211/121/121/211/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>3-300</enemyImage>
 		<enemyWholeImage>300</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -325,7 +325,7 @@
 		<conv_state>121/211/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>3-300</enemyImage>
 		<enemyWholeImage>300</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -337,7 +337,7 @@
 		<conv_state>121/211/121/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>3-300</enemyImage>
 		<enemyWholeImage>300</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -356,7 +356,7 @@
 		<conv_state>110/211/121/211/121/211/121/211/121/212/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
-		<enemyImage>heung</enemyImage>
+		<enemyImage>4-1</enemyImage>
 		<enemyWholeImage>10</enemyWholeImage>
 		<BGM>america</BGM>
 	</DialogSet>
@@ -368,7 +368,7 @@
 		<conv_state>211/211/121/121/121/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
-		<enemyImage>heung</enemyImage>
+		<enemyImage>4-1</enemyImage>
 		<enemyWholeImage>10</enemyWholeImage>
 		<BGM>america</BGM>
 	</DialogSet>
@@ -380,7 +380,7 @@
 		<conv_state>110/121/211/121/211/211/121/121/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>4-2</enemyImage>
 		<enemyWholeImage>11</enemyWholeImage>
 		<BGM>america</BGM>
 	</DialogSet>
@@ -392,7 +392,7 @@
 		<conv_state>211/211/121/121/121/211/211</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>america_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>4-2</enemyImage>
 		<enemyWholeImage>11</enemyWholeImage>
 		<BGM>america</BGM>
 	</DialogSet>
@@ -411,7 +411,7 @@
 		<conv_state>110/121/121/211/211/211/121</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>america_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>4-3</enemyImage>
 		<enemyWholeImage>12</enemyWholeImage>
 		<BGM>america</BGM>
 	</DialogSet>
@@ -423,7 +423,7 @@
 		<conv_state>201/201/101/100/201/101/201/201/201/201/201</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>america_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>4-3</enemyImage>
 		<enemyWholeImage>12</enemyWholeImage>
 		<BGM>america</BGM>
 	</DialogSet>
@@ -435,7 +435,7 @@
 		<conv_state>000/200/000/000/000/200/000/000/000/200/000/200/000/000/200/000/000/000/000/000/000/000/000/000/200</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>0</enemyImage>
 		<enemyWholeImage>0</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -447,7 +447,7 @@
 		<conv_state>121/121/211/121/121/121/121/211/121/121/121/111</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>0</enemyImage>
 		<enemyWholeImage>0</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -459,7 +459,7 @@
 		<conv_state>000/200/000/000/000/000/000/000/000/000/000/000/000/200/000</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>0</enemyImage>
 		<enemyWholeImage>0</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -471,7 +471,7 @@
 		<conv_state>100/201/201/100/201/201/101/101/201/211/121/211/211/211/121/121/121/121/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-1</enemyImage>
 		<enemyWholeImage>13</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -483,7 +483,7 @@
 		<conv_state>121/211/121/121/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-1</enemyImage>
 		<enemyWholeImage>13</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -495,7 +495,7 @@
 		<conv_state>121/121/211/211/121/211/211/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-2</enemyImage>
 		<enemyWholeImage>14</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -507,7 +507,7 @@
 		<conv_state>121/211/211/121/121/211/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-2</enemyImage>
 		<enemyWholeImage>14</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -519,7 +519,7 @@
 		<conv_state>110/211/211/121/121/211/121/121/121/211/121/121/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-3</enemyImage>
 		<enemyWholeImage>15</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -531,7 +531,7 @@
 		<conv_state>121/211/121/211/121/211/211/021/010</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-3</enemyImage>
 		<enemyWholeImage>15</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -543,7 +543,7 @@
 		<conv_state>100/100/201/201/201/211/121/211/121/121/121/211/121/211/121</conv_state>
 		<isKnockDown>TRUE</isKnockDown>
 		<BGImage>joseon_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-4</enemyImage>
 		<enemyWholeImage>16</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -555,7 +555,7 @@
 		<conv_state>121/121/211/121/211/211/211/211/121/211/121/121/121/121/211/211/211/211/121/211/121/211</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>joseon_bg_2</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>5-4</enemyImage>
 		<enemyWholeImage>16</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
@@ -567,7 +567,7 @@
 		<conv_state>100/201/101/201/201</conv_state>
 		<isKnockDown>FALSE</isKnockDown>
 		<BGImage>jeonju_1</BGImage>
-		<enemyImage>player_face</enemyImage>
+		<enemyImage>0</enemyImage>
 		<enemyWholeImage>0</enemyWholeImage>
 		<BGM>joseon</BGM>
 	</DialogSet>
