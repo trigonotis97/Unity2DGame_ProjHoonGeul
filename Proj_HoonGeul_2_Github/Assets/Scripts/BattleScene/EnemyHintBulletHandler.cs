@@ -275,7 +275,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
             case 2://right hint bullet
                 //현재 문제초성 데이터 가져오기  //그중에서 가장 오래된거 골라내기
                 string oldsetValue = chosungGenerator.GetOldestQuestionValue();
-                int randInt = Random.Range(0, 10);
+                int randInt = Random.Range(0, chosungValHintTable[oldsetValue].Count);
                 int indexCount = 0;
                 string outHintWord="";
                 //해당 문제 밸류값으로 힌트 검색, 랜덤으로 선택

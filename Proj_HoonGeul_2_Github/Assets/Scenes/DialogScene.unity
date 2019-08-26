@@ -210,7 +210,7 @@ MonoBehaviour:
   blackBack: {fileID: 1799138495}
   sunbiFace: {fileID: 1715394687}
   enemyFace: {fileID: 1908377439}
-  sunbiChar: {fileID: 610722523}
+  sunbiChar: {fileID: 1197977023}
   enemyChar: {fileID: 0}
   EnemyRect: {fileID: 1875319385}
 --- !u!4 &77259063
@@ -263,7 +263,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1008,11 +1008,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3500886638791031166, guid: 8240651f2c3d46e43ac19481170d1635,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8240651f2c3d46e43ac19481170d1635, type: 3}
 --- !u!224 &1197977022 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3500886638791031167, guid: 8240651f2c3d46e43ac19481170d1635,
+    type: 3}
+  m_PrefabInstance: {fileID: 1197977021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1197977023 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3500886638791031166, guid: 8240651f2c3d46e43ac19481170d1635,
     type: 3}
   m_PrefabInstance: {fileID: 1197977021}
   m_PrefabAsset: {fileID: 0}

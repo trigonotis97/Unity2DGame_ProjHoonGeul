@@ -4527,7 +4527,7 @@ MonoBehaviour:
   countCorrect_hell: 0
   isHellQuestState: 0
   hellCountInd: 0
-  hellCountNum: 2
+  hellCountNum: 3
   countCorrect_heal: 0
   healProbability: 0
   percentageAddNum: 0
@@ -4871,7 +4871,7 @@ PrefabInstance:
     - target: {fileID: 1541346128387092623, guid: 1adea435a510fe849b570600e992f704,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1419.6
+      value: 1433
       objectReference: {fileID: 0}
     - target: {fileID: 1541346128387092623, guid: 1adea435a510fe849b570600e992f704,
         type: 3}

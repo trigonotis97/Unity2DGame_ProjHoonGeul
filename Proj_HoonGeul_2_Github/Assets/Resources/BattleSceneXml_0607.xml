@@ -4,10 +4,10 @@
 		<key>1</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>1</stageNum>
-		<problemPocket>ㅇㅅ,ㄱㅅ,ㄱㅈ,ㅇㄱ,ㅇㅎ,ㅊㄱ,ㅈㄱ,ㅅㅅ,ㄱㅁ</problemPocket>
-		<hellProblemPocket>ㅈㅌ,ㄴㄹ,ㄷㅎ</hellProblemPocket>
+		<problemPocket>ㅇㅅ,ㄱㅇ,ㅅㅇ,ㅅㄱ,ㅇㅊ,ㅅㅅ,ㅂㄱ</problemPocket>
+		<hellProblemPocket>ㅎㅊ,ㄷㄷ,ㅍㅂ</hellProblemPocket>
 		<enemyPrefab>1</enemyPrefab>
-		<enemyHP>10</enemyHP>
+		<enemyHP>11</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -19,10 +19,10 @@
 		<key>2</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>2</stageNum>   
-		<problemPocket>ㄱㅇ,ㅇㅇ,ㅇㅈ,ㄱㄱ,ㄱㅎ,ㄱㅊ</problemPocket>
-		<hellProblemPocket>ㅈㅌ,ㄴㄹ,ㄷㅎ</hellProblemPocket>
+		<problemPocket>ㄱㄱ,ㄱㅅ,ㅈㅇ,ㅈㄱ,ㅎㅇ,ㅇㅂ,ㅈㅅ,ㅎㄱ,ㅅㅈ,ㅈㅈ,ㄱㅂ,ㅎㅅ</problemPocket>
+		<hellProblemPocket>ㅁㅍ,ㅍㅊ,ㄴㅁ</hellProblemPocket>
 		<enemyPrefab>2</enemyPrefab>
-		<enemyHP>13</enemyHP>
+		<enemyHP>15</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>  
 		<bossPattern>0</bossPattern>
@@ -34,10 +34,10 @@
 		<key>3</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>3</stageNum>
-		<problemPocket>ㅇㅈ,ㅅㅂ,ㄴㅈ</problemPocket>
-		<hellProblemPocket>ㅇㅈ,ㅅㅂ,ㄴㅈ</hellProblemPocket>
+		<problemPocket>ㅇㅈ,ㅇㅇ,ㄴㅈ</problemPocket>
+		<hellProblemPocket>ㅇㅈ,ㅇㅇ,ㄴㅈ</hellProblemPocket>
 		<enemyPrefab>3</enemyPrefab>
-		<enemyHP>15</enemyHP>
+		<enemyHP>20</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>1</bossPattern>
@@ -49,10 +49,10 @@
 		<key>4</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>1</stageNum>
-		<problemPocket>ㅇㄹ,ㅅㄹ,ㅈㄹ,ㄱㄷ,ㅅㅌ,ㅁㄹ</problemPocket>
-		<hellProblemPocket>ㅎㅍ,ㅍㄹ,ㅎㅌ</hellProblemPocket>
+		<problemPocket>ㄱㅊ,ㅇㅁ,ㅂㅇ,ㅂㅅ,ㅊㅇ,ㅎㅈ,ㅊㄱ,ㄱㄹ,ㅈㅊ,ㅈㄹ,ㅇㄱ,ㅇㅎ,</problemPocket>
+		<hellProblemPocket>ㅌㄹ,ㅍㅁ,ㅂㄴ</hellProblemPocket>
 		<enemyPrefab>4</enemyPrefab>
-		<enemyHP>15</enemyHP>
+		<enemyHP>23</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -64,10 +64,10 @@
 		<key>5</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>2</stageNum>
-		<problemPocket>ㅅㅍ,ㅍㄱ,ㄱㅍ,ㅌㄱ,ㅅㄴ,ㅊㄹ</problemPocket>
-		<hellProblemPocket>ㅍㅎ,ㄴㅌ,ㄴㅍ</hellProblemPocket>
+		<problemPocket>ㄱㅊ,ㅇㄹ,ㄱㅎ,ㅊㅅ,ㅅㅂ,ㅂㅈ,ㄱㅁ,ㅅㅊ,ㅈㅂ,ㅁㅅ,ㅅㄹ,ㅇㅍ</problemPocket>
+		<hellProblemPocket>ㅊㅍ,ㄴㄷ,ㅌㅂ</hellProblemPocket>
 		<enemyPrefab>5</enemyPrefab>
-		<enemyHP>17</enemyHP>
+		<enemyHP>23</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -79,10 +79,10 @@
 		<key>6</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>3</stageNum>
-		<problemPocket>ㅇㄹ,ㅅㄹ,ㅈㄹ,ㄱㄷ,ㅅㅌ,ㅁㄹ,ㅅㅍ,ㅍㄱ,ㄱㅍ,ㅌㄱ,ㅅㄴ,ㅊㄹ</problemPocket>
-		<hellProblemPocket>ㅎㅍ,ㅍㄹ,ㅎㅌ,ㅍㅎ,ㄴㅌ,ㄴㅍ</hellProblemPocket>
+		<problemPocket>ㅇㄱ,ㄱㅈ,ㅇㅎ,ㅇㄹ,ㅇㅁ,ㄱㅎ,ㄱㄹ,ㅁㅅ,ㅈㅊ,ㅅㄹ,ㅈㄹ,ㅇㅍ</problemPocket>
+		<hellProblemPocket>ㄴㄹ,ㅍㅎ,ㄷㅍ</hellProblemPocket>
 		<enemyPrefab>6</enemyPrefab>
-		<enemyHP>20</enemyHP>
+		<enemyHP>23</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>2</bossPattern>
@@ -94,10 +94,10 @@
 		<key>7</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>1</stageNum>
-		<problemPocket>ㅅㄱ,ㅂㅅ,ㄱㅂ,ㅇㅂ,ㄷㅂ,ㄴㅇ</problemPocket>
-		<hellProblemPocket>ㄷㅍ,ㄴㅁ,ㅈㄴ</hellProblemPocket>
+		<problemPocket>ㅊㅈ,ㅇㄷ,ㅅㅎ,ㅈㅎ,ㅁㄱ,ㅁㅇ,ㅁㅁ,ㅁㄷ,ㄷㄹ,ㄷㅁ,ㅈㅌ,ㅍㄹ</problemPocket>
+		<hellProblemPocket>ㅍㄷ,ㅊㅌ,ㅎㄴ</hellProblemPocket>
 		<enemyPrefab>7</enemyPrefab>
-		<enemyHP>20</enemyHP>
+		<enemyHP>25</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -109,10 +109,10 @@
 		<key>8</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>2</stageNum>
-		<problemPocket>ㅂㅈ,ㅁㅅ,ㅇㅁ,ㄱㄹ,ㄴㅁ,ㅂㅌ</problemPocket>
-		<hellProblemPocket>ㅍㅊ,ㅂㄴ,ㅎㄴ</hellProblemPocket>
+		<problemPocket>ㅅㅁ,ㅁㅈ,ㄱㄷ,ㅈㅁ,ㄷㄱ,ㅂㄹ,ㄱㄴ,ㅅㄴ,ㅂㅌ,ㄴㅂ,ㅈㄴ,ㅂㅍ</problemPocket>
+		<hellProblemPocket>ㅌㅎ,ㄴㅍ,ㅁㄴ</hellProblemPocket>
 		<enemyPrefab>8</enemyPrefab>
-		<enemyHP>22</enemyHP>
+		<enemyHP>28</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -124,10 +124,10 @@
 		<key>9</key>
 		<chapterNum>3</chapterNum>
 		<stageNum>3</stageNum>
-		<problemPocket>ㅅㄱ,ㅂㅅ,ㄱㅂ,ㅇㅂ,ㅂㅈ,ㅁㅅ,ㅇㅁ,ㄱㄹ,ㄷㅂ,ㄴㅇ,ㄴㅁ,ㅂㅌ</problemPocket>
-		<hellProblemPocket>ㄷㅍ,ㄴㅁ,ㅈㄴ,ㅍㅊ,ㅂㄴ,ㅎㄴ</hellProblemPocket>
+		<problemPocket>ㅁㅁ,ㄱㄴ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㄴㅂ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ</problemPocket>
+		<hellProblemPocket>ㅁㅌ,ㄷㅌ,ㅍㅌ</hellProblemPocket>
 		<enemyPrefab>9</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>32</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>3</bossPattern>
@@ -139,10 +139,10 @@
 		<key>10</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>1</stageNum>
-		<problemPocket>ㅎㅅ,ㅂㅇ,ㅊㅁ,ㅎㅊ,ㅁㅊ,ㅌㅈ</problemPocket>
-		<hellProblemPocket>ㅍㄷ,ㅍㅂ,ㄴㅊ</hellProblemPocket>
+		<problemPocket>ㅂㅊ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ</problemPocket>
+		<hellProblemPocket>ㅌㅁ,ㄷㄴ,ㅌㅊ</hellProblemPocket>
 		<enemyPrefab>10</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>30</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -154,10 +154,10 @@
 		<key>11</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>2</stageNum>
-		<problemPocket>ㅂㄱ,ㅎㄱ,ㅊㄷ,ㅊㅊ,ㄷㄷ,ㄷㅊ</problemPocket>
-		<hellProblemPocket>ㅍㅁ,ㄴㅎ,ㅁㄴ</hellProblemPocket>
+		<problemPocket>ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ</problemPocket>
+		<hellProblemPocket>ㅊㄴ,ㅌㅍ,ㅅㅋ</hellProblemPocket>
 		<enemyPrefab>11</enemyPrefab>
-		<enemyHP>27</enemyHP>
+		<enemyHP>30</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -169,10 +169,10 @@
 		<key>12</key>
 		<chapterNum>4</chapterNum>
 		<stageNum>3</stageNum>
-		<problemPocket>ㅎㅅ,ㅂㅇ,ㅊㅁ,ㅎㅊ,ㅁㅊ,ㅌㅈ,ㅂㄱ,ㅎㄱ,ㅊㄷ,ㅊㅊ,ㄷㄷ,ㄷㅊ</problemPocket>
-		<hellProblemPocket>ㅍㄷ,ㅍㅂ,ㄴㅊ,ㅍㅁ,ㄴㅎ,ㅁㄴ</hellProblemPocket>
+		<problemPocket>ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ</problemPocket>
+		<hellProblemPocket>ㅇㅋ,ㄴㅌ,ㅍㅍ</hellProblemPocket>
 		<enemyPrefab>12</enemyPrefab>
-		<enemyHP>29</enemyHP>
+		<enemyHP>30</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>4</bossPattern>
@@ -184,10 +184,10 @@
 		<key>13</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>1</stageNum>
-		<problemPocket>ㅇㅎ,ㅊㄱ,ㄱㅎ,ㄱㅊ,ㄱㅁ,ㅊㅅ,ㅅㅎ,ㅇㄷ,ㅅㅂ,ㅎㅈ,ㅁㅈ,ㅈㅂ,ㅇㅊ,ㅊㅈ,ㄷㅅ,ㅅㅊ,ㅁㅇ,ㅅㄹ,ㅈㅊ,ㅈㄹ,ㅈㅁ,ㅈㅎ,ㄱㄷ,ㅁㄱ,ㅅㅁ,ㅊㅇ,ㄷㄱ,ㄷㅈ,ㅂㅊ,ㅂㅎ,ㅈㄷ,ㅂㅂ,ㅎㅂ,ㅅㄷ,ㄷㅇ,ㅂㅁ,ㄴㅅ,ㅁㅁ,ㅍㅅ,ㄷㅂ,ㅂㄹ,ㄴㅇ,ㅅㅍ,ㄴㅈ,ㅎㄷ,ㅂㄷ,ㅊㅂ,ㅌㅅ,ㅍㄱ,ㅎㅁ,ㄱㅍ,ㅁㅂ,ㅈㅍ,ㅌㄱ,ㅍㅈ,ㅎㅎ,ㄷㄹ,ㅁㄷ,ㅇㅍ,ㅅㅌ,ㅊㅎ,ㅎㄹ,ㅁㄹ,ㅇㄴ,ㄴㄱ,ㄴㅂ,ㅅㄴ,ㅌㅇ,ㅍㅇ,ㄱㅌ,ㄷㅁ,ㅁㅎ,ㅂㅍ,ㅇㅌ,ㄱㄴ,ㅊㅁ,ㅎㅊ,ㅁㅊ,ㅌㅈ,ㅊㄷ,ㅊㅊ,ㅊㄹ,ㅂㅌ,ㄷㄷ,ㄷㅊ</problemPocket>
-		<hellProblemPocket>ㄷㅍ,ㅎㅍ,ㅍㄹ,ㄴㅁ,ㅈㅌ,ㄴㄹ,ㄷㅎ,ㅈㄴ,ㅍㄷ,ㅍㅂ,ㄴㅊ,ㅍㅁ,ㅎㅌ,ㅂㄴ,ㅍㅎ,ㄴㅎ,ㅁㄴ,ㄷㄴ,ㅁㅍ,ㅊㅌ,ㅎㄴ,ㅌㅎ,ㄴㄷ,ㅊㄴ,ㅊㅍ,ㅌㄹ,ㅁㅌ,ㅌㅂ,ㅍㅊ,ㄴㅍ,ㅌㅁ,ㅌㄷ,ㅌㅊ,ㄴㅌ,ㅌㅍ,ㅍㅍ,ㄷㅌ</hellProblemPocket>
+		<problemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</problemPocket>
+		<hellProblemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</hellProblemPocket>
 		<enemyPrefab>13</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>35</enemyHP>
 		<enemyDamage>2.5</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>5</bossPattern>
@@ -199,10 +199,10 @@
 		<key>14</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>2</stageNum>
-		<problemPocket>ㅇㅎ,ㅊㄱ,ㄱㅎ,ㄱㅊ,ㄱㅁ,ㅊㅅ,ㅅㅎ,ㅇㄷ,ㅅㅂ,ㅎㅈ,ㅁㅈ,ㅈㅂ,ㅇㅊ,ㅊㅈ,ㄷㅅ,ㅅㅊ,ㅁㅇ,ㅅㄹ,ㅈㅊ,ㅈㄹ,ㅈㅁ,ㅈㅎ,ㄱㄷ,ㅁㄱ,ㅅㅁ,ㅊㅇ,ㄷㄱ,ㄷㅈ,ㅂㅊ,ㅂㅎ,ㅈㄷ,ㅂㅂ,ㅎㅂ,ㅅㄷ,ㄷㅇ,ㅂㅁ,ㄴㅅ,ㅁㅁ,ㅍㅅ,ㄷㅂ,ㅂㄹ,ㄴㅇ,ㅅㅍ,ㄴㅈ,ㅎㄷ,ㅂㄷ,ㅊㅂ,ㅌㅅ,ㅍㄱ,ㅎㅁ,ㄱㅍ,ㅁㅂ,ㅈㅍ,ㅌㄱ,ㅍㅈ,ㅎㅎ,ㄷㄹ,ㅁㄷ,ㅇㅍ,ㅅㅌ,ㅊㅎ,ㅎㄹ,ㅁㄹ,ㅇㄴ,ㄴㄱ,ㄴㅂ,ㅅㄴ,ㅌㅇ,ㅍㅇ,ㄱㅌ,ㄷㅁ,ㅁㅎ,ㅂㅍ,ㅇㅌ,ㄱㄴ,ㅊㅁ,ㅎㅊ,ㅁㅊ,ㅌㅈ,ㅊㄷ,ㅊㅊ,ㅊㄹ,ㅂㅌ,ㄷㄷ,ㄷㅊ</problemPocket>
-		<hellProblemPocket>ㄷㅍ,ㅎㅍ,ㅍㄹ,ㄴㅁ,ㅈㅌ,ㄴㄹ,ㄷㅎ,ㅈㄴ,ㅍㄷ,ㅍㅂ,ㄴㅊ,ㅍㅁ,ㅎㅌ,ㅂㄴ,ㅍㅎ,ㄴㅎ,ㅁㄴ,ㄷㄴ,ㅁㅍ,ㅊㅌ,ㅎㄴ,ㅌㅎ,ㄴㄷ,ㅊㄴ,ㅊㅍ,ㅌㄹ,ㅁㅌ,ㅌㅂ,ㅍㅊ,ㄴㅍ,ㅌㅁ,ㅌㄷ,ㅌㅊ,ㄴㅌ,ㅌㅍ,ㅍㅍ,ㄷㅌ</hellProblemPocket>
+		<problemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</problemPocket>
+		<hellProblemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</hellProblemPocket>
 		<enemyPrefab>14</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>35</enemyHP>
 		<enemyDamage>2.5</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>6</bossPattern>
@@ -214,10 +214,10 @@
 		<key>15</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>3</stageNum>
-		<problemPocket>ㅇㅎ,ㅊㄱ,ㄱㅎ,ㄱㅊ,ㄱㅁ,ㅊㅅ,ㅅㅎ,ㅇㄷ,ㅅㅂ,ㅎㅈ,ㅁㅈ,ㅈㅂ,ㅇㅊ,ㅊㅈ,ㄷㅅ,ㅅㅊ,ㅁㅇ,ㅅㄹ,ㅈㅊ,ㅈㄹ,ㅈㅁ,ㅈㅎ,ㄱㄷ,ㅁㄱ,ㅅㅁ,ㅊㅇ,ㄷㄱ,ㄷㅈ,ㅂㅊ,ㅂㅎ,ㅈㄷ,ㅂㅂ,ㅎㅂ,ㅅㄷ,ㄷㅇ,ㅂㅁ,ㄴㅅ,ㅁㅁ,ㅍㅅ,ㄷㅂ,ㅂㄹ,ㄴㅇ,ㅅㅍ,ㄴㅈ,ㅎㄷ,ㅂㄷ,ㅊㅂ,ㅌㅅ,ㅍㄱ,ㅎㅁ,ㄱㅍ,ㅁㅂ,ㅈㅍ,ㅌㄱ,ㅍㅈ,ㅎㅎ,ㄷㄹ,ㅁㄷ,ㅇㅍ,ㅅㅌ,ㅊㅎ,ㅎㄹ,ㅁㄹ,ㅇㄴ,ㄴㄱ,ㄴㅂ,ㅅㄴ,ㅌㅇ,ㅍㅇ,ㄱㅌ,ㄷㅁ,ㅁㅎ,ㅂㅍ,ㅇㅌ,ㄱㄴ,ㅊㅁ,ㅎㅊ,ㅁㅊ,ㅌㅈ,ㅊㄷ,ㅊㅊ,ㅊㄹ,ㅂㅌ,ㄷㄷ,ㄷㅊ</problemPocket>
-		<hellProblemPocket>ㄷㅍ,ㅎㅍ,ㅍㄹ,ㄴㅁ,ㅈㅌ,ㄴㄹ,ㄷㅎ,ㅈㄴ,ㅍㄷ,ㅍㅂ,ㄴㅊ,ㅍㅁ,ㅎㅌ,ㅂㄴ,ㅍㅎ,ㄴㅎ,ㅁㄴ,ㄷㄴ,ㅁㅍ,ㅊㅌ,ㅎㄴ,ㅌㅎ,ㄴㄷ,ㅊㄴ,ㅊㅍ,ㅌㄹ,ㅁㅌ,ㅌㅂ,ㅍㅊ,ㄴㅍ,ㅌㅁ,ㅌㄷ,ㅌㅊ,ㄴㅌ,ㅌㅍ,ㅍㅍ,ㄷㅌ</hellProblemPocket>
+		<problemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</problemPocket>
+		<hellProblemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</hellProblemPocket>
 		<enemyPrefab>15</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>35</enemyHP>
 		<enemyDamage>2.5</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>7</bossPattern>
@@ -229,10 +229,10 @@
 		<key>16</key>
 		<chapterNum>5</chapterNum>
 		<stageNum>4</stageNum>
-		<problemPocket>ㅇㅎ,ㅊㄱ,ㄱㅎ,ㄱㅊ,ㄱㅁ,ㅊㅅ,ㅅㅎ,ㅇㄷ,ㅅㅂ,ㅎㅈ,ㅁㅈ,ㅈㅂ,ㅇㅊ,ㅊㅈ,ㄷㅅ,ㅅㅊ,ㅁㅇ,ㅅㄹ,ㅈㅊ,ㅈㄹ,ㅈㅁ,ㅈㅎ,ㄱㄷ,ㅁㄱ,ㅅㅁ,ㅊㅇ,ㄷㄱ,ㄷㅈ,ㅂㅊ,ㅂㅎ,ㅈㄷ,ㅂㅂ,ㅎㅂ,ㅅㄷ,ㄷㅇ,ㅂㅁ,ㄴㅅ,ㅁㅁ,ㅍㅅ,ㄷㅂ,ㅂㄹ,ㄴㅇ,ㅅㅍ,ㄴㅈ,ㅎㄷ,ㅂㄷ,ㅊㅂ,ㅌㅅ,ㅍㄱ,ㅎㅁ,ㄱㅍ,ㅁㅂ,ㅈㅍ,ㅌㄱ,ㅍㅈ,ㅎㅎ,ㄷㄹ,ㅁㄷ,ㅇㅍ,ㅅㅌ,ㅊㅎ,ㅎㄹ,ㅁㄹ,ㅇㄴ,ㄴㄱ,ㄴㅂ,ㅅㄴ,ㅌㅇ,ㅍㅇ,ㄱㅌ,ㄷㅁ,ㅁㅎ,ㅂㅍ,ㅇㅌ,ㄱㄴ,ㅊㅁ,ㅎㅊ,ㅁㅊ,ㅌㅈ,ㅊㄷ,ㅊㅊ,ㅊㄹ,ㅂㅌ,ㄷㄷ,ㄷㅊ</problemPocket>
-		<hellProblemPocket>ㄷㅍ,ㅎㅍ,ㅍㄹ,ㄴㅁ,ㅈㅌ,ㄴㄹ,ㄷㅎ,ㅈㄴ,ㅍㄷ,ㅍㅂ,ㄴㅊ,ㅍㅁ,ㅎㅌ,ㅂㄴ,ㅍㅎ,ㄴㅎ,ㅁㄴ,ㄷㄴ,ㅁㅍ,ㅊㅌ,ㅎㄴ,ㅌㅎ,ㄴㄷ,ㅊㄴ,ㅊㅍ,ㅌㄹ,ㅁㅌ,ㅌㅂ,ㅍㅊ,ㄴㅍ,ㅌㅁ,ㅌㄷ,ㅌㅊ,ㄴㅌ,ㅌㅍ,ㅍㅍ,ㄷㅌ</hellProblemPocket>
+		<problemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</problemPocket>
+		<hellProblemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</hellProblemPocket>
 		<enemyPrefab>16</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>28</enemyHP>
 		<enemyDamage>2.5</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>8</bossPattern>

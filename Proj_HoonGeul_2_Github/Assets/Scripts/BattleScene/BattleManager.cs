@@ -128,7 +128,7 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             //"chapter-imageNum"
-            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_1", typeof(Sprite)) as Sprite;
+            bullets[i] = Resources.Load("EnemyBullet/projectile_" + m_data.chapterNum.ToString() + "_" + m_data.stageNum.ToString(), typeof(Sprite)) as Sprite;
            // Debug.Log(bullets[i].name);
         }
         hintHandler.LoadBulletImage(bullets);
@@ -220,12 +220,14 @@ public class BattleManager : MonoBehaviour
         for (int i=0;i<m_data.problemPocket.Length;i++)
         {
             questValue = hintHandler.WordtoValue(m_data.problemPocket[i], 0);
-            outDict.Add(questValue,m_gameManager.GetSingleHintDictionary(questValue));
+            if (!outDict.ContainsKey(questValue))
+                outDict.Add(questValue,m_gameManager.GetSingleHintDictionary(questValue));
         }
         for (int i = 0; i < m_data.hellProblemPocket.Length; i++)
         {
             questValue = hintHandler.WordtoValue(m_data.hellProblemPocket[i], 0);
-            outDict.Add(questValue, m_gameManager.GetSingleHintDictionary(questValue));
+            if (!outDict.ContainsKey(questValue))
+                outDict.Add(questValue, m_gameManager.GetSingleHintDictionary(questValue));
         }
 
         return outDict;
@@ -238,13 +240,15 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < m_data.problemPocket.Length; i++)
         {
             questWord = hintHandler.WordtoValue(m_data.problemPocket[i], 0);
-            outWrongHintDict.Add(questWord, m_gameManager.GetSingleWrongHintArray(m_data.problemPocket[i]));
+            if(!outWrongHintDict.ContainsKey(questWord))
+                outWrongHintDict.Add(questWord, m_gameManager.GetSingleWrongHintArray(m_data.problemPocket[i]));
 
         }
         for (int i = 0; i < m_data.hellProblemPocket.Length; i++)
         {
             questWord = hintHandler.WordtoValue(m_data.hellProblemPocket[i], 0);
-            outWrongHintDict.Add(questWord, m_gameManager.GetSingleWrongHintArray(m_data.hellProblemPocket[i]));
+            if (!outWrongHintDict.ContainsKey(questWord))
+                outWrongHintDict.Add(questWord, m_gameManager.GetSingleWrongHintArray(m_data.hellProblemPocket[i]));
 
         }
         return outWrongHintDict;
