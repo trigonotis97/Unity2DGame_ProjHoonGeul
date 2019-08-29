@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +14,7 @@ public class MainSceneManager : MonoBehaviour
     public GameObject Difficulty1, Difficulty2, BackButton;
     public SceneData sceneData;
     public SceneChange SceneChange;
+    public Unity_Cunjiin_Keyboard Unity_Cunjiin_Keyboard;
 
     private void Awake()
     {
@@ -47,6 +48,14 @@ public class MainSceneManager : MonoBehaviour
             ExitGame.SetActive(true);
         }
         InputText.text = "";
+    }
+    public void OnClickForGiuk()
+    {
+        if (InputText.text == "시작")
+        {
+            onClick();
+            Unity_Cunjiin_Keyboard.Enter();
+        }
     }
 
     public void NewGameClick()

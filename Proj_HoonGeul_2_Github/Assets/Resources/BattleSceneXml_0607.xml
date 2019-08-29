@@ -49,7 +49,7 @@
 		<key>4</key>
 		<chapterNum>2</chapterNum>
 		<stageNum>1</stageNum>
-		<problemPocket>ㄱㅊ,ㅇㅁ,ㅂㅇ,ㅂㅅ,ㅊㅇ,ㅎㅈ,ㅊㄱ,ㄱㄹ,ㅈㅊ,ㅈㄹ,ㅇㄱ,ㅇㅎ,</problemPocket>
+		<problemPocket>ㄱㅊ,ㅇㅁ,ㅂㅇ,ㅂㅅ,ㅊㅇ,ㅎㅈ,ㅊㄱ,ㄱㄹ,ㅈㅊ,ㅈㄹ,ㅇㄱ,ㅇㅎ</problemPocket>
 		<hellProblemPocket>ㅌㄹ,ㅍㅁ,ㅂㄴ</hellProblemPocket>
 		<enemyPrefab>4</enemyPrefab>
 		<enemyHP>23</enemyHP>
