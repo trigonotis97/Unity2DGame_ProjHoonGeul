@@ -4515,7 +4515,7 @@ MonoBehaviour:
   ansJudge: {fileID: 1894321288}
   m_sunbi: {fileID: 0}
   dealHeal: -1
-  HellColor: {r: 1, g: 0, b: 0, a: 1}
+  HellColor: {r: 0.8490566, g: 0, b: 0, a: 1}
   isChapter1Boss: 0
   correctState: 0
   isChapter2Boss: 0
@@ -4527,7 +4527,7 @@ MonoBehaviour:
   countCorrect_hell: 0
   isHellQuestState: 0
   hellCountInd: 0
-  hellCountNum: 3
+  hellCountNum: 4
   countCorrect_heal: 0
   healProbability: 0
   percentageAddNum: 0
@@ -4535,10 +4535,10 @@ MonoBehaviour:
   count_1: 1
   count_2: 3
   count_3: 5
-  count_4: 20
+  count_4: 30
   count_5: 60
-  count_6: 70
-  count_7: 80
+  count_6: 80
+  count_7: 100
   m_enemybulletHandler: {fileID: 610284874}
 --- !u!224 &1894321287
 RectTransform:
