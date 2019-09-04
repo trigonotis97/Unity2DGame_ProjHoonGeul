@@ -96,7 +96,7 @@ public class SpeechBubble : MonoBehaviour
             }
 
             rectTransform.sizeDelta += new Vector2(bubbleText.preferredWidth * textWidthScale, 0);
-            rectTransform.anchoredPosition = new Vector3(355f + (bubbleText.preferredWidth * textWidthScale * 0.7f), 2043f, 0);
+            rectTransform.anchoredPosition = new Vector3(rectTransform.anchoredPosition.x + (bubbleText.preferredWidth * textWidthScale * 0.7f), rectTransform.anchoredPosition.y, 0);
             bubbleImage.enabled = true;
             StartCoroutine("maintainBubble");
         }
@@ -107,7 +107,7 @@ public class SpeechBubble : MonoBehaviour
         yield return new WaitForSeconds(bubbleWaitTime);
         bubbleImage.enabled = false;
         bubbleText.text = "";
-        rectTransform.anchoredPosition = new Vector3(355f, 2043f, 0);
+        rectTransform.anchoredPosition = new Vector3(355f, rectTransform.anchoredPosition.y, 0);
         rectTransform.sizeDelta = new Vector2 (249.7f, 228.6f);
         isCoRunning = false;
     }
