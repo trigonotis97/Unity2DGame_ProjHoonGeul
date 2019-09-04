@@ -16,7 +16,7 @@ public class MainSceneManager : MonoBehaviour
     public Unity_Cunjiin_Keyboard Unity_Cunjiin_Keyboard;
 
     public GameObject[] mainButtonArray;
-    public Animator ButtonsAnimator;
+    public Animator ButtonsAnimator, doorAnimator;
 
     private void Awake()
     {
@@ -63,7 +63,8 @@ public class MainSceneManager : MonoBehaviour
         //m_gameManager.SetCurrentDialogKey(1);
         m_gameManager.SetCurrentDialogKey(0);
         MainSceneChange.nextScene = "DialogScene";
-        MainSceneChange.SceneLoad();
+
+        doorAnimator.SetTrigger("nextScene!");
 
         //전에 하던거부터 이어하는 기능이 추가 되야해용!!!! - 성율
     }
@@ -71,22 +72,22 @@ public class MainSceneManager : MonoBehaviour
     public void LastStoryModeClick()
     {
         MainSceneChange.nextScene = "LastStoryMode";
-        MainSceneChange.SceneLoad(); // 이 자리에 애니메이션 트리거가 들어가고, 애니메이션 끝에 이벤트로 씬 이동 함수 넣을 예정.
+        doorAnimator.SetTrigger("nextScene!"); // 이 자리에 애니메이션 트리거가 들어가고, 애니메이션 끝에 이벤트로 씬 이동 함수 넣을 예정.
     }
     public void GgamJiModeClick()
     {
         MainSceneChange.nextScene = "GgamJiMode";
-        MainSceneChange.SceneLoad();
+        doorAnimator.SetTrigger("nextScene!");
     }
     public void PuzzleModeClick()
     {
         MainSceneChange.nextScene = "PuzzleMode";
-        MainSceneChange.SceneLoad();
+        doorAnimator.SetTrigger("nextScene!");
     }
     public void RankModeClick()
     {
         MainSceneChange.nextScene = "RankMode";
-        MainSceneChange.SceneLoad();
+        doorAnimator.SetTrigger("nextScene!");
     }
 
 
