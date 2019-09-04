@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SceneDoorClose
+  m_Name: SceneDoorClose_for_Main
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -178,7 +178,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.75
-    functionName: NextScene
+    functionName: SceneLoad
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
