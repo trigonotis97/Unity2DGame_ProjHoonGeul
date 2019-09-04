@@ -8,6 +8,9 @@ public class CharacterQuiz : MonoBehaviour
 {
     GameManager m_gameManager;
 
+    public AudioClip o, x;
+    public AudioSource audio;
+
     public Text question;
     public Text num1;
     public Text num2;
@@ -75,6 +78,8 @@ public class CharacterQuiz : MonoBehaviour
         if (BtNum == correctAns)
         {
             Debug.Log("정답");
+            audio.clip = o;
+            audio.PlayOneShot(o);
             if (selectAns < 8)
             {
                 selectAns++;
@@ -89,6 +94,8 @@ public class CharacterQuiz : MonoBehaviour
         else
         {
             Debug.Log("오답");
+            audio.clip = x;
+            audio.PlayOneShot(x);
             SceneChange.BonusNextScene(false);
         }
     }

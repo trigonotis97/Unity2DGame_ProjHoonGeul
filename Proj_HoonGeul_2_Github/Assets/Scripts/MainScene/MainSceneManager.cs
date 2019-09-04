@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +10,13 @@ public class MainSceneManager : MonoBehaviour
     public InputField InputText;
     public GameObject Input;
     public GameObject chunjiin_keyboard;
-    public GameObject NewGame, ContinueGame, ExitGame;
-    public GameObject Difficulty1, Difficulty2, BackButton;
+
     public SceneData sceneData;
-    public SceneChange SceneChange;
+    public MainSceneChange MainSceneChange;
+    public Unity_Cunjiin_Keyboard Unity_Cunjiin_Keyboard;
+
+    public GameObject[] mainButtonArray;
+    public Animator ButtonsAnimator, doorAnimator;
 
     private void Awake()
     {
@@ -24,77 +27,79 @@ public class MainSceneManager : MonoBehaviour
     {
         chunjiin_keyboard.SetActive(true);
         Input.SetActive(true);
-        NewGame.SetActive(false);
-        ContinueGame.SetActive(false);
-        ExitGame.SetActive(false);
-        Difficulty1.SetActive(false);
-        Difficulty2.SetActive(false);
-        BackButton.SetActive(false);
-
-    }
-    public void text(Text Test_Text) //디버그용 텍스트. 인게임에서 영향은 없다.
-    {
-        Test_Text.text = InputText.text;
+        foreach (GameObject i in mainButtonArray)
+        {
+            i.SetActive(false);
+        }
     }
     public void onClick() // 메인화면에서 "시작"을 입력하면 넘어가는 함수.
-    {        
+    {
         if (InputText.text == "시작")
         {
             chunjiin_keyboard.SetActive(false);
             Input.SetActive(false);
-            NewGame.SetActive(true);
-            ContinueGame.SetActive(true);
-            ExitGame.SetActive(true);
+            foreach (GameObject i in mainButtonArray)
+            {
+                i.SetActive(true);
+            }
+            ButtonsAnimator.enabled = true;
         }
         InputText.text = "";
     }
-
-    public void NewGameClick()
+    public void OnClickForGiuk()
     {
-        NewGame.SetActive(false);
-        ContinueGame.SetActive(false);
-        ExitGame.SetActive(false);
-        Difficulty1.SetActive(true);
-        Difficulty2.SetActive(true);
-        BackButton.SetActive(true);
+        if (InputText.text == "시작")
+        {
+            onClick();
+            Unity_Cunjiin_Keyboard.Enter();
+        }
     }
 
-    public void ContinueGameClick()
-    {
-        NewGame.SetActive(true);
-        ContinueGame.SetActive(true);
-        ExitGame.SetActive(true);
-        Difficulty1.SetActive(false);
-        Difficulty2.SetActive(false);
-        BackButton.SetActive(false);
-        SceneManager.LoadScene("TempMain");
-    }
-    public void BackClick()
-    {
-        Difficulty1.SetActive(false);
-        Difficulty2.SetActive(false);
-        BackButton.SetActive(false);
-        NewGame.SetActive(true);
-        ContinueGame.SetActive(true);
-        ExitGame.SetActive(true);
-    }
-    public void Difficulty1Click()
+
+    //씬 전환 애니메이션을 위해 mainSceneChange 스크립트를 만들어서 따로 분리했습니다.
+    public void StoryModeClick()
     {
         m_gameManager.SetGameMode(1); //집현전 모드 설정
         //m_gameManager.SetCurrentDialogKey(1);
         m_gameManager.SetCurrentDialogKey(0);
-        SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+        MainSceneChange.nextScene = "DialogScene";
+
+        doorAnimator.SetTrigger("nextScene!");
+
+        //전에 하던거부터 이어하는 기능이 추가 되야해용!!!! - 성율
     }
 
-    public void Difficulty2Click()
+    public void LastStoryModeClick()
     {
-        m_gameManager.SetGameMode(2); //세종대왕 모드 설정
-        m_gameManager.SetCurrentDialogKey(1);
-        m_gameManager.SetCurrentSceneKey(1);
+        MainSceneChange.nextScene = "LastStoryMode";
+        doorAnimator.SetTrigger("nextScene!"); // 이 자리에 애니메이션 트리거가 들어가고, 애니메이션 끝에 이벤트로 씬 이동 함수 넣을 예정.
+    }
+    public void GgamJiModeClick()
+    {
+        MainSceneChange.nextScene = "GgamJiMode";
+        doorAnimator.SetTrigger("nextScene!");
+    }
+    public void PuzzleModeClick()
+    {
+        MainSceneChange.nextScene = "PuzzleMode";
+        doorAnimator.SetTrigger("nextScene!");
+    }
+    public void RankModeClick()
+    {
+        MainSceneChange.nextScene = "RankMode";
+        doorAnimator.SetTrigger("nextScene!");
     }
 
-    public void ExitGameClick()
-    {
-        Application.Quit();
-    }
+
+    //public void Difficulty2Click()
+    //{
+    //    m_gameManager.SetGameMode(2); //세종대왕 모드 설정
+    //    m_gameManager.SetCurrentDialogKey(1);
+    //    m_gameManager.SetCurrentSceneKey(1);
+    //}
+
+    //public void ExitGameClick()
+    //{
+    //    Application.Quit();
+    //}
 }

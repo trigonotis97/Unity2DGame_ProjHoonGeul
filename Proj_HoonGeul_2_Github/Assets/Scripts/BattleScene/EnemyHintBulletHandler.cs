@@ -32,6 +32,11 @@ public class EnemyHintBulletHandler : MonoBehaviour
 
     /// 힌트관련 변수
     public Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
+    Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
+
+
+
+
     BattleManager mbattleManager;
     public ChosungGeneratorDefault chosungGenerator;
     ///xml 완료 시 수정
@@ -192,9 +197,15 @@ public class EnemyHintBulletHandler : MonoBehaviour
 "ㄴㅌ",
 "ㅌㅍ",
 "ㅍㅍ",
-"ㄷㅌ"
+"ㄷㅌ",
+"ㅍㅌ",
+"ㅅㅋ",
+"ㅇㅋ"
         };
     // key=questionValue , value=hintTable
+
+    bool isAlreadyShow = false;
+    string alreadyShowWord = "";
 
 
     private void Awake()
@@ -210,9 +221,11 @@ public class EnemyHintBulletHandler : MonoBehaviour
         bulletIndCount = 0;
 
         //chosungValHintTable 초기화
-        LoadHintTable();
-        //print("hell world");
-        //bullet 이미지 로드
+        LoadAllHintTable();
+
+        //bullet image load->배틀씬에서 넣어준다.
+
+        bulletImage.enabled = false;
 
     }
     public void SunbiHitCounter()//Sunbi.cs
@@ -224,8 +237,16 @@ public class EnemyHintBulletHandler : MonoBehaviour
         int hintProb = HintProbHandler();
         if (sunbiHitCount >= sunbiMaxHitNum)
         {
-            hintProb = 2;
-            sunbiHitCount = 0;
+            if(isAlreadyShow)//쳐맞은담에 또 쳐맞았을때
+            {
+                hintProb = 3;
+            }
+            else
+            {
+                hintProb = 2;
+                isAlreadyShow = true;
+            }
+            //sunbiHitCount = 0;
         }
         switch (hintProb)
         {
@@ -241,17 +262,20 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 break;
 
             case 1://worng hint bullet
+                string oldsetValue_ = chosungGenerator.GetOldestQuestionValue();
+                int randInt_ = Random.Range(0, chosungWrongHintTable[oldsetValue_].Length);
+                string outWrongHintWord = chosungWrongHintTable[oldsetValue_][randInt_];
+
                 ///xml 완료시 수정
                 bulletText.enabled=true;
-                string wrongHint = wrongHintTable[Random.Range(0, wrongHintTable.Length)];
-                bulletText.text = wrongHint;
-                Debug.Log("오답힌트 발사 :" + wrongHint);
+                bulletText.text = outWrongHintWord;
+                Debug.Log("오답힌트 발사 :" + outWrongHintWord);
                 break;
 
             case 2://right hint bullet
                 //현재 문제초성 데이터 가져오기  //그중에서 가장 오래된거 골라내기
                 string oldsetValue = chosungGenerator.GetOldestQuestionValue();
-                int randInt = Random.Range(0, 10);
+                int randInt = Random.Range(0, chosungValHintTable[oldsetValue].Count);
                 int indexCount = 0;
                 string outHintWord="";
                 //해당 문제 밸류값으로 힌트 검색, 랜덤으로 선택
@@ -268,6 +292,12 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 ///xml 완료시 수정
                 bulletText.enabled = true;
                 bulletText.text = outHintWord;
+                alreadyShowWord = outHintWord;
+                break;
+            case 3:
+                bulletText.enabled = true;
+                bulletText.text = alreadyShowWord;
+                Debug.Log("정답힌트 발사+다회차:" + alreadyShowWord);
                 break;
 
         }
@@ -276,6 +306,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
     public void ResetSunbiHitCount()//chosung generator.cs
     {
         sunbiHitCount = 0;
+        isAlreadyShow = false;
     }
 
     int HintProbHandler()
@@ -376,10 +407,13 @@ public class EnemyHintBulletHandler : MonoBehaviour
         return outValue;
     }
 
-    void LoadHintTable()
+    void LoadAllHintTable()
     {
         chosungValHintTable = mbattleManager.GetUsingHint();
+        chosungWrongHintTable = mbattleManager.GetUsingWrongHint();
     }
+
+
 
     /*
 string WordToValue(string word)

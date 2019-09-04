@@ -7,16 +7,16 @@ public class textDownCunji : MonoBehaviour
 {
     RectTransform childRect;
     Text text;
-    float top = 164.89f;
-    float bottom = -169.93f;
+    float min, max;
+
 
     // Start is called before the first frame update
     void Start()
     {
         childRect = transform.GetChild(0).GetComponent<RectTransform>();
         text = transform.GetChild(0).GetComponent<Text>();
-        text.fontSize = 170;
-
+        min = childRect.offsetMin.y;
+        max = childRect.offsetMax.y;
     }
 
     // Update is called once per frame
@@ -27,15 +27,15 @@ public class textDownCunji : MonoBehaviour
 
     public void PointerDown()
     {
-        childRect.offsetMin = new Vector2(childRect.offsetMin.x, bottom);
-        childRect.offsetMax = new Vector2(childRect.offsetMax.x, top);
+        childRect.offsetMin = new Vector2(childRect.offsetMin.x, min -16);
+        childRect.offsetMax = new Vector2(childRect.offsetMax.x, max -16);
        
     }
 
     public void PointerUp()
     {
-        childRect.offsetMin = new Vector2(childRect.offsetMin.x, -192.6f);
-        childRect.offsetMax = new Vector2(childRect.offsetMax.x, 192.6f);
+        childRect.offsetMin = new Vector2(childRect.offsetMin.x, min);
+        childRect.offsetMax = new Vector2(childRect.offsetMax.x, max);
     
     }
 }

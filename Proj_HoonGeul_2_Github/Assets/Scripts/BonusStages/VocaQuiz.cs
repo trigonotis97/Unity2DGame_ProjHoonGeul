@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class VocaQuiz : MonoBehaviour
 {
+    public AudioClip o, x;
+    public AudioSource audio;
     GameManager m_gameManager;
     
 
@@ -59,6 +61,8 @@ public class VocaQuiz : MonoBehaviour
     {
         if (BtNum == correctAns)
         {
+            audio.clip = o;
+            audio.PlayOneShot(o);
             Debug.Log("정답");
             if (selectAns < 5)
             {
@@ -73,6 +77,8 @@ public class VocaQuiz : MonoBehaviour
         }
         else
         {
+            audio.clip = x;
+            audio.PlayOneShot(x);
             Debug.Log("오답");
             SceneChange.BonusNextScene(false);
         }

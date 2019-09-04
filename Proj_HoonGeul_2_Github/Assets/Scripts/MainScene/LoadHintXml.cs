@@ -8,6 +8,7 @@ public class LoadHintXml : MonoBehaviour
 {
     GameManager m_gameManamger;
     Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
+    Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
     //key : chosung value , value : value hint table 
 
     private static string m_cho_Tbl = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"; // 10부터 시작
@@ -166,7 +167,10 @@ public class LoadHintXml : MonoBehaviour
 "ㄴㅌ",
 "ㅌㅍ",
 "ㅍㅍ",
-"ㄷㅌ"
+"ㄷㅌ",
+"ㅍㅌ",
+"ㅅㅋ",
+"ㅇㅋ"
         };
 
     //Dictionary<string, string>[] dictTable;
@@ -177,13 +181,18 @@ public class LoadHintXml : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        ///만약 테스트 씬에서 테스트를 해야한다면 이 줄을 주석처리 하세요
         m_gameManamger = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void Start()
     {
         Load_tXml();
-        m_gameManamger.SetHintData(chosungValHintTable);
+       
+        Load_wrongHintXml();
+
+        if (m_gameManamger != null)
+            m_gameManamger.SetAllHintData(chosungValHintTable, chosungWrongHintTable);
     }
 
 
@@ -231,7 +240,7 @@ public class LoadHintXml : MonoBehaviour
                         outValue += (10 + j).ToString();
                 }
             }
-        } 
+        }
         else//모음
         {
             for (int i = 0; i < 2; i++)
@@ -257,19 +266,40 @@ public class LoadHintXml : MonoBehaviour
         for (int i = 0; i < word_arr.Length; i++)
         {
             string valueSet = WordtoValue(word_arr[i], 0);
-            Dictionary<string, string> singleHintDict=new Dictionary<string, string>();
+            Dictionary<string, string> singleHintDict = new Dictionary<string, string>();
 
             string alphaSet = ValuetoAlphabet(valueSet);
             XmlNodeList nodes = xmlDoc.SelectNodes("HintData/" + alphaSet + "/WordSet");
             foreach (XmlNode node in nodes)
             {
-                singleHintDict.Add(node.SelectSingleNode("Key").InnerText ,node.SelectSingleNode("Value").InnerText);
+                singleHintDict.Add(node.SelectSingleNode("Key").InnerText, node.SelectSingleNode("Value").InnerText);
             }
 
             chosungValHintTable.Add(valueSet, singleHintDict);
 
         }
-//        print("Hell World!");
+        //        print("Hell World!");
     }
+
+    void Load_wrongHintXml()
+    {
+
+        XmlDocument xmlDoc = new XmlDocument();
+
+        TextAsset textAsset = (TextAsset)Resources.Load("WrongHintDataXml");
+        xmlDoc.LoadXml(textAsset.text);
+
+
+        XmlNodeList nodes = xmlDoc.SelectNodes("WrongHintData/HintSet");
+
+        foreach (XmlNode node in nodes)
+        {
+            string[] wordset = node.SelectSingleNode("Value").InnerText.Split(',');
+            chosungWrongHintTable.Add(node.SelectSingleNode("Key").InnerText, wordset);
+
+        }
+    }
+
+
 
 }

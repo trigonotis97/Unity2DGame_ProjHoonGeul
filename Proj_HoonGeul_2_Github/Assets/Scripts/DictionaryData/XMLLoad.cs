@@ -66,78 +66,79 @@ public class XMLLoad : MonoBehaviour
             }
             Debug.Log("wordCount:" + count);
         }
-        
-        
-        for (int i = 4; i < 5; i++) // 배틀씬데이터 저장
+        if (hintXmlTool == null)
         {
-            xmlDoc.LoadXml(textAsset[i].text);
-            XmlNodeList nodes = xmlDoc.SelectNodes("BattleScene/BattleSceneSet");
-            int indCount = 0;
-            foreach (XmlNode node in nodes)
-            {
-                BattleSceneData BSD = new BattleSceneData();
-                BSD.key = int.Parse(node.SelectSingleNode("key").InnerText);
-                BSD.chapterNum = int.Parse(node.SelectSingleNode("chapterNum").InnerText);
-                BSD.stageNum = int.Parse(node.SelectSingleNode("stageNum").InnerText);
-                string tmp_prob = node.SelectSingleNode("problemPocket").InnerText;
-                BSD.problemPocket = tmp_prob.Split(new char[] { ',' });
-                string tmp_hellprob = node.SelectSingleNode("hellProblemPocket").InnerText; 
-                BSD.hellProblemPocket = tmp_hellprob.Split(new char[] { ',' });
-                BSD.enemyPrefab = int.Parse(node.SelectSingleNode("enemyPrefab").InnerText);
-                BSD.enemyHp = float.Parse(node.SelectSingleNode("enemyHP").InnerText);
-                BSD.enemyDamage = float.Parse(node.SelectSingleNode("enemyDamage").InnerText);                
-                BSD.isBoss = bool.Parse(node.SelectSingleNode("isBoss").InnerText);
-                BSD.bossPattern = int.Parse(node.SelectSingleNode("bossPattern").InnerText);
-                BSD.nextDialogNum = int.Parse(node.SelectSingleNode("nextDialogNum").InnerText);
-                BSD.BGImage = node.SelectSingleNode("BGImage").InnerText;
-                BSD.BGM = node.SelectSingleNode("BGM").InnerText; //암것도 안 들어있어서 주석 처리. 나중에 넣어주세요!
-                battleDataTbl[indCount++] = BSD;
-            }
-        }
 
-        for (int i = 5; i<6; i++) //다이얼로그 데이터 저장
-        {
-            xmlDoc.LoadXml(textAsset[i].text);
-            XmlNodeList nodes = xmlDoc.SelectNodes("DialogScene/DialogSet");
-            int indCount = 0;
-            foreach (XmlNode node in nodes)
+            for (int i = 4; i < 5; i++) // 배틀씬데이터 저장
             {
-                DialogData DLD = new DialogData();
-                DLD.key = int.Parse(node.SelectSingleNode("key").InnerText);
-                DLD.chapterNum = int.Parse(node.SelectSingleNode("chapterNum").InnerText);
-                DLD.stageNum = int.Parse(node.SelectSingleNode("stageNum").InnerText);
-                string tmp_script = node.SelectSingleNode("script").InnerText;
-                DLD.script = tmp_script.Split(new char[] { '/' });
-                string tmp_conv_state = node.SelectSingleNode("conv_state").InnerText;
-                string[] tmp_conv_state_arr = tmp_conv_state.Split(new char[] { ',' });
-                DLD.conv_state = tmp_conv_state_arr;
-                //DLD.conv_state = Array.ConvertAll<string, int>(tmp_conv_state_arr, int.Parse);
-                DLD.isKnockDown = bool.Parse(node.SelectSingleNode("isKnockDown").InnerText);
-                DLD.BGImage = node.SelectSingleNode("BGImage").InnerText;
-                DLD.enemyImage = node.SelectSingleNode("enemyImage").InnerText;
-                DLD.enemyWholeImage = node.SelectSingleNode("enemyWholeImage").InnerText;
-                DLD.BGM = node.SelectSingleNode("BGM").InnerText; //암것도 안 들어있어서 주석 처리. 나중에 넣어주세요!
-                dialogDataTbl[indCount++] = DLD;
+                xmlDoc.LoadXml(textAsset[i].text);
+                XmlNodeList nodes = xmlDoc.SelectNodes("BattleScene/BattleSceneSet");
+                int indCount = 0;
+                foreach (XmlNode node in nodes)
+                {
+                    BattleSceneData BSD = new BattleSceneData();
+                    BSD.key = int.Parse(node.SelectSingleNode("key").InnerText);
+                    BSD.chapterNum = int.Parse(node.SelectSingleNode("chapterNum").InnerText);
+                    BSD.stageNum = int.Parse(node.SelectSingleNode("stageNum").InnerText);
+                    string tmp_prob = node.SelectSingleNode("problemPocket").InnerText;
+                    BSD.problemPocket = tmp_prob.Split(new char[] { ',' });
+                    string tmp_hellprob = node.SelectSingleNode("hellProblemPocket").InnerText;
+                    BSD.hellProblemPocket = tmp_hellprob.Split(new char[] { ',' });
+                    BSD.enemyPrefab = int.Parse(node.SelectSingleNode("enemyPrefab").InnerText);
+                    BSD.enemyHp = float.Parse(node.SelectSingleNode("enemyHP").InnerText);
+                    BSD.enemyDamage = float.Parse(node.SelectSingleNode("enemyDamage").InnerText);
+                    BSD.isBoss = bool.Parse(node.SelectSingleNode("isBoss").InnerText);
+                    BSD.bossPattern = int.Parse(node.SelectSingleNode("bossPattern").InnerText);
+                    BSD.nextDialogNum = int.Parse(node.SelectSingleNode("nextDialogNum").InnerText);
+                    BSD.BGImage = node.SelectSingleNode("BGImage").InnerText;
+                    BSD.BGM = node.SelectSingleNode("BGM").InnerText; //암것도 안 들어있어서 주석 처리. 나중에 넣어주세요!
+                    battleDataTbl[indCount++] = BSD;
+                }
             }
-        }
-        for (int i = 6; i < 7; i++) //다이얼로그 데이터 저장
-        {
-            xmlDoc.LoadXml(textAsset[i].text);
-            XmlNodeList nodes = xmlDoc.SelectNodes("SceneData/SceneDataSet");
-            int indCount = 0;
-            foreach (XmlNode node in nodes)
-            {
-                SceneData SCD = new SceneData();
-                SCD.key = int.Parse(node.SelectSingleNode("key").InnerText);
-                SCD.nextScene = int.Parse(node.SelectSingleNode("nextSceneCase").InnerText);
-                SCD.nextSceneKey = int.Parse(node.SelectSingleNode("nextSceneKey").InnerText);
-                sceneDataTbl[indCount++] = SCD;
-            }
-        }
-        
-    
-    
 
+            for (int i = 5; i < 6; i++) //다이얼로그 데이터 저장
+            {
+                xmlDoc.LoadXml(textAsset[i].text);
+                XmlNodeList nodes = xmlDoc.SelectNodes("DialogScene/DialogSet");
+                int indCount = 0;
+                foreach (XmlNode node in nodes)
+                {
+                    DialogData DLD = new DialogData();
+                    DLD.key = int.Parse(node.SelectSingleNode("key").InnerText);
+                    DLD.chapterNum = int.Parse(node.SelectSingleNode("chapterNum").InnerText);
+                    DLD.stageNum = int.Parse(node.SelectSingleNode("stageNum").InnerText);
+                    string tmp_script = node.SelectSingleNode("script").InnerText;
+                    DLD.script = tmp_script.Split(new char[] { '/' });
+                    string tmp_conv_state = node.SelectSingleNode("conv_state").InnerText;
+                    string[] tmp_conv_state_arr = tmp_conv_state.Split(new char[] { '/' });
+                    DLD.conv_state = tmp_conv_state_arr;
+                    //DLD.conv_state = Array.ConvertAll<string, int>(tmp_conv_state_arr, int.Parse);
+                    DLD.isKnockDown = bool.Parse(node.SelectSingleNode("isKnockDown").InnerText);
+                    DLD.BGImage = node.SelectSingleNode("BGImage").InnerText;
+                    DLD.enemyImage = node.SelectSingleNode("enemyImage").InnerText;
+                    DLD.enemyWholeImage = node.SelectSingleNode("enemyWholeImage").InnerText;
+                    DLD.BGM = node.SelectSingleNode("BGM").InnerText; //암것도 안 들어있어서 주석 처리. 나중에 넣어주세요!
+                    dialogDataTbl[indCount++] = DLD;
+                }
+            }
+            for (int i = 6; i < 7; i++) //다이얼로그 데이터 저장
+            {
+                xmlDoc.LoadXml(textAsset[i].text);
+                XmlNodeList nodes = xmlDoc.SelectNodes("SceneData/SceneDataSet");
+                int indCount = 0;
+                foreach (XmlNode node in nodes)
+                {
+                    SceneData SCD = new SceneData();
+                    SCD.key = int.Parse(node.SelectSingleNode("key").InnerText);
+                    SCD.nextScene = int.Parse(node.SelectSingleNode("nextSceneCase").InnerText);
+                    SCD.nextSceneKey = int.Parse(node.SelectSingleNode("nextSceneKey").InnerText);
+                    sceneDataTbl[indCount++] = SCD;
+                }
+            }
+
+
+
+        }
 
 
         sw.Stop();//시간측정을 위한 함수

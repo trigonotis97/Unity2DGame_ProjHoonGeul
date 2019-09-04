@@ -20,7 +20,7 @@ public class SpeechBubble : MonoBehaviour
     string[] chinaPatternWorng = { "한자어를 써야하네", "저자는 중국인일세", "한자어만 사용해야 한다네", "한자로 된 단어만 알아듣는건가...?" }; //3
 
     ///우의정 조선 스테이지1. 3
-    string[] joseonRightMinister = { "그 모음은 쓰면 안되네", "그게 들어가면 안되네", "저 모음(자음)들은 사용해선 안돼.", "쓰면 안되는 모음이 있는 것 같은데?" };
+    string[] joseonRightMinister = { "그 모음은 쓰면 안되네", "그게 들어가면 안되네", "저 모음들은 사용해선 안돼.", "쓰면 안되는 모음이 있는 것 같은데?" };
     
     //좌의정 조선 스테이지2. 2
     string[] joseonLeftMinister = { "꼭 필요한 모음이 빠진 것 같은데..", "저자가 말하는 모음이 포함되야해", "저 모음이 사용되지 않은 것 같은데..?" };

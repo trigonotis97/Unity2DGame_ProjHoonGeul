@@ -123,6 +123,7 @@ public class EnemyScriptDefault : MonoBehaviour
         hintHandler.MakeHintorImage();
 
         ///투사체 발사하는 작업 여기에
+        animator.SetTrigger("attackT");
         bulletAnimator.SetTrigger("goText");
         /*
         GameObject attackPref = Instantiate(enemyAttackPrefb[0], transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
@@ -148,6 +149,7 @@ public class EnemyScriptDefault : MonoBehaviour
         
         if (collision.gameObject.tag == "PlayerBullet") 
         {
+            animator.SetTrigger("hitT");
             EnemyDamage();
         }
     }
