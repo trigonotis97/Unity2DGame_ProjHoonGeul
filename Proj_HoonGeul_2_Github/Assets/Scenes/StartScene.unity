@@ -842,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 8939180287212870520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8939180287212870524, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
@@ -993,6 +993,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 117281153837009958, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690613, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690616, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Offset.y
+      value: 1324.2388
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690616, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Size.y
+      value: 89.52246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690616, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.16116333
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690616, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Size.x
+      value: 1440.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690615, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Offset.y
+      value: -1324.4823
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690615, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Size.y
+      value: 89.0354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690615, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.24240112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362690615, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Size.x
+      value: 1440.3306
+      objectReference: {fileID: 0}
+    - target: {fileID: 158207023, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939180287721746107, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
