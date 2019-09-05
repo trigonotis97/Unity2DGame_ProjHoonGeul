@@ -42,6 +42,7 @@ public class BattleManager : MonoBehaviour
     {
         READY,
         PLAYING,
+        PAUSE,
         GAMEOVER,
         STAGECLEAR
     };
@@ -151,6 +152,13 @@ public class BattleManager : MonoBehaviour
         return temp;
 
     }
+
+    public void SetStatePlaying()
+    {
+        stageStatus = StageState.PLAYING;
+
+    }
+
     public void SetStateGameover()
     {
         stageStatus = StageState.GAMEOVER;
@@ -161,10 +169,7 @@ public class BattleManager : MonoBehaviour
         stageStatus = StageState.STAGECLEAR;
     }
 
-    public void testDataMapper()
-    {
-
-    }
+    
     public bool IsBossStage()
     {
         return m_data.isBoss;

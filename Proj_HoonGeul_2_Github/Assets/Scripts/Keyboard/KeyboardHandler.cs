@@ -105,7 +105,7 @@ public class KeyboardHandler : MonoBehaviour
     private void Update()
     {
         ///
-        if (!inputField.isFocused)
+       /* if (!inputField.isFocused)
         {
             inputField.ActivateInputField();
         }
@@ -115,7 +115,7 @@ public class KeyboardHandler : MonoBehaviour
             inputField.selectionAnchorPosition = caretPos;
             inputField.selectionFocusPosition = selectionPos;
             inputField.ForceLabelUpdate();
-        }
+        }*/
 
     }
 

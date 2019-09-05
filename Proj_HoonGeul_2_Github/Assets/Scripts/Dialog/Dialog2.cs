@@ -29,10 +29,6 @@ public class Dialog2 : MonoBehaviour
         convStateHandler.Effect(now_conv_state[index]);
 
     }
-    void Update()
-    {
-        
-    }
 
     public void SetScriptloader(string[] ScriptTbl, string[] ConvTbl)
     {
