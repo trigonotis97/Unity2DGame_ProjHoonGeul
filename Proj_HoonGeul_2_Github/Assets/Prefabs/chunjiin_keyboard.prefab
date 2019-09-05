@@ -434,6 +434,8 @@ MonoBehaviour:
   - {fileID: 8939180288667111810}
   - {fileID: 8939180288049335852}
   - {fileID: 8939180288591356160}
+  caretPos: 0
+  selectionPos: 0
 --- !u!1 &8939180287321498885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3412,7 +3414,7 @@ MonoBehaviour:
   - {fileID: 8939180289208586247}
   - {fileID: 8939180287713364521}
   - {fileID: 0}
-  et: {fileID: 0}
+  inputfield: {fileID: 0}
 --- !u!82 &3516023502062134921
 AudioSource:
   m_ObjectHideFlags: 0
