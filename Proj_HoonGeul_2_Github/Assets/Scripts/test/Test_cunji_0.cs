@@ -2,14 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Unity_Cunjiin_Keyboard : MonoBehaviour
+public class Test_cunji_0 : MonoBehaviour
 {
-    public AudioClip m_audioEffect;
+
+   // public AudioClip m_audioEffect;
     AudioSource m_audio;
 
     public Button[] buttonTable = new Button[13];
 
+    private void Start()
+    {
+        m_audio = GetComponent<AudioSource>();
+       // m_audio.clip = m_audioEffect;
+
+    }
+
+    public void Enter()
+    {
+       // m_audio.PlayOneShot(m_audioEffect);
+        hangul = new Hangul();
+        //hangul.chosung = hangul.jungsung = hangul.jongsung = hangul.jongsung2 = "";
+    }
     //public InputField inputField;
 
     /*
@@ -22,25 +37,8 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     //private static int NUMBER = 3;
 
     private Button[] btn;
-    public InputField inputfield;
+    public InputField et;
     private int now_mode = HANGUL;
-
-
-
-
-    private void Start()
-    {
-        m_audio = GetComponent<AudioSource>();
-        m_audio.clip = m_audioEffect;
-        //inputfield.ActivateInputField
-    }
-
-    public void Enter()
-    {
-        m_audio.PlayOneShot(m_audioEffect);
-        hangul = new Hangul();
-        //hangul.chosung = hangul.jungsung = hangul.jongsung = hangul.jongsung2 = "";
-    }
 
     private class Hangul
     {
@@ -84,13 +82,13 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     public void onClick(int i)
     {
         int input = i;
-        
+
         if (input == -1)
             return;
         if (now_mode == HANGUL)
             hangulMake(input);
 
-        m_audio.PlayOneShot(m_audioEffect);
+       // m_audio.PlayOneShot(m_audioEffect);
         write(now_mode);
     }
 
@@ -179,7 +177,6 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
        {
            now_mode = (now_mode == NUMBER) ? HANGUL : now_mode + 1;
            setBtnText(now_mode);
-
            hangul.init();
            init_engnum();
        }
@@ -194,11 +191,11 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     private void write(int mode)
     {
         //int position = et.getSelectionStart();
-        int position = inputfield.caretPosition;
+        int position = et.caretPosition;
         string origin = "";
         string str = "";
         //origin = et.getText().tostring();
-        origin = inputfield.text;
+        origin = et.text;
 
         if (mode == HANGUL)
         {
@@ -270,9 +267,9 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
                 dotflag = true;
             }
 
-            str += origin.Substring(position, origin.Length-position);
+            str += origin.Substring(position, origin.Length - position);
             //et.setText(str);
-            inputfield.text = str;
+            et.text = str;
 
             if (dotflag)
                 position++;
@@ -302,23 +299,23 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
             {
                 if (hangul.chosung.Length == 0 && dotflag == false)
                 {//et.setSelection(position);
-                    inputfield.caretPosition = position;
+                    et.caretPosition = position;
                 }
                 else
                 {
                     //et.setSelection(position - 1);
-                    inputfield.caretPosition = position - 1;
+                    et.caretPosition = position - 1;
                 }
             }
             else if (!hangul.flag_writing && dotflag == false)
             {
                 //et.setSelection(position + 1);
-                inputfield.caretPosition = position + 1;
+                et.caretPosition = position + 1;
             }
             else
             {
                 //et.setSelection(position);
-                inputfield.caretPosition = position;
+                et.caretPosition = position;
             }
 
             hangul.flag_dotused = false;
@@ -365,20 +362,20 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     private void delete()
     {
         //int position = et.getSelectionStart();
-        int position = inputfield.caretPosition;
+        int position = et.caretPosition;
         if (position == 0)
             return;
 
         string origin = "";
         string str = "";
 
-        origin = inputfield.text;
+        origin = et.text;
         str += origin.Substring(0, position - 1);
-        str += origin.Substring(position, origin.Length-position);
+        str += origin.Substring(position, origin.Length - position);
         //et.setText(str);
-        inputfield.text = str;
+        et.text = str;
         //et.setSelection(position - 1);
-        inputfield.caretPosition = position - 1;
+        et.caretPosition = position - 1;
     }
     /*
     private void engMake(int input)
@@ -942,7 +939,7 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
             return 0x1100 + cho;
         if ((hangul.jungsung == "·") || (hangul.jungsung == "‥"))
             return 0x1100 + cho;
-        
+
         // 중성
         if (hangul.jungsung == "ㅏ") jung = 0;
         else if (hangul.jungsung == "ㅐ") jung = 1;
@@ -1034,6 +1031,8 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         return s;
     }
 }
+
+
 
 
 

@@ -20,6 +20,12 @@ public class KeyboardHandler : MonoBehaviour
     public GameObject frameColX, frameColY;
     public GameObject[] movingButtons;
 
+
+    ///
+    private InputField inputField;
+    public int caretPos = 0;
+    public int selectionPos = 0;
+
     private void Awake()
     {
         if (SceneManager.GetActiveScene().name != "StartScene")
@@ -47,6 +53,8 @@ public class KeyboardHandler : MonoBehaviour
                 movingButtons[i].GetComponent<keyButtonColHandler>().enabled = true;
             }
         }
+        ///
+        inputField = GetComponent<InputField>();
     }
 
     void ChangeKeyboardKortoEng()
@@ -94,8 +102,23 @@ public class KeyboardHandler : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        ///
+       /* if (!inputField.isFocused)
+        {
+            inputField.ActivateInputField();
+        }
+        if (inputField.caretPosition != caretPos || caretPos != selectionPos)
+        {
+            inputField.caretPosition = caretPos;
+            inputField.selectionAnchorPosition = caretPos;
+            inputField.selectionFocusPosition = selectionPos;
+            inputField.ForceLabelUpdate();
+        }*/
 
-    
+    }
+
     void DeleteKeyboardText()
     {
         keyButtonObj = GameObject.FindGameObjectsWithTag("ChunjiinKeyText");
