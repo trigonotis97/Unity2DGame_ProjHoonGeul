@@ -150,7 +150,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
     void hpTextUpdate()
     {
-        ///
+        /// `u
     }
     public void EnemyAttack() //fire bullet
     {

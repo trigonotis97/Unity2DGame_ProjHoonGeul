@@ -174,6 +174,7 @@ public class BattleManager : MonoBehaviour
     public void SetStateStageClear()
     {
         stageStatus = StageState.STAGECLEAR;
+
     }
 
     public StageState GetState()
