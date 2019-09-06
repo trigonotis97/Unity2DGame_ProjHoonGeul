@@ -21,11 +21,17 @@ public class EnemyScriptDefault : MonoBehaviour
 
     //변수 조정 부분 
     [Header("for TEST")]
-    public float maxHP;
-    public float currentHp; // 현재 enemy의 hp
-    public float attackDemage;
+    public float maxHP_f;
+    public float currentHp_f; // 현재 enemy의 hp
+    public float attackDemage_f;
     public float attackWaveSpeed_temp; //임시
     public bool isBoss;
+
+    public int maxHP;
+    public int currentHp; // 현재 enemy의 hp
+    public int attackDemage;
+    public int sunbiAttackDamage;
+
 
     ///데이터 초기화 부분
     GameManager m_gameManager;
@@ -44,7 +50,7 @@ public class EnemyScriptDefault : MonoBehaviour
     Animator bulletAnimator;
     GameObject m_canvas;
     Sunbi m_sunbi;
-    public float sunbiAttackDamage;
+    public float sunbiAttackDamage_f;
 
     private int hpValue;
 
@@ -59,8 +65,10 @@ public class EnemyScriptDefault : MonoBehaviour
 
     ///attack loop
     public float enemyAttackLoopTime = 0f;
-    
 
+    /// 
+    public Text enemyHpText;
+    
 
     private void Awake()
     {
@@ -80,16 +88,16 @@ public class EnemyScriptDefault : MonoBehaviour
     {
         attackWaveSpeed_temp = 4;
         m_enemyData = m_battleManager.GetEnemyData();
-        maxHP = m_enemyData.maxHp;
+        maxHP_f = m_enemyData.maxHp;
 
-        attackDemage = m_enemyData.attack_demage;
+        attackDemage_f = m_enemyData.attack_demage;
 
         //sunbi data 가져오기
         m_sunbi.SetEnemyDamage(attackDemage);
-        sunbiAttackDamage = m_sunbi.GetSunbiDamage();
+        sunbiAttackDamage = (int)m_sunbi.GetSunbiDamage();
         
         //StartCoroutine("AttackWave");
-        currentHp = maxHP;
+        currentHp = (int)maxHP;
 
         //transform.position = new Vector3(507.392f,405.248f,- 9000f);
 
@@ -137,6 +145,12 @@ public class EnemyScriptDefault : MonoBehaviour
     void hpBarUpdate()
     {
         hpBar.value = currentHp / maxHP;
+        
+    }
+
+    void hpTextUpdate()
+    {
+        ///
     }
     public void EnemyAttack() //fire bullet
     {
