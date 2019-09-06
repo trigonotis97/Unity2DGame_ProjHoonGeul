@@ -56,7 +56,11 @@ public class EnemyScriptDefault : MonoBehaviour
     ///enemy bullet vareiable
     GameObject enemyBullet;
 
-   
+
+    ///attack loop
+    public float enemyAttackLoopTime = 0f;
+    
+
 
     private void Awake()
     {
@@ -84,13 +88,33 @@ public class EnemyScriptDefault : MonoBehaviour
         m_sunbi.SetEnemyDamage(attackDemage);
         sunbiAttackDamage = m_sunbi.GetSunbiDamage();
         
-        StartCoroutine("AttackWave");
+        //StartCoroutine("AttackWave");
         currentHp = maxHP;
 
         //transform.position = new Vector3(507.392f,405.248f,- 9000f);
 
-        
+        m_battleManager.SetStatePlaying();
     }
+    private void Update()
+    {
+        //일정 시간이 지난 후 에너미 공격 호출
+        if (enemyAttackLoopTime <= 0f)
+        {
+            enemyAttackLoopTime = attackWaveSpeed_temp;
+            EnemyAttack();
+        }
+
+        //게임중일때만 시간 줄어듬
+        if (m_battleManager.GetState() == StageState.PLAYING)
+        {
+            enemyAttackLoopTime -= Time.deltaTime;
+        }
+
+
+        //if (m_battleManager.get)
+    }
+
+
 
     public void EnemyDamage(/*int i*/) //콜라이더 ontrigger 에서 호출
     {
@@ -132,7 +156,7 @@ public class EnemyScriptDefault : MonoBehaviour
         attackPrefText.text = "공1";//"お前";
         */
     }
-
+    /*
     IEnumerator AttackWave()
     {
         Debug.Log("start wave");
@@ -141,8 +165,10 @@ public class EnemyScriptDefault : MonoBehaviour
         StartCoroutine(AttackWave());
         //공격 속도 변수에 따라서 쉬는 시간의 길이도 달라짐. 
     }
+    */
 
     
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

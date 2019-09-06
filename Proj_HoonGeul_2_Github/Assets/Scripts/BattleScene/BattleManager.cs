@@ -24,6 +24,15 @@ public class EnemyStatus
 - (미확정) 에너미별 특수 스킬?
 - hp값 
 */
+
+public enum StageState
+{
+    READY,
+    PLAYING,
+    PAUSE,
+    GAMEOVER,
+    STAGECLEAR
+};
 public class BattleManager : MonoBehaviour
 {
 
@@ -38,14 +47,7 @@ public class BattleManager : MonoBehaviour
     StageState stageStatus; // 0: 게임 시작 전 1: 게임중 2: 게임 중단 3:게임종료 4: 게임 클리어
     public GameObject m_canvas;
 
-    enum StageState
-    {
-        READY,
-        PLAYING,
-        PAUSE,
-        GAMEOVER,
-        STAGECLEAR
-    };
+
 
 
 
@@ -159,6 +161,11 @@ public class BattleManager : MonoBehaviour
 
     }
 
+    public void SetStatePause()
+    {
+        stageStatus = StageState.PAUSE;
+    }
+
     public void SetStateGameover()
     {
         stageStatus = StageState.GAMEOVER;
@@ -167,6 +174,33 @@ public class BattleManager : MonoBehaviour
     public void SetStateStageClear()
     {
         stageStatus = StageState.STAGECLEAR;
+    }
+
+    public StageState GetState()
+    {
+        /*
+        int outInt=-1;
+        switch(stageStatus)
+        {
+            case StageState.READY:
+                outInt = 1;
+                break;
+            case StageState.PLAYING:
+                outInt = 2;
+                break;
+            case StageState.PAUSE:
+                outInt = 3;
+                break;
+            case StageState.GAMEOVER:
+                outInt = 4;
+                break;
+            case StageState.STAGECLEAR:
+                outInt = 5;
+                break;
+        }
+        return outInt;
+        */
+        return stageStatus;
     }
 
     
