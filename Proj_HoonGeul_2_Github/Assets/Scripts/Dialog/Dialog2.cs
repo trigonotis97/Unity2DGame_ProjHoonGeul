@@ -24,7 +24,7 @@ public class Dialog2 : MonoBehaviour
     
     private void Start()
     {
-        duration = 1;
+        
         StartCoroutine(_PlayDialogueText(script[index], duration));
         convStateHandler.Effect(now_conv_state[index]);
 
@@ -41,10 +41,12 @@ public class Dialog2 : MonoBehaviour
         float timer = 0;
         int separator = 0;
         textDisplay.text = "";
-
+        int separatorInd = 0;
+        /*
         while (timer < duration)
         {
             // Find midpoint in string.
+            separator = (int)Mathf.Lerp(0, text.Length, timer / duration);
             separator = (int)Mathf.Lerp(0, text.Length, timer / duration);
 
             // Divide string in 2 and add color at separator.
@@ -56,6 +58,25 @@ public class Dialog2 : MonoBehaviour
             yield return null;
         }
         textDisplay.text = text;
+        */
+        while (text.Length < separatorInd)
+        {
+            // Find midpoint in string.
+            if (duration*0.1f< timer)
+            {
+                separatorInd++;
+                timer = 0;
+            }
+
+            // Divide string in 2 and add color at separator.
+            string left = text.Substring(0, separatorInd);
+            string right = text.Substring(separatorInd, text.Length - separatorInd);
+            textDisplay.text = left + "<color=#00000000>" + right + "</color>";
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
     }
 
     public void OnClickNextSentence()

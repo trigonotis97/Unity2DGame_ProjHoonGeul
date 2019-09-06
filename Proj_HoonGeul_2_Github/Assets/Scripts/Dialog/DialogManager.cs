@@ -39,7 +39,7 @@ public class DialogManager : MonoBehaviour
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        m_script = GameObject.Find("ScriptGenerator").GetComponent<Dialog2>();
+        m_script = GameObject.Find("DialogGenerator").GetComponent<Dialog2>();
         m_audio=GetComponent<AudioSource>();
     }
 

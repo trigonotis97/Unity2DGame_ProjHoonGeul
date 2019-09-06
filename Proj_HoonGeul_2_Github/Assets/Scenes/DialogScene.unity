@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 1711597449}
   - component: {fileID: 1711597448}
   m_Layer: 0
-  m_Name: ScriptGenerator
+  m_Name: DialogGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
