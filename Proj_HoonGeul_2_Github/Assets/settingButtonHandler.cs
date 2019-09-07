@@ -7,18 +7,20 @@ public class settingButtonHandler : MonoBehaviour
 {
     public GameObject panel;
     public Text buttonText;
+    public Animator panelAnimator;
+
     // Start is called before the first frame update
     
-    public void onClick()
+    public void OnClick()
     {
         if (panel.activeSelf)
         {
-            panel.SetActive(false);
+            panelAnimator.SetTrigger("panelOff");
             buttonText.text = "설";
         }
         else
         {
-            panel.SetActive(true);
+            panelAnimator.SetTrigger("panelOff");
             buttonText.text = "X";
         }
     }
