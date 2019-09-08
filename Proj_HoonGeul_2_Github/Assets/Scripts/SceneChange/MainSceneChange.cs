@@ -8,10 +8,6 @@ public class MainSceneChange : MonoBehaviour
     static public string nextScene;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        //nextScene = "";
-    }
 
     public void SceneLoad()
     {

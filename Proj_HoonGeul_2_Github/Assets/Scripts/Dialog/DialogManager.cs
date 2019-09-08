@@ -63,8 +63,7 @@ public class DialogManager : MonoBehaviour
         //m_enemy = Instantiate(enemyImg, new Vector3(507.392f, 405.248f, -9000f), transform.rotation)as GameObject;
         //m_enemy.GetComponent<SpriteRenderer>().sprite = tempEnemy.GetComponent<SpriteRenderer>().sprite;
         
-            GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString()) as GameObject;
-            tempEnemy.GetComponent<EnemyScriptDefault>().enabled = false;
+            GameObject tempEnemy = Resources.Load("DialogPref/Mob_" + m_data.enemyWholeImage.ToString() + " Variant") as GameObject;
             m_enemy = Instantiate(tempEnemy, new Vector3(0f, 0f, 0f), transform.rotation) as GameObject;
             m_enemy.transform.Translate(new Vector3(-m_enemy.GetComponent<SpriteRenderer>().bounds.size.x / 2, m_enemy.GetComponent<SpriteRenderer>().bounds.size.y / 2, 0));
 

@@ -44,7 +44,10 @@ public class MainSceneManager : MonoBehaviour
             }
             ButtonsAnimator.enabled = true;
         }
-        InputText.text = "";
+        else
+        {
+            InputText.text = "";
+        }
     }
     public void OnClickForGiuk()
     {

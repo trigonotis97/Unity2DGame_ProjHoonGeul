@@ -5,22 +5,26 @@ using UnityEngine.UI;
 
 public class settingButtonHandler : MonoBehaviour
 {
-    public GameObject panel;
+    //public GameObject panel;
     public Text buttonText;
     public Animator panelAnimator;
+    public bool panelState;
 
-    // Start is called before the first frame update
+
+    
     
     public void OnClick()
     {
-        if (panel.activeSelf)
+        if (panelState) // off
         {
+            panelState = false;
             panelAnimator.SetTrigger("panelOff");
             buttonText.text = "설";
         }
-        else
+        else //on
         {
-            panelAnimator.SetTrigger("panelOff");
+            panelState = true;
+            panelAnimator.SetTrigger("panelOn");
             buttonText.text = "X";
         }
     }
