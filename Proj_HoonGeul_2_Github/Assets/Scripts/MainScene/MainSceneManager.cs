@@ -25,11 +25,13 @@ public class MainSceneManager : MonoBehaviour
 
     public void Start()
     {
-        chunjiin_keyboard.SetActive(true);
-        Input.SetActive(true);
+        bool param = m_gameManager.GetisFirstStart();
+
+        chunjiin_keyboard.SetActive(param);
+        Input.SetActive(param);
         foreach (GameObject i in mainButtonArray)
         {
-            i.SetActive(false);
+            i.SetActive(!param);
         }
     }
     public void onClick() // 메인화면에서 "시작"을 입력하면 넘어가는 함수.
@@ -41,8 +43,11 @@ public class MainSceneManager : MonoBehaviour
             foreach (GameObject i in mainButtonArray)
             {
                 i.SetActive(true);
+                
             }
             ButtonsAnimator.enabled = true;
+
+            m_gameManager.SetisFirstStart();
         }
         else
         {

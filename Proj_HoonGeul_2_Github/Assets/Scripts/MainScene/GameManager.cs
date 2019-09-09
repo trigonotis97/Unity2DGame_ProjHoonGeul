@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
     private Dictionary<string, Dictionary<string, string>> chosungValHint_Tbl = new Dictionary<string, Dictionary<string, string>>();
     private Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
 
-
+    private bool isFirstStart = true;
 
     void Awake()
     {
@@ -186,7 +186,14 @@ public class GameManager : MonoBehaviour {
         chosungValHint_Tbl = hintTable;
         chosungWrongHintTable = wrongHintTable;
     }
-
+    public void SetisFirstStart()
+    {
+        isFirstStart = false;
+    }
+    public bool GetisFirstStart()
+    {
+        return isFirstStart;
+    }
 
 }
 public class BattleSceneData
