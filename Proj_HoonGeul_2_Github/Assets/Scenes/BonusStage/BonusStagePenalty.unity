@@ -745,6 +745,11 @@ PrefabInstance:
       propertyPath: et
       value: 
       objectReference: {fileID: 63685610}
+    - target: {fileID: 8939180289032598604, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: inputfield
+      value: 
+      objectReference: {fileID: 63685610}
     - target: {fileID: 8939180287321498885, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: m_IsActive

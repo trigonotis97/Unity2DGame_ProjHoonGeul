@@ -28,7 +28,7 @@ public class KeyboardHandler : MonoBehaviour
 
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name != "StartScene")
+        if (SceneManager.GetActiveScene().name == "BattleScene")
             m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
     }
 
