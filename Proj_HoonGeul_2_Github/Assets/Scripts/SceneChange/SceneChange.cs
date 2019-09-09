@@ -8,7 +8,9 @@ public class SceneChange : MonoBehaviour
     SceneData sceneData;
     DialogData m_data;
     GameManager m_gameManager;
+
     public Animator animator;
+    public MainSceneChange MainSceneChange;
 
     private void Start()
     {
@@ -23,34 +25,34 @@ public class SceneChange : MonoBehaviour
         switch (sceneData.nextScene)
         {
             case 0:
-                SceneManager.LoadScene("StartScene");
+                MainSceneChange.nextScene="StartScene"; animator.SetTrigger("nextScene!");
                 break;
             case 1:
                 if (sceneData.nextSceneKey % 9 == 0 && sceneData.nextSceneKey < 45)
                 {
-                    SceneManager.LoadScene("BonusStagePenalty");
+                    MainSceneChange.nextScene="BonusStagePenalty"; animator.SetTrigger("nextScene!");
                 }
                 else
                 {
                     m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("DialogScene");
+                    MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
                 }
                 break;
             case 2:
                 m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                SceneManager.LoadScene("BattleScene");
+                MainSceneChange.nextScene="BattleScene"; animator.SetTrigger("nextScene!");
                 break;
             case 3:
-                SceneManager.LoadScene("BonusStageVoca");
+                MainSceneChange.nextScene="BonusStageVoca"; animator.SetTrigger("nextScene!");
                 break;
             case 4:
-                SceneManager.LoadScene("BonusStageCharacter");
+                MainSceneChange.nextScene="BonusStageCharacter"; animator.SetTrigger("nextScene!");
                 break;
             case 5:
-                SceneManager.LoadScene("BonusStageSpelling");
+                MainSceneChange.nextScene="BonusStageSpelling"; animator.SetTrigger("nextScene!");
                 break;
             case 6:
-                SceneManager.LoadScene("BonusStageSukBong");
+                MainSceneChange.nextScene="BonusStageSukBong"; animator.SetTrigger("nextScene!");
                 break;
         }
     }
@@ -61,14 +63,14 @@ public class SceneChange : MonoBehaviour
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
             sceneData = m_gameManager.GetSceneData();
             m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-            SceneManager.LoadScene("DialogScene");
+            MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
         }
         else
         {
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey());
             sceneData = m_gameManager.GetSceneData();
             m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-            SceneManager.LoadScene("DialogScene");
+            MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
         }
     }
 }

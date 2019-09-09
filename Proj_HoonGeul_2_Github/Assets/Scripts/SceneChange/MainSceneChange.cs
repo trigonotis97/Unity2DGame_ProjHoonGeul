@@ -7,7 +7,6 @@ public class MainSceneChange : MonoBehaviour
 {
     GameManager m_gameManager;
 
-    public SceneChange SceneChange;
     static public string nextScene;
     public Animator doorAnimator;
     
@@ -23,7 +22,7 @@ public class MainSceneChange : MonoBehaviour
         SceneManager.LoadScene(nextScene);
     }
 
-    public void SetSceneName(string i)
+    public void SetSceneName(string i) //버튼에 씬 이름을 직접 넣어서 이동할 때 쓰는 함수.
     {
         nextScene = i;
         doorAnimator.SetTrigger("nextScene!");
@@ -42,10 +41,5 @@ public class MainSceneChange : MonoBehaviour
         doorAnimator.SetTrigger("nextScene!");
 
         //전에 하던거부터 이어하는 기능이 추가 되야해용!!!! - 성율
-    }
-
-    public void NextSceneTrigger()
-    {
-
     }
 }

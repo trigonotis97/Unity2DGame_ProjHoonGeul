@@ -93,11 +93,13 @@ public class Dialog2 : MonoBehaviour
             {
                 SceneChange.NextScene();
             }
-            Debug.Log(index);
-            
+            //Debug.Log(index);
+            else
+            { 
             index++;
             convStateHandler.Effect(now_conv_state[index]);
             StartCoroutine(_PlayDialogueText(script[index], duration));
+            }
         }
     }
 }

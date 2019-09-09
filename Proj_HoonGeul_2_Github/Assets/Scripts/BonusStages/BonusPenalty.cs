@@ -17,6 +17,8 @@ public class BonusPenalty : MonoBehaviour
     public AudioSource AudioSource;
     public AudioClip correct, incorrect;
 
+    public MainSceneChange MainSceneChange;
+
     public int questionNum;
     public string[,] answerStr = new string[4, 4]
     {
@@ -69,16 +71,17 @@ public class BonusPenalty : MonoBehaviour
                 switch (sceneData.nextScene)
                 {
                     case 3:
-                        SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+                      
+                       MainSceneChange.SetSceneName("BonusStageVoca");
                         break;
                     case 4:
-                        SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                       MainSceneChange.SetSceneName("BonusStageCharacter");
                         break;
                     case 5:
-                        SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                       MainSceneChange.SetSceneName("BonusStageSpelling");
                         break;
                     case 6:
-                        SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                       MainSceneChange.SetSceneName("BonusStageSukBong");
                         break;
                 }
             }
@@ -108,16 +111,16 @@ public class BonusPenalty : MonoBehaviour
         switch (sceneData.nextScene)
         {
             case 3:
-                SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+               MainSceneChange.SetSceneName("BonusStageVoca");
                 break;
             case 4:
-                SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+               MainSceneChange.SetSceneName("BonusStageCharacter");
                 break;
             case 5:
-                SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+               MainSceneChange.SetSceneName("BonusStageSpelling");
                 break;
             case 6:
-                SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+               MainSceneChange.SetSceneName("BonusStageSukBong");
                 break;
         }
     }
@@ -142,27 +145,27 @@ public class BonusPenalty : MonoBehaviour
             switch (sceneData.nextScene)
             {
                 case 0:
-                    SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+                   MainSceneChange.SetSceneName("StartScene");
                     break;
                 case 1:
                     m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("DialogScene", LoadSceneMode.Single);
+                   MainSceneChange.SetSceneName("DialogScene");
                     break;
                 case 2:
                     m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                    SceneManager.LoadScene("BattleScene", LoadSceneMode.Single);
+                   MainSceneChange.SetSceneName("BattleScene");
                     break;
                 case 3:
-                    SceneManager.LoadScene("BonusStageVoca", LoadSceneMode.Single);
+                   MainSceneChange.SetSceneName("BonusStageVoca");
                     break;
                 case 4:
-                    SceneManager.LoadScene("BonusStageCharacter", LoadSceneMode.Single);
+                   MainSceneChange.SetSceneName("BonusStageCharacter");
                     break;
                 case 5:
-                    SceneManager.LoadScene("BonusStageSpelling", LoadSceneMode.Single);
+                   MainSceneChange.SetSceneName("BonusStageSpelling");
                     break;
                 case 6:
-                    SceneManager.LoadScene("BonusStageSukBong", LoadSceneMode.Single);
+                   MainSceneChange.SetSceneName("BonusStageSukBong");
                     break;
             }
         }
