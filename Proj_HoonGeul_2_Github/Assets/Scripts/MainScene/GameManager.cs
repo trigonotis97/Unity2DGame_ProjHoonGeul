@@ -194,7 +194,16 @@ public class GameManager : MonoBehaviour {
     {
         return isFirstStart;
     }
+    public void SetAllVariableInit()
+    {
+        PlayerPrefs.SetInt("BattleStageIndex", 0);
+        PlayerPrefs.SetInt("SceneIndex", 0);
+        PlayerPrefs.SetInt("DialogStageIndex", 0);
+        currentBattleStageIdx = 0;
+        currentDialogIdx = 0;
+        currentSceneDataIdx = 0;
 
+    }
 }
 public class BattleSceneData
 {
