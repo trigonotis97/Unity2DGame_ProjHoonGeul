@@ -18,6 +18,10 @@ public class MainSceneManager : MonoBehaviour
     public GameObject[] mainButtonArray;
     public Animator ButtonsAnimator;
 
+    //연습모드를 위한 변수
+    bool isPracticeMode = false;
+
+
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -62,6 +66,9 @@ public class MainSceneManager : MonoBehaviour
             Unity_Cunjiin_Keyboard.Enter();
         }
     }
+
+
+
 
 
     //씬 전환 애니메이션을 위해 mainSceneChange 스크립트를 만들어서 따로 분리했습니다.
