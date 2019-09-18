@@ -19,7 +19,8 @@ public class BonusPenalty : MonoBehaviour
 
     public MainSceneChange MainSceneChange;
 
-    public int questionNum;
+    int questionNum;
+
     public string[,] answerStr = new string[4, 4]
     {
         {"동해물과 백두산이 마르고 닳도록",
@@ -42,21 +43,28 @@ public class BonusPenalty : MonoBehaviour
 
     void Start()
     {
-        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        sceneData = m_gameManager.GetSceneData();
+        if (GameObject.FindGameObjectWithTag("GameManager") != null)
+        {
+            m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+            sceneData = m_gameManager.GetSceneData();
+        }
+
         nowLine = 0;
         
         questionNum = Random.Range(0, 4);
+        Debug.Log(questionNum);
         //일단 랜덤으로 뽑았는데, 게임데이터 이용해서 순서대로 돌려야해요.
         answerSpace.text = "";
         for (int i = 0; i < 4; i++)
         {
             answerSpace.text += answerStr[questionNum, i] + "\n";
+            
         }
        
     }
     public void Check()
     {
+        Debug.Log(questionNum);
         if (InputText.text == answerStr[questionNum,nowLine])
         {
             //정답 사운드
@@ -70,8 +78,7 @@ public class BonusPenalty : MonoBehaviour
                 sceneData = m_gameManager.GetSceneData();
                 switch (sceneData.nextScene)
                 {
-                    case 3:
-                      
+                    case 3:       
                        MainSceneChange.SetSceneName("BonusStageVoca");
                         break;
                     case 4:
@@ -100,11 +107,12 @@ public class BonusPenalty : MonoBehaviour
             AudioSource.PlayOneShot(incorrect);
             InputText.text = "";
             Debug.Log("틀렸어요");
+            Debug.Log(questionNum);
+            Debug.Log(answerStr[questionNum, nowLine]);
         }
     }
     public void AdButton()
     {
-
         //광고 재생 후 다음 씬으로
         m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
         sceneData = m_gameManager.GetSceneData();
