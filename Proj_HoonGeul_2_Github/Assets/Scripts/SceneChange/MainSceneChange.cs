@@ -17,7 +17,7 @@ public class MainSceneChange : MonoBehaviour
         }
     }
 
-    public void SceneLoad()
+    public void SceneLoad() // 타임라인에서 쓰는 함수
     {
         SceneManager.LoadScene(nextScene);
     }

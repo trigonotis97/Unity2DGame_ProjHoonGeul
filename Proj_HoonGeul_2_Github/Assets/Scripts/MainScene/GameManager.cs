@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour {
 
     private bool isFirstStart = true;
 
+    private int ggamJiStageNum;
+
     void Awake()
     {
         //Check if instance already exists
@@ -203,6 +205,25 @@ public class GameManager : MonoBehaviour {
         currentDialogIdx = 0;
         currentSceneDataIdx = 0;
 
+    }
+    //깜지모드
+    public void SetGgamJiStageNum(int i)
+    {
+        ggamJiStageNum = i;
+    }
+    public int GetGgamJiStageNum()
+    {
+        return ggamJiStageNum;
+    }
+    //프리팹 공용 함수
+    public void SetFloatPlayerPrefs(string name, float value)
+    {
+        PlayerPrefs.SetFloat(name, value);
+    }
+    public float GetFloatPlayerPrefs(string name)
+    {
+        
+        return PlayerPrefs.GetFloat(name);
     }
 }
 public class BattleSceneData
