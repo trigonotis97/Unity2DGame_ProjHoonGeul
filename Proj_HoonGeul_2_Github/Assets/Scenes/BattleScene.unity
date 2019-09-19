@@ -1347,8 +1347,9 @@ GameObject:
   m_Component:
   - component: {fileID: 270493406}
   - component: {fileID: 270493407}
+  - component: {fileID: 270493408}
   m_Layer: 5
-  m_Name: PlayerHpbar
+  m_Name: TimeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1425,6 +1426,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &270493408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270493405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9350e5a41e65e04296036e1bc3be9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeSpeed: 0.02
+  m_battleManager: {fileID: 404107655}
 --- !u!1 &274631025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3655,6 +3670,7 @@ RectTransform:
   - {fileID: 785011535}
   - {fileID: 1173681521}
   - {fileID: 632915916}
+  - {fileID: 1575055951}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4720,6 +4736,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520677478}
   m_CullTransparentMesh: 0
+--- !u!1 &1575055947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575055951}
+  - component: {fileID: 1575055950}
+  - component: {fileID: 1575055949}
+  - component: {fileID: 1575055948}
+  m_Layer: 5
+  m_Name: BgWordPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1575055948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575055947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c4e408b48318a4ca4522008e3109cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordPref: {fileID: 3268224072492882984, guid: 8359a890e367c8045b5baf673fa9ef9f,
+    type: 3}
+--- !u!114 &1575055949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575055947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9215687, g: 0.9215687, b: 0.9215687, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1575055950
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575055947}
+  m_CullTransparentMesh: 0
+--- !u!224 &1575055951
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575055947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1148911756}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 36.200005, y: 731.7}
+  m_SizeDelta: {x: 585, y: 245.16}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1585734726
 GameObject:
   m_ObjectHideFlags: 0
@@ -5399,6 +5504,7 @@ MonoBehaviour:
   count_6: 80
   count_7: 100
   m_enemybulletHandler: {fileID: 610284874}
+  backgroundWordGen: {fileID: 1575055948}
 --- !u!224 &1894321287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6265,6 +6371,11 @@ PrefabInstance:
       propertyPath: m_enemybulletHandler
       value: 
       objectReference: {fileID: 610284874}
+    - target: {fileID: 3500886638791031164, guid: 8240651f2c3d46e43ac19481170d1635,
+        type: 3}
+      propertyPath: timeSlider
+      value: 
+      objectReference: {fileID: 270493408}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8240651f2c3d46e43ac19481170d1635, type: 3}
 --- !u!1001 &4882307644322852215

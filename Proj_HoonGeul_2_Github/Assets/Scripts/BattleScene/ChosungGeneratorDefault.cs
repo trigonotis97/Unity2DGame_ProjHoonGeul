@@ -96,7 +96,11 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
     //힌트관련 변수
     int []oldestQuestInd_arr=new int [3];
-    
+
+    //백그라운드 정답 문자 표시 변수
+    public BackGroundWordGen backgroundWordGen;
+
+
     private void Awake()
     {
         //퍼블릭으로 할당했습니다. 이름이 같아야 애니메이터를 공유할 수 있어서!
@@ -191,6 +195,9 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 else
                     oldestQuestInd_arr[i] ++;
             }
+
+            //백그라운드에 정답 문자 표시
+            backgroundWordGen.MakeWordRandomPos(inputWord);
 
         }
         /////여기 성율이가 추가함. O X 애니메이션 띄우기 위함.
