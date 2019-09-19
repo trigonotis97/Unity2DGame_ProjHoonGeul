@@ -20,6 +20,7 @@ TagManager:
   - KeyColliderX
   - KeyColliderY
   - BulletHandler
+  - PracticeManager
   layers:
   - Default
   - TransparentFX

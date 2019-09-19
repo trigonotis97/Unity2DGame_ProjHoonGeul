@@ -98,7 +98,27 @@ public class GameManager : MonoBehaviour {
         sceneData_Tbl = inputData;
     }
 
-    
+    public int SearchDialogInd(int chapNum,int stageNum)
+    {
+        int outInd=-1;
+        foreach(DialogData item in dialogData_Tbl)
+        {
+            if(item.chapterNum==chapNum)
+            {
+                if(item.stageNum==stageNum)
+                {
+                    outInd = item.key - 1;
+                    break;
+                }
+            }
+        }
+
+        return outInd;
+
+
+    }
+
+
 
     //battle scene manager 에서 호출. battle scene 에 필요한 데이터를 가져간다.
     public BattleSceneData GetBattleSceneData(int inputNum)
