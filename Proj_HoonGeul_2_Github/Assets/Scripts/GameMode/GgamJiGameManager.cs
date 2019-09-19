@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BonusPenalty : MonoBehaviour
+public class GgamJiGameManager : MonoBehaviour
 {
     GameManager m_gameManager;
     //public Text problem;
@@ -20,6 +20,16 @@ public class BonusPenalty : MonoBehaviour
     public MainSceneChange MainSceneChange;
 
     int questionNum;
+
+    float time,sec, min;
+    string secString, minString;
+    public Text timer;
+    public enum GgState
+    {
+        PAUSE,
+        PLAYING
+    }
+    public GgState m_GgState;
 
     public string[,] answerStr = new string[4, 4]
     {
@@ -50,21 +60,56 @@ public class BonusPenalty : MonoBehaviour
         }
 
         nowLine = 0;
-        
-        questionNum = Random.Range(0, 4);
+
+        questionNum =m_gameManager.GetGgamJiStageNum();
         Debug.Log(questionNum);
-        //일단 랜덤으로 뽑았는데, 게임데이터 이용해서 순서대로 돌려야해요.
         answerSpace.text = "";
         for (int i = 0; i < 4; i++)
         {
             answerSpace.text += answerStr[questionNum, i] + "\n";
             
         }
-       
+
+        time = 90f;
+        m_GgState = GgState.PAUSE;
     }
+
+    void Update()
+    {
+        if (m_GgState == GgState.PLAYING)
+        {
+            time -= Time.deltaTime;
+            
+            //if (min < 10)
+            //{
+            //    minString = "0" + Mathf.Floor(min).ToString();
+            //}
+
+            if (time > 0)
+            {
+                min = time / 60;
+                sec = time % 60;
+
+                if (sec < 10)
+                {
+                    secString = "0";
+                }
+                else
+                {
+                    secString = "";
+                }
+                timer.text = "0" + Mathf.Floor(min) + ":" + secString + Mathf.Floor(sec).ToString();
+            }       
+            else
+            {
+                m_GgState = GgState.PAUSE;
+                GameOver();
+            }
+        }
+    }
+
     public void Check()
     {
-        Debug.Log(questionNum);
         if (InputText.text == answerStr[questionNum,nowLine])
         {
             //정답 사운드
@@ -73,27 +118,12 @@ public class BonusPenalty : MonoBehaviour
             nowLine += 1;
             if (nowLine == 4)
             {
-                Debug.Log("다음 씬으로 보내주자");
-                m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
-                sceneData = m_gameManager.GetSceneData();
-                switch (sceneData.nextScene)
-                {
-                    case 3:       
-                       MainSceneChange.SetSceneName("BonusStageVoca");
-                        break;
-                    case 4:
-                       MainSceneChange.SetSceneName("BonusStageCharacter");
-                        break;
-                    case 5:
-                       MainSceneChange.SetSceneName("BonusStageSpelling");
-                        break;
-                    case 6:
-                       MainSceneChange.SetSceneName("BonusStageSukBong");
-                        break;
-                }
+                m_GgState = GgState.PAUSE;
+                GameClear();
+                
             }
-            else { 
-            
+            else
+            {   
             InputText.textComponent = texts[nowLine];
             InputText.text = "";
             Debug.Log("일치!");
@@ -111,27 +141,57 @@ public class BonusPenalty : MonoBehaviour
             Debug.Log(answerStr[questionNum, nowLine]);
         }
     }
-    public void AdButton()
+
+    public void SetState(string state)
     {
-        //광고 재생 후 다음 씬으로
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
-        sceneData = m_gameManager.GetSceneData();
-        switch (sceneData.nextScene)
-        {
-            case 3:
-               MainSceneChange.SetSceneName("BonusStageVoca");
-                break;
-            case 4:
-               MainSceneChange.SetSceneName("BonusStageCharacter");
-                break;
-            case 5:
-               MainSceneChange.SetSceneName("BonusStageSpelling");
-                break;
-            case 6:
-               MainSceneChange.SetSceneName("BonusStageSukBong");
-                break;
-        }
+        if (state == "PAUSE") m_GgState = GgState.PAUSE;
+        if (state == "PLAYING") m_GgState = GgState.PLAYING;
     }
+
+    public void GameOver()
+    {
+        timer.text = "00:00";
+        // 게임끗 애니 (씬이동 포함) 트리거 ㄱㄱ
+        Debug.Log("gameOver");
+    }
+    public void GameClear()
+    {
+        //time 값을 내 현재 스코어 보여주는 창에 넣는다
+        if (!PlayerPrefs.HasKey("ggBestScore" + questionNum.ToString()) ||
+            m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()) < time) //최고기록이면!
+        {
+            m_gameManager.SetFloatPlayerPrefs("ggBestScore" + questionNum.ToString(), time); //최고기록에 저장            
+            Debug.Log(m_gameManager.GetFloatPlayerPrefs("최고기록갱신!"+"ggBestScore" + questionNum.ToString())); 
+        }
+        else //최고기록이 아니면
+        {
+            Debug.Log("클리어했지만 최고기록은 아니네요.\n현재기록:"+time.ToString()+"\n최고기록:"+m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
+        }
+        
+        //성공!, 내 현재 기록 (소요시간), 갱신했니? 보여주는 애니메이션 트리거. (씬 이동까지 함께)
+
+    }
+    //public void AdButton()
+    //{
+    //    //광고 재생 후 다음 씬으로
+    //    m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
+    //    sceneData = m_gameManager.GetSceneData();
+    //    switch (sceneData.nextScene)
+    //    {
+    //        case 3:
+    //           MainSceneChange.SetSceneName("BonusStageVoca");
+    //            break;
+    //        case 4:
+    //           MainSceneChange.SetSceneName("BonusStageCharacter");
+    //            break;
+    //        case 5:
+    //           MainSceneChange.SetSceneName("BonusStageSpelling");
+    //            break;
+    //        case 6:
+    //           MainSceneChange.SetSceneName("BonusStageSukBong");
+    //            break;
+    //    }
+    //}
     //public void AnsGenerator()
     //{
     //    selectAns = Random.Range(0, 2);

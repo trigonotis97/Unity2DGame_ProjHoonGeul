@@ -35,10 +35,10 @@ public class KeyboardHandler : MonoBehaviour
     void Start()
     {
         //4 스테이지 보스 일 경우 키 버튼을 영어 텍스트로 변경
-        if ((SceneManager.GetActiveScene().name != "StartScene") && (m_battleManager.Is2to5BossStage() == 4))
+        if ((SceneManager.GetActiveScene().name == "BattleScene") && (m_battleManager.Is2to5BossStage() == 4))
             ChangeKeyboardKortoEng();
         //5-3 스테이지 일 경우 키 버튼 텍스트 지우기.
-        else if ((SceneManager.GetActiveScene().name != "StartScene") && (m_battleManager.Is2to5BossStage() == 7))
+        else if ((SceneManager.GetActiveScene().name == "BattleScene") && (m_battleManager.Is2to5BossStage() == 7))
             DeleteKeyboardText();
 
 

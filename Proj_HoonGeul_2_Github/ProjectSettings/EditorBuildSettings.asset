@@ -42,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BonusStage/BonusStageCharacter.unity
     guid: c03f9a44cdaf42448b03262c83f40095
   - enabled: 1
+    path: Assets/Scenes/GameModeScenes/GgamJiInGame.unity
+    guid: 17082636ea7edfc41a07287d7969c6f4
+  - enabled: 1
     path: Assets/Scenes/BonusStage/BonusStageSpelling.unity
     guid: b7845d03614a51646a929a397a7171f2
   - enabled: 1
@@ -51,10 +54,10 @@ EditorBuildSettings:
     path: Assets/Scenes/BonusStage/BonusStagePenalty.unity
     guid: 8e89a517e5350a5498483d1a0e8fcc4b
   - enabled: 1
-    path: Assets/Scenes/GameModeScenes/GgamJiMode.unity
+    path: Assets/Scenes/GameModeScenes/LastStoryMode.unity
     guid: ce53df847be613f4ab2b3a5f59c80574
   - enabled: 1
-    path: Assets/Scenes/GameModeScenes/LastStoryMode.unity
+    path: Assets/Scenes/GameModeScenes/GgamJiMode.unity
     guid: 69892f28065d2af48b960e6d07551ce9
   - enabled: 1
     path: Assets/Scenes/GameModeScenes/PuzzleMode.unity
