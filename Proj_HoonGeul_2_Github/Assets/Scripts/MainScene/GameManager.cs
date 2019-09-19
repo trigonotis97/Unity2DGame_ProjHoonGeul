@@ -101,17 +101,28 @@ public class GameManager : MonoBehaviour {
     
 
     //battle scene manager 에서 호출. battle scene 에 필요한 데이터를 가져간다.
-    public BattleSceneData GetBattleSceneData()
+    public BattleSceneData GetBattleSceneData(int inputNum)
     {
-        return battleData_Tbl[currentBattleStageIdx];//class 라도 public으로 만들어진 form이 아니면 접근이 안된다...
+        if (inputNum == -1)//스토리모드 데이터
+            return battleData_Tbl[currentBattleStageIdx];//class 라도 public으로 만들어진 form이 아니면 접근이 안된다...
+        else//연습모드 시
+        {
+            return battleData_Tbl[inputNum];
+        }
     }
-    public DialogData GetDialogData()
+    public DialogData GetDialogData(int inputNum)
     {
-        return dialogData_Tbl[currentDialogIdx];
+        if(inputNum==-1)//스토리모드 데이터
+            return dialogData_Tbl[currentDialogIdx];
+        else//연습모드 시
+        {
+            return dialogData_Tbl[inputNum];
+        }
     }
-    public SceneData GetSceneData()
+
+    public SceneData GetSceneIndData()
     {
-        return sceneData_Tbl[currentSceneDataIdx];
+            return sceneData_Tbl[currentSceneDataIdx];
     }
 
     ///씬 이동 관련 변수

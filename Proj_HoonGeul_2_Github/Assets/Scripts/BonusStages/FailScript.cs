@@ -13,7 +13,7 @@ public class FailScript : MonoBehaviour
     {
         m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        sceneData = m_gameManager.GetSceneData();
+        sceneData = m_gameManager.GetSceneIndData();
     }
 
     // Update is called once per frame

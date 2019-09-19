@@ -68,6 +68,9 @@ public class BattleManager : MonoBehaviour
     GameObject m_enemy;
     public EnemyHintBulletHandler hintHandler;
 
+    //연습모드를 위한 변수
+    PracticeManager m_practiceManager;
+
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -77,18 +80,29 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-
-        stageStatus = StageState.READY;
-        sceneData = m_gameManager.GetSceneData();
-        //###나중에 받아오기
-        //데이터 받아오기 (가져올 객체 : 
-        m_data = m_gameManager.GetBattleSceneData();
-        if (m_data.stageNum == 1)
+        //데이터 초기화
+        if (GameObject.FindGameObjectWithTag("PracticeManager") == null)//스토리모드일경우
         {
-            m_gameManager.SaveCheckPoint();
+            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+            sceneData = m_gameManager.GetSceneIndData();
+
+            m_data = m_gameManager.GetBattleSceneData(-1);
+            if (m_data.stageNum == 1)
+            {
+                m_gameManager.SaveCheckPoint();
+            }
         }
+        else
+        {
+            m_practiceManager = GameObject.FindGameObjectWithTag("PracticeManager").GetComponent<PracticeManager>();
+            int tempBattleKey = m_practiceManager.GetBattleIndex();
+            m_data = m_gameManager.GetBattleSceneData(tempBattleKey);
+        }
+
+
         Debug.Log(m_data.enemyDamage);
+
+
         m_generator.SetProblempocket(m_data.problemPocket, m_data.hellProblemPocket);
 
         //백그라운드 오디오 가져오기 및 재생
@@ -141,6 +155,8 @@ public class BattleManager : MonoBehaviour
         {
             chunjiin.GetComponent<KeyboardHandler>().isSejong = true;
         }
+        stageStatus = StageState.READY;
+
 
     }
 
@@ -169,38 +185,27 @@ public class BattleManager : MonoBehaviour
     public void SetStateGameover()
     {
         stageStatus = StageState.GAMEOVER;
-
+        ///게임오버 판넬 추가해야함
     }
     public void SetStateStageClear()
     {
         stageStatus = StageState.STAGECLEAR;
+        //스토리 모드일경우
+
+        //연습모드일경우
+        m_practiceManager.ChangeDialogKey_forNextScene();
+        SceneManager.LoadScene("DialogScene");
 
     }
+    public void OnClickRestart()
+    {
+
+    }
+    
 
     public StageState GetState()
     {
-        /*
-        int outInt=-1;
-        switch(stageStatus)
-        {
-            case StageState.READY:
-                outInt = 1;
-                break;
-            case StageState.PLAYING:
-                outInt = 2;
-                break;
-            case StageState.PAUSE:
-                outInt = 3;
-                break;
-            case StageState.GAMEOVER:
-                outInt = 4;
-                break;
-            case StageState.STAGECLEAR:
-                outInt = 5;
-                break;
-        }
-        return outInt;
-        */
+        
         return stageStatus;
     }
 

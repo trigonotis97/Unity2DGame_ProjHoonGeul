@@ -34,7 +34,7 @@ public class VocaQuiz : MonoBehaviour
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
         AnsGenerator();
-        sceneData = m_gameManager.GetSceneData();
+        sceneData = m_gameManager.GetSceneIndData();
     }
 
     public void AnsGenerator()

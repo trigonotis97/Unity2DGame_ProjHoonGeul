@@ -16,6 +16,10 @@ public class DialogManager : MonoBehaviour
     StageState stageStatus;
     public GameObject m_canvas;
 
+    //다음 씬으로 넘기기을 위한 변수
+    public SceneChange sceneChanger;
+
+
     enum StageState
     {
         READY,
@@ -36,6 +40,8 @@ public class DialogManager : MonoBehaviour
 
     public ConvStateHandler convStateHandler;
 
+    //연습모드 변수
+    PracticeManager m_practiceManager;
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -45,12 +51,23 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+        //데이터 초기화
+        if(GameObject.FindGameObjectWithTag("PracticeManager")==null)
+        {
+            m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
 
-        stageStatus = StageState.READY;
-        sceneData = m_gameManager.GetSceneData();
+            stageStatus = StageState.READY;
 
-        m_data = m_gameManager.GetDialogData();
+            sceneData = m_gameManager.GetSceneIndData();
+
+            m_data = m_gameManager.GetDialogData(-1);
+        }
+        else //연습모드일경우
+        {
+            m_practiceManager = GameObject.FindGameObjectWithTag("PracticeManager").GetComponent<PracticeManager>();
+            int tempDialogKey = m_practiceManager.GetDialogIndex();
+            m_data = m_gameManager.GetDialogData(tempDialogKey);
+        }
         m_script.SetScriptloader(m_data.script, m_data.conv_state);
 
         show_chapter_num = m_data.chapterNum;
@@ -87,5 +104,25 @@ public class DialogManager : MonoBehaviour
     public int GetChapterNum()
     {
         return m_data.chapterNum;
+    }
+
+    public void NextScene()
+    {
+        if(m_practiceManager==null)//스토리모드일경우
+        {
+            sceneChanger.NextScene();
+        }
+        else//연습모드일경우
+        {
+            bool isWinState = m_practiceManager.GetWinState();
+            if (isWinState)
+            {
+                SceneManager.LoadScene("StartScene");
+            }
+            else
+            {
+                SceneManager.LoadScene("BattleScene");
+            }
+        }
     }
 }

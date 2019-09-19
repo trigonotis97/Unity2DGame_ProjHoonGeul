@@ -33,7 +33,7 @@ public class SukBong : MonoBehaviour
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-        sceneData = m_gameManager.GetSceneData();
+        sceneData = m_gameManager.GetSceneIndData();
         AnsGenerator();
         selectAns = 0;
         Debug.Log(answerStr.Length);

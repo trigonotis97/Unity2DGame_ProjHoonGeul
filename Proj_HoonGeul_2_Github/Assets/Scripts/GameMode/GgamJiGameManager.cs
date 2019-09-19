@@ -56,7 +56,7 @@ public class GgamJiGameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("GameManager") != null)
         {
             m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            sceneData = m_gameManager.GetSceneData();
+            sceneData = m_gameManager.GetSceneIndData();
         }
 
         nowLine = 0;
@@ -175,7 +175,7 @@ public class GgamJiGameManager : MonoBehaviour
     //{
     //    //광고 재생 후 다음 씬으로
     //    m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
-    //    sceneData = m_gameManager.GetSceneData();
+    //    sceneData = m_gameManager.GetSceneIndData();
     //    switch (sceneData.nextScene)
     //    {
     //        case 3:

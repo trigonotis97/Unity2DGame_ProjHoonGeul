@@ -6,18 +6,21 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     SceneData sceneData;
-    DialogData m_data;
+    //DialogData m_data;
     GameManager m_gameManager;
 
     public Animator animator;
     public MainSceneChange MainSceneChange;
-
+    PracticeManager m_practiceManager;
     private void Start()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        sceneData = m_gameManager.GetSceneData();
-        m_data = m_gameManager.GetDialogData();
+            sceneData = m_gameManager.GetSceneIndData();
+        
+        //m_data = m_gameManager.GetDialogData();
     }
+    
+
     public void NextScene()
     {
         Debug.Log(sceneData.nextScene);
@@ -27,7 +30,7 @@ public class SceneChange : MonoBehaviour
             case 0:
                 MainSceneChange.nextScene="StartScene"; animator.SetTrigger("nextScene!");
                 break;
-            case 1:
+            case 1://다이얼로그
                 if (sceneData.nextSceneKey % 9 == 0 && sceneData.nextSceneKey < 45)
                 {
                     MainSceneChange.nextScene="BonusStagePenalty"; animator.SetTrigger("nextScene!");
@@ -38,7 +41,7 @@ public class SceneChange : MonoBehaviour
                     MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
                 }
                 break;
-            case 2:
+            case 2://배틀
                 m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
                 MainSceneChange.nextScene="BattleScene"; animator.SetTrigger("nextScene!");
                 break;
@@ -61,14 +64,14 @@ public class SceneChange : MonoBehaviour
         if (isCorrect == true)
         {
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-            sceneData = m_gameManager.GetSceneData();
+            sceneData = m_gameManager.GetSceneIndData();
             m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
             MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
         }
         else
         {
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey());
-            sceneData = m_gameManager.GetSceneData();
+            sceneData = m_gameManager.GetSceneIndData();
             m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
             MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
         }
