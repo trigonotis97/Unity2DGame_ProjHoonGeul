@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour {
 
     private int ggamJiStageNum;
 
+    //rank mode data
+    string[] normalQuestionAll_arr;
+    string[] hellQuestionAll_arr;
+    private int currentScore;
+
     void Awake()
     {
         //Check if instance already exists
@@ -175,18 +180,16 @@ public class GameManager : MonoBehaviour {
     //모드 관련 함수
     public void SetGameMode(int modeNum)
     {
+        // 0 : 스타트씬(default), 1: 자음 스토리 ,  2:모음 스토리, 3: 연습모드 ,4: 도전모드
         currentMode = modeNum;
     }
+
     public int GetGameMode()
     {
+
         return currentMode;
     }
-    /*
-    public MoeumData GetMoeumData()
-    {
-        
-    }
-    */
+
     public Dictionary<string,string> GetSingleHintDictionary(string inputValue)
     {
         Dictionary<string, string> outDict = new Dictionary<string, string>();
@@ -256,6 +259,41 @@ public class GameManager : MonoBehaviour {
         
         return PlayerPrefs.GetFloat(name);
     }
+
+    //기록모드 전용
+    public string[] GetAllQuestionData(out string[]outHell_arr)
+    {
+        outHell_arr=hellQuestionAll_arr;
+        return normalQuestionAll_arr;
+    }
+    public bool IsAllQuestionDataExist()
+    {
+        if (normalQuestionAll_arr == null)
+            return false;
+        else
+            return true;
+    }
+    public BattleSceneData[] GetAllBattleData()
+    {
+        return battleData_Tbl;
+    }
+    public void SetAllQuestionData(string[] inNornalQuestion,string[] inHellQuestion)
+    {
+        normalQuestionAll_arr = inNornalQuestion;
+        hellQuestionAll_arr = inHellQuestion;
+    }
+
+    public int GetCurrentRankScore()
+    {
+        return PlayerPrefs.GetInt("RankModeScore",0);
+    }
+    public void SetRankScore(int newScore)
+    {
+        PlayerPrefs.SetInt("RankModeScore", newScore);
+
+    }
+
+
 }
 public class BattleSceneData
 {

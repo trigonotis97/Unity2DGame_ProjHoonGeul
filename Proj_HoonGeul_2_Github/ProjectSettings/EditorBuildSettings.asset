@@ -28,7 +28,7 @@ EditorBuildSettings:
     guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
-    guid: 5ddcf4015998bb243872e6e550855032
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: ce774097540279a488807d9eb14bea1d
@@ -62,7 +62,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameModeScenes/PuzzleMode.unity
     guid: c7df42cec05bbe644a5344fe761e0cc6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameModeScenes/RankMode.unity
     guid: fac0393ee7bfce24bb99965446841a84
+  - enabled: 1
+    path: Assets/Scenes/GameModeScenes/RankMode_1.unity
+    guid: a1787ad2dc91d60418bbe7706d0a68da
   m_configObjects: {}

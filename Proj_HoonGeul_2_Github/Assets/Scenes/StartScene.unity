@@ -1963,7 +1963,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 153234435}
   panelAnimator: {fileID: 6815023732156785044}
-  panelState: 0
 --- !u!114 &1121942373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3198,7 +3197,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: RankMode
+          m_StringArgument: RankMode_1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
