@@ -37,6 +37,8 @@ public class BattleManager : MonoBehaviour
 {
 
     GameManager m_gameManager;
+    int currentMode;
+
     public int show_chapter_num;
     public int show_stage_num;
     //데이터 받아올변수
@@ -57,8 +59,7 @@ public class BattleManager : MonoBehaviour
     public AudioClip bg_audioclip;
     AudioSource m_audioSource;
 
-    int currentMode;
-
+    
     ChosungGeneratorDefault m_generator;
 
     // 키보드 날아다니는 세종 패턴을 위한 천지인캔버스 할당
@@ -80,6 +81,7 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
+        
         //데이터 초기화
         if (GameObject.FindGameObjectWithTag("PracticeManager") == null)//스토리모드일경우
         {
@@ -191,10 +193,14 @@ public class BattleManager : MonoBehaviour
     {
         stageStatus = StageState.STAGECLEAR;
         //스토리 모드일경우
-
+        if (currentMode == 1)
+            m_gameManager.SaveCurrentBattlekey();
         //연습모드일경우
-        m_practiceManager.ChangeDialogKey_forNextScene();
-        SceneManager.LoadScene("DialogScene");
+        else if (currentMode == 3)
+        {
+            m_practiceManager.ChangeDialogKey_forNextScene();
+            SceneManager.LoadScene("DialogScene");
+        }
 
     }
     public void OnClickRestart()

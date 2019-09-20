@@ -107,7 +107,10 @@ public class RankModeManager : MonoBehaviour
 
     }
 
-
+    public void ChangeCurrentGameMode_0()
+    {
+        m_gameManager.SetGameMode(0);
+    }
 
 
 

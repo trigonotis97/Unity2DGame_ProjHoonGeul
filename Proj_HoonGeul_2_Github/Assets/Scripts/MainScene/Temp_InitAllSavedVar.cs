@@ -5,14 +5,10 @@ using UnityEngine;
 public class Temp_InitAllSavedVar : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void InitAllSavedPlayerpref() { 
+        PlayerPrefs.SetInt("BattleStageIndex", 0);
+        PlayerPrefs.SetInt("DialogStageIndex", 0);
+        PlayerPrefs.SetInt("SceneIndex", 0);
+        PlayerPrefs.SetInt("RankModeScore", 0);
     }
 }

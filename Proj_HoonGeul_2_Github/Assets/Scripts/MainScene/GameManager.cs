@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     private int currentBattleStageIdx;
     private int currentDialogIdx;
     private int currentSceneDataIdx;
-    private int currentMode; // 1: 집현전모드(노멀)  2: 세종대왕모드 (하드)
+    private int currentMode; // 0:메인 씬 1: 집현전모드(노멀)  2: 세종대왕모드 (하드) 3: 연습모드 4:기록모드
 
     private Dictionary<string, Dictionary<string, string>> chosungValHint_Tbl = new Dictionary<string, Dictionary<string, string>>();
     private Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
@@ -50,15 +50,10 @@ public class GameManager : MonoBehaviour {
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
 
-        PlayerPrefs.SetInt("BattleStageIndex", 0);
-        PlayerPrefs.SetInt("DialogStageIndex", 0);
-        PlayerPrefs.SetInt("SceneIndex", 0);
+
 
         ///저장된 체크포인트 가져오기 (체크포인트 초기화)
         currentBattleStageIdx = PlayerPrefs.GetInt("BattleStageIndex", 0);
-        /*
-
-        */
         currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
         currentSceneDataIdx = PlayerPrefs.GetInt("SceneIndex", 0);
 
@@ -172,6 +167,11 @@ public class GameManager : MonoBehaviour {
     {
         currentBattleStageIdx = input;
     }
+    public void SaveCurrentBattlekey()
+    {
+        PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
+
+    }
     public void SetCurrentSceneKey(int input)
     {
         currentSceneDataIdx = input;
@@ -230,16 +230,7 @@ public class GameManager : MonoBehaviour {
     {
         return isFirstStart;
     }
-    public void SetAllVariableInit()
-    {
-        PlayerPrefs.SetInt("BattleStageIndex", 0);
-        PlayerPrefs.SetInt("SceneIndex", 0);
-        PlayerPrefs.SetInt("DialogStageIndex", 0);
-        currentBattleStageIdx = 0;
-        currentDialogIdx = 0;
-        currentSceneDataIdx = 0;
 
-    }
     //깜지모드
     public void SetGgamJiStageNum(int i)
     {
