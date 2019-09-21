@@ -55,8 +55,12 @@ public class GameManager : MonoBehaviour {
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
 
-
-
+        /*
+        PlayerPrefs.SetInt("BattleStageIndex", 0);
+        PlayerPrefs.SetInt("DialogStageIndex", 0);
+        PlayerPrefs.SetInt("SceneIndex", 0);
+        PlayerPrefs.SetInt("RankModeScore", 0);
+        */
         ///저장된 체크포인트 가져오기 (체크포인트 초기화)
         currentBattleStageIdx = PlayerPrefs.GetInt("BattleStageIndex", 0);
         currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
@@ -70,15 +74,20 @@ public class GameManager : MonoBehaviour {
     }
 
     //체크포인트를 저장할 곳에서 호출. 주로 battle scene manager.
-    public void SaveCheckPoint()
+
+    public int LoadBattleStageIndex()
     {
-        PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
-        PlayerPrefs.SetInt("DialogStageIndex", currentDialogIdx);
-        PlayerPrefs.SetInt("SceneIndex", currentSceneDataIdx);
+        return PlayerPrefs.GetInt("BattleStageIndex", 0);
+    }
+    public int LoadDialogStageIndex()
+    {
+        return PlayerPrefs.GetInt("DialogStageIndex", 0);
+    }
+    public int LoadSceneIndex()
+    {
+        return PlayerPrefs.GetInt("SceneIndex", 0);
     }
 
-  
-    
     /// 데이터 초기화
 
     //xml load 씬에서 호출. game manager 의 데이터를 초기화해준다
@@ -105,12 +114,12 @@ public class GameManager : MonoBehaviour {
 
     public int SearchDialogInd(int chapNum,int stageNum)
     {
-        int outInd=-1;
+        int outInd=-2;
         foreach(DialogData item in dialogData_Tbl)
         {
             if(item.chapterNum==chapNum)
             {
-                if(item.stageNum==stageNum)
+                if(item.stageNum==stageNum*2-1)
                 {
                     outInd = item.key - 1;
                     break;
@@ -128,7 +137,7 @@ public class GameManager : MonoBehaviour {
         {
             if (item.nextScene == 1 && item.nextSceneKey == currentDialogKey)
             {
-                outind = item.key - 1;
+                outind = item.key -1;
                 break;
             }
             
@@ -154,7 +163,7 @@ public class GameManager : MonoBehaviour {
     }
     public DialogData GetDialogData(int inputNum)
     {
-        if(inputNum==-1)//스토리모드 데이터
+        if(inputNum==1 )//스토리모드 데이터
             return dialogData_Tbl[currentDialogIdx];
         else if (inputNum == 3)//연습모드시
         {
@@ -209,6 +218,22 @@ public class GameManager : MonoBehaviour {
     {
         PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
 
+    }
+    public void SaveCheckPoint()
+    {
+        PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
+        PlayerPrefs.SetInt("DialogStageIndex", currentDialogIdx-1);
+        PlayerPrefs.SetInt("SceneIndex", currentSceneDataIdx-2);
+    }
+    public void SaveCheckPoint_testPortal(int chapterNum,int stageNum)
+    {
+        int battleInd= (chapterNum - 1) * 3 + stageNum - 1;
+        int dialogInd=SearchDialogInd(chapterNum,stageNum);
+        int sceneInd=SearchSceneDataInd(dialogInd);
+        Debug.Log(battleInd + ":" + dialogInd + ":" + sceneInd);
+        PlayerPrefs.SetInt("BattleStageIndex", battleInd);
+        PlayerPrefs.SetInt("DialogStageIndex", dialogInd );
+        PlayerPrefs.SetInt("SceneIndex", sceneInd ); 
     }
     public void SetCurrentSceneKey(int input)
     {
@@ -342,6 +367,10 @@ public class GameManager : MonoBehaviour {
     public int GetPracticeBattleKey()
     {
         return tempBattleInd;
+    }
+    public int GetPracticeSceneKey()
+    {
+        return tempSceneDataInd;
     }
     public void SetPracticeStateWin()
     {

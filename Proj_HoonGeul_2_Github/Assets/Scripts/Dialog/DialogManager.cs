@@ -66,6 +66,8 @@ public class DialogManager : MonoBehaviour
         }
         else if(currentGameMode==3)//연습모드일떄
         {
+            m_gameManager.SetPracticeSceneDataKey(m_gameManager.GetPracticeSceneKey() + 1);
+
             m_data = m_gameManager.GetDialogData(currentGameMode);
 
         }
@@ -112,6 +114,7 @@ public class DialogManager : MonoBehaviour
         if ((currentGameMode == 1)|| (currentGameMode == 2))//스토리모드일경우 ( 맑은물, 고인물)
         {
             sceneChanger.NextScene();
+            m_gameManager.SetCurrentDialogKey(m_gameManager.GetCurrentDialogKey()+1);
         }
         else if(currentGameMode==3)//연습모드일경우
         {

@@ -72,6 +72,8 @@ public class BattleManager : MonoBehaviour
     //연습모드를 위한 변수
     //PracticeManager m_practiceManager;
 
+    public SceneChange sceneChange;
+
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -81,7 +83,8 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        
+        currentMode = m_gameManager.GetGameMode();
+
         //데이터 초기화
         if (currentMode==1|| currentMode == 2)//스토리모드일경우
         {
@@ -89,14 +92,11 @@ public class BattleManager : MonoBehaviour
             sceneData = m_gameManager.GetSceneIndData(currentMode);
 
             m_data = m_gameManager.GetBattleSceneData(currentMode);
-            if (m_data.stageNum == 1)
-            {
-                m_gameManager.SaveCheckPoint();
-            }
+
         }
         else if(currentMode == 3) //연습모드 일경우
         {
-            m_gameManager.SetPracticeSceneDataKey(m_gameManager.GetCurrentSceneKey() + 1);
+            m_gameManager.SetPracticeSceneDataKey(m_gameManager.GetPracticeSceneKey() + 1);
             sceneData = m_gameManager.GetSceneIndData(currentMode);
             m_data = m_gameManager.GetBattleSceneData(currentMode);
         }
@@ -165,7 +165,7 @@ public class BattleManager : MonoBehaviour
     //enemy script에서 호출.
     public EnemyStatus GetEnemyData()
     {
-        Debug.Log(m_data.enemyHp + " <<" + m_data.enemyDamage);
+        //Debug.Log(m_data.enemyHp + " <<" + m_data.enemyDamage);
         EnemyStatus temp = new EnemyStatus();
         temp.maxHp = m_data.enemyHp;
         temp.attack_demage = m_data.enemyDamage;
@@ -194,7 +194,10 @@ public class BattleManager : MonoBehaviour
         stageStatus = StageState.STAGECLEAR;
         //스토리 모드일경우
         if (currentMode == 1)
-            m_gameManager.SaveCurrentBattlekey();
+        {
+            m_gameManager.SaveCheckPoint();
+            sceneChange.NextScene();
+        }
         //연습모드일경우
         else if (currentMode == 3)
         {

@@ -13,6 +13,8 @@ public class SceneChange : MonoBehaviour
     public MainSceneChange MainSceneChange;
     //PracticeManager m_practiceManager;
     public int currentMode;
+    public int nextscene;
+    public int nextscenekey;
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -21,8 +23,11 @@ public class SceneChange : MonoBehaviour
     private void Start()
     {
         currentMode = m_gameManager.GetGameMode();
+        Debug.Log(m_gameManager.GetCurrentSceneKey());
         sceneData = m_gameManager.GetSceneIndData(currentMode);
-        
+        nextscene = sceneData.nextScene;
+        nextscenekey = sceneData.nextSceneKey;
+
         //m_data = m_gameManager.GetDialogData();
     }
     
