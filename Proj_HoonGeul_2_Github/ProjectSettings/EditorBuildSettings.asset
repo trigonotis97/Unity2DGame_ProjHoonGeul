@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameModeScenes/RankMode_1.unity
     guid: a1787ad2dc91d60418bbe7706d0a68da
+  - enabled: 1
+    path: Assets/Scenes/GameModeScenes/ChallengeMode.unity
+    guid: d41b9d59f7120dc44abe75dff33344ce
   m_configObjects: {}

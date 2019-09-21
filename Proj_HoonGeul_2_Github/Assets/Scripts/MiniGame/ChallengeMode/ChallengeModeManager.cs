@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ChallengeModeManager : MonoBehaviour
 {
-    public float enemyHp;
-    public int patternNum;
-    public int gameModeNum;
+    
+    public float maxTime_tmp;
+
+    public int patternNum_tmp; //0: is test num
+    public int gameModeNum_tmp;
 
     GameManager m_gameManager;
 
