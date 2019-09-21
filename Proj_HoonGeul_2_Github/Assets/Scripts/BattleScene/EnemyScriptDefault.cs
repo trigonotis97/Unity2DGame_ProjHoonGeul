@@ -36,7 +36,6 @@ public class EnemyScriptDefault : MonoBehaviour
     ///데이터 초기화 부분
     GameManager m_gameManager;
     public BattleManager m_battleManager;
-    public SceneChange SceneChange;
     EnemyStatus m_enemyData;
 
 
@@ -140,7 +139,6 @@ public class EnemyScriptDefault : MonoBehaviour
             hpBarUpdate();
             //게임오버 판정
             m_battleManager.SetStateStageClear();           
-            SceneChange.NextScene();
         }
         else
         {
@@ -151,7 +149,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
     void hpBarUpdate()
     {
-        hpBar.value = currentHp / maxHP;
+        hpBar.value = (float)currentHp / (float)maxHP;
         enemyHpText.text = currentHp.ToString() + " / " + maxHP.ToString();
 
 
@@ -199,6 +197,7 @@ public class EnemyScriptDefault : MonoBehaviour
             EnemyDamage();
         }
     }
+
 
 
     public void SetEnemyData(float enemyHp,float enemyDemage)

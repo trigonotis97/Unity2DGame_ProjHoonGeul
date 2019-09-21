@@ -79,7 +79,7 @@ public class Sunbi : MonoBehaviour
         bullet.GetComponent<Text>().text= inputString;
         Debug.Log(bullet.GetComponent<Text>().text);
 
-        m_enemy.EnemyDamage();
+        //m_enemy.EnemyDamage();
 
     }
     public void Heal()

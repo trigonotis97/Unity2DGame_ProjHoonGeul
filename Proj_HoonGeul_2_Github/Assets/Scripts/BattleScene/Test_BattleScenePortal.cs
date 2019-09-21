@@ -22,6 +22,8 @@ public class Test_BattleScenePortal : MonoBehaviour
         int chapterNum = int.Parse(inputText[0].ToString());
         int stageNum = int.Parse(inputText[2].ToString());
         m_gameManager.SetCurrentBattlekey((chapterNum - 1) * 3 + stageNum-1);
+        m_gameManager.SaveCheckPoint_testPortal(chapterNum, stageNum);
+        m_gameManager.SetGameMode(1);
         /*
         get battle data-> xml 데이터의 키값이 아닌 인덱스로 접근한다.
         key는 1부터 시작하고 index 는 0부터시작하므로 그 차이를 -1 해준다.

@@ -191,10 +191,11 @@ public class LoadHintXml : MonoBehaviour
         {
             Load_tXml();
             Load_wrongHintXml();
+
+            if (m_gameManamger != null)
+                m_gameManamger.SetAllHintData(chosungValHintTable, chosungWrongHintTable);
         }
 
-        if (m_gameManamger != null)
-            m_gameManamger.SetAllHintData(chosungValHintTable, chosungWrongHintTable);
     }
 
 

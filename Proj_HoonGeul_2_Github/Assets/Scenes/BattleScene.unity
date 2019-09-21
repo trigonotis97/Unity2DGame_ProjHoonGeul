@@ -2037,6 +2037,7 @@ MonoBehaviour:
   bg_audioclip: {fileID: 0}
   chunjiin: {fileID: 2941351920318328974}
   hintHandler: {fileID: 610284874}
+  sceneChange: {fileID: 404107658}
 --- !u!224 &404107656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2169,6 +2170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 404107662}
   MainSceneChange: {fileID: 404107663}
+  currentMode: 0
+  nextscene: 0
+  nextscenekey: 0
 --- !u!114 &404107659
 MonoBehaviour:
   m_ObjectHideFlags: 0
