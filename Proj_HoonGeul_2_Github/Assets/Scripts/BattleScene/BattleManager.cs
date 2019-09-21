@@ -70,7 +70,7 @@ public class BattleManager : MonoBehaviour
     public EnemyHintBulletHandler hintHandler;
 
     //연습모드를 위한 변수
-    PracticeManager m_practiceManager;
+    //PracticeManager m_practiceManager;
 
     private void Awake()
     {

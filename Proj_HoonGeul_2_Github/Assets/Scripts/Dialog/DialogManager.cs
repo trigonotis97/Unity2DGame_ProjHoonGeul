@@ -64,7 +64,7 @@ public class DialogManager : MonoBehaviour
 
             m_data = m_gameManager.GetDialogData(-1);
         }
-        else if(currentGameMode==3)
+        else if(currentGameMode==3)//연습모드일떄
         {
             m_practiceManager = GameObject.FindGameObjectWithTag("PracticeManager").GetComponent<PracticeManager>();
             int tempDialogKey = m_practiceManager.GetDialogIndex();

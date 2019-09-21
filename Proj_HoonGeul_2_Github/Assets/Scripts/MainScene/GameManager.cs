@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     private int currentBattleStageIdx;
     private int currentDialogIdx;
     private int currentSceneDataIdx;
-    private int currentMode; // 0:메인 씬 1: 집현전모드(노멀)  2: 세종대왕모드 (하드) 3: 연습모드 4:기록모드
+    private int currentMode; // 0:메인 씬 1: 집현전모드(노멀)  2: 세종대왕모드 (하드) 3: 연습모드 4:기록모드 
 
     private Dictionary<string, Dictionary<string, string>> chosungValHint_Tbl = new Dictionary<string, Dictionary<string, string>>();
     private Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour {
     string[] normalQuestionAll_arr;
     string[] hellQuestionAll_arr;
     private int currentScore;
+
+    //practice mode temp variable
+    private int tempBattleInd=0;
+    private int tempDialogInd=0;
 
     void Awake()
     {
@@ -283,7 +287,15 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt("RankModeScore", newScore);
 
     }
-
+    //연습모드
+    public int GetPracticeDialogKey()
+    {
+        return tempBattleInd;
+    }
+    public int GetPracticeBattleKey()
+    {
+        return tempDialogInd;
+    }
 
 }
 public class BattleSceneData
