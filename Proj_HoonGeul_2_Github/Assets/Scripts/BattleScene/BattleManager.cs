@@ -83,22 +83,22 @@ public class BattleManager : MonoBehaviour
     {
         
         //데이터 초기화
-        if (GameObject.FindGameObjectWithTag("PracticeManager") == null)//스토리모드일경우
+        if (currentMode==1|| currentMode == 2)//스토리모드일경우
         {
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-            sceneData = m_gameManager.GetSceneIndData();
+            sceneData = m_gameManager.GetSceneIndData(currentMode);
 
-            m_data = m_gameManager.GetBattleSceneData(-1);
+            m_data = m_gameManager.GetBattleSceneData(currentMode);
             if (m_data.stageNum == 1)
             {
                 m_gameManager.SaveCheckPoint();
             }
         }
-        else
+        else if(currentMode == 3) //연습모드 일경우
         {
-            m_practiceManager = GameObject.FindGameObjectWithTag("PracticeManager").GetComponent<PracticeManager>();
-            int tempBattleKey = m_practiceManager.GetBattleIndex();
-            m_data = m_gameManager.GetBattleSceneData(tempBattleKey);
+            m_gameManager.SetPracticeSceneDataKey(m_gameManager.GetCurrentSceneKey() + 1);
+            sceneData = m_gameManager.GetSceneIndData(currentMode);
+            m_data = m_gameManager.GetBattleSceneData(currentMode);
         }
 
 
@@ -198,7 +198,7 @@ public class BattleManager : MonoBehaviour
         //연습모드일경우
         else if (currentMode == 3)
         {
-            m_practiceManager.ChangeDialogKey_forNextScene();
+            //m_practiceManager.ChangeDialogKey_forNextScene();
             SceneManager.LoadScene("DialogScene");
         }
 

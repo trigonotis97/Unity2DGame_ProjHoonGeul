@@ -56,7 +56,7 @@ public class GgamJiGameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("GameManager") != null)
         {
             m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            sceneData = m_gameManager.GetSceneIndData();
+            sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
         }
 
         nowLine = 0;

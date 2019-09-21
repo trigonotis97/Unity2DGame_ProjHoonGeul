@@ -46,7 +46,7 @@ public class BonusPenalty : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("GameManager") != null)
         {
             m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            sceneData = m_gameManager.GetSceneIndData();
+            sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
         }
 
         nowLine = 0;
@@ -75,7 +75,7 @@ public class BonusPenalty : MonoBehaviour
             {
                 Debug.Log("다음 씬으로 보내주자");
                 m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
-                sceneData = m_gameManager.GetSceneIndData();
+                sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
                 switch (sceneData.nextScene)
                 {
                     case 3:       
@@ -115,7 +115,7 @@ public class BonusPenalty : MonoBehaviour
     {
         //광고 재생 후 다음 씬으로
         m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() - 2);
-        sceneData = m_gameManager.GetSceneIndData();
+        sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
         switch (sceneData.nextScene)
         {
             case 3:

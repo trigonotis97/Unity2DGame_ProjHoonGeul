@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class GgUIHandler : MonoBehaviour
 {
+    GameManager m_gameManager;
+
     public Animator Animator;
     public MainSceneChange MainSceneChange;
     public GameObject forthButton;
 
-    public int chpaterNum, stageNum;
+    public int chapterNum, stageNum;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
+        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void ChapterSelect(int i)
     {
-        chpaterNum = i;
+        chapterNum = i;
         //여기에서 챕터 넘버를 게임매니저에 넣어야함.
         if (i == 5)
         {
@@ -38,7 +35,12 @@ public class GgUIHandler : MonoBehaviour
     public void StageSelect(int i)
     {
         stageNum = i;
+        m_gameManager.SetPracticeBattleKey((chapterNum - 1) * 3 + stageNum - 1);
+        int tempDialogkey = m_gameManager.SearchDialogInd(chapterNum, stageNum);
+        m_gameManager.SetPracticeDialogKey(tempDialogkey);
+        m_gameManager.SetPracticeSceneDataKey((m_gameManager.SearchSceneDataInd(tempDialogkey)+1));
         //게임매니저에 불러올 다이얼로그 넘버 새기고
+
         MainSceneChange.StoryModeClick(); // 여기에 stageNum, chpaterNum이 매개변수로 들어가야함.
     }
     public void BackToChapterSelect()

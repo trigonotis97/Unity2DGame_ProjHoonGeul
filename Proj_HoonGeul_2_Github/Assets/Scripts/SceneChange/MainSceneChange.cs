@@ -38,4 +38,5 @@ public class MainSceneChange : MonoBehaviour
 
         //전에 하던거부터 이어하는 기능이 추가 되야해용!!!! - 성율
     }
+
 }

@@ -23,12 +23,10 @@ public class PracticeModeHandler : MonoBehaviour
 
     public void StartPracticeMode(int stageNum)
     {
-        GameObject pm_obj = Instantiate(practiceMangerPref) as GameObject;
-        PracticeManager tempPm = pm_obj.GetComponent<PracticeManager>();
-
-        tempPm.SetBattleIndex((chapterNum - 1) * 3 + stageNum - 1);
-        tempPm.SetDialogIndex(m_gameManager.SearchDialogInd(chapterNum, stageNum));
-        SceneManager.LoadScene("DialogScene");
+        
+        m_gameManager.SetPracticeBattleKey((chapterNum - 1) * 3 + stageNum - 1);
+        m_gameManager.SetPracticeDialogKey(m_gameManager.SearchDialogInd(chapterNum, stageNum));
+        
     }
 }
 

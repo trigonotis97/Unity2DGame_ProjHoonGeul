@@ -11,11 +11,17 @@ public class SceneChange : MonoBehaviour
 
     public Animator animator;
     public MainSceneChange MainSceneChange;
-    PracticeManager m_practiceManager;
-    private void Start()
+    //PracticeManager m_practiceManager;
+    public int currentMode;
+    private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-            sceneData = m_gameManager.GetSceneIndData();
+
+    }
+    private void Start()
+    {
+        currentMode = m_gameManager.GetGameMode();
+        sceneData = m_gameManager.GetSceneIndData(currentMode);
         
         //m_data = m_gameManager.GetDialogData();
     }
@@ -33,17 +39,34 @@ public class SceneChange : MonoBehaviour
             case 1://다이얼로그
                 if (sceneData.nextSceneKey % 9 == 0 && sceneData.nextSceneKey < 45)
                 {
-                    MainSceneChange.nextScene="BonusStagePenalty"; animator.SetTrigger("nextScene!");
+                    MainSceneChange.nextScene = "BonusStagePenalty"; animator.SetTrigger("nextScene!");
                 }
-                else
-                {
-                    m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
-                    MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
+                else { 
+                    if (currentMode == 1 || currentMode == 2)//스토리 모드
+                    {
+                        m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
+                        MainSceneChange.nextScene = "DialogScene"; animator.SetTrigger("nextScene!");
+                    }
+                    else if(currentMode==3)//연습모드일경우
+                    {
+                        m_gameManager.SetPracticeDialogKey(sceneData.nextSceneKey);
+                        MainSceneChange.nextScene = "DialogScene"; animator.SetTrigger("nextScene!");
+                    }
                 }
+                
                 break;
             case 2://배틀
-                m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
-                MainSceneChange.nextScene="BattleScene"; animator.SetTrigger("nextScene!");
+                if (currentMode == 1 || currentMode == 2)//스토리 모드
+                {
+                    m_gameManager.SetCurrentBattlekey(sceneData.nextSceneKey);
+                    MainSceneChange.nextScene = "BattleScene"; animator.SetTrigger("nextScene!");
+                }
+                else if(currentMode ==3)
+                {
+                    m_gameManager.SetPracticeBattleKey(sceneData.nextSceneKey);
+                    MainSceneChange.nextScene = "BattleScene"; animator.SetTrigger("nextScene!");
+
+                }
                 break;
             case 3:
                 MainSceneChange.nextScene="BonusStageVoca"; animator.SetTrigger("nextScene!");
@@ -64,14 +87,14 @@ public class SceneChange : MonoBehaviour
         if (isCorrect == true)
         {
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
-            sceneData = m_gameManager.GetSceneIndData();
+            sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
             m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
             MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
         }
         else
         {
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey());
-            sceneData = m_gameManager.GetSceneIndData();
+            sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
             m_gameManager.SetCurrentDialogKey(sceneData.nextSceneKey);
             MainSceneChange.nextScene="DialogScene"; animator.SetTrigger("nextScene!");
         }

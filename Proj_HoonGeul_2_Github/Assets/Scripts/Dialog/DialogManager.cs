@@ -42,7 +42,7 @@ public class DialogManager : MonoBehaviour
     public ConvStateHandler convStateHandler;
 
     //연습모드 변수
-    PracticeManager m_practiceManager;
+    //PracticeManager m_practiceManager;
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -60,15 +60,14 @@ public class DialogManager : MonoBehaviour
 
             stageStatus = StageState.READY;
 
-            sceneData = m_gameManager.GetSceneIndData();
+            sceneData = m_gameManager.GetSceneIndData(currentGameMode);
 
-            m_data = m_gameManager.GetDialogData(-1);
+            m_data = m_gameManager.GetDialogData(currentGameMode);
         }
         else if(currentGameMode==3)//연습모드일떄
         {
-            m_practiceManager = GameObject.FindGameObjectWithTag("PracticeManager").GetComponent<PracticeManager>();
-            int tempDialogKey = m_practiceManager.GetDialogIndex();
-            m_data = m_gameManager.GetDialogData(tempDialogKey);
+            m_data = m_gameManager.GetDialogData(currentGameMode);
+
         }
         m_script.SetScriptloader(m_data.script, m_data.conv_state);
 
@@ -114,17 +113,17 @@ public class DialogManager : MonoBehaviour
         {
             sceneChanger.NextScene();
         }
-        else//연습모드일경우
+        else if(currentGameMode==3)//연습모드일경우
         {
-            bool isWinState = m_practiceManager.GetWinState();
-            if (isWinState)
+            bool isWinState = m_gameManager.GetIsWinState();
+            if (isWinState)//이겼을때
             {
                 SceneManager.LoadScene("LastStoryMode");
                 m_gameManager.SetGameMode(0);
             }
-            else
+            else//처음 시작부분일때
             {
-                SceneManager.LoadScene("BattleScene");
+                sceneChanger.NextScene();
             }
         }
     }

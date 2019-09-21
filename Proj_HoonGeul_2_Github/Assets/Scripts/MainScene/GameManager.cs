@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour {
     //practice mode temp variable
     private int tempBattleInd=0;
     private int tempDialogInd=0;
+    private int tempSceneDataInd=0;
 
     void Awake()
     {
@@ -119,7 +120,20 @@ public class GameManager : MonoBehaviour {
 
         return outInd;
 
-
+    }
+    public int SearchSceneDataInd(int currentDialogKey)
+    {
+        int outind = -1;
+        foreach(SceneData item in sceneData_Tbl)
+        {
+            if (item.nextScene == 1 && item.nextSceneKey == currentDialogKey)
+            {
+                outind = item.key - 1;
+                break;
+            }
+            
+        }
+        return outind;
     }
 
 
@@ -127,26 +141,46 @@ public class GameManager : MonoBehaviour {
     //battle scene manager 에서 호출. battle scene 에 필요한 데이터를 가져간다.
     public BattleSceneData GetBattleSceneData(int inputNum)
     {
-        if (inputNum == -1)//스토리모드 데이터
+        if (inputNum == 1)//스토리모드 데이터
             return battleData_Tbl[currentBattleStageIdx];//class 라도 public으로 만들어진 form이 아니면 접근이 안된다...
-        else//연습모드 시
+        else if(inputNum==3)//연습모드시
         {
-            return battleData_Tbl[inputNum];
+            return battleData_Tbl[tempBattleInd];
+        }
+        else
+        {
+            return null;
         }
     }
     public DialogData GetDialogData(int inputNum)
     {
         if(inputNum==-1)//스토리모드 데이터
             return dialogData_Tbl[currentDialogIdx];
-        else//연습모드 시
+        else if (inputNum == 3)//연습모드시
         {
-            return dialogData_Tbl[inputNum];
+            return dialogData_Tbl[tempDialogInd];
+        }
+        else
+        {
+            return null;
         }
     }
 
-    public SceneData GetSceneIndData()
+    public SceneData GetSceneIndData(int currentMode)
     {
+        if(currentMode==1)
+        {
             return sceneData_Tbl[currentSceneDataIdx];
+
+        }
+        else if(currentMode ==3)
+        {
+            return sceneData_Tbl[tempSceneDataInd];
+        }
+        else
+        {
+            return null;
+        }
     }
 
     ///씬 이동 관련 변수
@@ -288,14 +322,38 @@ public class GameManager : MonoBehaviour {
 
     }
     //연습모드
-    public int GetPracticeDialogKey()
+    public void SetPracticeDialogKey(int inputKey)
     {
-        return tempBattleInd;
+        tempDialogInd = inputKey;
     }
-    public int GetPracticeBattleKey()
+    public void SetPracticeBattleKey(int inputKey)
+    {
+        tempBattleInd = inputKey;
+    }
+    public void SetPracticeSceneDataKey(int inputKey)
+    {
+        tempSceneDataInd = inputKey;
+        isWinState = false;
+    }
+    public int GetPracticeDialogKey()
     {
         return tempDialogInd;
     }
+    public int GetPracticeBattleKey()
+    {
+        return tempBattleInd;
+    }
+    public void SetPracticeStateWin()
+    {
+        isWinState = true;
+    }
+    public bool GetIsWinState()
+    {
+        return isWinState;
+    }
+    
+    private bool isWinState = false;
+
 
 }
 public class BattleSceneData
