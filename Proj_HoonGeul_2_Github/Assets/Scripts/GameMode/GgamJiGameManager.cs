@@ -161,7 +161,7 @@ public class GgamJiGameManager : MonoBehaviour
             m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()) < time) //최고기록이면!
         {
             m_gameManager.SetFloatPlayerPrefs("ggBestScore" + questionNum.ToString(), time); //최고기록에 저장            
-            Debug.Log(m_gameManager.GetFloatPlayerPrefs("최고기록갱신!"+"ggBestScore" + questionNum.ToString())); 
+            Debug.Log("최고기록갱신! :" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString())); 
         }
         else //최고기록이 아니면
         {
