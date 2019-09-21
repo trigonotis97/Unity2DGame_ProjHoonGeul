@@ -10,6 +10,7 @@ public class GgamJiModeManager : MonoBehaviour
 
     public Text title, stageText;
     public GameObject startButton;
+    public string bestScore;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,17 @@ public class GgamJiModeManager : MonoBehaviour
 
     public void SelectJeol(int jeolNum)
     {
-        title.text = "애국가 " + jeolNum.ToString() + "절";
-        stageText.text = "최고 기록\n" + "임0:0시"; //게임매니저에서 최고기록 받아오기
+        title.text = "애국가 " + (jeolNum+1).ToString() + "절";
+        if(PlayerPrefs.HasKey("ggBestScore" + jeolNum.ToString()))
+        {
+            bestScore = m_gameManager.GetFloatPlayerPrefs("ggBestScore" + jeolNum.ToString()).ToString();
+        }
+        else
+        {
+            bestScore = "00:00";
+        }
+        
+        stageText.text = "최고 기록\n" + bestScore; //게임매니저에서 최고기록 받아오기
         m_gameManager.SetGgamJiStageNum(jeolNum);//게임매니저에 몇절인지 변수 넣기
         if (startButton.activeSelf == false) startButton.SetActive(true);
     }
