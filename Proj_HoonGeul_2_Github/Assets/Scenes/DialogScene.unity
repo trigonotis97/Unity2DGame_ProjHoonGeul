@@ -1127,7 +1127,7 @@ MonoBehaviour:
   show_chapter_num: 0
   show_stage_num: 0
   m_canvas: {fileID: 1875319385}
-  sceneChanger: {fileID: 0}
+  sceneChanger: {fileID: 917640931}
   m_enemyImage: {fileID: 0}
   bg_image_: {fileID: 1852292404}
   enemyImg: {fileID: 1623089738495535638, guid: 586bfede2e84f3d45a6b4e5aa11a523c,
