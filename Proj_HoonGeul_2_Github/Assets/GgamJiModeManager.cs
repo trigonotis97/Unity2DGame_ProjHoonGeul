@@ -21,6 +21,7 @@ public class GgamJiModeManager : MonoBehaviour
         }
         title.text = "깜지 경연 대회";
         stageText.text = "원하는 글을 선택하시오.";
+      
     }
 
     public void SelectJeol(int jeolNum)
@@ -28,11 +29,12 @@ public class GgamJiModeManager : MonoBehaviour
         title.text = "애국가 " + (jeolNum+1).ToString() + "절";
         if(PlayerPrefs.HasKey("ggBestScore" + jeolNum.ToString()))
         {
-            bestScore = m_gameManager.GetFloatPlayerPrefs("ggBestScore" + jeolNum.ToString()).ToString();
+            bestScore = m_gameManager.GetFloatPlayerPrefs("ggBestScore" + jeolNum.ToString() ).ToString();
+
         }
         else
         {
-            bestScore = "00:00";
+            bestScore = "00:00.0";
         }
         
         stageText.text = "최고 기록\n" + bestScore; //게임매니저에서 최고기록 받아오기

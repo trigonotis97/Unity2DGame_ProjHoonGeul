@@ -570,6 +570,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2096474895145910112, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1397344569}
+    - target: {fileID: 2096474895145910112, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onClick
+      objectReference: {fileID: 0}
     - target: {fileID: 8939180287212870520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: m_Name
@@ -5782,7 +5792,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 8439813559497453386}
   panelAnimator: {fileID: 3149122580996367069}
-  panelState: 0
 --- !u!114 &8439813558612768814
 MonoBehaviour:
   m_ObjectHideFlags: 0

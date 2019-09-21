@@ -161,11 +161,11 @@ public class GgamJiGameManager : MonoBehaviour
             m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()) < time) //최고기록이면!
         {
             m_gameManager.SetFloatPlayerPrefs("ggBestScore" + questionNum.ToString(), time); //최고기록에 저장            
-            Debug.Log("최고기록갱신! :" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString())); 
+            Debug.Log("최고기록갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString())); 
         }
         else //최고기록이 아니면
         {
-            Debug.Log("클리어했지만 최고기록은 아니네요.\n현재기록:"+time.ToString()+"\n최고기록:"+m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
+            Debug.Log("클리어했지만 최고기록은 아니네요.\n소요시간:"+time.ToString()+"\n최고기록:"+m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
         }
         
         //성공!, 내 현재 기록 (소요시간), 갱신했니? 보여주는 애니메이션 트리거. (씬 이동까지 함께)
