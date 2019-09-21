@@ -59,7 +59,7 @@ public class Dialog2 : MonoBehaviour
         }
         textDisplay.text = text;
         */
-        while (text.Length < separatorInd)
+        while (text.Length > separatorInd)
         {
             // Find midpoint in string.
             if (duration*0.1f< timer)
@@ -76,6 +76,7 @@ public class Dialog2 : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
+        textDisplay.text = text;
 
     }
 
