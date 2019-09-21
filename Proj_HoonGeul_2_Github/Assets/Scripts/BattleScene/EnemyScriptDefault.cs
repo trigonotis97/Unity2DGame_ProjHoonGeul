@@ -75,6 +75,9 @@ public class EnemyScriptDefault : MonoBehaviour
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         hpBar = GameObject.FindGameObjectWithTag("EnemyHpBar").GetComponent<Slider>();
+
+
+        enemyHpText = hpBar.GetComponentInChildren<Text>();
         m_canvas = GameObject.FindGameObjectWithTag("Canvas");
         animator = this.GetComponent<Animator>();
         bulletAnimator = GameObject.FindGameObjectWithTag("EnemyBullet").GetComponent<Animator>();
@@ -94,13 +97,16 @@ public class EnemyScriptDefault : MonoBehaviour
 
         //sunbi data 가져오기
         m_sunbi.SetEnemyDamage(attackDemage);
+        m_sunbi.AccessEnemyObject();
         sunbiAttackDamage = (int)m_sunbi.GetSunbiDamage();
         
         //StartCoroutine("AttackWave");
-        currentHp = (int)maxHP;
+        currentHp = (int)maxHP_f;
+        maxHP = (int)maxHP_f;
 
         //transform.position = new Vector3(507.392f,405.248f,- 9000f);
 
+        hpBarUpdate();
         m_battleManager.SetStatePlaying();
     }
     private void Update()
@@ -131,6 +137,7 @@ public class EnemyScriptDefault : MonoBehaviour
         {
             currentHp = 0;
             hpBar.value = 0;
+            hpBarUpdate();
             //게임오버 판정
             m_battleManager.SetStateStageClear();           
             SceneChange.NextScene();
@@ -145,13 +152,12 @@ public class EnemyScriptDefault : MonoBehaviour
     void hpBarUpdate()
     {
         hpBar.value = currentHp / maxHP;
-        
+        enemyHpText.text = currentHp.ToString() + " / " + maxHP.ToString();
+
+
     }
 
-    void hpTextUpdate()
-    {
-        /// `u
-    }
+
     public void EnemyAttack() //fire bullet
     {
         //reset bullet position

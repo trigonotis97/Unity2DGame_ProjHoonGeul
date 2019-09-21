@@ -33,11 +33,17 @@ public class Sunbi : MonoBehaviour
     public GameObject canvasObj;//프리팹 캔버스 하위에 생성하기 위해서 가져오기
 
     //적 받아오기
-    GameObject enemy;
+    //public GameObject enemy;
+    public EnemyScriptDefault m_enemy;
     public float enemyDamage;
 
     //적 힌트 투사체를 위한 선비 피격 카운트 보낼 오브젝트
     public EnemyHintBulletHandler m_enemybulletHandler;
+
+    //enemyhp
+
+
+
 
     /*
     Awake는 모든 오브젝트가 초기화되고 호출되기 때문에, 
@@ -72,6 +78,9 @@ public class Sunbi : MonoBehaviour
         //프리팹 컴포넌트에 입력 스트링값 전달
         bullet.GetComponent<Text>().text= inputString;
         Debug.Log(bullet.GetComponent<Text>().text);
+
+        m_enemy.EnemyDamage();
+
     }
     public void Heal()
     {
@@ -131,6 +140,10 @@ public class Sunbi : MonoBehaviour
     public void SetEnemyDamage(float enemyDamage)
     {
         this.enemyDamage = enemyDamage;
+    }
+    public void AccessEnemyObject()
+    {
+        m_enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyScriptDefault>();
     }
     
     public float GetSunbiDamage()

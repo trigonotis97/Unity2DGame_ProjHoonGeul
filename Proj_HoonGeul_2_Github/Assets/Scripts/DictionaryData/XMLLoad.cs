@@ -26,10 +26,13 @@ public class XMLLoad : MonoBehaviour
     }
     void Start()
     {
-        battleDataTbl = new BattleSceneData[battleDataLength];
-        dialogDataTbl = new DialogData[dialogDataLength];
-        sceneDataTbl = new SceneData[sceneDataLength];
-        LoadXml();
+        if (m_gameManager.GetisFirstStart())
+        {
+            battleDataTbl = new BattleSceneData[battleDataLength];
+            dialogDataTbl = new DialogData[dialogDataLength];
+            sceneDataTbl = new SceneData[sceneDataLength];
+            LoadXml();
+        }
     }
 
     void LoadXml()
