@@ -1010,6 +1010,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1440.3306
       objectReference: {fileID: 0}
+    - target: {fileID: 8759454596336053297, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8939180287367699537, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+클래스 멤버변수 hangul 은 이전문자의 정보를 나타낸다.
+*/
+
 public class Unity_Cunjiin_Keyboard : MonoBehaviour
 {
     public AudioClip m_audioEffect;
@@ -26,7 +30,8 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     private int now_mode = HANGUL;
 
 
-
+    public CustomCursor m_cursor;
+    int beforeCaretPos = 0;
 
     private void Start()
     {
@@ -39,7 +44,23 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     {
         m_audio.PlayOneShot(m_audioEffect);
         hangul = new Hangul();
+
+        m_cursor.MakeDefaultPos();
         //hangul.chosung = hangul.jungsung = hangul.jongsung = hangul.jongsung2 = "";
+    }
+    public bool CheckCaretPos(int currentCaretPos)
+    {
+        bool isSamePos;
+        if(beforeCaretPos==currentCaretPos)//같다면
+        {
+            isSamePos = true;
+        }
+        else
+        {
+            isSamePos = false;
+        }
+        beforeCaretPos = currentCaretPos;
+        return isSamePos;
     }
 
     private class Hangul
@@ -49,13 +70,13 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         public string jungsung = "";
         public string jongsung = "";
         public string jongsung2 = "";
-        public int step = 0;
+        public int step = 0; //문자의 초,중,종의 상태. 0:없음or 자음 1:모음 2: 자모종1 3: 자+모+종1+종2
         public bool flag_writing = false;
-        public bool flag_dotused = false;
+        public bool flag_dotused = false; //전 문자가 dot이 있을때 이 dot을 사용함. ex)자음+dot 이었다가 자모로 합쳐짐(pos-1)
         public bool flag_doubled = false;
         public bool flag_addcursor = false;
         //private bool flag_space = false;
-        public bool flag_space = false;
+        public bool flag_space = false; //스페이스 문자 출력
         public void init()
         {
             this.chosung = "";
@@ -92,6 +113,7 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
 
         m_audio.PlayOneShot(m_audioEffect);
         write(now_mode);
+        Debug.Log(inputfield.caretPosition);
     }
 
 
@@ -203,21 +225,21 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         if (mode == HANGUL)
         {
             bool dotflag = false;
-            bool doubleflag = false;
+            bool doubleflag = false; //true :종성의 사용할수있는 더하기 조합 다 사용해셔 꽉참(다음 입력시 포지션 한칸 앞으로 )
             bool spaceflag = false;
             bool impossiblejongsungflag = false;
             char unicode;
             string real_jongsung = checkDouble(hangul.jongsung, hangul.jongsung2);
-            if (real_jongsung.Length == 0)
+            if (real_jongsung.Length == 0)//쌍받침이 불가능한 문자일경우 (문자없는경우 포함)
             {
                 real_jongsung = hangul.jongsung;
-                if (hangul.jongsung2.Length != 0)
-                    doubleflag = true;
+                if (hangul.jongsung2.Length != 0)//두번째 종성자음이 있는경우(문자가 있는경우)
+                    doubleflag = true; //한칸 앞으로 가기플래그 올림
             }
 
             //bug fixed, 16.4.22 ~
             //added impossible jongsungflag.
-            if (hangul.jongsung == "ㅃ" || hangul.jongsung == "ㅉ" || hangul.jongsung == "ㄸ")
+            if (hangul.jongsung == "ㅃ" || hangul.jongsung == "ㅉ" || hangul.jongsung == "ㄸ")//동일문자의 쌍받침 판별
             {
                 doubleflag = true;
                 impossiblejongsungflag = true;
@@ -259,15 +281,19 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
                 else
                     str += hangul.jongsung2;
             }
+
+
             if (hangul.jungsung == "·")
             {
                 str += "·";
+                Debug.Log("  single dot");
                 dotflag = true;
             }
             else if (hangul.jungsung == "‥")
             {
                 str += "‥";
-                dotflag = true;
+                Debug.Log("  double dot");
+                dotflag = true;// dot만 입력했고, 이미 문자열에 포함됨
             }
 
             str += origin.Substring(position, origin.Length-position);
@@ -298,11 +324,11 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
                 position++;
             }
 
-            if (hangul.flag_dotused)
+            if (hangul.flag_dotused)//전 문자에서 dot이 사용됨
             {
-                if (hangul.chosung.Length == 0 && dotflag == false)
+                if (hangul.chosung.Length == 0 && dotflag == false) //자음이 없으면서, 모음이 만들어짐
                 {//et.setSelection(position);
-                    inputfield.caretPosition = position;
+                    inputfield.caretPosition = position;//dot-> 모음으로 변화했으므로 포지션 변동 없음
                 }
                 else
                 {
@@ -362,6 +388,7 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         */
     }
 
+    //경우와 상관없이 무조건 실제 필드의 한글자 삭제 (빈 필드일경우 작동안함)
     private void delete()
     {
         //int position = et.getSelectionStart();
@@ -379,6 +406,11 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         inputfield.text = str;
         //et.setSelection(position - 1);
         inputfield.caretPosition = position - 1;
+        Debug.Log("Delete");
+        /*
+        문자를 삭제하거나 이전문자에서 따온자음(종성)으로 다음글자를 만들어야 될때
+        */
+           
     }
     /*
     private void engMake(int input)
@@ -461,32 +493,59 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         if (input == 10) //띄어쓰기
         {
             if (hangul.flag_writing)
-                hangul.init();
-            else
+                hangul.init();//다음문자
+            else//전의 문자가 이미 완성된 문자일때 =>hangul.flag_writing ==false
                 hangul.flag_space = true;
         }
         else if (input == 11) //지우기
         {
-            if (hangul.step == 0)
+            if (hangul.step == 0)//문자 없음
             {
                 if (hangul.chosung.Length == 0)
                 {
+                    string lastword = inputfield.text.Substring(inputfield.caretPosition-1, 1);
+                    Debug.Log("Lastword :" + lastword);
+
+                    //커서 포즈 움직임
+                    if (lastword ==" "|| lastword == "·")
+                    {
+                        m_cursor.DeletePosSpace();
+                    }
+                    else
+                    {
+                        m_cursor.DeletePosSingleChar();
+                    }
+
                     delete();
                     hangul.flag_writing = false;
+                    
                 }
                 else
                     hangul.chosung = "";
             }
             else if (hangul.step == 1)
             {
-                if (hangul.jungsung == "·" || hangul.jungsung == "‥")
+                if (hangul.jungsung == "·" || hangul.jungsung == "‥") //점만 있을때 
                 {
+                    if(hangul.jungsung == "·")
+                    {
+                        m_cursor.DeletePosSpace();
+                    }
+                    else if(hangul.jungsung == "‥")
+                    {
+                        m_cursor.DeletePosSingleChar();
+                    }
                     delete();
                     if (hangul.chosung.Length == 0)
-                        hangul.flag_writing = false;
+                        hangul.flag_writing = false;// 전의 문자가 이미 완성된 문자
+                }
+                else
+                {
+                    m_cursor.DeletePosSingleChar();
+
                 }
                 hangul.jungsung = "";
-                hangul.step = 0;
+                hangul.step = 0;//빈문자(혹은 이미 꽉찬문자)
             }
             else if (hangul.step == 2)
             {
@@ -539,6 +598,8 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
             }
             beforedata = hangul.jungsung;
             hangul.step = 1;
+
+            //실제 글자 제작
             if (input == 1) // ㅣ ㅓ ㅕ ㅐ ㅔ ㅖㅒ ㅚ ㅟ ㅙ ㅝ ㅞ ㅢ
             {
                 if (beforedata.Length == 0) nowdata = "ㅣ";
@@ -1005,6 +1066,7 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         return 44032 + cho * 588 + jung * 28 + jong;
     }
 
+    //
     private string checkDouble(string jong, string jong2)
     {
         string s = "";
