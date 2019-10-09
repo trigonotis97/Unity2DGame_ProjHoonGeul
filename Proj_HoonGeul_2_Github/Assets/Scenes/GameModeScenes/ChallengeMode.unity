@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a2c9ad1e804534cb38b151e6f620aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosungGeneratorDefault: {fileID: 0}
+  QuestionGen_RankMode: {fileID: 1894321286}
 --- !u!1 &63685609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a2c9ad1e804534cb38b151e6f620aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosungGeneratorDefault: {fileID: 0}
+  QuestionGen_RankMode: {fileID: 1894321286}
 --- !u!1 &151679820
 GameObject:
   m_ObjectHideFlags: 0
@@ -6293,7 +6293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a2c9ad1e804534cb38b151e6f620aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosungGeneratorDefault: {fileID: 0}
+  QuestionGen_RankMode: {fileID: 1894321286}
 --- !u!1 &1894321285
 GameObject:
   m_ObjectHideFlags: 0
