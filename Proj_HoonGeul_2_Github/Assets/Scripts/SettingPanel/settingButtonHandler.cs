@@ -9,10 +9,9 @@ public class settingButtonHandler : MonoBehaviour
     public Text buttonText;
     public Animator panelAnimator;
     public static bool panelState;
+    public BattleManager BattleManager;
+    public RankModeManager RankModeManager; 
 
-
-    
-    
     public void OnClick()
     {
         if (panelState) // off
@@ -20,12 +19,28 @@ public class settingButtonHandler : MonoBehaviour
             panelState = false;
             panelAnimator.SetTrigger("panelOff");
             buttonText.text = "설";
+            if (BattleManager != null)
+            {
+                BattleManager.SetStatePlaying();
+            }
+            else if (RankModeManager != null)
+            {
+                RankModeManager.SetStatePlaying();
+            }
         }
         else //on
         {
             panelState = true;
             panelAnimator.SetTrigger("panelOn");
             buttonText.text = "X";
+            if (BattleManager != null)
+            {
+                BattleManager.SetStatePause();
+            }
+            else if (RankModeManager != null)
+            {
+                RankModeManager.SetStatePause();
+            }
         }
     }
 }

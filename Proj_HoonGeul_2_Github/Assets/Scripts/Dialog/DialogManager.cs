@@ -45,6 +45,7 @@ public class DialogManager : MonoBehaviour
     //PracticeManager m_practiceManager;
     private void Awake()
     {
+      
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_script = GameObject.Find("DialogGenerator").GetComponent<Dialog2>();
         m_audio = GetComponent<AudioSource>();
@@ -53,6 +54,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         currentGameMode = m_gameManager.GetGameMode();
+        Debug.Log("currentgameMode:" + currentGameMode);
         //데이터 초기화
         if ((currentGameMode == 1) || (currentGameMode == 2))
         {
