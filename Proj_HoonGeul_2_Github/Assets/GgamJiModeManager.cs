@@ -29,12 +29,12 @@ public class GgamJiModeManager : MonoBehaviour
         title.text = "애국가 " + (jeolNum+1).ToString() + "절";
         if(PlayerPrefs.HasKey("ggBestScore" + jeolNum.ToString()))
         {
-            bestScore = m_gameManager.GetFloatPlayerPrefs("ggBestScore" + jeolNum.ToString() ).ToString();
+            bestScore = m_gameManager.GetFloatPlayerPrefs("ggBestScore" + jeolNum.ToString() ).ToString("N2");
 
         }
         else
         {
-            bestScore = "00:00.0";
+            bestScore = "기록 없음";
         }
         
         stageText.text = "최고 기록\n" + bestScore; //게임매니저에서 최고기록 받아오기
