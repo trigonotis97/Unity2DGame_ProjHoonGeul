@@ -63,7 +63,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
 
     ///attack loop
-    public float enemyAttackLoopTime = 0f;
+    public float enemyAttackLoopTime;
 
     /// 
     public Text enemyHpText;
@@ -88,6 +88,7 @@ public class EnemyScriptDefault : MonoBehaviour
     }
     void Start()
     {
+        enemyAttackLoopTime = 6f;
         attackWaveSpeed_temp = 4;
         m_enemyData = m_battleManager.GetEnemyData();
         maxHP_f = m_enemyData.maxHp;

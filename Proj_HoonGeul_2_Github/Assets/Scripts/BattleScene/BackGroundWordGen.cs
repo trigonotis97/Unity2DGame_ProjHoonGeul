@@ -22,7 +22,9 @@ public class BackGroundWordGen : MonoBehaviour
     public void MakeWordRandomPos(string inputWord)
     {
         Vector3 outPos;
-        outPos = new Vector3(UnityEngine.Random.Range(x, x + width), UnityEngine.Random.Range(y, y + height), 0);
+        outPos = new Vector3(UnityEngine.Random.Range(-width/2, width/2), UnityEngine.Random.Range(-height/2, height/2), 0);
+        
+        //Debug.Log(outPos);
         /*
         1안. 어차피 여기에 시간 투자 많이해봤자 퀄리티 좋게 나오는게 아니므로 그냥 올랜덤
         2안. width 와 height을 적당한 거리로 랜덤하게 나오게 한다 
@@ -31,6 +33,7 @@ public class BackGroundWordGen : MonoBehaviour
         */
         GameObject tempWord=Instantiate(wordPref)as GameObject;
         tempWord.transform.SetParent(this.transform);
+
         tempWord.transform.localPosition = outPos;
         tempWord.transform.localScale = new Vector3(1,1,1);
         tempWord.GetComponent<Text>().text = inputWord;
