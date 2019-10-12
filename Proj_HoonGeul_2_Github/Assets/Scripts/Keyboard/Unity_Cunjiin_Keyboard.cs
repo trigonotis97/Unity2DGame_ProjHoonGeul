@@ -24,15 +24,24 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     private Button[] btn;
     public InputField inputfield;
     private int now_mode = HANGUL;
-
-
-
+    public Text inputText;
+    public GameObject sideCursor, underCursor;
+    RectTransform underCursor_rect, sideCursor_rect;
 
     private void Start()
     {
         m_audio = GetComponent<AudioSource>();
         m_audio.clip = m_audioEffect;
         //inputfield.ActivateInputField
+
+        Init_cursor();
+    }
+    public void Init_cursor()
+    {
+        underCursor_rect = underCursor.GetComponent<RectTransform>();
+        sideCursor_rect = sideCursor.GetComponent<RectTransform>();
+
+        RenderCursor(false);
     }
 
     public void Enter()
@@ -40,6 +49,27 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
         m_audio.PlayOneShot(m_audioEffect);
         hangul = new Hangul();
         //hangul.chosung = hangul.jungsung = hangul.jongsung = hangul.jongsung2 = "";
+        Init_cursor();
+    }
+    public void RenderCursor(bool is_writing)
+    {
+        if (is_writing)
+        {
+            sideCursor.SetActive(false);
+            underCursor.SetActive(true);
+            underCursor_rect.anchoredPosition = new Vector3(inputText.preferredWidth - 128, 0, 0);           
+        }
+        else
+        {
+            sideCursor.SetActive(true);
+            underCursor.SetActive(false);
+            sideCursor_rect.anchoredPosition = new Vector3(inputText.preferredWidth - 128, 0, 0);
+        }
+    }
+    public void DisableCursors()
+    {
+        sideCursor.SetActive(false);
+        underCursor.SetActive(false);
     }
 
     private class Hangul
@@ -92,6 +122,9 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
 
         m_audio.PlayOneShot(m_audioEffect);
         write(now_mode);
+
+        RenderCursor(hangul.flag_writing);
+
     }
 
 

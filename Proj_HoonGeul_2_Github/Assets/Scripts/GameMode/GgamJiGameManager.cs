@@ -31,6 +31,16 @@ public class GgamJiGameManager : MonoBehaviour
     }
     public GgState m_GgState;
 
+    public Unity_Cunjiin_Keyboard Unity_Cunjiin_Keyboard;
+    [System.Serializable]
+    public struct forCursor
+    {
+        public Text text;
+        public GameObject side;
+        public GameObject under;
+    }
+    public forCursor[] for_Cursor = new forCursor[3];
+
     public string[,] answerStr = new string[4, 4]
     {
         {"동해물과 백두산이 마르고 닳도록",
@@ -123,10 +133,17 @@ public class GgamJiGameManager : MonoBehaviour
                 
             }
             else
-            {   
-            InputText.textComponent = texts[nowLine];
-            InputText.text = "";
-            Debug.Log("일치!");
+            {
+                InputText.textComponent = texts[nowLine];
+                InputText.text = "";
+                Debug.Log("일치!");
+
+
+                Unity_Cunjiin_Keyboard.DisableCursors();
+                Unity_Cunjiin_Keyboard.inputText = for_Cursor[nowLine - 1].text;
+                Unity_Cunjiin_Keyboard.underCursor = for_Cursor[nowLine - 1].under;
+                Unity_Cunjiin_Keyboard.sideCursor = for_Cursor[nowLine - 1].side;
+                Unity_Cunjiin_Keyboard.Init_cursor();
             }
 
         }
