@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SpellingQuiz : MonoBehaviour
+public class Mode_SpellingQuiz : MonoBehaviour
 {
     GameManager m_gameManager;
 
@@ -32,10 +32,12 @@ public class SpellingQuiz : MonoBehaviour
     string[] nowAnsStr = new string[4];
     private void Start()
     {        
-        m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+       // m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        //m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
+     
+        //sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
+
         AnsGenerator();
-        sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
     }
 
     public void AnsGenerator()
@@ -68,15 +70,15 @@ public class SpellingQuiz : MonoBehaviour
             Debug.Log("정답");
             audio.clip = o;
             audio.PlayOneShot(o);
-            if (selectAns < 7)
+            if (selectAns < answerStr.GetLength(0) - 1)
             {
                 selectAns++;
                 AnsGenerator();
             }
             else
             {
-                Debug.Log("클리어");
-                SceneChange.BonusNextScene(true);
+                Debug.Log("클리어. 총"+(selectAns +1).ToString()+"문제 모두 맞춤");
+                
             }
         }
         else
@@ -84,7 +86,8 @@ public class SpellingQuiz : MonoBehaviour
             Debug.Log("오답");
             audio.clip = x;
             audio.PlayOneShot(x);
-            SceneChange.BonusNextScene(false);
+            Debug.Log("클리어. 총 " +answerStr.GetLength(0).ToString() + "문제 중" + (selectAns).ToString() + "문제 맞춤");
+
         }
     }
 }

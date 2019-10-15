@@ -2171,9 +2171,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 63685613}
+  - {fileID: 1894321287}
   - {fileID: 487357940020799157}
   - {fileID: 4950671154559596412}
-  - {fileID: 1894321287}
   - {fileID: 1864606652654808893}
   - {fileID: 1329578961}
   - {fileID: 823910745}
@@ -3215,6 +3215,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404107656}
     m_Modifications:
+    - target: {fileID: 6558603100423666927, guid: be8c0210ac0dc49e591ffa127bab8ba0,
+        type: 3}
+      propertyPath: m_Name
+      value: Door_Frame
+      objectReference: {fileID: 0}
     - target: {fileID: 6558603100423666926, guid: be8c0210ac0dc49e591ffa127bab8ba0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3319,11 +3324,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6558603100423666927, guid: be8c0210ac0dc49e591ffa127bab8ba0,
-        type: 3}
-      propertyPath: m_Name
-      value: Door_Frame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8c0210ac0dc49e591ffa127bab8ba0, type: 3}
@@ -4373,6 +4373,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404107656}
     m_Modifications:
+    - target: {fileID: 1380029233013307537, guid: 3ffdd4c85c9c442e68ffe21c0b48fc5b,
+        type: 3}
+      propertyPath: m_Name
+      value: Door_inside
+      objectReference: {fileID: 0}
     - target: {fileID: 1380029233013307536, guid: 3ffdd4c85c9c442e68ffe21c0b48fc5b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4477,11 +4482,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380029233013307537, guid: 3ffdd4c85c9c442e68ffe21c0b48fc5b,
-        type: 3}
-      propertyPath: m_Name
-      value: Door_inside
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ffdd4c85c9c442e68ffe21c0b48fc5b, type: 3}
@@ -5791,7 +5791,7 @@ RectTransform:
   - {fileID: 1847067959}
   - {fileID: 132659186}
   m_Father: {fileID: 404107656}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -6444,7 +6444,7 @@ RectTransform:
   m_Children:
   - {fileID: 487357938624292259}
   m_Father: {fileID: 404107656}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -8117,6 +8117,11 @@ PrefabInstance:
       propertyPath: underCursor
       value: 
       objectReference: {fileID: 418259283}
+    - target: {fileID: 1629970794986411128, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 72.99994
+      objectReference: {fileID: 0}
     - target: {fileID: 2941351920318328973, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: frameColX
@@ -8127,11 +8132,6 @@ PrefabInstance:
       propertyPath: frameColY
       value: 
       objectReference: {fileID: 2941351920318328972}
-    - target: {fileID: 1629970794986411128, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 72.99994
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65fc7bf7e51c62f4e991c984b64f2c5f, type: 3}
 --- !u!1 &2941351920318328972 stripped
@@ -9356,7 +9356,7 @@ RectTransform:
   m_Children:
   - {fileID: 4950671153307934749}
   m_Father: {fileID: 404107656}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
