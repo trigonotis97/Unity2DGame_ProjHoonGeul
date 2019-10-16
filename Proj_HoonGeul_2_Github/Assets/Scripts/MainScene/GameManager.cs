@@ -87,6 +87,10 @@ public class GameManager : MonoBehaviour {
     {
         return PlayerPrefs.GetInt("SceneIndex", 0);
     }
+    public void PrefsDeleteAll()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 
     /// 데이터 초기화
 

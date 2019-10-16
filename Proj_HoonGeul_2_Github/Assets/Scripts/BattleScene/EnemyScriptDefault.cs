@@ -107,7 +107,7 @@ public class EnemyScriptDefault : MonoBehaviour
         //transform.position = new Vector3(507.392f,405.248f,- 9000f);
 
         hpBarUpdate();
-        m_battleManager.SetStatePlaying();
+        //m_battleManager.SetStatePlaying();
     }
     private void Update()
     {
