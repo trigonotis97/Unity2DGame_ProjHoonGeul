@@ -317,23 +317,29 @@ public class Judgement : MonoBehaviour
     {
         if (bossStageIdx == 5)
         {
+            bossCondText.text = "사용 금지!\n";
             for (int i = 0; i < 3; i++)
             {
                 if (i == 0)
-                    bossCondText.text = ValuetoWord(ch5_1_moeumTable[bossCondCount, i], 1).ToString();
+                    bossCondText.text += ValuetoWord(ch5_1_moeumTable[bossCondCount, i], 1).ToString();
                 else
                     bossCondText.text += ValuetoWord(ch5_1_moeumTable[bossCondCount, i], 1);
 
             }
+
+            
         }
         else if (bossStageIdx == 6)
         {
+            bossCondText.text = "무조건 사용!\n";
             for (int i = 0; i < 3; i++)
             {
                 if(i==0)
-                    bossCondText.text = ValuetoWord(ch5_2_moeumTable[bossCondCount, i], 1).ToString();
+                    bossCondText.text += ValuetoWord(ch5_2_moeumTable[bossCondCount, i], 1).ToString();
                 else
                     bossCondText.text += ValuetoWord(ch5_2_moeumTable[bossCondCount, i], 1);
+
+                
 
             }
         }

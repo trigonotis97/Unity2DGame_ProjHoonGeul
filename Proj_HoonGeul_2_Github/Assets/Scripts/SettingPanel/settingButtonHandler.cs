@@ -18,6 +18,7 @@ public class settingButtonHandler : MonoBehaviour
     private void Start()
     {
         iconImage.sprite = openIcon;
+        panelState = false;
     }
     public void OnClick()
     {
