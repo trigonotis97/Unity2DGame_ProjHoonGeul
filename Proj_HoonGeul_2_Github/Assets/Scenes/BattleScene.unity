@@ -4729,7 +4729,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3153\u315C\u3151\n"
+  m_Text: 
 --- !u!222 &1520677481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6711,6 +6711,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487357940020799157}
     m_Modifications:
+    - target: {fileID: 2613077098298180108, guid: d73502dfcf7e1114695bab1716a940d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768516265354970747, guid: d73502dfcf7e1114695bab1716a940d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 404107663}
+    - target: {fileID: 7768516265354970747, guid: d73502dfcf7e1114695bab1716a940d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSceneName
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602388504196209583, guid: d73502dfcf7e1114695bab1716a940d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 404107658}
+    - target: {fileID: 5602388504196209583, guid: d73502dfcf7e1114695bab1716a940d2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8598818161239485642, guid: d73502dfcf7e1114695bab1716a940d2,
         type: 3}
       propertyPath: m_Name
@@ -6836,31 +6861,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 404107663}
-    - target: {fileID: 2613077098298180108, guid: d73502dfcf7e1114695bab1716a940d2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7768516265354970747, guid: d73502dfcf7e1114695bab1716a940d2,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 404107663}
-    - target: {fileID: 7768516265354970747, guid: d73502dfcf7e1114695bab1716a940d2,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSceneName
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602388504196209583, guid: d73502dfcf7e1114695bab1716a940d2,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 404107658}
-    - target: {fileID: 5602388504196209583, guid: d73502dfcf7e1114695bab1716a940d2,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextScene
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d73502dfcf7e1114695bab1716a940d2, type: 3}
 --- !u!224 &6802152829105123104 stripped
