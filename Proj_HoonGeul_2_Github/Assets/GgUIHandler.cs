@@ -11,14 +11,22 @@ public class GgUIHandler : MonoBehaviour
     public GameObject forthButton;
 
     public int chapterNum, stageNum;
+    public GameObject seceneBackButton, chapterBackButton;
     // Start is called before the first frame update
     private void Awake()
     {
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
     }
+    private void Start()
+    {
+        seceneBackButton.SetActive(true);
+        chapterBackButton.SetActive(false);
+    }
     public void ChapterSelect(int i)
     {
+        seceneBackButton.SetActive(false);
+        chapterBackButton.SetActive(true);
         chapterNum = i;
         //여기에서 챕터 넘버를 게임매니저에 넣어야함.
         if (i == 5)
@@ -46,6 +54,8 @@ public class GgUIHandler : MonoBehaviour
     }
     public void BackToChapterSelect()
     {
+        seceneBackButton.SetActive(true);
+        chapterBackButton.SetActive(false);
         Animator.SetTrigger("2to1");
     }
 }
