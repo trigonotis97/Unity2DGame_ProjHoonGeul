@@ -66,9 +66,9 @@ public class GameManager : MonoBehaviour {
         currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
         currentSceneDataIdx = PlayerPrefs.GetInt("SceneIndex", 0);
 
-        Debug.Log("battle ind: " + currentBattleStageIdx);
-        Debug.Log("dialog ind: " + currentDialogIdx);
-        Debug.Log("scene ind: " + currentSceneDataIdx);
+        Debug.Log("crnt battle ind: " + currentBattleStageIdx);
+        Debug.Log("crnt dialog ind: " + currentDialogIdx);
+        Debug.Log("crnt scene ind: " + currentSceneDataIdx);
 
 
     }

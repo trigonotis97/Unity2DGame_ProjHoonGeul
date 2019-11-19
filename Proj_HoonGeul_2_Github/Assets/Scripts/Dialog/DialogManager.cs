@@ -78,7 +78,7 @@ public class DialogManager : MonoBehaviour
         show_chapter_num = m_data.chapterNum;
         show_stage_num = m_data.stageNum;
 
-        Debug.Log("Background/" + m_data.BGImage);
+        
         bg_image_.sprite = Resources.Load("Background/" + m_data.BGImage, typeof(Sprite)) as Sprite;
 
         //GameObject tempEnemy = Resources.Load("EnemyPref/Mob_" + m_data.enemyWholeImage.ToString())as GameObject;

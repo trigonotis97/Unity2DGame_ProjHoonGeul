@@ -291,8 +291,6 @@ public class Judgement : MonoBehaviour
         }
     }
 
-    //테스트를 위한 함수. xml 데이터 연동과 메인부터 씬 이동이 구현 된다면
-    //게임 시작시 xml을 받아올것이므로 이 함수가 필요없다.
     IEnumerator GetDictXml()
     {
         // Debug.Log(" ienum : im start1");

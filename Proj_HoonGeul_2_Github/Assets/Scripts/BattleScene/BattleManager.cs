@@ -102,13 +102,13 @@ public class BattleManager : MonoBehaviour
         }
 
 
-        Debug.Log(m_data.enemyDamage);
+        
 
 
         m_generator.SetProblempocket(m_data.problemPocket, m_data.hellProblemPocket);
 
         //백그라운드 오디오 가져오기 및 재생
-        Debug.Log("clip :: " + m_data.BGM);
+        
         bg_audioclip = Resources.Load("BGM/" + m_data.BGM) as AudioClip;
 
         m_audioSource.clip = bg_audioclip;

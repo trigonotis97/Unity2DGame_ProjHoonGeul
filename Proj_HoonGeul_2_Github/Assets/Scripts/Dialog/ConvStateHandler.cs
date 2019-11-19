@@ -15,16 +15,16 @@ public class ConvStateHandler : MonoBehaviour
 
     public void FaceImageUpload(string enemyWhole) //스테이지에 따른 적 캐릭터 얼굴 가져오는 함수. 다이얼로그 매니저 start단에서 실행. enemy rect 하위에 생성되는 적 캐릭 프리팹도 받아옴
     {
-        Debug.Log("시발시작");
+        
         Sprite temp = Resources.Load("Face/" + enemyWhole, typeof (Sprite) ) as Sprite;
         enemyFace.sprite = temp;
         enemyChar = EnemyRect.transform.GetChild(0).GetComponent<SpriteRenderer>();
-        Debug.Log("시발끝");
+        
     }
 
     public void Effect(string state) //다이얼로그매니저 넥스트센턴스에서 실행
     {
-        Debug.Log(state);
+       
         //선비
         switch (state[0])
         {
