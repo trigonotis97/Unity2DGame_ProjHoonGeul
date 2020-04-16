@@ -45,9 +45,9 @@ public class XMLTestScript : MonoBehaviour
 
     void Start()
     {
-        MakeKeyTabel();
+        MakeKeyTabel(); //카운팅 할 key table 초기화
         Load_Xml();
-        //Divide_Hangul('강');
+       
         Debug.Log("자음 개수 : " + m_cho_Tbl.Length);
         Debug.Log("모음 개수 : " + m_jung_Tbl.Length);
 
