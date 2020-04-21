@@ -241,9 +241,9 @@ public class GameManager : MonoBehaviour {
     public void SaveCheckPoint()
     {
         Debug.Log(":: Save Check Point :: " + "  ||  "
-            + currentBattleStageIdx.ToString() + "  ||  "
-            + (currentDialogIdx - 1).ToString() + "  ||  "
-            + (currentSceneDataIdx - 2).ToString()
+            +"Battle Ind : "+ currentBattleStageIdx.ToString() + "  ||  "
+            +"Dialog ind : "+ (currentDialogIdx - 1).ToString() + "  ||  "
+            +"Scene ind : "+ (currentSceneDataIdx - 2).ToString()
             );
 
         PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);

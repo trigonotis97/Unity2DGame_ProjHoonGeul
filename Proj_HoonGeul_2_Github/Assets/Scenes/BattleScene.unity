@@ -6746,11 +6746,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 404107655}
+      objectReference: {fileID: 404107658}
     - target: {fileID: 5602388504196209583, guid: d73502dfcf7e1114695bab1716a940d2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetStateStageClear
+      value: NextScene
       objectReference: {fileID: 0}
     - target: {fileID: 8598818161239485642, guid: d73502dfcf7e1114695bab1716a940d2,
         type: 3}
