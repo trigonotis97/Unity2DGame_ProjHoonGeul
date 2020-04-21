@@ -234,7 +234,9 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
     public void MakeHintorImage()
     {
-        int hintProb = HintProbHandler();
+        int hintProb = 2;
+            /*
+            HintProbHandler();
         if (sunbiHitCount >= sunbiMaxHitNum)
         {
             if(isAlreadyShow)//쳐맞은담에 또 쳐맞았을때
@@ -248,6 +250,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
             }
             //sunbiHitCount = 0;
         }
+        */
         switch (hintProb)
         {
             case 0:// image bullet

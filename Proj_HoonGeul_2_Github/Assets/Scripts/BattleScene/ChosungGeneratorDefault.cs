@@ -425,6 +425,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
             }
         }
 
-        return questionVal_arr[oldIndex];
+        return questionVal_arr[oldIndex]; //인덱스도 같이 보내야하는데
     }
 }
