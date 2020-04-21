@@ -26,7 +26,8 @@ public class Sunbi : MonoBehaviour
     Text bulletPrefText;//받아오기
 
     public Animator m_animator;
-    public TimeBar timeSlider;
+    //public TimeBar timeSlider;
+    public Slider sunbiHpSlider;
     BoxCollider2D m_boxCollider;
 
     public AudioClip sunbiAudioClip;
@@ -87,12 +88,12 @@ public class Sunbi : MonoBehaviour
         //currentHp += healValue;
         currentHp += healValue;
         Debug.Log(currentHp);
-        timeSlider.IncreaseTimeBar(healValue / maxHP);
-        //hpBarUpdate();
+        //timeSlider.IncreaseTimeBar(healValue / maxHP);
+        hpBarUpdate();
 
     }
 
-    /*
+    
     // 아래 콜라이더 ontrigger에서 호출
     public void Damage() //선비가 피격당함
     {
@@ -134,7 +135,7 @@ public class Sunbi : MonoBehaviour
             //Debug.Log(currentHp);
         }
        
-    }*/
+    }
 
     //enemyscript에서 호출, 에너미 데이터 가져와서 초기화
     public void SetEnemyDamage(float enemyDamage)
