@@ -34,8 +34,10 @@ public class EnemyHintBulletHandler : MonoBehaviour
     public Dictionary<string, Dictionary<string, string>> chosungValHintTable = new Dictionary<string, Dictionary<string, string>>();
     Dictionary<string, string[]> chosungWrongHintTable = new Dictionary<string, string[]>();
 
-
-
+    //메잌뉴퀘스천 공유를 위함
+    public Animator[] tile = new Animator[3];
+    public connectToMakeNewQ[] m_connectToMakeNewQ = new connectToMakeNewQ[3];
+    public BackGroundWordGen backgroundWordGen;
 
     BattleManager mbattleManager;
     public ChosungGeneratorDefault chosungGenerator;
@@ -292,6 +294,11 @@ public class EnemyHintBulletHandler : MonoBehaviour
                     indexCount++;
                 }
                 Debug.Log("정답힌트 발사:" + outHintWord);
+
+                m_connectToMakeNewQ[chosungGenerator.GetOldestQuestIndex()].m_correctState = chosungGenerator.GetOldestQuestIndex();
+                tile[chosungGenerator.GetOldestQuestIndex()].SetTrigger("correct");
+
+                backgroundWordGen.MakeWordRandomPos(outHintWord);
                 ///xml 완료시 수정
                 bulletText.enabled = true;
                 bulletText.text = outHintWord;

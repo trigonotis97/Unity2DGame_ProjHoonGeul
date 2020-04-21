@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChosungGeneratorDefault: {fileID: 1894321286}
+  m_correctState: 0
 --- !u!1 &63685609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChosungGeneratorDefault: {fileID: 1894321286}
+  m_correctState: 0
 --- !u!1 &174599983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,6 +2626,15 @@ MonoBehaviour:
   sunbiMaxHitNum: 2
   sunbiHitCount: 0
   enemyBullet: {fileID: 97411529}
+  tile:
+  - {fileID: 36634332}
+  - {fileID: 1847067962}
+  - {fileID: 132659189}
+  m_connectToMakeNewQ:
+  - {fileID: 36634333}
+  - {fileID: 1847067963}
+  - {fileID: 132659190}
+  backgroundWordGen: {fileID: 1575055948}
   chosungGenerator: {fileID: 1894321286}
 --- !u!4 &610284875
 Transform:
@@ -4808,7 +4819,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575055947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5232,6 +5243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChosungGeneratorDefault: {fileID: 1894321286}
+  m_correctState: 0
 --- !u!1 &1894321285
 GameObject:
   m_ObjectHideFlags: 0
@@ -5303,6 +5315,10 @@ MonoBehaviour:
   count_7: 100
   m_enemybulletHandler: {fileID: 610284874}
   backgroundWordGen: {fileID: 1575055948}
+  m_connectToMake:
+  - {fileID: 36634333}
+  - {fileID: 1847067963}
+  - {fileID: 132659190}
 --- !u!224 &1894321287
 RectTransform:
   m_ObjectHideFlags: 0

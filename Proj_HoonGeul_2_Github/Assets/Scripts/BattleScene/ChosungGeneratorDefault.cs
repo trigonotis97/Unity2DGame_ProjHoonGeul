@@ -100,6 +100,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
     //백그라운드 정답 문자 표시 변수
     public BackGroundWordGen backgroundWordGen;
 
+    //메잌뉴퀘스천 함수를 에너미도 사용하게 하기 위함
+    public connectToMakeNewQ[] m_connectToMake = new connectToMakeNewQ[3];
 
     private void Awake()
     {
@@ -155,6 +157,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         ///정답일 경우
         if (correctState > -1)//correctState 가 맞은 문제의 인덱스를 나타낸다.
         {
+            m_connectToMake[correctState].m_correctState = correctState;
             tile[correctState].SetTrigger("correct"); //애니메이션이 끝날때 make new question 실행.
             signAni.Play("O");
 
@@ -408,7 +411,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         }
     }
 
-
+    int oldIndextForGet;
 
     public string GetOldestQuestionValue()
     {
@@ -424,7 +427,11 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 oldCount = oldestQuestInd_arr[i];
             }
         }
-
+        oldIndextForGet = oldIndex;
         return questionVal_arr[oldIndex]; //인덱스도 같이 보내야하는데
+    }
+    public int GetOldestQuestIndex()
+    {
+        return oldIndextForGet;
     }
 }
