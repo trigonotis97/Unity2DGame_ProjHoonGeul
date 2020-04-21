@@ -96,7 +96,7 @@ public class EnemyScriptDefault : MonoBehaviour
         attackDemage_f = m_enemyData.attack_demage;
 
         //sunbi data 가져오기
-        m_sunbi.SetEnemyDamage(attackDemage);
+        m_sunbi.SetEnemyDamage(attackDemage_f);
         m_sunbi.AccessEnemyObject();
         sunbiAttackDamage = (int)m_sunbi.GetSunbiDamage();
         
