@@ -62,13 +62,7 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt("RankModeScore", 0);
         */
         ///저장된 체크포인트 가져오기 (체크포인트 초기화)
-        currentBattleStageIdx = PlayerPrefs.GetInt("BattleStageIndex", 0);
-        currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
-        currentSceneDataIdx = PlayerPrefs.GetInt("SceneIndex", 0);
-
-        Debug.Log("crnt battle ind: " + currentBattleStageIdx);
-        Debug.Log("crnt dialog ind: " + currentDialogIdx);
-        Debug.Log("crnt scene ind: " + currentSceneDataIdx);
+        InitSaveData();
 
 
     }
@@ -89,7 +83,28 @@ public class GameManager : MonoBehaviour {
     }
     public void PrefsDeleteAll()
     {
+        Debug.Log("Delete All Save Data");
         PlayerPrefs.DeleteAll();
+        InitSaveData();
+
+
+    }
+    public void InitSaveData()
+    {
+        
+        currentBattleStageIdx = PlayerPrefs.GetInt("BattleStageIndex", 0);
+        currentDialogIdx = PlayerPrefs.GetInt("DialogStageIndex", 0);
+        currentSceneDataIdx = PlayerPrefs.GetInt("SceneIndex", 0);
+
+        Debug.Log(":: Init Save Data  ::");
+        PrintCurrentData();
+    }
+    public void PrintCurrentData()
+    {
+            Debug.Log(":: Print Current Data  ::  " 
+        + "crnt battle ind: " + currentBattleStageIdx + "  ||  "
+        + "crnt scene ind: " + currentSceneDataIdx
+        );
     }
 
     /// 데이터 초기화
@@ -225,6 +240,12 @@ public class GameManager : MonoBehaviour {
     }
     public void SaveCheckPoint()
     {
+        Debug.Log(":: Save Check Point :: " + "  ||  "
+            + currentBattleStageIdx.ToString() + "  ||  "
+            + (currentDialogIdx - 1).ToString() + "  ||  "
+            + (currentSceneDataIdx - 2).ToString()
+            );
+
         PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
         PlayerPrefs.SetInt("DialogStageIndex", currentDialogIdx-1);
         PlayerPrefs.SetInt("SceneIndex", currentSceneDataIdx-2);
