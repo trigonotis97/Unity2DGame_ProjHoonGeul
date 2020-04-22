@@ -54,7 +54,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         currentGameMode = m_gameManager.GetGameMode();
-        Debug.Log("currentgameMode:" + currentGameMode);
+        //Debug.Log("currentgameMode:" + currentGameMode);
         //데이터 초기화
         if ((currentGameMode == 1) || (currentGameMode == 2))
         {

@@ -37,7 +37,7 @@ public class BackGroundWordGen : MonoBehaviour
         tempWord.transform.localPosition = outPos;
         tempWord.transform.localScale = new Vector3(1,1,1);
         tempWord.GetComponent<Text>().text = inputWord;
-        Debug.Log(outPos);
+        //Debug.Log(outPos);
         
 
     }

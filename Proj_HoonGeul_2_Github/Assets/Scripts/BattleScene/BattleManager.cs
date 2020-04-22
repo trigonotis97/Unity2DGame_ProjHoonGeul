@@ -86,7 +86,7 @@ public class BattleManager : MonoBehaviour
         currentMode = m_gameManager.GetGameMode();
 
         //데이터 초기화
-        if (currentMode==1|| currentMode == 2)//스토리모드일경우
+        if (currentMode == 1 || currentMode == 2)//스토리모드일경우
         {
             m_gameManager.SetCurrentSceneKey(m_gameManager.GetCurrentSceneKey() + 1);
             sceneData = m_gameManager.GetSceneIndData(currentMode);
@@ -94,7 +94,7 @@ public class BattleManager : MonoBehaviour
             m_data = m_gameManager.GetBattleSceneData(currentMode);
 
         }
-        else if(currentMode == 3) //연습모드 일경우
+        else if (currentMode == 3) //연습모드 일경우
         {
             m_gameManager.SetPracticeSceneDataKey(m_gameManager.GetPracticeSceneKey() + 1);
             sceneData = m_gameManager.GetSceneIndData(currentMode);
@@ -102,13 +102,13 @@ public class BattleManager : MonoBehaviour
         }
 
 
-        
+
 
 
         m_generator.SetProblempocket(m_data.problemPocket, m_data.hellProblemPocket);
 
         //백그라운드 오디오 가져오기 및 재생
-        
+
         bg_audioclip = Resources.Load("BGM/" + m_data.BGM) as AudioClip;
 
         m_audioSource.clip = bg_audioclip;
@@ -120,6 +120,7 @@ public class BattleManager : MonoBehaviour
 
         show_chapter_num = m_data.chapterNum;
         show_stage_num = m_data.stageNum;
+        Debug.Log(" Chapter : " + show_chapter_num.ToString() + " : Stage : " + show_stage_num.ToString());
         ///
         /*
         m_enemy.GetComponent<SpriteRenderer>().sprite = Resources.Load("EnemySprite/" + m_data.enemyPrefab.ToString())as Sprite;
@@ -191,6 +192,7 @@ public class BattleManager : MonoBehaviour
     }
     public void SetStateStageClear()
     {
+        Debug.Log("STAGE CLEAR");
         stageStatus = StageState.STAGECLEAR;
         //스토리 모드일경우
         if (currentMode == 1)

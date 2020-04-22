@@ -295,7 +295,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
                     }
                     indexCount++;
                 }
-                Debug.Log("정답힌트 발사:" + outHintWord);
+                //Debug.Log("정답힌트 발사:" + outHintWord);
 
                 m_connectToMakeNewQ[chosungGenerator.GetOldestQuestIndex()].m_correctState = chosungGenerator.GetOldestQuestIndex();
                 tile[chosungGenerator.GetOldestQuestIndex()].SetTrigger("correct");
