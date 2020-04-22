@@ -236,8 +236,9 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
     public void MakeHintorImage()
     {
-        int hintProb = 2;
-            /*
+        int hintProb;
+            
+        /*
             HintProbHandler();
         if (sunbiHitCount >= sunbiMaxHitNum)
         {
@@ -253,8 +254,9 @@ public class EnemyHintBulletHandler : MonoBehaviour
             //sunbiHitCount = 0;
         }
         */
-        switch (hintProb)
+        switch (2)
         {
+            /*
             case 0:// image bullet
                 bulletImage.enabled = true;
                 bulletImage.sprite = bulletSprites[bulletIndCount];
@@ -276,7 +278,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 bulletText.text = outWrongHintWord;
                 Debug.Log("오답힌트 발사 :" + outWrongHintWord);
                 break;
-
+            */
             case 2://right hint bullet
                 //현재 문제초성 데이터 가져오기  //그중에서 가장 오래된거 골라내기
                 string oldsetValue = chosungGenerator.GetOldestQuestionValue();
@@ -304,12 +306,13 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 bulletText.text = outHintWord;
                 alreadyShowWord = outHintWord;
                 break;
+            /*
             case 3:
                 bulletText.enabled = true;
                 bulletText.text = alreadyShowWord;
                 Debug.Log("정답힌트 발사+다회차:" + alreadyShowWord);
                 break;
-
+            */
         }
     }
     
@@ -318,7 +321,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
         sunbiHitCount = 0;
         isAlreadyShow = false;
     }
-
+    /*
     int HintProbHandler()
     {
         float word_percent = Random.Range(0f, 100f);
@@ -333,7 +336,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
         }
         return 0;// image bullet
     }
-
+    */
     ///정답+오답 힌트 뽑아주는거
     string FindHintWord(string targetValue,Dictionary<string,Dictionary<string, string>> targetTable)
     {

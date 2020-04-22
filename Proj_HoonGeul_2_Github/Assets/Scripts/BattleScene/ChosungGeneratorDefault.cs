@@ -411,7 +411,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         }
     }
 
-    int oldIndextForGet;
+    int oldIndextForGet; //인덱스도 같이 보내야하는데 RETURN 두개하기 애매해서
 
     public string GetOldestQuestionValue()
     {
@@ -427,8 +427,12 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 oldCount = oldestQuestInd_arr[i];
             }
         }
-        oldIndextForGet = oldIndex;
-        return questionVal_arr[oldIndex]; //인덱스도 같이 보내야하는데
+        if (oldestQuestInd_arr[0] == oldestQuestInd_arr[1] && oldestQuestInd_arr[1] == oldestQuestInd_arr[2])
+        {
+            oldIndex = Random.Range(0, 3);
+        }
+        oldIndextForGet = oldIndex; //인덱스도 같이 보내야하는데 RETURN 두개하기 애매해서
+        return questionVal_arr[oldIndex]; 
     }
     public int GetOldestQuestIndex()
     {
