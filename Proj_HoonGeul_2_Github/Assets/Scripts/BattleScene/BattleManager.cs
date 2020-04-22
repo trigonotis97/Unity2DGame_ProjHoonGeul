@@ -197,7 +197,7 @@ public class BattleManager : MonoBehaviour
         //스토리 모드일경우
         if (currentMode == 1)
         {
-            m_gameManager.SaveCheckPoint();
+            //m_gameManager.SaveCheckPoint();
             sceneChange.NextScene();
         }
         //연습모드일경우

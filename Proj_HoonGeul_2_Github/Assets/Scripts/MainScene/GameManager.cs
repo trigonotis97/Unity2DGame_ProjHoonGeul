@@ -242,13 +242,13 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log(":: Save Check Point :: " + "  ||  "
             +"Battle Ind : "+ currentBattleStageIdx.ToString() + "  ||  "
-            +"Dialog ind : "+ (currentDialogIdx - 1).ToString() + "  ||  "
-            +"Scene ind : "+ (currentSceneDataIdx - 2).ToString()
+            +"Dialog ind : "+ (currentDialogIdx ).ToString() + "  ||  "
+            +"Scene ind : "+ (currentSceneDataIdx -1).ToString()
             );
 
-        PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
-        PlayerPrefs.SetInt("DialogStageIndex", currentDialogIdx-1);
-        PlayerPrefs.SetInt("SceneIndex", currentSceneDataIdx-2);
+        //PlayerPrefs.SetInt("BattleStageIndex", currentBattleStageIdx);
+        PlayerPrefs.SetInt("DialogStageIndex", currentDialogIdx);
+        PlayerPrefs.SetInt("SceneIndex", currentSceneDataIdx-1);
     }
     public void SaveCheckPoint_testPortal(int chapterNum,int stageNum)
     {

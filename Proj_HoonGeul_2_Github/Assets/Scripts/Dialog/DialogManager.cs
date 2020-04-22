@@ -53,6 +53,7 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
+        
         currentGameMode = m_gameManager.GetGameMode();
         //Debug.Log("currentgameMode:" + currentGameMode);
         //데이터 초기화
@@ -99,6 +100,8 @@ public class DialogManager : MonoBehaviour
         m_audio.loop = true;
 
         convStateHandler.FaceImageUpload(m_data.enemyImage);
+
+        m_gameManager.SaveCheckPoint();
     }
 
     public void SetStateDialogEnd()
