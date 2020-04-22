@@ -28,6 +28,8 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     public GameObject sideCursor, underCursor;
     RectTransform underCursor_rect, sideCursor_rect;
 
+    //디버깅용 키보드 입력받기
+
     private void Start()
     {
         m_audio = GetComponent<AudioSource>();

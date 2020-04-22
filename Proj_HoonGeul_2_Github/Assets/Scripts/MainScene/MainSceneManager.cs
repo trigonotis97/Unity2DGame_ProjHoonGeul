@@ -38,7 +38,8 @@ public class MainSceneManager : MonoBehaviour
             i.SetActive(!param);
         }
     }
-    public void onClick() // 메인화면에서 "시작"을 입력하면 넘어가는 함수.
+    
+    public void OnClickForGiuk()
     {
         if (InputText.text == "시작")
         {
@@ -47,24 +48,14 @@ public class MainSceneManager : MonoBehaviour
             foreach (GameObject i in mainButtonArray)
             {
                 i.SetActive(true);
-                
+
             }
             ButtonsAnimator.enabled = true;
 
             m_gameManager.SetisFirstStart();
-        }
-        else
-        {
             InputText.text = "";
         }
-    }
-    public void OnClickForGiuk()
-    {
-        if (InputText.text == "시작")
-        {
-            onClick();
-            Unity_Cunjiin_Keyboard.Enter();
-        }
+
     }
 
 

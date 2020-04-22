@@ -236,10 +236,8 @@ public class EnemyHintBulletHandler : MonoBehaviour
     }
     public void MakeHintorImage()
     {
-        int hintProb;
-            
-        /*
-            HintProbHandler();
+        /*int hintProb;            
+        HintProbHandler();
         if (sunbiHitCount >= sunbiMaxHitNum)
         {
             if(isAlreadyShow)//쳐맞은담에 또 쳐맞았을때
@@ -252,8 +250,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 isAlreadyShow = true;
             }
             //sunbiHitCount = 0;
-        }
-        */
+        }        */
         switch (2)
         {
             /*
@@ -294,17 +291,24 @@ public class EnemyHintBulletHandler : MonoBehaviour
                         break;
                     }
                     indexCount++;
-                }
-                //Debug.Log("정답힌트 발사:" + outHintWord);
+                } //Debug.Log("정답힌트 발사:" + outHintWord);
 
-                m_connectToMakeNewQ[chosungGenerator.GetOldestQuestIndex()].m_correctState = chosungGenerator.GetOldestQuestIndex();
-                tile[chosungGenerator.GetOldestQuestIndex()].SetTrigger("correct");
+                //힌트 배틀화 작업
+                int oldIndex = chosungGenerator.GetOldestQuestIndex();
+                m_connectToMakeNewQ[oldIndex].m_correctState = chosungGenerator.GetOldestQuestIndex();
+                tile[oldIndex].SetTrigger("correct");
+                if (chosungGenerator.questionHealOrDeal_arr[oldIndex] == 1)
+                {
+                    chosungGenerator.ExternalHeal(oldIndex);
+                }
+                chosungGenerator.oldestQuestInd_arr[oldIndex] = 0;
 
                 backgroundWordGen.MakeWordRandomPos(outHintWord);
                 ///xml 완료시 수정
                 bulletText.enabled = true;
                 bulletText.text = outHintWord;
                 alreadyShowWord = outHintWord;
+                
                 break;
             /*
             case 3:

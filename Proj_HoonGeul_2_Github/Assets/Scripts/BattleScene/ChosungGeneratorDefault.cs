@@ -19,7 +19,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
     public Text[] Chosung_text_arr = new Text[3]; //문제판의 텍스트를 처리
     string[] questionVal_arr = new string[3]; // 
-    int[] questionHealOrDeal_arr = new int[3]; // 문제판이 힐, 딜 정보 저장 및 갱신
+    public int[] questionHealOrDeal_arr = new int[3]; // 문제판이 힐, 딜 정보 저장 및 갱신
                                            
     bool[] hellQueue = new bool[3];
 
@@ -95,7 +95,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
     public EnemyHintBulletHandler m_enemybulletHandler;
 
     //힌트관련 변수
-    int []oldestQuestInd_arr=new int [3];
+    public int []oldestQuestInd_arr=new int [3];
 
     //백그라운드 정답 문자 표시 변수
     public BackGroundWordGen backgroundWordGen;
@@ -144,7 +144,10 @@ public class ChosungGeneratorDefault : MonoBehaviour
         
 
     }
-
+    public void ExternalHeal(int oldIndex)
+    {
+        healRenderer_arr[oldIndex].enabled = false;
+    }
     /// 엔터 버튼을 눌렀을 때
     public void textInputEnter() 
     {
@@ -165,19 +168,17 @@ public class ChosungGeneratorDefault : MonoBehaviour
             countCorrect_hell++;
             countCorrect_heal++;
 
+            m_sunbi.Attack(inputWord);
 
             if (questionHealOrDeal_arr[correctState] == 1) //힐일 경우
             {
-                m_sunbi.Attack(inputWord);
                 m_sunbi.Heal();
                 healRenderer_arr[correctState].enabled = false;
             }
             else if (questionHealOrDeal_arr[correctState] == 0) //딜일 경우
             {
-                m_sunbi.Attack(inputWord);
                 Debug.Log("딜");
-            }
-            
+            }   
             
             if (countCorrect_hell >= hellCountNum) //2개 맞추면 헬로 만들기
             {
@@ -427,9 +428,17 @@ public class ChosungGeneratorDefault : MonoBehaviour
                 oldCount = oldestQuestInd_arr[i];
             }
         }
-        if (oldestQuestInd_arr[0] == oldestQuestInd_arr[1] && oldestQuestInd_arr[1] == oldestQuestInd_arr[2])
+        if (oldestQuestInd_arr[0] == oldestQuestInd_arr[1])
         {
-            oldIndex = Random.Range(0, 3);
+            if (oldestQuestInd_arr[1] == oldestQuestInd_arr[2])
+            {
+                oldIndex = Random.Range(0, 3);
+            }
+            else oldIndex = Random.Range(0, 2);
+        }
+        else if(oldestQuestInd_arr[1] == oldestQuestInd_arr[2])
+        {
+            oldIndex = Random.Range(1, 3);
         }
         oldIndextForGet = oldIndex; //인덱스도 같이 보내야하는데 RETURN 두개하기 애매해서
         return questionVal_arr[oldIndex]; 
