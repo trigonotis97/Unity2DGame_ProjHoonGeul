@@ -302,6 +302,18 @@ public class EnemyHintBulletHandler : MonoBehaviour
                     chosungGenerator.ExternalHeal(oldIndex);
                 }
                 chosungGenerator.oldestQuestInd_arr[oldIndex] = 0;
+                /*
+                for (int i = 0; i < 3; i++)
+                {
+                    if (chosungGenerator.bossStageIdx == 8)
+                        break;
+
+                    if (i == oldIndex)
+                        chosungGenerator.oldestQuestInd_arr[oldIndex] = 0;
+                    else
+                        chosungGenerator.oldestQuestInd_arr[i]++;
+                }
+                */
 
                 backgroundWordGen.MakeWordRandomPos(outHintWord);
                 ///xml 완료시 수정

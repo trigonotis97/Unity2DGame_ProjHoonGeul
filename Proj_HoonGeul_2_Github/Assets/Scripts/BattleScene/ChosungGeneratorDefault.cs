@@ -81,7 +81,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     //보스 스테이지 관련 변수
-    int bossStageIdx;
+    public int bossStageIdx;
     int wordType;
 
 

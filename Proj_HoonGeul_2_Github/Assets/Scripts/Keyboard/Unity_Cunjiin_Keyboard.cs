@@ -29,6 +29,57 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     RectTransform underCursor_rect, sideCursor_rect;
 
     //디버깅용 키보드 입력받기
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            onClick(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            onClick(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            onClick(3);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            onClick(4);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            onClick(5);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            onClick(6);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            onClick(7);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            onClick(8);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            onClick(9);
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            onClick(11);
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            onClick(10);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            onClick(0);
+        }
+    }
 
     private void Start()
     {
