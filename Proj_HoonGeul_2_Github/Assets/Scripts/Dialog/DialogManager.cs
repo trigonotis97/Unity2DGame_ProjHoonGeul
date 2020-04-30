@@ -101,7 +101,7 @@ public class DialogManager : MonoBehaviour
 
         convStateHandler.FaceImageUpload(m_data.enemyImage);
 
-        m_gameManager.SaveCheckPoint();
+        if (currentGameMode != 3) m_gameManager.SaveCheckPoint();
     }
 
     public void SetStateDialogEnd()

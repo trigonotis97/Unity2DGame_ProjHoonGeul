@@ -27,8 +27,8 @@ public class EnemyScriptDefault : MonoBehaviour
     public float attackWaveSpeed_temp; //임시
     public bool isBoss;
 
-    public int maxHP;
-    public int currentHp; // 현재 enemy의 hp
+    //public int maxHP;
+    //public int currentHp; // 현재 enemy의 hp
     public int attackDemage;
     public int sunbiAttackDamage;
 
@@ -99,10 +99,11 @@ public class EnemyScriptDefault : MonoBehaviour
         m_sunbi.SetEnemyDamage(attackDemage_f);
         m_sunbi.AccessEnemyObject();
         sunbiAttackDamage = (int)m_sunbi.GetSunbiDamage();
-        
+
         //StartCoroutine("AttackWave");
-        currentHp = (int)maxHP_f;
-        maxHP = (int)maxHP_f;
+        //currentHp = (int)maxHP_f;
+        //maxHP = (int)maxHP_f;
+        currentHp_f = maxHP_f;
 
         //transform.position = new Vector3(507.392f,405.248f,- 9000f);
 
@@ -132,10 +133,10 @@ public class EnemyScriptDefault : MonoBehaviour
 
     public void EnemyDamage(/*int i*/) //콜라이더 ontrigger 에서 호출
     {
-        currentHp -= sunbiAttackDamage;
-        if (currentHp <= 0f)
+        currentHp_f -= sunbiAttackDamage;
+        if (currentHp_f <= 0f)
         {
-            currentHp = 0;
+            currentHp_f = 0;
             hpBar.value = 0;
             hpBarUpdate();
             //게임오버 판정
@@ -150,8 +151,8 @@ public class EnemyScriptDefault : MonoBehaviour
 
     void hpBarUpdate()
     {
-        hpBar.value = (float)currentHp / (float)maxHP;
-        enemyHpText.text = currentHp.ToString() + " / " + maxHP.ToString();
+        hpBar.value = currentHp_f / maxHP_f;
+        enemyHpText.text = currentHp_f.ToString() + " / " + maxHP_f.ToString();
 
 
     }

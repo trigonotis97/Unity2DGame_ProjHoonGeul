@@ -39,6 +39,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
     public Judgement ansJudge; 
     public Sunbi m_sunbi;
+    public EnemyScriptDefault m_enemyScriptDefault;
     public int dealHeal = -1; // 딜, 힐 속성. 1은 힐, 0은 딜
 
     public Color HellColor = new Color(1f,0f,0f);
@@ -70,6 +71,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
     public int countCorrect_heal;
     public int healProbability;
     public int percentageAddNum;
+    /*
     public int count_0;
     public int count_1;
     public int count_2;
@@ -78,7 +80,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
     public int count_5;
     public int count_6;
     public int count_7;
-
+    */
 
     //보스 스테이지 관련 변수
     public int bossStageIdx;
@@ -103,11 +105,14 @@ public class ChosungGeneratorDefault : MonoBehaviour
     //메잌뉴퀘스천 함수를 에너미도 사용하게 하기 위함
     public connectToMakeNewQ[] m_connectToMake = new connectToMakeNewQ[3];
 
+    //주석 개많네
+
     private void Awake()
     {
         //퍼블릭으로 할당했습니다. 이름이 같아야 애니메이터를 공유할 수 있어서!
         m_sunbi = GameObject.FindGameObjectWithTag("Sunbi").GetComponent<Sunbi>();
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
+       
         speechBubble = GetComponent<SpeechBubble>();
     }
 
@@ -121,8 +126,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
         countCorrect_hell = 0;
         isHellQuestState = false;
         hellCountInd = 0;
-        
 
+        m_enemyScriptDefault = GameObject.FindWithTag("Enemy").GetComponent<EnemyScriptDefault>();
         //처음 문제 생성
         for (int i = 0; i < 3; i++)
         {
@@ -141,8 +146,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
             oldestQuestInd_arr[0] = -1;
             oldestQuestInd_arr[2] = -1;
         }
-        
 
+        
     }
     public void ExternalHeal(int oldIndex)
     {
@@ -303,18 +308,31 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
         ///힐 판정부분
         //RandomRange가 아닌 다른 방법으로 확률 생성하는 방법?
-        float Percent = Random.Range(1.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
-        
+        float Percent = Random.Range(0.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
+        healProbability = 10;
+        if (m_sunbi.currentHp <= 3)
+        {
+            healProbability = 100;
+        }
+        else if (m_sunbi.currentHp/m_sunbi.maxHP+0.1f < m_enemyScriptDefault.currentHp_f/m_enemyScriptDefault.maxHP_f)
+        {
+            if(m_sunbi.currentHp <10) healProbability = 40;
+        }
+        //적이 공격했거나 이미 많으면 0퍼로
+        Debug.Log("현재 힐 등장 확률:" + healProbability + "\n 내 체력비:"+(m_sunbi.currentHp / m_sunbi.maxHP).ToString() + "\n 적 체력비:"+(m_enemyScriptDefault.currentHp_f / m_enemyScriptDefault.maxHP_f).ToString());
+
         if (Percent <= healProbability)//make heal
         {
             healRenderer_arr[index].enabled = true;
             //Chosung_text_arr[index].color = HealColor;
             questionHealOrDeal_arr[index] = 1;
-            countCorrect_heal=0;
-            healProbability = 0;
+            //countCorrect_heal=0;
+            //healProbability = 0;
         }
+        
         else
         {
+            /*
             switch(countCorrect_heal)
             {
                 case 0:
@@ -345,10 +363,11 @@ public class ChosungGeneratorDefault : MonoBehaviour
                     healProbability = 100;
                     break;
             }
+            */
             //Chosung_text_arr[index].color = Color.black;
             questionHealOrDeal_arr[index] = 0;
         }
-
+        
 
 
         Chosung_text_arr[index].text = questStr;
