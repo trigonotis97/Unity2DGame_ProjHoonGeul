@@ -93,7 +93,8 @@ public class EnemyScriptDefault : MonoBehaviour
         m_enemyData = m_battleManager.GetEnemyData();
         maxHP_f = m_enemyData.maxHp;
 
-        attackDemage_f = m_enemyData.attack_demage;
+        //attackDemage_f = m_enemyData.attack_demage;
+        attackDemage_f = 1;
 
         //sunbi data 가져오기
         m_sunbi.SetEnemyDamage(attackDemage_f);

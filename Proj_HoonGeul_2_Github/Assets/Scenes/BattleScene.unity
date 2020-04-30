@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChosungGeneratorDefault: {fileID: 1894321286}
   m_correctState: 0
+  m_isEnemy: 0
 --- !u!1 &63685609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChosungGeneratorDefault: {fileID: 1894321286}
   m_correctState: 0
+  m_isEnemy: 0
 --- !u!1 &174599983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,7 +2554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -107.26999, y: -1.75}
+  m_AnchoredPosition: {x: -107.27002, y: -1.75}
   m_SizeDelta: {x: -121.87, y: 55.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599317988
@@ -5244,6 +5246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChosungGeneratorDefault: {fileID: 1894321286}
   m_correctState: 0
+  m_isEnemy: 0
 --- !u!1 &1894321285
 GameObject:
   m_ObjectHideFlags: 0
@@ -5285,9 +5288,11 @@ MonoBehaviour:
   - {fileID: 679400837}
   - {fileID: 468854829}
   - {fileID: 16077848}
+  questionHealOrDeal_arr: 000000000000000000000000
   InputText: {fileID: 63685610}
   ansJudge: {fileID: 1894321288}
   m_sunbi: {fileID: 0}
+  m_enemyScriptDefault: {fileID: 0}
   dealHeal: -1
   HellColor: {r: 0.8490566, g: 0, b: 0, a: 1}
   isChapter1Boss: 0
@@ -5305,15 +5310,9 @@ MonoBehaviour:
   countCorrect_heal: 0
   healProbability: 0
   percentageAddNum: 0
-  count_0: 0
-  count_1: 1
-  count_2: 3
-  count_3: 5
-  count_4: 30
-  count_5: 60
-  count_6: 80
-  count_7: 100
+  bossStageIdx: 0
   m_enemybulletHandler: {fileID: 610284874}
+  oldestQuestInd_arr: 000000000000000000000000
   backgroundWordGen: {fileID: 1575055948}
   m_connectToMake:
   - {fileID: 36634333}
@@ -6479,6 +6478,16 @@ PrefabInstance:
       propertyPath: timeSlider
       value: 
       objectReference: {fileID: 270493408}
+    - target: {fileID: 3500886638791031164, guid: 8240651f2c3d46e43ac19481170d1635,
+        type: 3}
+      propertyPath: maxHP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500886638791031164, guid: 8240651f2c3d46e43ac19481170d1635,
+        type: 3}
+      propertyPath: healValue
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8240651f2c3d46e43ac19481170d1635, type: 3}
 --- !u!1 &5784591205146947354

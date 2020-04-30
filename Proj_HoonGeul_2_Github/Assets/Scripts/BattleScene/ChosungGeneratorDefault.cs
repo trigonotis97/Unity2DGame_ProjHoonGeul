@@ -126,12 +126,13 @@ public class ChosungGeneratorDefault : MonoBehaviour
         countCorrect_hell = 0;
         isHellQuestState = false;
         hellCountInd = 0;
+        healProbability = 10;
 
         m_enemyScriptDefault = GameObject.FindWithTag("Enemy").GetComponent<EnemyScriptDefault>();
         //처음 문제 생성
         for (int i = 0; i < 3; i++)
         {
-            MakeNewQuestion(i, isChapter1Boss);
+            MakeNewQuestion(i, isChapter1Boss,true);
             healRenderer_arr[i].enabled = false;//힐 오브젝트 렌더 끄기
 
             oldestQuestInd_arr[i] = 0;//사용변수 초기화
@@ -166,6 +167,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
         if (correctState > -1)//correctState 가 맞은 문제의 인덱스를 나타낸다.
         {
             m_connectToMake[correctState].m_correctState = correctState;
+            m_connectToMake[correctState].m_isEnemy = false;
             tile[correctState].SetTrigger("correct"); //애니메이션이 끝날때 make new question 실행.
             signAni.Play("O");
 
@@ -224,7 +226,7 @@ public class ChosungGeneratorDefault : MonoBehaviour
 
 
     ///문제생성
-    public void MakeNewQuestion(int index,bool isChapter1Boss)
+    public void MakeNewQuestion(int index,bool isChapter1Boss, bool isEnemy)
     {
         ///사용 변수 초기화
         string questStr;
@@ -309,16 +311,23 @@ public class ChosungGeneratorDefault : MonoBehaviour
         ///힐 판정부분
         //RandomRange가 아닌 다른 방법으로 확률 생성하는 방법?
         float Percent = Random.Range(0.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
-        healProbability = 10;
-        if (m_sunbi.currentHp <= 3)
+
+        //적이 공격했거나 이미 많으면 0퍼로       
+        if (isEnemy || questionHealOrDeal_arr[0] + questionHealOrDeal_arr[1] + questionHealOrDeal_arr[2] >= 1)
+        {
+            healProbability = 0;
+        }
+        else if (m_sunbi.currentHp <= 3)
         {
             healProbability = 100;
         }
-        else if (m_sunbi.currentHp/m_sunbi.maxHP+0.1f < m_enemyScriptDefault.currentHp_f/m_enemyScriptDefault.maxHP_f)
+        else if (m_sunbi.currentHp / m_sunbi.maxHP + 0.15f < m_enemyScriptDefault.currentHp_f / m_enemyScriptDefault.maxHP_f)
         {
-            if(m_sunbi.currentHp <10) healProbability = 40;
+            if (m_sunbi.currentHp < 10) healProbability = 50;
+            else healProbability = 33;
         }
-        //적이 공격했거나 이미 많으면 0퍼로
+        else healProbability = 10;
+
         Debug.Log("현재 힐 등장 확률:" + healProbability + "\n 내 체력비:"+(m_sunbi.currentHp / m_sunbi.maxHP).ToString() + "\n 적 체력비:"+(m_enemyScriptDefault.currentHp_f / m_enemyScriptDefault.maxHP_f).ToString());
 
         if (Percent <= healProbability)//make heal

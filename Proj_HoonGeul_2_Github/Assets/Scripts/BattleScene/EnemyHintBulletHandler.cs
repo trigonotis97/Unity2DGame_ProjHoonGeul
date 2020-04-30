@@ -296,6 +296,7 @@ public class EnemyHintBulletHandler : MonoBehaviour
                 //힌트 배틀화 작업
                 int oldIndex = chosungGenerator.GetOldestQuestIndex();
                 m_connectToMakeNewQ[oldIndex].m_correctState = chosungGenerator.GetOldestQuestIndex();
+                m_connectToMakeNewQ[oldIndex].m_isEnemy = true;
                 tile[oldIndex].SetTrigger("correct");
                 if (chosungGenerator.questionHealOrDeal_arr[oldIndex] == 1)
                 {
