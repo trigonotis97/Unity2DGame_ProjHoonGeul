@@ -64,8 +64,6 @@ public class ChosungGeneratorDefault : MonoBehaviour
     public int hellCountNum; //여기서 개수 조절 퍼블릭으로
                              //[Space(16)]
 
-
-
     //확률관련 변수 조정
     [Header("Percentage(int) : 0 ~ 100 (=always True)")]
     public int countCorrect_heal;
@@ -312,8 +310,8 @@ public class ChosungGeneratorDefault : MonoBehaviour
         //RandomRange가 아닌 다른 방법으로 확률 생성하는 방법?
         float Percent = Random.Range(0.0f, 100.0f); // 딜.힐 속성 생성. 0이면 Heal일 예정. 즉, Heal:Deal 비율은 1:4로 우선 해둠.
 
-        //적이 공격했거나 이미 많으면 0퍼로       
-        if (isEnemy || questionHealOrDeal_arr[0] + questionHealOrDeal_arr[1] + questionHealOrDeal_arr[2] >= 1)
+        //적이 공격했거나 이미 있으면 0퍼로       
+        if ((isEnemy || questionHealOrDeal_arr[0] + questionHealOrDeal_arr[1] + questionHealOrDeal_arr[2] >= 2) && bossStageIdx != 8)
         {
             healProbability = 0;
         }
@@ -321,14 +319,14 @@ public class ChosungGeneratorDefault : MonoBehaviour
         {
             healProbability = 100;
         }
-        else if (m_sunbi.currentHp / m_sunbi.maxHP + 0.15f < m_enemyScriptDefault.currentHp_f / m_enemyScriptDefault.maxHP_f)
+        else if (m_sunbi.currentHp / m_sunbi.maxHP + 0.1f <= m_enemyScriptDefault.currentHp_f / m_enemyScriptDefault.maxHP_f)
         {
-            if (m_sunbi.currentHp < 10) healProbability = 50;
+            if (m_sunbi.currentHp <= 10) healProbability = 60;
             else healProbability = 33;
         }
-        else healProbability = 10;
+        else healProbability = 20;
 
-        Debug.Log("현재 힐 등장 확률:" + healProbability + "\n 내 체력비:"+(m_sunbi.currentHp / m_sunbi.maxHP).ToString() + "\n 적 체력비:"+(m_enemyScriptDefault.currentHp_f / m_enemyScriptDefault.maxHP_f).ToString());
+        Debug.Log("현재 힐 등장 확률:" + healProbability + ", 내 체력비:"+(m_sunbi.currentHp / m_sunbi.maxHP).ToString() + ", 적 체력비:"+(m_enemyScriptDefault.currentHp_f / m_enemyScriptDefault.maxHP_f).ToString());
 
         if (Percent <= healProbability)//make heal
         {

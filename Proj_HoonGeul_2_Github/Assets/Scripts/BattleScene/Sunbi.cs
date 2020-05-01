@@ -11,6 +11,7 @@ public class Sunbi : MonoBehaviour
     [Header("for TEST")]
     public float maxHP;
     public float currentHp; //현재 sunbi의  hp
+    public Text sunbiHpText;
 
     public float attackDamage; //어차피 작용하는건 enemy의 데미지인데 선비공격데미지를 왜 가지고 있지?
     public float attackSpeed_temp;
@@ -57,12 +58,13 @@ public class Sunbi : MonoBehaviour
         m_battleSceneManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         m_animator = GetComponent<Animator>();
         m_boxCollider = GetComponent<BoxCollider2D>();
-
+     
     }
 
     private void Start()
     {
-        currentHp = maxHP;       
+        currentHp = maxHP;
+        hpBarUpdate();
     }
 
 
@@ -109,6 +111,7 @@ public class Sunbi : MonoBehaviour
             sunbiHpSlider.value = 0;
             //게임오버 판정
             m_battleSceneManager.SetStateGameover();
+            
             //battle scene 으로 게임오버 함수 실행
         }
         else
@@ -119,6 +122,7 @@ public class Sunbi : MonoBehaviour
     void hpBarUpdate()
     {
         sunbiHpSlider.value = currentHp / maxHP;
+        sunbiHpText.text = currentHp.ToString() + " / " + maxHP.ToString();
     }
     
 

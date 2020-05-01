@@ -45,10 +45,10 @@ public class BattleManager : MonoBehaviour
 
     public BattleSceneData m_data; //현재 배틀 스테이지에서 사용할 데이터
     public SceneData sceneData;
+    public MainSceneChange m_mainSceneChange;
 
     public StageState stageStatus; // 0: 게임 시작 전 1: 게임중 2: 게임 중단 3:게임종료 4: 게임 클리어
     public GameObject m_canvas;
-
 
 
 
@@ -188,7 +188,9 @@ public class BattleManager : MonoBehaviour
     public void SetStateGameover()
     {
         stageStatus = StageState.GAMEOVER;
-        ///게임오버 판넬 추가해야함
+
+        //게임오버 판넬 추가해야함
+        m_mainSceneChange.SetSceneName("StartScene");
     }
     public void SetStateStageClear()
     {

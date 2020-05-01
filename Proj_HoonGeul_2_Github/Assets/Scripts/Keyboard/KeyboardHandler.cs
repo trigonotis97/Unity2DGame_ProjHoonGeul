@@ -36,7 +36,9 @@ public class KeyboardHandler : MonoBehaviour
     {
         //4 스테이지 보스 일 경우 키 버튼을 영어 텍스트로 변경
         if ((SceneManager.GetActiveScene().name == "BattleScene") && (m_battleManager.Is2to5BossStage() == 4))
-            ChangeKeyboardKortoEng();
+            if (m_battleManager.show_stage_num == 3) ChangeKeyboardKortoEng();
+            else ChangeKeyboardKortoHalfEng();
+
         //5-3 스테이지 일 경우 키 버튼 텍스트 지우기.
         else if ((SceneManager.GetActiveScene().name == "BattleScene") && (m_battleManager.Is2to5BossStage() == 7))
             DeleteKeyboardText();
@@ -96,6 +98,50 @@ public class KeyboardHandler : MonoBehaviour
                     break;
                 case "ㅇㅁ":
                     keyText[i].text = "O M";
+                    break;
+
+            }
+        }
+    }
+    void ChangeKeyboardKortoHalfEng()
+    {
+        keyButtonObj = GameObject.FindGameObjectsWithTag("ChunjiinKeyText");
+        keyText = new Text[keyButtonObj.Length];
+        for (int i = 0; i < keyText.Length; i++)
+        {
+            keyText[i] = keyButtonObj[i].GetComponent<Text>();
+            switch (keyText[i].text)
+            {
+                case "엔터":
+                    break;
+                case "띄움":
+                    break;
+                case "ㅈㅊ":
+                    keyText[i].text = "J ㅊ";
+                    break;
+                case "ㅅㅎ":
+                    keyText[i].text = "S ㅎ";
+                    break;
+                case "ㅂㅍ":
+                    keyText[i].text = "ㅂ P";
+                    break;
+                case "ㄷㅌ":
+                    keyText[i].text = "ㄷ T";
+                    break;
+                case "ㄴㄹ":
+                    keyText[i].text = "ㄴ R";
+                    break;
+                case "ㄱㅋ":
+                    keyText[i].text = "G ㅋ";
+                    break;
+                case "ㅡ":
+                    break;
+                case "ㆍ":
+                    break;
+                case "ㅣ":
+                    break;
+                case "ㅇㅁ":
+                    keyText[i].text = "ㅇ M";
                     break;
 
             }

@@ -94,7 +94,7 @@ public class EnemyScriptDefault : MonoBehaviour
         maxHP_f = m_enemyData.maxHp;
 
         //attackDemage_f = m_enemyData.attack_demage;
-        attackDemage_f = 1;
+        attackDemage_f = 1; //모든 적 데미지 1로 통일.   
 
         //sunbi data 가져오기
         m_sunbi.SetEnemyDamage(attackDemage_f);

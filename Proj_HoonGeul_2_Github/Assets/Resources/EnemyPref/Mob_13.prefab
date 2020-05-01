@@ -126,8 +126,6 @@ MonoBehaviour:
   attackDemage_f: 0
   attackWaveSpeed_temp: 3
   isBoss: 0
-  maxHP: 0
-  currentHp: 0
   attackDemage: 0
   sunbiAttackDamage: 0
   m_battleManager: {fileID: 0}

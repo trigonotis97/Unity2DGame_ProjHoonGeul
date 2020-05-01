@@ -7,7 +7,7 @@
 		<problemPocket>ㅇㅅ,ㄱㅇ,ㅅㅇ,ㅅㄱ,ㅇㅊ,ㅅㅅ,ㅂㄱ</problemPocket>
 		<hellProblemPocket>ㅎㅊ,ㄷㄷ,ㅍㅂ</hellProblemPocket>
 		<enemyPrefab>1</enemyPrefab>
-		<enemyHP>8</enemyHP>
+		<enemyHP>5</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>0</bossPattern>
@@ -22,7 +22,7 @@
 		<problemPocket>ㄱㄱ,ㄱㅅ,ㅈㅇ,ㅈㄱ,ㅎㅇ,ㅇㅂ,ㅈㅅ,ㅎㄱ,ㅅㅈ,ㅈㅈ,ㄱㅂ,ㅎㅅ</problemPocket>
 		<hellProblemPocket>ㅁㅍ,ㅍㅊ,ㄴㅁ</hellProblemPocket>
 		<enemyPrefab>2</enemyPrefab>
-		<enemyHP>12</enemyHP>
+		<enemyHP>8</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>  
 		<bossPattern>0</bossPattern>
@@ -37,7 +37,7 @@
 		<problemPocket>ㅇㅈ,ㅇㅇ,ㄴㅈ</problemPocket>
 		<hellProblemPocket>ㅇㅈ,ㅇㅇ,ㄴㅈ</hellProblemPocket>
 		<enemyPrefab>3</enemyPrefab>
-		<enemyHP>15</enemyHP>
+		<enemyHP>12</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>1</bossPattern>
@@ -52,9 +52,9 @@
 		<problemPocket>ㄱㅊ,ㅇㅁ,ㅂㅇ,ㅂㅅ,ㅊㅇ,ㅎㅈ,ㅊㄱ,ㄱㄹ,ㅈㅊ,ㅈㄹ,ㅇㄱ,ㅇㅎ</problemPocket>
 		<hellProblemPocket>ㅌㄹ,ㅍㅁ,ㅂㄴ</hellProblemPocket>
 		<enemyPrefab>4</enemyPrefab>
-		<enemyHP>18</enemyHP>
+		<enemyHP>10</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>0</bossPattern>
 		<nextDialogNum>9</nextDialogNum>
 		<BGImage>jap_bg_1</BGImage>
@@ -67,9 +67,9 @@
 		<problemPocket>ㄱㅊ,ㅇㄹ,ㄱㅎ,ㅊㅅ,ㅅㅂ,ㅂㅈ,ㄱㅁ,ㅅㅊ,ㅈㅂ,ㅁㅅ,ㅅㄹ,ㅇㅍ</problemPocket>
 		<hellProblemPocket>ㅊㅍ,ㄴㄷ,ㅌㅂ</hellProblemPocket>
 		<enemyPrefab>5</enemyPrefab>
-		<enemyHP>18</enemyHP>
+		<enemyHP>12</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>0</bossPattern>
 		<nextDialogNum>11</nextDialogNum>
 		<BGImage>jap_bg_1</BGImage>
@@ -82,7 +82,7 @@
 		<problemPocket>ㅇㄱ,ㄱㅈ,ㅇㅎ,ㅇㄹ,ㅇㅁ,ㄱㅎ,ㄱㄹ,ㅁㅅ,ㅈㅊ,ㅅㄹ,ㅈㄹ,ㅇㅍ</problemPocket>
 		<hellProblemPocket>ㄴㄹ,ㅍㅎ,ㄷㅍ</hellProblemPocket>
 		<enemyPrefab>6</enemyPrefab>
-		<enemyHP>20</enemyHP>
+		<enemyHP>16</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>2</bossPattern>
@@ -97,9 +97,9 @@
 		<problemPocket>ㅊㅈ,ㅇㄷ,ㅅㅎ,ㅈㅎ,ㅁㄱ,ㅁㅇ,ㅁㅁ,ㅁㄷ,ㄷㄹ,ㄷㅁ,ㅈㅌ,ㅍㄹ</problemPocket>
 		<hellProblemPocket>ㅍㄷ,ㅊㅌ,ㅎㄴ</hellProblemPocket>
 		<enemyPrefab>7</enemyPrefab>
-		<enemyHP>20</enemyHP>
+		<enemyHP>13</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>0</bossPattern>
 		<nextDialogNum>15</nextDialogNum>
 		<BGImage>china_bg_1</BGImage>
@@ -112,9 +112,9 @@
 		<problemPocket>ㅅㅁ,ㅁㅈ,ㄱㄷ,ㅈㅁ,ㄷㄱ,ㅂㄹ,ㄱㄴ,ㅅㄴ,ㅂㅌ,ㄴㅂ,ㅈㄴ,ㅂㅍ</problemPocket>
 		<hellProblemPocket>ㅌㅎ,ㄴㅍ,ㅁㄴ</hellProblemPocket>
 		<enemyPrefab>8</enemyPrefab>
-		<enemyHP>22</enemyHP>
+		<enemyHP>16</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>0</bossPattern>
 		<nextDialogNum>17</nextDialogNum>
 		<BGImage>china_bg_1</BGImage>
@@ -127,7 +127,7 @@
 		<problemPocket>ㅁㅁ,ㄱㄴ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㄴㅂ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ</problemPocket>
 		<hellProblemPocket>ㅁㅌ,ㄷㅌ,ㅍㅌ</hellProblemPocket>
 		<enemyPrefab>9</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>20</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>3</bossPattern>
@@ -142,9 +142,9 @@
 		<problemPocket>ㅂㅊ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ</problemPocket>
 		<hellProblemPocket>ㅌㅁ,ㄷㄴ,ㅌㅊ</hellProblemPocket>
 		<enemyPrefab>10</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>14</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>0</bossPattern>
 		<nextDialogNum>21</nextDialogNum>
 		<BGImage>america_bg_1</BGImage>
@@ -157,9 +157,9 @@
 		<problemPocket>ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ</problemPocket>
 		<hellProblemPocket>ㅊㄴ,ㅌㅍ,ㅅㅋ</hellProblemPocket>
 		<enemyPrefab>11</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>16</enemyHP>
 		<enemyDamage>4</enemyDamage>
-		<isBoss>false</isBoss>
+		<isBoss>true</isBoss>
 		<bossPattern>0</bossPattern>
 		<nextDialogNum>23</nextDialogNum>
 		<BGImage>america_bg_1</BGImage>
@@ -172,7 +172,7 @@
 		<problemPocket>ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ</problemPocket>
 		<hellProblemPocket>ㅇㅋ,ㄴㅌ,ㅍㅍ</hellProblemPocket>
 		<enemyPrefab>12</enemyPrefab>
-		<enemyHP>28</enemyHP>
+		<enemyHP>20</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>true</isBoss>
 		<bossPattern>4</bossPattern>
@@ -187,7 +187,7 @@
 		<problemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</problemPocket>
 		<hellProblemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</hellProblemPocket>
 		<enemyPrefab>13</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>16</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>5</bossPattern>
@@ -202,7 +202,7 @@
 		<problemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</problemPocket>
 		<hellProblemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</hellProblemPocket>
 		<enemyPrefab>14</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>16</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>6</bossPattern>
@@ -217,7 +217,7 @@
 		<problemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</problemPocket>
 		<hellProblemPocket>ㄷㄱ,ㅂㄹ,ㅂㅊ,ㅇㅍ,ㅎㄹ,ㅂㅂ,ㅎㅂ,ㄷㅅ,ㄷㅇ,ㅎㅊ,ㅅㄷ,ㅎㅎ,ㅊㅂ,ㄴㅇ,ㄱㅍ,ㄷㅈ,ㅎㅁ,ㄴㄱ,ㅂㅎ,ㅊㄹ,ㄴㅅ,ㅈㄷ,ㅊㅎ,ㅍㅅ,ㅂㅁ,ㅇㅌ,ㅅㅍ,ㅇㄴ,ㄷㅂ,ㅊㅊ,ㅍㄱ,ㅂㄷ,ㅅㅌ,ㅊㅁ,ㅍㅈ,ㅎㄷ,ㅁㅂ,ㅈㅍ,ㄴㅈ,ㅌㅅ,ㅁㅊ,ㅁㅎ,ㅁㅁ,ㅌㄱ,ㄷㅊ,ㄱㅌ,ㅍㅇ,ㄱㄴ,ㅁㄹ,ㅌㅇ,ㅁㄷ,ㅅㄴ,ㄷㄹ,ㅂㅌ,ㄷㅁ,ㅌㅈ,ㅊㄷ,ㅎㅍ,ㄴㅂ,ㄷㅎ,ㅈㅌ,ㅈㄴ,ㅍㄹ,ㅂㅍ,ㄴㅊ,ㄴㅎ</hellProblemPocket>
 		<enemyPrefab>15</enemyPrefab>
-		<enemyHP>25</enemyHP>
+		<enemyHP>16</enemyHP>
 		<enemyDamage>4</enemyDamage>
 		<isBoss>false</isBoss>
 		<bossPattern>7</bossPattern>

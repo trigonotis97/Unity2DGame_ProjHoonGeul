@@ -329,7 +329,7 @@ public class Judgement : MonoBehaviour
         }
         else if (bossStageIdx == 6)
         {
-            bossCondText.text = "무조건 사용!\n";
+            bossCondText.text = "이 중 하나는 꼭 사용!\n";
             for (int i = 0; i < 3; i++)
             {
                 if(i==0)

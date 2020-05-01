@@ -29,55 +29,61 @@ public class Unity_Cunjiin_Keyboard : MonoBehaviour
     RectTransform underCursor_rect, sideCursor_rect;
 
     //디버깅용 키보드 입력받기
+    public ChosungGeneratorDefault m_chosungGeneratorDefault;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Keypad7))
         {
             onClick(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Keypad8))
         {
             onClick(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Keypad9))
         {
             onClick(3);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Keypad4))
         {
             onClick(4);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Keypad5))
         {
             onClick(5);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Keypad6))
         {
             onClick(6);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             onClick(7);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             onClick(8);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             onClick(9);
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             onClick(11);
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.KeypadPeriod))
         {
             onClick(10);
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Keypad0))
         {
             onClick(0);
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            Enter();
+            m_chosungGeneratorDefault.textInputEnter();
         }
     }
 
