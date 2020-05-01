@@ -4,7 +4,7 @@
 		<key>1</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>1</stageNum>
-		<problemPocket>ㅇㅅ,ㄱㅇ,ㅅㅇ,ㅅㄱ,ㅇㅊ,ㅅㅅ,ㅂㄱ</problemPocket>
+		<problemPocket>ㄱㄱ,ㄱㅇ,ㅅㅇ,ㅅㄱ,ㅇㅊ,ㅅㅅ,ㅂㄱ</problemPocket>
 		<hellProblemPocket>ㅎㅊ,ㄷㄷ,ㅍㅂ</hellProblemPocket>
 		<enemyPrefab>1</enemyPrefab>
 		<enemyHP>5</enemyHP>
@@ -19,7 +19,7 @@
 		<key>2</key>
 		<chapterNum>1</chapterNum>
 		<stageNum>2</stageNum>   
-		<problemPocket>ㄱㄱ,ㄱㅅ,ㅈㅇ,ㅈㄱ,ㅎㅇ,ㅇㅂ,ㅈㅅ,ㅎㄱ,ㅅㅈ,ㅈㅈ,ㄱㅂ,ㅎㅅ</problemPocket>
+		<problemPocket>ㅇㅅ,ㄱㅅ,ㅈㅇ,ㅈㄱ,ㅎㅇ,ㅇㅂ,ㅈㅅ,ㅎㄱ,ㅅㅈ,ㅈㅈ,ㄱㅂ,ㅎㅅ</problemPocket>
 		<hellProblemPocket>ㅁㅍ,ㅍㅊ,ㄴㅁ</hellProblemPocket>
 		<enemyPrefab>2</enemyPrefab>
 		<enemyHP>8</enemyHP>

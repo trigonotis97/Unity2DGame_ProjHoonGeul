@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TimeBar_RankMode : MonoBehaviour
 {
     public float timeSpeed;
-    public float healValue;
+    //public float healValue;
     public RankModeManager m_rankModeManager;
     Slider timeSlider;
 
@@ -40,6 +40,6 @@ public class TimeBar_RankMode : MonoBehaviour
 
     public void IncreaseTimeBar()
     {
-        timeSlider.value += healValue;
+        timeSlider.value =1f;
     }
 }
