@@ -21,7 +21,7 @@ public class GgamJiGameManager : MonoBehaviour
 
     int questionNum;
 
-    float time,sec, min;
+    public float time,sec, min;
     string secString, minString;
     public Text timer;
     public enum GgState
@@ -30,6 +30,7 @@ public class GgamJiGameManager : MonoBehaviour
         PLAYING
     }
     public GgState m_GgState;
+    public Animator startEndAni;
 
     public Unity_Cunjiin_Keyboard Unity_Cunjiin_Keyboard;
     [System.Serializable]
@@ -82,6 +83,7 @@ public class GgamJiGameManager : MonoBehaviour
 
         time = 90f;
         m_GgState = GgState.PAUSE;
+        startEndAni.SetTrigger("tutoOff");
     }
 
     void Update()
@@ -170,6 +172,7 @@ public class GgamJiGameManager : MonoBehaviour
         timer.text = "00:00";
         // 게임끗 애니 (씬이동 포함) 트리거 ㄱㄱ
         Debug.Log("gameOver");
+        MainSceneChange.SetSceneName("GgamJiMode");
     }
     public void GameClear()
     {
@@ -184,7 +187,7 @@ public class GgamJiGameManager : MonoBehaviour
         {
             Debug.Log("클리어했지만 최고기록은 아니네요.\n소요시간:"+time.ToString()+"\n최고기록:"+m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
         }
-        
+        MainSceneChange.SetSceneName("GgamJiMode");
         //성공!, 내 현재 기록 (소요시간), 갱신했니? 보여주는 애니메이션 트리거. (씬 이동까지 함께)
 
     }

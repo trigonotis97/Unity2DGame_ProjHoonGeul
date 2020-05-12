@@ -860,7 +860,7 @@ PrefabInstance:
     - target: {fileID: 1629970794986411128, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 72.99994
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 258499229684092469, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
@@ -4018,6 +4018,7 @@ MonoBehaviour:
   MainSceneChange: {fileID: 1045165034}
   timer: {fileID: 1402995560}
   m_GgState: 0
+  startEndAni: {fileID: 1717266439}
   Unity_Cunjiin_Keyboard: {fileID: 1397344569}
   for_Cursor:
   - text: {fileID: 1313705673}
