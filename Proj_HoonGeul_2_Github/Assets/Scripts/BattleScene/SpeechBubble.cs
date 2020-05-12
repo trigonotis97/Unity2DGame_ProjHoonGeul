@@ -17,7 +17,7 @@ public class SpeechBubble : MonoBehaviour
 
 
     string[] japanPatternWrong = { "받침이 없어야 된다네", "받침이 없는 단어로 다시 해보게", "일본어에는 받침이 없다네" }; //일본 보스 패턴에 맞지 않음. 2
-    string[] chinaPatternWorng = { "한자어를 써야하네", "저자는 중국인일세", "한자어만 사용해야 한다네", "한자로 된 단어만 알아듣는건가...?" }; //3
+    string[] chinaPatternWorng = { "한자어를 써야하네", "저자는 중국인일세", "한자어만 사용해야 한다네", "한자로 된 단어만 알아듣나?" }; //3
 
     ///우의정 조선 스테이지1. 3
     string[] joseonRightMinister = { "그 모음은 쓰면 안되네", "그게 들어가면 안되네", "저 모음들은 사용해선 안돼.", "쓰면 안되는 모음이 있는 것 같은데?" };
@@ -64,12 +64,12 @@ public class SpeechBubble : MonoBehaviour
                     bubbleText.text = yesDictWrong[randInt];
                     break;
 
-                case -4: //사전에 있지만 받침이 있음 (일본 보스 chapter 2 boss)
+                case -4: //사전에 있지만 받침이 있음 (일본 보스 chapter 2 boss)                  
                     randInt = Random.Range(0, japanPatternWrong.Length);
                     bubbleText.text = japanPatternWrong[randInt];
                     break;
 
-                case -5: //한자어가 아님 (중국 보스)
+                case -3: //한자어가 아님 (중국 보스)
                     randInt = Random.Range(0, chinaPatternWorng.Length);
                     bubbleText.text = chinaPatternWorng[randInt];
                     break;

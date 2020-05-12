@@ -45,6 +45,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
 
     Slider hpBar;
+    Animator hpAnimator;
     Animator animator;
     Animator bulletAnimator;
     GameObject m_canvas;
@@ -74,6 +75,7 @@ public class EnemyScriptDefault : MonoBehaviour
         m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         hpBar = GameObject.FindGameObjectWithTag("EnemyHpBar").GetComponent<Slider>();
+        hpAnimator = GameObject.FindGameObjectWithTag("EnemyHpBar").GetComponent<Animator>();
 
 
         enemyHpText = hpBar.GetComponentInChildren<Text>();
@@ -88,8 +90,8 @@ public class EnemyScriptDefault : MonoBehaviour
     }
     void Start()
     {
-        enemyAttackLoopTime = 4f;
-        attackWaveSpeed_temp = 4f;
+        enemyAttackLoopTime = 5.33f;
+        attackWaveSpeed_temp = 5.33f;
         m_enemyData = m_battleManager.GetEnemyData();
         maxHP_f = m_enemyData.maxHp;
 
@@ -134,6 +136,7 @@ public class EnemyScriptDefault : MonoBehaviour
 
     public void EnemyDamage(/*int i*/) //콜라이더 ontrigger 에서 호출
     {
+        hpAnimator.SetTrigger("hp_heat");
         currentHp_f -= sunbiAttackDamage;
         if (currentHp_f <= 0f)
         {

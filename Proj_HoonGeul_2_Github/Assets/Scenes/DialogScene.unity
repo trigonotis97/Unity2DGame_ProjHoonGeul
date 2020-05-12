@@ -1747,6 +1747,7 @@ MonoBehaviour:
   duration: 1
   continueButton: {fileID: 1745466638}
   dialogManager: {fileID: 917640930}
+  SceneChange: {fileID: 917640931}
   convStateHandler: {fileID: 77259062}
 --- !u!4 &1711597449
 Transform:

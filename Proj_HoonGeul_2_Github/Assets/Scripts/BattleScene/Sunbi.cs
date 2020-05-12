@@ -29,6 +29,7 @@ public class Sunbi : MonoBehaviour
     public Animator m_animator;
     //public TimeBar timeSlider;
     public Slider sunbiHpSlider;
+    public Animator hpAnimator;
     BoxCollider2D m_boxCollider;
 
     public AudioClip sunbiAudioClip;
@@ -58,7 +59,6 @@ public class Sunbi : MonoBehaviour
         m_battleSceneManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         m_animator = GetComponent<Animator>();
         m_boxCollider = GetComponent<BoxCollider2D>();
-     
     }
 
     private void Start()
@@ -88,6 +88,7 @@ public class Sunbi : MonoBehaviour
     public void Heal()
     {
         //currentHp += healValue;
+        hpAnimator.SetTrigger("hp_heal");
         currentHp += healValue;
         Debug.Log(currentHp);
         //timeSlider.IncreaseTimeBar(healValue / maxHP);
@@ -100,6 +101,7 @@ public class Sunbi : MonoBehaviour
     public void Damage() //선비가 피격당함
     {
         //선비 hp 감소
+        hpAnimator.SetTrigger("hp_heat");
         currentHp -= enemyDamage;
         //hp bar value 변경을 위한 변환 (value : 0~1f)
         

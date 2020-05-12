@@ -17,7 +17,7 @@ public class Dialog2 : MonoBehaviour
     public float duration;
     public GameObject continueButton;
     public DialogManager dialogManager;
-    //public SceneChange SceneChange;
+    public SceneChange SceneChange;
     private int index = 0;
 
     public ConvStateHandler convStateHandler;
@@ -92,9 +92,9 @@ public class Dialog2 : MonoBehaviour
         {
             if (index + 1 == script.Length)
             {
-                //SceneChange.NextScene();
+                SceneChange.NextScene();
                 //다이얼로그 매니저로 씬 이동 권한 위임
-                dialogManager.NextScene();
+                //dialogManager.NextScene();
                 
             }
             //Debug.Log(index);
