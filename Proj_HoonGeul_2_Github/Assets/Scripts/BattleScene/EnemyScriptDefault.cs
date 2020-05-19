@@ -68,7 +68,9 @@ public class EnemyScriptDefault : MonoBehaviour
 
     /// 
     public Text enemyHpText;
-    
+
+    AudioSource effectAudioSource;
+    public AudioClip enemy_attack, enemy_hit;
 
     private void Awake()
     {
@@ -76,7 +78,6 @@ public class EnemyScriptDefault : MonoBehaviour
         m_battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>();
         hpBar = GameObject.FindGameObjectWithTag("EnemyHpBar").GetComponent<Slider>();
         hpAnimator = GameObject.FindGameObjectWithTag("EnemyHpBar").GetComponent<Animator>();
-
 
         enemyHpText = hpBar.GetComponentInChildren<Text>();
         m_canvas = GameObject.FindGameObjectWithTag("Canvas");
@@ -86,8 +87,11 @@ public class EnemyScriptDefault : MonoBehaviour
         enemyBullet = GameObject.FindGameObjectWithTag("EnemyBullet");
         hintHandler = GameObject.FindGameObjectWithTag("BulletHandler").GetComponent<EnemyHintBulletHandler>();
 
-
+        effectAudioSource = GameObject.FindGameObjectWithTag("effectAudioComp").GetComponent<AudioSource>();
+        enemy_attack = Resources.Load("EffectSounds/" + "enemy_attack") as AudioClip;
+        enemy_hit = Resources.Load("EffectSounds/" + "enemy_hit") as AudioClip;
     }
+
     void Start()
     {
         enemyAttackLoopTime = 5.33f;
@@ -137,6 +141,7 @@ public class EnemyScriptDefault : MonoBehaviour
     public void EnemyDamage(/*int i*/) //콜라이더 ontrigger 에서 호출
     {
         hpAnimator.SetTrigger("hp_heat");
+        effectAudioSource.PlayOneShot(enemy_hit);
         currentHp_f -= sunbiAttackDamage;
         if (currentHp_f <= 0f)
         {
@@ -173,6 +178,7 @@ public class EnemyScriptDefault : MonoBehaviour
         ///투사체 발사하는 작업 여기에
         animator.SetTrigger("attackT");
         bulletAnimator.SetTrigger("goText");
+        effectAudioSource.PlayOneShot(enemy_attack);
         /*
         GameObject attackPref = Instantiate(enemyAttackPrefb[0], transform.position + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
         attackPref.transform.SetParent(m_canvas.transform, false);

@@ -28,10 +28,10 @@ public class SceneChange : MonoBehaviour
         nextscene = sceneData.nextScene;
         nextscenekey = sceneData.nextSceneKey;
         m_gameManager.PrintCurrentData();
-        Debug.Log("CURRENT MODE ->" + currentMode + "  ||  "
-            + "SCENE DATA - next scene (1:dlg 2:bt) -> " + sceneData.nextScene + "  ||  "
-            + "SCENE DATA - next scene  key: " + sceneData.nextSceneKey
-            );
+        //Debug.Log("CURRENT MODE ->" + currentMode + "  ||  "
+        //    + "SCENE DATA - next scene (1:dlg 2:bt) -> " + sceneData.nextScene + "  ||  "
+        //    + "SCENE DATA - next scene  key: " + sceneData.nextSceneKey
+        //    );
     }
     
     public void StoryMode_SceneChanger()

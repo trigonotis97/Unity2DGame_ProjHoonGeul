@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class GgamJiGameManager : MonoBehaviour
 {
     GameManager m_gameManager;
@@ -21,7 +22,7 @@ public class GgamJiGameManager : MonoBehaviour
 
     int questionNum;
 
-    public float time,sec, min;
+    public float time, sec, min;
     string secString, minString;
     public Text timer;
     public enum GgState
@@ -41,6 +42,9 @@ public class GgamJiGameManager : MonoBehaviour
         public GameObject under;
     }
     public forCursor[] for_Cursor = new forCursor[3];
+
+    public GameObject clearCanvas;
+    public Text clearText;
 
     public string[,] answerStr = new string[4, 4]
     {
@@ -69,16 +73,17 @@ public class GgamJiGameManager : MonoBehaviour
             m_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
             sceneData = m_gameManager.GetSceneIndData(m_gameManager.GetGameMode());
         }
+        clearCanvas.SetActive(false);
 
         nowLine = 0;
 
-        questionNum =m_gameManager.GetGgamJiStageNum();
+        questionNum = m_gameManager.GetGgamJiStageNum();
         Debug.Log(questionNum);
         answerSpace.text = "";
         for (int i = 0; i < 4; i++)
         {
             answerSpace.text += answerStr[questionNum, i] + "\n";
-            
+
         }
 
         time = 90f;
@@ -91,7 +96,7 @@ public class GgamJiGameManager : MonoBehaviour
         if (m_GgState == GgState.PLAYING)
         {
             time -= Time.deltaTime;
-            
+
             //if (min < 10)
             //{
             //    minString = "0" + Mathf.Floor(min).ToString();
@@ -111,7 +116,7 @@ public class GgamJiGameManager : MonoBehaviour
                     secString = "";
                 }
                 timer.text = "0" + Mathf.Floor(min) + ":" + secString + Mathf.Floor(sec).ToString();
-            }       
+            }
             else
             {
                 m_GgState = GgState.PAUSE;
@@ -122,7 +127,7 @@ public class GgamJiGameManager : MonoBehaviour
 
     public void Check()
     {
-        if (InputText.text == answerStr[questionNum,nowLine])
+        if (InputText.text == answerStr[questionNum, nowLine])
         {
             //정답 사운드
             AudioSource.clip = correct;
@@ -132,7 +137,7 @@ public class GgamJiGameManager : MonoBehaviour
             {
                 m_GgState = GgState.PAUSE;
                 GameClear();
-                
+
             }
             else
             {
@@ -170,27 +175,33 @@ public class GgamJiGameManager : MonoBehaviour
     public void GameOver()
     {
         timer.text = "00:00";
-        // 게임끗 애니 (씬이동 포함) 트리거 ㄱㄱ
+        startEndAni.SetTrigger("gameOver");
         Debug.Log("gameOver");
+        MainSceneChange.SetSceneName("GgamJiMode");
+    }
+    public void SceneChangeForInvoke()
+    {
         MainSceneChange.SetSceneName("GgamJiMode");
     }
     public void GameClear()
     {
+        clearCanvas.SetActive(true);
         //time 값을 내 현재 스코어 보여주는 창에 넣는다
-        if (!PlayerPrefs.HasKey("ggBestScore" + questionNum.ToString()) ||
-            m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()) < time) //최고기록이면!
+        if (!PlayerPrefs.HasKey("ggBestScore" + questionNum.ToString()) || m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()) < time) //최고기록이면!
         {
             m_gameManager.SetFloatPlayerPrefs("ggBestScore" + questionNum.ToString(), time); //최고기록에 저장            
-            Debug.Log("최고기록갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString())); 
+            Debug.Log("최고기록갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
+            clearText.text = "최고기록갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString());
         }
         else //최고기록이 아니면
         {
-            Debug.Log("클리어했지만 최고기록은 아니네요.\n소요시간:"+time.ToString()+"\n최고기록:"+m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
-        }
-        MainSceneChange.SetSceneName("GgamJiMode");
-        //성공!, 내 현재 기록 (소요시간), 갱신했니? 보여주는 애니메이션 트리거. (씬 이동까지 함께)
+            Debug.Log("완료했지만 최고기록은 아니네요.\n소요시간:" + time.ToString() + "\n최고기록:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
+            clearText.text = "클리어했지만 최고기록은 아니네요.\n소요시간:" + time.ToString() + "\n최고기록:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString());
 
+            Invoke("SceneChangeForInvoke", 2.0f);
+        }
     }
+
     //public void AdButton()
     //{
     //    //광고 재생 후 다음 씬으로
@@ -265,4 +276,6 @@ public class GgamJiGameManager : MonoBehaviour
         InputText.text = "";
     }
     */
+
 }
+

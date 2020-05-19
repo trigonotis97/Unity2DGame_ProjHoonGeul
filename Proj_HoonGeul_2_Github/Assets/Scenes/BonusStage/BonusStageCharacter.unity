@@ -2543,6 +2543,7 @@ GameObject:
   - component: {fileID: 992197811}
   - component: {fileID: 992197812}
   - component: {fileID: 992197813}
+  - component: {fileID: 8439813559050719162}
   m_Layer: 0
   m_Name: BSCManager
   m_TagString: Untagged
@@ -2569,6 +2570,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8439813559050719162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439813559050719160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee84f9452563bdf409467f319e726d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8439813559188815462
 RectTransform:
   m_ObjectHideFlags: 0

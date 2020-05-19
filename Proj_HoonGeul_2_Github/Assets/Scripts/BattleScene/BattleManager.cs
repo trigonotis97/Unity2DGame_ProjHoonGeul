@@ -45,12 +45,12 @@ public class BattleManager : MonoBehaviour
 
     public BattleSceneData m_data; //현재 배틀 스테이지에서 사용할 데이터
     public SceneData sceneData;
-    public MainSceneChange m_mainSceneChange;
+
 
     public StageState stageStatus; // 0: 게임 시작 전 1: 게임중 2: 게임 중단 3:게임종료 4: 게임 클리어
     public GameObject m_canvas;
 
-
+    public Animator startEndAnimator;
 
 
     //public SpriteRenderer bg_image; // ####
@@ -58,7 +58,7 @@ public class BattleManager : MonoBehaviour
 
     public AudioClip bg_audioclip;
     AudioSource m_audioSource;
-
+    public Zing m_Zing;
     
     ChosungGeneratorDefault m_generator;
 
@@ -176,6 +176,7 @@ public class BattleManager : MonoBehaviour
 
     public void SetStatePlaying()
     {
+        m_Zing.PlayZing();
         stageStatus = StageState.PLAYING;
 
     }
@@ -189,8 +190,8 @@ public class BattleManager : MonoBehaviour
     {
         stageStatus = StageState.GAMEOVER;
 
-        //게임오버 판넬 추가해야함
-        m_mainSceneChange.SetSceneName("StartScene");
+        startEndAnimator.SetTrigger("gameOver");
+        //m_mainSceneChange.SetSceneName("StartScene");//이걸 애니메이션으로 해야함. mainscene 변수는 지우고.
     }
     public void SetStateStageClear()
     {

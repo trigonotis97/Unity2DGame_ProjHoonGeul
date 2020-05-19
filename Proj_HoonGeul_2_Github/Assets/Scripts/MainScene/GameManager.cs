@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour {
     {
             Debug.Log(":: Print Current Data  ::  " 
         + "crnt battle ind: " + currentBattleStageIdx + "  ||  "
-        + "crnt scene ind: " + currentSceneDataIdx
+        + "crnt scene ind: " + currentSceneDataIdx + "  ||  " + "dialog ind: " + currentDialogIdx
         );
     }
 

@@ -43,10 +43,9 @@ public class Sunbi : MonoBehaviour
     //적 힌트 투사체를 위한 선비 피격 카운트 보낼 오브젝트
     public EnemyHintBulletHandler m_enemybulletHandler;
 
-    //enemyhp
-
-
-
+    //effect audio
+    AudioSource effectAudioSource;
+    public AudioClip sunbi_hit;
 
     /*
     Awake는 모든 오브젝트가 초기화되고 호출되기 때문에, 
@@ -65,6 +64,7 @@ public class Sunbi : MonoBehaviour
     {
         currentHp = maxHP;
         hpBarUpdate();
+        effectAudioSource = GameObject.FindGameObjectWithTag("effectAudioComp").GetComponent<AudioSource>();
     }
 
 
@@ -104,8 +104,8 @@ public class Sunbi : MonoBehaviour
         hpAnimator.SetTrigger("hp_heat");
         currentHp -= enemyDamage;
         //hp bar value 변경을 위한 변환 (value : 0~1f)
-        
 
+        effectAudioSource.PlayOneShot(sunbi_hit);
         
         if(currentHp<=0f)
         {

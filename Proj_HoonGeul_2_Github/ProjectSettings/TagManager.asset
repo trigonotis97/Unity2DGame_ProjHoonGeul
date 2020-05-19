@@ -21,6 +21,7 @@ TagManager:
   - KeyColliderY
   - BulletHandler
   - PracticeManager
+  - effectAudioComp
   layers:
   - Default
   - TransparentFX

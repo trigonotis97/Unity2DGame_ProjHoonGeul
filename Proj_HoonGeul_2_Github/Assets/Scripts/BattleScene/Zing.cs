@@ -11,7 +11,7 @@ public class Zing : MonoBehaviour
     void Start()
     {
         audio.clip = zingSound;
-        audio.PlayOneShot(zingSound);
+        
     }
 
     // Update is called once per frame
@@ -19,7 +19,10 @@ public class Zing : MonoBehaviour
     {
         
     }
-
+    public void PlayZing()
+    {
+        audio.PlayOneShot(zingSound);
+    }
     public void CorrectSound()
     {
         audio.clip = correct;

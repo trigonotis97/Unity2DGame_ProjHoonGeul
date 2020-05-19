@@ -2553,6 +2553,7 @@ GameObject:
   - component: {fileID: 597391912}
   - component: {fileID: 597391913}
   - component: {fileID: 597391914}
+  - component: {fileID: 8439813559441328430}
   m_Layer: 0
   m_Name: BSSManager
   m_TagString: Untagged
@@ -2560,6 +2561,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8439813559441328430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439813559441328429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee84f9452563bdf409467f319e726d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &8439813559708404530
 CanvasRenderer:
   m_ObjectHideFlags: 0

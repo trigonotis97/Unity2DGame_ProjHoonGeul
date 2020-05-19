@@ -889,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 1629970794986411128, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 72.99994
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 258499229684092469, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
@@ -3844,6 +3844,7 @@ GameObject:
   - component: {fileID: 1045165040}
   - component: {fileID: 1045165034}
   - component: {fileID: 1045165039}
+  - component: {fileID: 8439813558322395712}
   m_Layer: 0
   m_Name: BSPManager
   m_TagString: Untagged
@@ -3851,6 +3852,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8439813558322395712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439813558322395711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee84f9452563bdf409467f319e726d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &8439813558612768800
 CanvasRenderer:
   m_ObjectHideFlags: 0
