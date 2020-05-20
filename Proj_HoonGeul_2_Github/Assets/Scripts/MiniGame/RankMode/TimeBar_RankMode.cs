@@ -15,19 +15,15 @@ public class TimeBar_RankMode : MonoBehaviour
     private void Awake()
     {
         timeSlider=GetComponent<Slider>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (m_rankModeManager.GetState() == StageState.PLAYING)
         {
             DecreaseTimeBar();
         }
-
     }
-
 
     void DecreaseTimeBar()
     {
@@ -40,6 +36,7 @@ public class TimeBar_RankMode : MonoBehaviour
 
     public void IncreaseTimeBar()
     {
+        //timeSlider.maxValue
         timeSlider.value =1f;
     }
 }

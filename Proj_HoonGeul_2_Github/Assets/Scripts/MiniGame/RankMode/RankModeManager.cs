@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RankModeManager : MonoBehaviour
 {
     GameManager m_gameManager;
-    public int currentScore=0;
+    
     public int show_chapter_num;
     public int show_stage_num;
 
@@ -17,11 +17,13 @@ public class RankModeManager : MonoBehaviour
     string[] normalQuestionAll_arr;
     string[] hellQuestionAll_arr;
 
-    public GameObject gameOverPanel;
-    public GameOverPanel_RankMode gameOverPanel_script;
-    public Score score_script;
-    int score;
+    public int score;
+    public Text scoreText;
+    public Animator startEndAni;
+    public MainSceneChange MainSceneChange;
 
+    public GameObject clearCanvas;
+    public Text clearText;
 
     private void Awake()
     {
@@ -34,7 +36,7 @@ public class RankModeManager : MonoBehaviour
 
         m_questionGen.SetProblempocket(normalQuestionAll_arr,hellQuestionAll_arr);//normal, hell
 
-        SetStatePlaying();
+        startEndAni.SetTrigger("tutoOff");
     }
 
     // Update is called once per frame
@@ -76,18 +78,28 @@ public class RankModeManager : MonoBehaviour
         }
     }
 
-
+    public void Correct()
+    {
+        score += 1;
+        scoreText.text = score.ToString();
+    }
     //스테이지 상태 전용 함수
     public StageState GetState()
     {
         return m_stageStatus;
     }
+
+    public void SetState(string state)
+    {
+        if (state == "PAUSE") m_stageStatus = StageState.PAUSE;
+        if (state == "PLAYING") m_stageStatus = StageState.PLAYING;
+    }
+
     public void SetStatePlaying()
     {
         m_stageStatus = StageState.PLAYING;
 
     }
-
     public void SetStatePause()
     {
         m_stageStatus = StageState.PAUSE;
@@ -96,23 +108,30 @@ public class RankModeManager : MonoBehaviour
     public void SetStateGameover()
     {
         m_stageStatus = StageState.GAMEOVER;
-        gameOverPanel.SetActive(true);
-        gameOverPanel_script.SetScoreText();
-        score = score_script.GetScore();
 
-        int currentHighScore = m_gameManager.GetCurrentRankScore();
-        if (score > currentHighScore)
+        clearCanvas.SetActive(true);
+
+        int bestScore = m_gameManager.GetCurrentRankScore();
+        if (score > bestScore)
+        {
             m_gameManager.SetRankScore(score);
+            clearText.text = "최고 기록 갱신! \n점수:" + score.ToString();
+        }
+        else
+        {
+            clearText.text = "기록 갱신 실패!\n현재 점수:" + score.ToString() + "\n최단 기록:" + bestScore.ToString();
+        }
+        Invoke("SceneChangeForInvoke", 2.0f);
 
-
+    }
+    public void SceneChangeForInvoke()
+    {
+        MainSceneChange.SetSceneName("RankMode");
     }
 
     public void ChangeCurrentGameMode_0()
     {
         m_gameManager.SetGameMode(0);
     }
-
-
-
 
 }

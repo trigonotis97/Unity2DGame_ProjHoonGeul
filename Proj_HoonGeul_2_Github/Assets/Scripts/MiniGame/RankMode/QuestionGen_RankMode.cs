@@ -79,7 +79,7 @@ public class QuestionGen_RankMode : MonoBehaviour
             signAni.Play("O");
             timeBar.IncreaseTimeBar();
 
-
+            m_rankModeManager.Correct();
             //백그라운드에 정답 문자 표시
             backgroundWordGen.MakeWordRandomPos(inputWord);
 

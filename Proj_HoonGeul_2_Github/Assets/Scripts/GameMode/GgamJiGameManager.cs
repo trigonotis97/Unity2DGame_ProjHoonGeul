@@ -185,21 +185,22 @@ public class GgamJiGameManager : MonoBehaviour
     }
     public void GameClear()
     {
+        SetState("PAUSE");
         clearCanvas.SetActive(true);
         //time 값을 내 현재 스코어 보여주는 창에 넣는다
-        if (!PlayerPrefs.HasKey("ggBestScore" + questionNum.ToString()) || m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()) < time) //최고기록이면!
+        if (!PlayerPrefs.HasKey("ggBestScore" + questionNum.ToString()) || m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()) > 90-time) //최단기록이면!
         {
-            m_gameManager.SetFloatPlayerPrefs("ggBestScore" + questionNum.ToString(), time); //최고기록에 저장            
-            Debug.Log("최고기록갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
-            clearText.text = "최고기록갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString());
+            m_gameManager.SetFloatPlayerPrefs("ggBestScore" + questionNum.ToString(), 90-time); //최고기록에 저장            
+            //Debug.Log("최고기록갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
+            clearText.text = "최단 기록 갱신! \n소요시간:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()).ToString("N2") + "초";
         }
         else //최고기록이 아니면
         {
-            Debug.Log("완료했지만 최고기록은 아니네요.\n소요시간:" + time.ToString() + "\n최고기록:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()));
-            clearText.text = "클리어했지만 최고기록은 아니네요.\n소요시간:" + time.ToString() + "\n최고기록:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString());
+            clearText.text = "기록 갱신 실패!\n소요시간:" + (90 - time).ToString("N2") + "초" + "\n최단 기록:" + m_gameManager.GetFloatPlayerPrefs("ggBestScore" + questionNum.ToString()).ToString("N2") + "초";
 
-            Invoke("SceneChangeForInvoke", 2.0f);
+            
         }
+        Invoke("SceneChangeForInvoke", 2.0f);
     }
 
     //public void AdButton()

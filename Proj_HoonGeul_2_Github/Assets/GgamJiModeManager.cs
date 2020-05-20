@@ -29,15 +29,15 @@ public class GgamJiModeManager : MonoBehaviour
         title.text = "애국가 " + (jeolNum+1).ToString() + "절";
         if(PlayerPrefs.HasKey("ggBestScore" + jeolNum.ToString()))
         {
-            bestScore = m_gameManager.GetFloatPlayerPrefs("ggBestScore" + jeolNum.ToString() ).ToString("N2");
+            bestScore = m_gameManager.GetFloatPlayerPrefs("ggBestScore" + jeolNum.ToString() ).ToString("N2") + "초";
 
         }
         else
         {
             bestScore = "기록 없음";
         }
-        
-        stageText.text = "최고 기록\n" + bestScore; //게임매니저에서 최고기록 받아오기
+
+        stageText.text = "최단 기록\n" + bestScore;//게임매니저에서 최고기록 받아오기
         m_gameManager.SetGgamJiStageNum(jeolNum);//게임매니저에 몇절인지 변수 넣기
         if (startButton.activeSelf == false) startButton.SetActive(true);
     }
