@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 65657274}
   - component: {fileID: 65657273}
   - component: {fileID: 65657272}
+  - component: {fileID: 65657275}
   m_Layer: 5
   m_Name: AdSkip
   m_TagString: Untagged
@@ -360,8 +361,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045165039}
-        m_MethodName: AdButton
+      - m_Target: {fileID: 65657275}
+        m_MethodName: ShowRewarded
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -410,6 +411,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65657270}
   m_CullTransparentMesh: 0
+--- !u!114 &65657275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65657270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef991ef092fd9534b824d52ad9448e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_bonusPenalty: {fileID: 1045165039}
 --- !u!1 &101079016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,7 +3932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 30, y: 6.000122}
+  m_AnchoredPosition: {x: 30, y: 6}
   m_SizeDelta: {x: 239, y: 196.9}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &8439813558612768811

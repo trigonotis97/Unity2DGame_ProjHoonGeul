@@ -111,7 +111,7 @@ public class RankModeManager : MonoBehaviour
 
         clearCanvas.SetActive(true);
 
-        int bestScore = m_gameManager.GetCurrentRankScore();
+        int bestScore = m_gameManager.GetBestRankScore();
         if (score > bestScore)
         {
             m_gameManager.SetRankScore(score);
@@ -119,7 +119,7 @@ public class RankModeManager : MonoBehaviour
         }
         else
         {
-            clearText.text = "기록 갱신 실패!\n현재 점수:" + score.ToString() + "\n최단 기록:" + bestScore.ToString();
+            clearText.text = "기록 갱신 실패!\n현재 점수:" + score.ToString() + "\n최고 기록:" + bestScore.ToString();
         }
         Invoke("SceneChangeForInvoke", 2.0f);
 

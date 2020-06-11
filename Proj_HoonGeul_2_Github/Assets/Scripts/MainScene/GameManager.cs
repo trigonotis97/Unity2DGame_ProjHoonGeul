@@ -362,14 +362,21 @@ public class GameManager : MonoBehaviour {
         hellQuestionAll_arr = inHellQuestion;
     }
 
-    public int GetCurrentRankScore()
+    public int GetBestRankScore()
     {
         return PlayerPrefs.GetInt("RankModeScore",0);
     }
     public void SetRankScore(int newScore)
     {
         PlayerPrefs.SetInt("RankModeScore", newScore);
-
+    }
+    public int GetBestPuzzleScore()
+    {
+        return PlayerPrefs.GetInt("PuzzleBestScore", 0);
+    }
+    public void SetBestPuzzleScore(int newScore)
+    {
+        PlayerPrefs.SetInt("PuzzleBestScore", newScore);
     }
     //연습모드
     public void SetPracticeDialogKey(int inputKey)

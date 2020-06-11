@@ -11,10 +11,15 @@ public class TimeBar_RankMode : MonoBehaviour
     public RankModeManager m_rankModeManager;
     Slider timeSlider;
 
+    public float currentTime;
+
     // Start is called before the first frame update
     private void Awake()
     {
         timeSlider=GetComponent<Slider>();
+        currentTime = 280f / (m_rankModeManager.score + 28);
+        timeSlider.maxValue = currentTime;
+        timeSlider.value = currentTime;
     }
 
     void Update()
@@ -36,7 +41,9 @@ public class TimeBar_RankMode : MonoBehaviour
 
     public void IncreaseTimeBar()
     {
-        //timeSlider.maxValue
-        timeSlider.value =1f;
+        currentTime = 280f / (m_rankModeManager.score + 27);
+        timeSlider.maxValue = currentTime;
+        timeSlider.value = currentTime;
     }
+ 
 }

@@ -15,7 +15,7 @@ public class RankMainManager : MonoBehaviour
     }
     void Start()
     {
-        bestScoreText.text = m_gameManager.GetCurrentRankScore().ToString() + "점";
+        bestScoreText.text = m_gameManager.GetBestRankScore().ToString() + "점";
     }
 
     // Update is called once per frame
