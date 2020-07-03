@@ -147,12 +147,22 @@ PrefabInstance:
     - target: {fileID: 3348068887742478690, guid: d02bc7ae3040d1747a69cc68462f4351,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1759
+      value: 1704
       objectReference: {fileID: 0}
     - target: {fileID: 3348068887742478690, guid: d02bc7ae3040d1747a69cc68462f4351,
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348068887742478690, guid: d02bc7ae3040d1747a69cc68462f4351,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348068887742478690, guid: d02bc7ae3040d1747a69cc68462f4351,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4876593703530158296, guid: d02bc7ae3040d1747a69cc68462f4351,
         type: 3}
@@ -446,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 2225506541732538259, guid: 74b2e4cb63f70684fb6ef3a80c7b0cb4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1713
+      value: 1508
       objectReference: {fileID: 0}
     - target: {fileID: 2225506541732538259, guid: 74b2e4cb63f70684fb6ef3a80c7b0cb4,
         type: 3}
@@ -1579,8 +1589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -63}
-  m_SizeDelta: {x: 1200, y: 300}
+  m_AnchoredPosition: {x: -41.3, y: -63}
+  m_SizeDelta: {x: 1282.7, y: 736}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1661108678
 MonoBehaviour:
@@ -1604,7 +1614,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 177b7b9ed3d2c6c4a844cc9d2a6993a9, type: 3}
-    m_FontSize: 130
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

@@ -10,7 +10,7 @@ public class UnityAdsManager : MonoBehaviour
 
     void Start()
     {
-        Advertisement.Initialize(google_id);
+        Advertisement.Initialize(google_id,false);
     }
 
     private void HandleShowResult(ShowResult result)

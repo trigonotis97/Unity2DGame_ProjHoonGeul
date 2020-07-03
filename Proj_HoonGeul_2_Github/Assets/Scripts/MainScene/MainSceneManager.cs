@@ -41,7 +41,7 @@ public class MainSceneManager : MonoBehaviour
     
     public void OnClickForGiuk()
     {
-        if (true)//InputText.text == "시작") //테스트용으로 뺌
+        if (InputText.text == "시작") //테스트용으로 뺌
         {
             chunjiin_keyboard.SetActive(false);
             Input.SetActive(false);

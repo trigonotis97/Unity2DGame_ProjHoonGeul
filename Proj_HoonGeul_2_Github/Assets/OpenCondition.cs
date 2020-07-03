@@ -62,7 +62,7 @@ public class OpenCondition : MonoBehaviour
             conditionText.enabled = true;
 
             btImage.color = new Color(0.55f,0.55f,0.55f);
-            //bt.enabled = false; 디버깅용으로 빼놓음
+            bt.enabled = false;
 
         }
         else

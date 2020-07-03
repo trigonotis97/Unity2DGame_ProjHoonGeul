@@ -2295,7 +2295,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3887,7 +3887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.12, y: 1.2136993}
+  m_AnchoredPosition: {x: -2.119995, y: 1.2136993}
   m_SizeDelta: {x: 50.31, y: 2.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974019683
@@ -4570,7 +4570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0.86, y: -3.1600037}
+  m_AnchoredPosition: {x: 0.85998535, y: -3.1600037}
   m_SizeDelta: {x: -26.98, y: 52.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1268027802
@@ -4759,7 +4759,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313140861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9000}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1148911756}
@@ -5624,7 +5624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.6, y: 723.80005}
+  m_AnchoredPosition: {x: -1.5999756, y: 723.80005}
   m_SizeDelta: {x: -136.7, y: -1471.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1601477261
@@ -7186,7 +7186,7 @@ PrefabInstance:
     - target: {fileID: 1541346128387092623, guid: 1adea435a510fe849b570600e992f704,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1493
+      value: 1478.4
       objectReference: {fileID: 0}
     - target: {fileID: 1541346128387092623, guid: 1adea435a510fe849b570600e992f704,
         type: 3}
@@ -7252,7 +7252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7766,6 +7766,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 73
       objectReference: {fileID: 0}
+    - target: {fileID: 8939180287713364520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 272.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939180287713364520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10.699951
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939180287713364520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 406
+      objectReference: {fileID: 0}
     - target: {fileID: 2941351920318328973, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
       propertyPath: frameColX
@@ -7795,21 +7810,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 266.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939180287713364520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 272.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939180287713364520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -10.699951
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939180287713364520, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 406
       objectReference: {fileID: 0}
     - target: {fileID: 8199985587367098133, guid: 65fc7bf7e51c62f4e991c984b64f2c5f,
         type: 3}
@@ -7898,7 +7898,7 @@ PrefabInstance:
     - target: {fileID: 3500886638791031167, guid: 8240651f2c3d46e43ac19481170d1635,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3500886638791031167, guid: 8240651f2c3d46e43ac19481170d1635,
         type: 3}

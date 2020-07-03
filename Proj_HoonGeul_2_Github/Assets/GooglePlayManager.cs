@@ -1,26 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GooglePlayManager : MonoBehaviour
 {
-
     bool bWait = false;
     int m_bestScore;
+    //public Text debug;
 
     void Awake()
     {
         PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder().Build());
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
+        Debug.Log(PlayerPrefs.GetFloat("ggBestScore1"));
+        Debug.Log(Convert.ToInt64(PlayerPrefs.GetFloat("ggBestScore1") * 100));
     }
     void Start()
     {
         OnLogin();
-        m_bestScore = PlayerPrefs.GetInt("PuzzleBestScore", 0);
+        
         if (SceneManager.GetActiveScene().name == "PuzzleMode")
         {
             if (m_bestScore == 100)
@@ -45,10 +49,8 @@ public class GooglePlayManager : MonoBehaviour
             {
                 OnAddAchievement25();
             }
-        }
-
+        }  
     }
-
 
     public void OnLogin()
     {
@@ -59,10 +61,12 @@ public class GooglePlayManager : MonoBehaviour
                 if (bSuccess)
                 {
                     Debug.Log("Success : " + Social.localUser.userName);
+                    //debug.text = "Success : " + Social.localUser.userName;
                 }
                 else
                 {
                     Debug.Log("Fall");
+                    //debug.text = "log Fail";
                 }
             });
         }
@@ -75,21 +79,96 @@ public class GooglePlayManager : MonoBehaviour
 
     public void OnShowLeaderBoard()
     {
-        // 1000점을 등록
         Social.ReportScore(PlayerPrefs.GetInt("RankModeScore",0), GPGSIds.leaderboard, (bool bSuccess) =>
         {
             if (bSuccess)
             {
                 Debug.Log("ReportLeaderBoard Success");
-
+                //debug.text = "ReportLeaderBoard Success";
             }
             else
             {
                 Debug.Log("ReportLeaderBoard Fall");
-
+                //debug.text = "ReportLeaderBoard Fall";
             }
         }
         );
+        Social.ShowLeaderboardUI();
+    }
+
+    public void OnShowLeaderBoardGG()
+    {
+        if (PlayerPrefs.HasKey("ggBestScore0"))
+        {
+            Social.ReportScore(Convert.ToInt64(PlayerPrefs.GetFloat("ggBestScore0", 90f) * 100), GPGSIds.leaderboard__1, (bool bSuccess) =>
+             {
+                 if (bSuccess)
+                 {
+                     Debug.Log("ReportLeaderBoard Success");
+
+                 }
+                 else
+                 {
+                     Debug.Log("ReportLeaderBoard Fall");
+
+                 }
+             }
+            );
+        }
+
+        if (PlayerPrefs.HasKey("ggBestScore1"))
+        {
+            Social.ReportScore(Convert.ToInt64(PlayerPrefs.GetFloat("ggBestScore1",90f) * 100), GPGSIds.leaderboard__2, (bool bSuccess) =>
+            {
+                if (bSuccess)
+                {
+                    Debug.Log("ReportLeaderBoard Success");
+
+                }
+                else
+                {
+                    Debug.Log("ReportLeaderBoard Fall");
+
+                }
+            }
+            );
+        }
+
+        if (PlayerPrefs.HasKey("ggBestScore2"))
+        {
+            Social.ReportScore(Convert.ToInt64(PlayerPrefs.GetFloat("ggBestScore2", 90f) * 100), GPGSIds.leaderboard__3, (bool bSuccess) =>
+            {
+                if (bSuccess)
+                {
+                    Debug.Log("ReportLeaderBoard Success");
+
+                }
+                else
+                {
+                    Debug.Log("ReportLeaderBoard Fall");
+
+                }
+            }
+            );
+        }
+        if (PlayerPrefs.HasKey("ggBestScore3"))
+        {
+            Social.ReportScore(Convert.ToInt64(PlayerPrefs.GetFloat("ggBestScore3", 90f) * 100), GPGSIds.leaderboard__4, (bool bSuccess) =>
+            {
+                if (bSuccess)
+                {
+                    Debug.Log("ReportLeaderBoard Success");
+
+                }
+                else
+                {
+                    Debug.Log("ReportLeaderBoard Fall");
+
+                }
+            }
+            );
+        }
+
         Social.ShowLeaderboardUI();
     }
 
